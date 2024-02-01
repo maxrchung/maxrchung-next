@@ -2,15 +2,14 @@ import {
   Pane,
   majorScale,
   Avatar,
-  Link,
   Popover,
   Position,
   MenuIcon,
-  Menu,
 } from "evergreen-ui";
 import NavIcon from "./NavIcon";
 import NavLink from "./NavLink";
 import MenuLink from "./MenuLink";
+import Link from "next/link";
 
 export default function NavBar() {
   const navIcons = (
@@ -39,13 +38,14 @@ export default function NavBar() {
       top={0}
     >
       <Pane display="flex" alignItems="center" gap={majorScale(2)}>
-        <Avatar
-          is={Link}
-          href="/"
-          src="/daboi.jpg"
-          size={majorScale(4)}
-          borderRadius="99999px"
-        />
+        <Pane is={Link} href="/">
+          <Pane
+            is="img"
+            src="/daboi.jpg"
+            width={majorScale(4)}
+            borderRadius="100%"
+          />
+        </Pane>
 
         <div className="is-hidden-mobile">
           <Pane display="flex" alignItems="center" gap={majorScale(2)}>
