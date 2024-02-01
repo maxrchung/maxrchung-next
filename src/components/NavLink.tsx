@@ -13,14 +13,8 @@ export default function NavLink({ href, name }: NavLinkProps) {
   const section = pathname.split("/")[1]?.toLowerCase();
 
   return (
-    <EvergreenLink
-      is={Link}
-      href={href}
-      color={section !== href ? "neutral" : undefined}
-      size={500}
-      padding={minorScale(1)}
-    >
-      {section === href ? <Strong size={500}>{name}</Strong> : name}
+    <EvergreenLink is={Link} href={href} color="neutral">
+      {section === href ? <Strong>{name}</Strong> : name}
     </EvergreenLink>
   );
 }

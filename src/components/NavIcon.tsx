@@ -9,7 +9,7 @@ interface NavIconProps {
 export default function NavIcon({ href, src }: NavIconProps) {
   return (
     <Pane is={Link} href={href} display="flex" alignItems="center">
-      <Pane is="img" src={src} width={majorScale(4)} />
+      <Pane is="img" src={src} width={majorScale(3)} />
     </Pane>
   );
 }

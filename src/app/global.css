@@ -1,3 +1,35 @@
+/* Set defaults following evergreen-ui docs site */
+body,
+html {
+  /* This sets the color to gray800 as default which is picked up by icon
+  component's currentColor */
+  color: #474d66;
+  font-family: "SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+/* Evergreen doesn't support responsive queries so I'm reimplementing some Bulma
+helpers: https://bulma.io/documentation/helpers/visibility-helpers/ */
+.is-hidden-mobile {
+  display: none;
+}
+
+.is-hidden-tablet {
+  display: initial;
+}
+
+/* For my use case I'm fine with just supporting mobile and tablet+ views */
+@media screen and (min-width: 768px) {
+  .is-hidden-mobile {
+    display: initial;
+  }
+
+  .is-hidden-tablet {
+    display: none;
+  }
+}
+
 /* :root {
   --max-width: 1100px;
   --border-radius: 12px;
