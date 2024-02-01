@@ -1,6 +1,9 @@
 "use client";
 
-import { Button, Link, Pane, Text, majorScale } from "evergreen-ui";
+import { Avatar, Pane, majorScale } from "evergreen-ui";
+import NavLink from "../NavLink";
+import Link from "next/link";
+import NavIcon from "../NavIcon";
 
 export default function About() {
   return (
@@ -9,13 +12,19 @@ export default function About() {
       alignItems="center"
       background="yellowTint"
       height={majorScale(7)}
-      padding={majorScale(1)}
+      padding={majorScale(2)}
     >
-      <Pane display="flex" alignItems="center" gap={majorScale(3)}>
-        <Link href="/">Home</Link>
-        <Link href="blog">Blog</Link>
-        <Link href="projects">Projects</Link>
-        <Link href="about">About</Link>
+      <Pane display="flex" alignItems="center" gap={majorScale(2)}>
+        <Avatar is={Link} href="/" src="/daboi.jpg" size={majorScale(4)} />
+        <NavLink href="blog" name="Blog" />
+        <NavLink href="projects" name="Projects" />
+        <NavLink href="about" name="About" />
+
+        <NavIcon href="mailto:maxrchung@gmail.com" src="/gmail-logo.png" />
+        <NavIcon href="mailto:maxrchung@gmail.com" src="/linkedin-logo.png" />
+        <NavIcon href="mailto:maxrchung@gmail.com" src="/github-logo.png" />
+        <NavIcon href="mailto:maxrchung@gmail.com" src="/x-logo.png" />
+        <NavIcon href="mailto:maxrchung@gmail.com" src="/osu-logo.png" />
       </Pane>
     </Pane>
   );
