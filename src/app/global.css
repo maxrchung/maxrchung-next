@@ -1,5 +1,4 @@
 /* Set defaults following evergreen-ui docs site */
-body,
 html {
   /* This sets the color to gray800 as default which is picked up by icon
   component's currentColor */
@@ -7,6 +6,12 @@ html {
   font-family: "SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
+
+  background-color: white;
+  background-image: url("/background.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 1080px 1080px;
 }
 
 /* Evergreen doesn't support responsive queries so I'm reimplementing some Bulma
