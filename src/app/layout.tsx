@@ -5,8 +5,8 @@ import { Inter } from "next/font/google";
 import "./reset.css";
 import "./global.css";
 import NavBar from "@/components/Nav/Nav";
-import { Pane, majorScale } from "evergreen-ui";
 import { ReactNode } from "react";
+import Main from "@/components/Main/Main";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NavBar />
-        <Pane width="768px" margin="auto" padding={majorScale(4)}>
-          {children}
-        </Pane>
+        <Main>{children}</Main>
       </body>
     </html>
   );

@@ -30,6 +30,7 @@ export default function NavBar() {
       padding={majorScale(2)}
       position="sticky"
       top={0}
+      zIndex={10} // Otherwise images apparently show over this
     >
       <Pane display="flex" alignItems="center" gap={majorScale(2)}>
         <Pane is={Link} href="/">
@@ -41,16 +42,13 @@ export default function NavBar() {
           />
         </Pane>
 
-        <Pane
-          className={style.isHiddenMobile}
-          display="flex"
-          alignItems="center"
-          gap={majorScale(2)}
-        >
-          <NavLink href="blog" name="Blog" />
-          <NavLink href="projects" name="Projects" />
-          <NavLink href="about" name="About" />
-        </Pane>
+        <div className={style.isHiddenMobile}>
+          <Pane display="flex" alignItems="center" gap={majorScale(2)}>
+            <NavLink href="blog" name="Blog" />
+            <NavLink href="projects" name="Projects" />
+            <NavLink href="about" name="About" />
+          </Pane>
+        </div>
 
         <Pane className={style.isHiddenTablet}>{navIcons}</Pane>
       </Pane>

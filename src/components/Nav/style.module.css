@@ -10,7 +10,7 @@ https://bulma.io/documentation/helpers/visibility-helpers/ */
 }
 
 /* For my use case I'm fine with just supporting mobile and tablet+ views */
-@media screen and (min-width: 768px) {
+@media (min-width: 700px) {
   .isHiddenMobile {
     display: initial;
   }
