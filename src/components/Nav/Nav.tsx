@@ -1,15 +1,9 @@
-import {
-  Pane,
-  majorScale,
-  Avatar,
-  Popover,
-  Position,
-  MenuIcon,
-} from "evergreen-ui";
+import { Pane, majorScale, Popover, Position, MenuIcon } from "evergreen-ui";
 import NavIcon from "./NavIcon";
 import NavLink from "./NavLink";
 import MenuLink from "./MenuLink";
 import Link from "next/link";
+import style from "./style.module.css";
 
 export default function NavBar() {
   const navIcons = (
@@ -47,18 +41,21 @@ export default function NavBar() {
           />
         </Pane>
 
-        <div className="is-hidden-mobile">
-          <Pane display="flex" alignItems="center" gap={majorScale(2)}>
-            <NavLink href="blog" name="Blog" />
-            <NavLink href="projects" name="Projects" />
-            <NavLink href="about" name="About" />
-          </Pane>
-        </div>
+        <Pane
+          className={style.isHiddenMobile}
+          display="flex"
+          alignItems="center"
+          gap={majorScale(2)}
+        >
+          <NavLink href="blog" name="Blog" />
+          <NavLink href="projects" name="Projects" />
+          <NavLink href="about" name="About" />
+        </Pane>
 
-        <div className="is-hidden-tablet">{navIcons}</div>
+        <Pane className={style.isHiddenTablet}>{navIcons}</Pane>
       </Pane>
 
-      <div className="is-hidden-mobile">{navIcons}</div>
+      <Pane className={style.isHiddenMobile}>{navIcons}</Pane>
 
       <Popover
         position={Position.BOTTOM_RIGHT}
@@ -71,7 +68,7 @@ export default function NavBar() {
           </Pane>
         }
       >
-        <MenuIcon className="is-hidden-tablet" />
+        <MenuIcon className={style.isHiddenTablet} />
       </Popover>
     </Pane>
   );

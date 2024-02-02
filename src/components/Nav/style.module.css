@@ -1,0 +1,21 @@
+/* Evergreen doesn't support responsive queries so I'm reimplementing some Bulma
+helpers: https://evergreen.segment.com/foundations/layers#responsive_layouts
+https://bulma.io/documentation/helpers/visibility-helpers/ */
+.isHiddenMobile {
+  display: none;
+}
+
+.isHiddenTablet {
+  display: initial;
+}
+
+/* For my use case I'm fine with just supporting mobile and tablet+ views */
+@media screen and (min-width: 768px) {
+  .isHiddenMobile {
+    display: initial;
+  }
+
+  .isHiddenTablet {
+    display: none;
+  }
+}
