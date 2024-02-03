@@ -3,7 +3,6 @@ import NavIcon from "./NavIcon";
 import NavLink from "./NavLink";
 import MenuLink from "./MenuLink";
 import Link from "next/link";
-import style from "./style.module.scss";
 
 export default function NavBar() {
   const navIcons = (
@@ -36,13 +35,13 @@ export default function NavBar() {
         <Pane is={Link} href="/">
           <Pane
             is="img"
-            src="/daboi.jpg"
+            src="/the-boy.jpg"
             width={majorScale(4)}
             borderRadius="100%"
           />
         </Pane>
 
-        <div className={style.isHiddenMobile}>
+        <div className="is-hidden-mobile">
           <Pane display="flex" alignItems="center" gap={majorScale(2)}>
             <NavLink href="projects" name="Projects" />
             <NavLink href="blog" name="Blog" />
@@ -50,10 +49,10 @@ export default function NavBar() {
           </Pane>
         </div>
 
-        <Pane className={style.isHiddenTablet}>{navIcons}</Pane>
+        <Pane className="is-hidden-tablet">{navIcons}</Pane>
       </Pane>
 
-      <Pane className={style.isHiddenMobile}>{navIcons}</Pane>
+      <Pane className="is-hidden-mobile">{navIcons}</Pane>
 
       <Popover
         position={Position.BOTTOM_RIGHT}
@@ -66,7 +65,7 @@ export default function NavBar() {
           </Pane>
         }
       >
-        <MenuIcon className={style.isHiddenTablet} />
+        <MenuIcon className="is-hidden-tablet" />
       </Popover>
     </Pane>
   );

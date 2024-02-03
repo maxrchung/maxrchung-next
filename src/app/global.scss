@@ -10,3 +10,25 @@
   /* Tiled background */
   background-image: url("/background.png");
 }
+
+/* Evergreen doesn't support responsive queries so I'm reimplementing some Bulma
+helpers: https://evergreen.segment.com/foundations/layers#responsive_layouts
+https://bulma.io/documentation/helpers/visibility-helpers/ */
+.is-hidden-mobile {
+  display: none;
+}
+
+.is-hidden-tablet {
+  display: initial;
+}
+
+/* For my use case I'm fine with just supporting mobile and tablet+ views */
+@media (min-width: 640px) {
+  .is-hidden-mobile {
+    display: initial;
+  }
+
+  .is-hidden-tablet {
+    display: none;
+  }
+}

@@ -1,34 +1,41 @@
-import { Document, Page } from "react-pdf";
-import { DocumentIcon, Image, Link, Pane, Spinner, minorScale } from "evergreen-ui";
+import { DocumentIcon, Image, Link, Pane, minorScale } from "evergreen-ui";
+import Caption from "@/components/Main/Caption";
+import Timestamp from "@/components/Main/Timestamp";
+import Pdf from "@/components/Main/Pdf";
 
 # About
 
-<Image src="/about-max.jpg" width={256} borderRadius="100%" />
+<Timestamp time="2024/2/3" />
 
-I'm a software engineer. Specifically, I like working on frontend. There's just
-something about bringing visuals and UX to life that gives me a certain spark of
-joy. I'm most proficient in developing web frontends, but I also dabble in some
-game, cloud, and animation programming on the side.
+<Image src="/about-max.jpg" width={256} borderRadius="100%" />
+<Caption>Me</Caption>
+
+I'm a software engineer. Specifically, I like working on frontend stuff. There's
+something about bringing visuals and UX to life that gives me a spark of joy.
+I'm most proficient in developing web frontends, but I also dabble in some game,
+cloud, and animation programming on the side.
 
 Outside of work, I'm probably cooking up some kind of side project. It could be
 a game, website, or sometimes an [osu!
 storyboard](https://maxrchung.com/projects/tegami). If I get the chance to, I
-love working with others to make some wacky stuff. Sometimes I organize small
-game jams or projects, but it can be hard to find time and motivation these
-days.
+love working with others to make some wacky stuff. Occasionally I organize small
+game jams or projects, but it can be hard to find time these days to manage
+things.
 
 If I'm not doing any of that, I'm probably at the arcade. I've been playing a
 lot of rhythm games and getting into Dance Dance Revolution, Pump It Up,
 DrumMania recently. If I'm not doing any of that that, I'm probably playing
 games at home, or watching anime, or I hope eating/sleeping.
 
-
 ## Resume
 
 <Pane display="flex" gap={minorScale(1)} alignItems="center">
-  <DocumentIcon /> <Link target="_blank" href="https://maxrchung-rails.s3.amazonaws.com/uploads/maxrchung-resume.pdf">maxrchung-resume.pdf</Link>
+  <DocumentIcon />{" "}
+  <Link
+    target="_blank"
+    href="https://maxrchung-rails.s3.amazonaws.com/uploads/maxrchung-resume.pdf"
+    children="maxrchung-resume.pdf"
+  />
 </Pane>
 
-<Document loading={<Spinner />} renderTextLayer={false} file="https://maxrchung-rails.s3.amazonaws.com/uploads/maxrchung-resume.pdf">
-  <Page pageNumber={1} renderTextLayer={false} renderAnnotationLayer={false} />
-</Document>
+<Pdf file="https://maxrchung-rails.s3.amazonaws.com/uploads/maxrchung-resume.pdf" />

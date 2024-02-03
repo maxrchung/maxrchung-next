@@ -4,7 +4,7 @@ const withMDX = require("@next/mdx")();
 const nextConfig = {
   // Configure `pageExtensions` to include MDX files
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-  // Optionally, add any other Next.js config below
+  // react-pdf needs this: https://github.com/wojtekmaj/react-pdf?tab=readme-ov-file#nextjs
   webpack: (config) => {
     config.resolve.alias.canvas = false;
     return config;
