@@ -3,7 +3,7 @@ import NavIcon from "./NavIcon";
 import NavLink from "./NavLink";
 import MenuLink from "./MenuLink";
 import Link from "next/link";
-import style from "./style.module.css";
+import style from "./style.module.scss";
 
 export default function NavBar() {
   const navIcons = (
@@ -44,8 +44,8 @@ export default function NavBar() {
 
         <div className={style.isHiddenMobile}>
           <Pane display="flex" alignItems="center" gap={majorScale(2)}>
-            <NavLink href="blog" name="Blog" />
             <NavLink href="projects" name="Projects" />
+            <NavLink href="blog" name="Blog" />
             <NavLink href="about" name="About" />
           </Pane>
         </div>
@@ -60,8 +60,8 @@ export default function NavBar() {
         minWidth="auto"
         content={
           <Pane display="flex" flexDirection="column">
-            <MenuLink href="blog" name="Blog" />
             <MenuLink href="projects" name="Projects" />
+            <MenuLink href="blog" name="Blog" />
             <MenuLink href="about" name="About" />
           </Pane>
         }

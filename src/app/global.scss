@@ -1,0 +1,12 @@
+/* Set defaults following evergreen-ui docs site */
+:root {
+  /* This sets the color to gray800 as default which is picked up for example by
+  icon component currentColor */
+  color: #474d66;
+  font-family: "SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+
+  /* Tiled background */
+  background-image: url("/background.png");
+}

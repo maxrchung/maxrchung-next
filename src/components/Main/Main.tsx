@@ -1,6 +1,6 @@
 import { Pane, majorScale } from "evergreen-ui";
 import { ReactNode } from "react";
-import style from "./style.module.css";
+import style from "./style.module.scss";
 
 interface MainProps {
   children: ReactNode;
@@ -15,7 +15,7 @@ export default function Main({ children }: MainProps) {
       padding={majorScale(2)}
       display="flex"
       flexDirection="column"
-      gap={majorScale(2)}
+      gap={majorScale(3)}
     >
       {children}
     </Pane>

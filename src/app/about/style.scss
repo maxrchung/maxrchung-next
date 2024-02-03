@@ -1,0 +1,14 @@
+#daboi {
+  animation: rotate 6.9s linear infinite;
+  border-radius: 100%;
+  max-width: 100%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(-45deg) rotateY(0deg) rotateZ(45deg);
+  }
+  to {
+    transform: rotateZ(-45deg) rotateY(360deg) rotateZ(45deg);
+  }
+}

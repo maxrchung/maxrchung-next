@@ -3,12 +3,15 @@ import {
   CodeProps,
   Heading,
   HeadingProps,
+  Image,
+  ImageProps,
   Link,
   LinkProps,
   ListItem,
   ListItemProps,
   OrderedList,
   OrderedListProps,
+  Pane,
   Paragraph,
   ParagraphProps,
   Pre,
@@ -46,6 +49,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ol: (props) => <OrderedList {...(props as OrderedListProps)} />,
     ul: (props) => <UnorderedList {...(props as UnorderedListProps)} />,
     li: (props) => <ListItem {...(props as ListItemProps)} />,
+    img: (props) => <Image alignSelf="center" {...(props as ImageProps)} />,
     ...components,
   };
 }

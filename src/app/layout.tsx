@@ -2,8 +2,8 @@
 "use client";
 
 import { Inter } from "next/font/google";
-import "./reset.css";
-import "./global.css";
+import "./reset.scss";
+import "./global.scss";
 import NavBar from "@/components/Nav/Nav";
 import { ReactNode } from "react";
 import Main from "@/components/Main/Main";

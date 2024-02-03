@@ -1,0 +1,13 @@
+.main {
+  width: 100%;
+
+  img {
+    align-self: center;
+  }
+}
+
+@media (min-width: 640px) {
+  .main {
+    width: 640px;
+  }
+}
