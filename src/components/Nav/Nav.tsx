@@ -43,9 +43,9 @@ export default function NavBar() {
 
         <div className="is-hidden-mobile">
           <Pane display="flex" alignItems="center" gap={majorScale(2)}>
-            <NavLink href="projects" name="Projects" />
-            <NavLink href="blog" name="Blog" />
-            <NavLink href="about" name="About" />
+            <NavLink href="/projects" name="Projects" />
+            <NavLink href="/blog" name="Blog" />
+            <NavLink href="/about" name="About" />
           </Pane>
         </div>
 
@@ -59,9 +59,9 @@ export default function NavBar() {
         minWidth="auto"
         content={
           <Pane display="flex" flexDirection="column">
-            <MenuLink href="projects" name="Projects" />
-            <MenuLink href="blog" name="Blog" />
-            <MenuLink href="about" name="About" />
+            <MenuLink href="/projects" name="Projects" />
+            <MenuLink href="/blog" name="Blog" />
+            <MenuLink href="/about" name="About" />
           </Pane>
         }
       >

@@ -9,5 +9,9 @@ export default function Timestamp({ time }: TimestampProps) {
   const date = new Date(time);
   const display = date.toLocaleDateString();
 
-  return <Small marginTop={majorScale(-1)}>{display}</Small>;
+  return (
+    <Small color="neutral" marginTop={majorScale(-1)}>
+      {display}
+    </Small>
+  );
 }

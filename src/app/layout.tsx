@@ -1,4 +1,3 @@
-// Required for evergreen-ui
 "use client";
 
 import { Inter } from "next/font/google";

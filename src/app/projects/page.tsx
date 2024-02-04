@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Client from "./Client";
-import "./style.scss";
 
 export default function Page() {
   return <Client />;
@@ -8,5 +7,5 @@ export default function Page() {
 
 // Metadata is only supported on server side
 export const metadata: Metadata = {
-  title: "maxrchung",
+  title: "maxrchung - Projects",
 };
