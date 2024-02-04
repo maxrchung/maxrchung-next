@@ -1,4 +1,4 @@
-import { Text, majorScale } from "evergreen-ui";
+import { Paragraph, majorScale } from "evergreen-ui";
 import { ReactNode } from "react";
 
 interface CaptionProps {
@@ -8,8 +8,8 @@ interface CaptionProps {
 // This component is typically used as a caption label under media
 export default function Caption({ children }: CaptionProps) {
   return (
-    <Text alignSelf="center" marginTop={majorScale(-1)}>
+    <Paragraph alignSelf="center" marginTop={majorScale(-2)}>
       {children}
-    </Text>
+    </Paragraph>
   );
 }

@@ -14,7 +14,12 @@
   // Used by old site for media captions.
   :global(.caption) {
     align-self: center;
-    margin-top: -8px;
+    margin-top: -16px;
+
+    // This is unfortunate but this will sync the size with Evergreen's default
+    // 14px
+    font-size: 14px;
+    line-height: 24px;
   }
 }
 

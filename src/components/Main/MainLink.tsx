@@ -1,6 +1,5 @@
 import { Link as EvergreenLink, Strong } from "evergreen-ui";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 interface MainLinkProps {
   href: string;

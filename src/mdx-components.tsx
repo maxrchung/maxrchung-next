@@ -3,8 +3,6 @@ import {
   CodeProps,
   Heading,
   HeadingProps,
-  Image,
-  ImageProps,
   Link,
   LinkProps,
   ListItem,
