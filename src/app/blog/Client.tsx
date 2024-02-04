@@ -14,18 +14,23 @@ export default function Client() {
         Blog
       </Heading>
 
-      {data.map(([slug, { title, lastUpdate }]) => (
-        <Pane
-          key={slug}
-          display="flex"
-          flexDirection="column"
-          gap={majorScale(3)}
-          alignItems="start"
-        >
-          <MainLink href={`blog/${slug}`} name={title} />
-          <Timestamp time={lastUpdate} />
-        </Pane>
-      ))}
+      {data.map((_, index) => {
+        // Go in reverse order because using number as config key will always
+        // force ascending key order
+        const [slug, { title, time }] = data[data.length - 1 - index];
+        return (
+          <Pane
+            key={slug}
+            display="flex"
+            flexDirection="column"
+            gap={majorScale(3)}
+            alignItems="start"
+          >
+            <MainLink href={`blog/${slug}`} name={title} />
+            <Timestamp time={time} />
+          </Pane>
+        );
+      })}
     </>
   );
 }
