@@ -10,7 +10,7 @@ export default function Client() {
   const params = useParams<{ slug: string }>();
   const { title, time } = blogConfigs[params.slug];
 
-  const Content = dynamic(() => import("./Content.mdx"));
+  const Content = dynamic(() => import(`./${params.slug}.mdx`));
 
   return (
     <>

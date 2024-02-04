@@ -1,8 +1,20 @@
 .main {
   width: 100%;
 
-  img {
+  img, audio, video, iframe {
     align-self: center;
+    max-width: 80%;
+    border-radius: 8px;
+  }
+
+  iframe {
+    width: 80%;
+  }
+
+  // Used by old site for media captions.
+  :global(.caption) {
+    align-self: center;
+    margin-top: -8px;
   }
 }
 

@@ -1,0 +1,42 @@
+For the longest time, this site's had some stability issues where it would
+silently crash from time to time. Before, I didn't really look into it too much
+since the problems seem to be rather deep, and I had the option to just restart
+the server when I needed it. Sometimes it would be down when I wanted to show it
+to people, so that wasn't great. Now, I have a bot that references a page of
+this site, and ultimately I decided to start looking into the issue.
+
+I say the problems were rather deep because there were no console errors that
+reported back what was going on when the site crashed. It would just close
+itself without warning. After researching the issue, I found a clue when looking
+through the system logs. Apparently, the server was automatically shut down
+because it used too much memory. Sure enough, when using top to keep track of
+the process, the memory usage would just keep on going up and up upon requests,
+and eventually everything would blow up.
+
+<video autoplay="" controls loop="">
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/dogberg_fetch.webm" />
+</video>
+
+I tried switching servers, from the default WEBrick to thin, but that didn't fix
+the issue. At some suggestions, I tried looking into memory debugging gems and
+other methods to help locate the issue, but, probably at my impatience, none of
+this worked out. Some of the gems were deprecated, and other ways seemed too
+convoluted. In the end, I never figured out why that memory was increasing. It
+might've been a problem with sessions. I glossed over my code and didn't see
+anything out of the ordinary.
+
+One potential fix was to use worker killers as a bandaid.
+[Unicorn](https://github.com/kzk/unicorn-worker-killer) and
+[Puma](https://github.com/schneems/puma_worker_killer) support worker killers,
+and from my understanding what they basically do is restart the server when it
+uses memory pass a certain limit. Not the most pleasant of solutions, and in
+Puma Worker Killer's own words, it's like putting a bandaid on a gunshot wound.
+
+That's probably my last resort, but I didn't have to go so far. I stumbled on a
+Digital Ocean
+[article](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-puma-and-nginx-on-ubuntu-14-04)
+about setting up a Rails app with Puma and Nginx, and I looked into that. Took
+me a bit to get through some humps, but things seem to be fine right now. I
+don't know if Nginx or Puma has some automatic stabilizing feature built in like
+the killers, but for the past day or two, my site seems to be stable. Whatever,
+I'll take it.
