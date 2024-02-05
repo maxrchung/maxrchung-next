@@ -1,11 +1,11 @@
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/killerself_banner.png" />
 
-networking\_why is it black-killer-self was a 2nd person shooter a few friends and I attempted to make during a game jam I hosted. For one reason or another, the project completely collapsed in on itself and our end product was nothing close to what we set out to achieve. Basically though, choosing to use Unreal was our first and last mistake.
+networking_why is it black-killer-self was a 2nd person shooter a few friends and I attempted to make during a game jam I hosted. For one reason or another, the project completely collapsed in on itself and our end product was nothing close to what we set out to achieve. Basically though, choosing to use Unreal was our first and last mistake.
 
-*   Made with: Unreal Engine 4
-*   Made by: Max Chung, Alex Lewis, Nina Volkmuth, Joshua Lin, Winston Liang, Emerson Sridhar
-*   Download: [networking\_why is it black-killer-self.zip](https://s3.amazonaws.com/lolmypics/networking_why+is+it+black-killer-self.zip) (503.4 MB)
-*   Repository: [killer-self](https://github.com/maxrchung/killer-self)
+- Made with: Unreal Engine 4
+- Made by: Max Chung, Alex Lewis, Nina Volkmuth, Joshua Lin, Winston Liang, Emerson Sridhar
+- Download: [networking_why is it black-killer-self.zip](https://s3.amazonaws.com/lolmypics/networking_why+is+it+black-killer-self.zip) (503.4 MB)
+- Repository: [killer-self](https://github.com/maxrchung/killer-self)
 
 ## Background
 
@@ -15,7 +15,10 @@ The planning for this jam was mostly decided between Alex and I. Since besides m
 
 He was pretty open with doing anything, which didn't really help much, but I brought up a few old ideas we could narrow down. One of them was Lizard Entertainment Presents Earthrock, a parody of Hearthstone where lizards played rocks against each other vs heroes playing cards. Another was IDOLM0NSTER, a parody of IDOLM@STER and idol games where you managed monsters instead of idols.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/my_singing_monsters.jpg" /><p className="caption">Welp, apparently it looks like someone's on the right track</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/my_singing_monsters.jpg" />
+<p className="caption">
+  Welp, apparently it looks like someone's on the right track
+</p>
 
 Alex was more partial to the former, but I also brought up some even older ideas, like a 2nd person shooter. This was a stupid idea that I had been brewing for years, where the game was about a 1v1 scenario where you tried to kill yourself. The catch was that your head was swapped with the opponent's, so you watched as you struggled to move your body around and attack your head.
 
@@ -25,7 +28,13 @@ Alex really liked the 2nd person game idea, however, and after giving it some th
 
 Here's where we made the fatal mistake. We decided to use Unreal. At the time, we didn't think switching engines and languages would be very difficult. When we switched to Python from Java, it was a bit difficult learning the new syntax but not impossible to deal with. We later switched from Python to Unity, and the many features embedded in that only made our life easier. Welp, Unreal unwound all of our good luck.
 
-<iframe width="960" height="720" src="https://www.youtube.com/embed/-vKm2rGFe3w" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="960"
+  height="720"
+  src="https://www.youtube.com/embed/-vKm2rGFe3w"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 I thought it was comparable to Unity, so I imagined the transition wouldn't be too bad. It also used C++, of which many of us studied, so that seemed appealing. Alex was down to try it out since he too was interested in it, so we settled on it. I don't think any of the members, Alex or I and any future coming people, had any experience with Unreal, and we mistakenly didn't let that bother us.
 
@@ -53,7 +62,9 @@ Then after some discussion it was the addition of two ideas, credited mostly I w
 
 We actually went so far as to buy a Google Cardboard as a cheap solution to VR that worked on our phones. It's sad really, to think we actually invested money this to this abomination of a project, but oh well, we were hyped at the time. Last I heard they were trying to find a way to return it, but who knows, VR may come back on a future project.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/vr_roller_coaster.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/vr_roller_coaster.webm" />
+</video>
 
 We didn't think about it at the time, but the Cardboard had its fair share of problems. Never mind the issue of actually implementing the camera properly and getting the 2nd person perspective working, which, if it would surprise you, we never got to. We didn't really think about the intricacies of deploying to mobile, hooking up the game with the gyroscope, and the difficulties inherent in that. We never got close to the end result we wanted to achieve goal. Again, I apologize to not only our souls but also our wallets.
 
@@ -83,7 +94,9 @@ Part of the problem was of course our understanding of Unreal and its network sy
 
 I was a bit sad actually that Winston wanted to do it. Usually, I'm the networking master of the group, so I expected to do it again. Now in retrospect, I'm not so sure I would have had a good time trying to fix the problems that came up. Maybe if I had the entire jam to work on it, I could of found a solution, but by the end of this jam none of us were even close to tackling the issues. Nina tried to help out without luck, and on the last half of the last day, I too tried to take a look but only met failure.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/fallout_kill_yourself.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/fallout_kill_yourself.webm" />
+</video>
 
 The biggest issue was trying to make 2nd person work. If this was just a normal first person shooter, we would have had a much easier time trying to get multiplayer working. Unreal comes automatically with an FPS template project, but as we would joke, they didn't come with a 2nd person shooter template to help us out.
 
@@ -127,7 +140,13 @@ What did make my life kind of awkward was figuring out how to split up the body.
 
 I think the animations were okay. I tried to make them all follow from a central pose, which made some movements look quite awkward. I'm almost certain, however, I did something very technically wrong somewhere down the line because some animations had like something like 600 key frames (including in-betweens). This didn't seem to affect file size though, and after a speed up in Unreal, they looked fine.
 
-<iframe width="960" height="720" src="https://www.youtube.com/embed/UmPmpUTr22c" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="960"
+  height="720"
+  src="https://www.youtube.com/embed/UmPmpUTr22c"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 The most time consuming part of working with 3D was ironically not within Maya itself but rather trying to successfully export animations out of Maya and import into Unreal. There're a lot of hoops you have to jump through to make sure you don't screw anything up, and I had to do a lot of trial and error in order to get something functional in the game. At least having done it once, I'm a lot more familiar with the process, and if I do something like this again, I'll be more ready.
 
@@ -141,7 +160,9 @@ After finishing all the 3D assets, I wanted to move onto networking. The animati
 
 I watched like 3 or 4 hours of tutorial at least in the morning. One series was on blueprints and the other covered networking. I wouldn't say they didn't help me. At the very least they familiarized me with the engine. Overall, however, I don't think anything could have really prepared me for trying to make a networked 2nd person game functional. I ran into the networking issues mentioned earlier in the post and hit a roadblock.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/men_vs_roadblock.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/men_vs_roadblock.webm" />
+</video>
 
 After several hours of fiddling around, I got nowhere and felt lost in the program. The monstrous beast of Unreal swallowed me up, and I couldn't find my way out. I encountered the same problems that Winston, Nina, and Alex had trying to tackle the game. To help remove clutter, I tried working from scratch in a separate project, but that led to nowhere.
 
@@ -151,17 +172,25 @@ Animations I struggled again for quite a bit with but managed to get working aft
 
 Nina was the one who put in the Barkley face and space jam background music. These two parts were inside jokes of the group. The Barkley face was originally supposed to be a heartbeat feature we wanted in the game. You were supposed to hear a thumping heartbeat to indicate where you other half of the body was. With time running down we didn't exactly get the effect we wanted, but instead if you're facing another character, the Barkley face pops up. And for some reason, only on my computer, his face flashes and freaks out in my editor.
 
-<video controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/why_is_it_black.mp4"/></video>
+<video controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/why_is_it_black.mp4" />
+</video>
 
 As for the music, that was just a stupid joke that Winston likes. I don't know what his fascination with it is, but he really likes the 800% slowed down version of the song, ironically or not, I'm not sure. It was probably more pain than it was worth trying to fit it into the game. You can imagine how much of a hassle it is trying to put in a 40 minute WAV file into not only our game but also our repo. I'm pretty sure when we last checked it clocked into something like 400 MB.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/3CdanQx427Q" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="1280"
+  height="720"
+  src="https://www.youtube.com/embed/3CdanQx427Q"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
-And, well, that's pretty much the game. By the end we had some kind of overly bloated satanic world explorer of sorts. It's a shame to see our project fall to such a low after we had such great aspirations, but what's done is done. As good as this idea was/is, I don't imagine us revisiting it anytime soon unless something miraculous happens. With this group of friends, none of us worked on our games after we finished the jam, and I doubt anyone would want to work with the abomination that is networking\_why is it black-killer-self.
+And, well, that's pretty much the game. By the end we had some kind of overly bloated satanic world explorer of sorts. It's a shame to see our project fall to such a low after we had such great aspirations, but what's done is done. As good as this idea was/is, I don't imagine us revisiting it anytime soon unless something miraculous happens. With this group of friends, none of us worked on our games after we finished the jam, and I doubt anyone would want to work with the abomination that is networking_why is it black-killer-self.
 
 I should probably talk about the name too. The name was suggested by Josh. I guess at the end we just didn't care anymore. All of us were exhausted and broken by the last night. I'm pretty sure Josh was awake for over 24 hours. We were all tired of this game and just wanted to see this project crashed and burned forever.
 
-The name was born from that deep, burning hatred. Maybe from now on all of our game projects will have ridiculous titles, following [Quaternion: Too Drunk 4 a Title (Basically a Tuple)](http://maxrchung.com/projects/quaterniontoodrunk4atitlebasicallyatuple)'s example. Honestly, I'm not too adverse to that. Thinking up names is always difficult. While having a stupid title like networking\_why is it black-killer-self is indeed pretty stupid, it's something all its developers remember it by. In the end, the game is made half just for us anyways.
+The name was born from that deep, burning hatred. Maybe from now on all of our game projects will have ridiculous titles, following [Quaternion: Too Drunk 4 a Title (Basically a Tuple)](http://maxrchung.com/projects/quaterniontoodrunk4atitlebasicallyatuple)'s example. Honestly, I'm not too adverse to that. Thinking up names is always difficult. While having a stupid title like networking_why is it black-killer-self is indeed pretty stupid, it's something all its developers remember it by. In the end, the game is made half just for us anyways.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/daughter_name.jpg" />
 

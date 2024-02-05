@@ -2,10 +2,10 @@
 
 SLicense to Dye was an action puzzle game that combined [Fruit Ninja](http://fruitninja.com/) with color theory. Colored lice fell from the sky, and it's up to you to slice them with the right color. Along the way you'll encounter more and more difficult lice combos, with different color patterns, abilities, and equipment. Oh yeah, and there's a coherent(probably) punny story backing all of this too.
 
-*   Made with: C#, Monogame, and Xamarin
-*   Made by: Max Chung, Christian Nava, George Wang, Tyler Nutsathiya, Grant Walker, Wesley Wu, John English, Khai Nguyen
-*   Download (Android): [SLicense to Dye](https://play.google.com/store/apps/details?id=slice.flame.smoketree&hl=en) (47.40 MB)
-*   Game art: [SliceArt.rar](https://maxrchung-rails.s3.amazonaws.com/uploads/SliceArt.rar) (62.0 MB)
+- Made with: C#, Monogame, and Xamarin
+- Made by: Max Chung, Christian Nava, George Wang, Tyler Nutsathiya, Grant Walker, Wesley Wu, John English, Khai Nguyen
+- Download (Android): [SLicense to Dye](https://play.google.com/store/apps/details?id=slice.flame.smoketree&hl=en) (47.40 MB)
+- Game art: [SliceArt.rar](https://maxrchung-rails.s3.amazonaws.com/uploads/SliceArt.rar) (62.0 MB)
 
 We had a few repositories we used for the project. One was set up by Michael directly on our studios site, but with that down now, we've since moved to Github. Because our repository contains some private key information (George'll know more about that), however, we decided just to be safe to make our repository private. That being said, I'd like to keep a record of my own work and share it with others, so I've included a copy of the game art folder.
 
@@ -61,7 +61,10 @@ Making these was a lot more work than you might think. I made it so that each li
 
 Each lice had its own standalone frame along with a moving and death animation. So in total I had got about 2\*8\*8 frames to worry about just with lice alone. I then worked on transformation animations, where I made sprite sheets for swapping all the lice to different colors. This took quite a bit of work, but I think we eventually removed all this as it got too cluttered and just resorted to transforming in code.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/lice1MoveSS.png" /><p className="caption">Red move</p><img src="https://maxrchung-rails.s3.amazonaws.com/uploads/lice1DeathSS.png" /><p className="caption">Red death</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/lice1MoveSS.png" />
+<p className="caption">Red move</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/lice1DeathSS.png" />
+<p className="caption">Red death</p>
 
 I definitely did a lot more art than was required of me, some of which was to just ease the programming required for the project. At one point I think I was actually animating particle effects to help out. I definitely, objectively, put in the largest amount of work into the project. Every single day I tried to work on it and contributed something no matter the day, season, occasion.
 
@@ -75,7 +78,11 @@ So we needed to be smart with what we chose. It needed to be something that was 
 
 For abilities we had bomb, ninja, and mound. Bomb was a special lice that when sliced released a big color explosion that colored everything around it a certain color. There were only three kinds of bombs: red, yellow, and blue for primary colors as we thought secondary color bombs would be too difficult to handle. These added a lot to gameplay and definitely allowed the designers to make some more creative levels. These bombs were also another solution to killing brown lice.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/bombRed.png" /><p className="caption">Not shown: The separate fuse and spark on the lice's butt</p><img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ninja.png" /> <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/moundMove.png" />
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/bombRed.png" />
+<p className="caption">
+  Not shown: The separate fuse and spark on the lice's butt
+</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ninja.png" /> <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/moundMove.png" />
 
 Next are ninja and mound, which I kind of group together. Ninjas are unkillable until about halfway down the screen. Then they give off a little poof and turn into a normal colored lice. Conversely, for mound, a normal lice travels halway down the map and then burrows into a mound to become, if I recall, unkillable. I think the ninja ability was definitely cuter and more fun to play with. I'm not 100% sure if mound made it into the game, but I'm pretty sure it did.
 
@@ -161,7 +168,9 @@ Some of it wasn't necessarily their fault. Christian made a separate level edito
 
 Still, work was really slow on the designers' end. John English, one of the designers, had it really rough on the project. He was kind of an awkwardish guy with not a lot of experience so he struggled quite a bit, but he put in the best he could and eventually got around to his work. He actually started off our sound producer, but he wasn't happy with his work and eventually turned to level design. Sound was handed off to Wes.
 
-<audio controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/LevelSong1.mp3"/></audio>
+<audio controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/LevelSong1.mp3" />
+</audio>
 
 <p className="caption">The original ganster SLicense theme</p>
 
@@ -169,7 +178,9 @@ I'm not sure what happened to John, but he kind of cracked under the pressure. I
 
 This was probably one of the most unusual reactions I've seen of someone on any of my projects. It's not something I can easily empathize with since I don't think I could ever give up making games permanently. John was a kind of sensitive character, so maybe just better communication with him and sharing his load would've helped him, but it seemed like a lot more of a personal issue on his end than something we could have really helped him with, or at least what he told me.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/dog_clothes.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/dog_clothes.webm" />
+</video>
 
 The other designer was Khai, who was kind of in opposites with John. I think he probably had the smarts to make good levels, but he just seemed really disinterested and unmotivated in the project. He even spoke to me aside about how he felt this project wasn't that fun or exciting, probably contributing to his lack of work. He's one of those guys you just tell and tell to do work, and they give to it you, really, really slowly, forced almost.
 
@@ -179,7 +190,8 @@ George I think was the biggest contributor to the programming end. He's probably
 
 I'm surprised George was able to find time for our game. At the same time as well, he was the lead programmer for The Xavier Mosaic, which was just a complicated hot mess of 3D story and fighting shenanigans. How he kept things together is a mystery to me, but he's a awesome, quirky dude that I'm happy to have had the chance to work with.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/Bowling.png" /><p className="caption">Edits by George Wang the god himself</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/Bowling.png" />
+<p className="caption">Edits by George Wang the god himself</p>
 
 Then there was Michael, who I honestly don't know too much about. Apparently he's supposed to be a lead programmer on SLice, so alright, that's cool. I know he worked on a bunch of extra things outside of the game like hooking up a Git repository to our (then) site. Maybe he did some logic stuff too or attempted social features, who knows.
 
@@ -189,7 +201,13 @@ He and Tyler were probably the closest to me on the team because we had a bunch 
 
 And last but not least was Wes. Wes joined on in the second quarter when we were looking potentially for someone to make more sounds for us. I think our project was going really smoothly at the time, and he looked at that as a good opportunity to work with us. At the time John was making our sounds, but after Wes showed he had a lot of production experience, Wes took over and remade everything. He's put in a lot of good work for us, and I've worked with him in the future for some osu! music projects.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/OOmQW6mLUTs" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="1280"
+  height="720"
+  src="https://www.youtube.com/embed/OOmQW6mLUTs"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 <p className="caption">Visit his YouTube channel!</p>
 

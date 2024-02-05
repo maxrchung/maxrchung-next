@@ -2,10 +2,10 @@
 
 Going Home is a resource management game where the goal is to safely navigate your ship back home. You have a variety of components on the ship that you can activate, at the expense of costing power. Be careful of what you enable, however, as you have a limited energy supply that recharges only during the day.
 
-*   Made with: Python and Pygame
-*   Made by: Max Chung, Andrew Chau, Faye Jao, Kevin Wong, Khai Nguyen
-*   Download: [Going\_Home\_Fixed.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/Going_Home_Fixed.zip) (39.0 MB)
-*   Repository: [ThereIsNeverEnough](https://github.com/Kromis/ThereIsNeverEnough)
+- Made with: Python and Pygame
+- Made by: Max Chung, Andrew Chau, Faye Jao, Kevin Wong, Khai Nguyen
+- Download: [Going_Home_Fixed.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/Going_Home_Fixed.zip) (39.0 MB)
+- Repository: [ThereIsNeverEnough](https://github.com/Kromis/ThereIsNeverEnough)
 
 ## Background
 
@@ -21,7 +21,9 @@ It's actually really funny that I got a chance to work with Andrew again on a Py
 
 While Andrew and I were pretty experienced with Pygame, however, the rest of the team was not. Faye and Kevin knew some Python, but they never used Pygame before. Over the jam, I think they picked it up pretty well though as Andrew and I helped them out and pair programmed at some points with them. Khai I think never touched Python before, so he struggled quite a bit with the whole project. He's a computer game science graduate, so there was some expectation that he would carry some weight, but unfortunately I have to say he didn't quite live up to his expectations.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/corgi_table_struggle.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/corgi_table_struggle.webm" />
+</video>
 
 Well, we'll get into that as we talk about individual responsibilities. I'll first talk about the start of the project. When we first got together, the first thing we did was hash out the main concept of the game. The theme was surprisingly difficult to think of an idea for, and I think even after we settled with an idea, we probably could have done better.
 
@@ -51,7 +53,8 @@ If we really wanted to focus on there is never enough power or there is never en
 
 Well, with time running down, the team agreed that this was probably the best we had going forwards, so we stuck with it. Upon getting back, we started splitting up roles. Since Andrew was most familiar with the library, he handled most of the overarching code structure and helped the other programmers out with any Pygame questions. Starting off, he worked mainly on UI and displaying things.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/going_home_clouds.png" /><p className="caption">Andrew the undisputed cloud master</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/going_home_clouds.png" />
+<p className="caption">Andrew the undisputed cloud master</p>
 
 Faye seemed interested in working on game code, so she handled most of the main game logic dealing with components, damage, player, and enemies. Kevin was a little more lost since he was more inexperienced, and with a lot of major functionalities taken up by the others, he would work on very small things until I came in and peer programmed with him later. Finally, Khai worked on a console system that displayed messages on screen when given a string of text.
 
@@ -83,7 +86,9 @@ So most of my morning was spent on making the screens. I was thinking about the 
 
 For the main menu and title screen, I basically tried to mimic as closely as I could the Gone Home main screen. The Going Home title was hand drawn to match Gone Home's style. I put in the end house indicator that I worked on for the main game, now resized bigger and with a few edits. The trees I replaced with a bunch of tentacles. I think I did a good job, although I doubt many people would actually recognize the connection. Maybe someone will get parts of the joke if they've played the game before, but I think that's about it.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/gone_home_main.png" /><p className="caption">For comparison</p><img src="https://maxrchung-rails.s3.amazonaws.com/uploads/going_home_banner.png" />
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/gone_home_main.png" />
+<p className="caption">For comparison</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/going_home_banner.png" />
 
 The other screens for win and lose were based off of the main menu. When you died, you found yourself at the game over screen where all the UI and ship were tipped and turned over. When you won, you found yourself at the got home screen. That about concludes all my art work. The rest of my art edits were made to adjust whatever I already did or add some small special effects.
 
@@ -107,17 +112,27 @@ Kevin was working with time I believe during the second day and handling when en
 
 Khai, on the other hand, seemed to be struggling the most of out of us. He only had one task, to make a console system that displayed messages into a window on screen, but throughout all of his many hours of work, he got nothing working. I mean, it wasn't like he wasn't putting in the effort. He worked solely on this functionality for all of Saturday and most of Sunday before he left early, but it just didn't click with him, and he left us with nothing.
 
-<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/triple_goal.webm"/></video>
+<video autoPlay controls loop>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/triple_goal.webm" />
+</video>
 
 I don't know. These kinds of things do happen I suppose. But as a long time VGDC member and a graduate of a computer science program, Khai should have a lot of experience under his belt. I think it's perfectly reasonable to expect some kind of basic output from him that he could do maybe not the simplest of tasks, but at least a single task, yet he betrayed my expectations. Maybe I'm being too harsh on him since he was new to Python, but he treats and holds himself up to be a capable developer, and this project certainly has changed my view of him. It's disappointing, really.
 
 Well anyways, returning back to my sound work, I decided to take a break from the music for now and work on the sound effects for the game first, then I could maybe return to the soundtrack later. The first sound I did was a recording of my voice. We decided the enemies of the game to be tentacles, and I coincidentally often voiced a characteristic slurping noise as a joke among my friends. So using my pretty crappy laptop, I looked for a quiet corner of the building to record the sound.
 
-<audio autoplay controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/tentacle.ogg"/></audio>
+<audio autoPlay controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/tentacle.ogg" />
+</audio>
 
 <p className="caption">In game slurp</p>
 
-<iframe width="960" height="720" src="https://www.youtube.com/embed/4hHHiHid15g" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="960"
+  height="720"
+  src="https://www.youtube.com/embed/4hHHiHid15g"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 <p className="caption">Source</p>
 
@@ -129,7 +144,9 @@ By the day's end, the music and sound were left in a pretty shabby place. My goa
 
 I woke up very early again, though this time significantly later than the 3AM from before. My first task was to resolve the music issues. I decided to stick with the Gone Home song that I found earlier but also layer some additional effects over it. Looking for samples online, I found some generic ocean wave and seagull sounds and mixed these along with the main song. I'm pretty proud of the end result. It was close to what I wanted to achieve initially. My team I think may still be a little sad that it wasn't an original song, but time was running down and this was the best I could do.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/super_long_surf.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/super_long_surf.webm" />
+</video>
 
 I actually didn't end up using FL Studio at all for final sounds. Since I wasn't producing music anymore, I did all my work through Audacity, a program that I was a little more familiar with since I used it briefly in the past. For all my cutting and recording purposes, it was through that program. I did gain a bit of experience with FL Studio from some tinkering with it, so I don't think my time with it was all wasted. We'll see in the future if I ever get a chance or want to take a stab at music again.
 
@@ -151,7 +168,9 @@ Some conflicts we had with Faye were matters of misunderstanding. I mentioned th
 
 I don't remember if Faye got upset at us when we met back together since we gutted out a large chunk of her code. I think in the end she was fine with our changes and more worried about refamiliarizing herself with what we did. I wouldn't say Kevin and I made the cleanest of changes, as we wanted to at least try and preserve her code as much as possible by making some hack fixes. With the help of Andrew who was there to work out the UI kinks, we started to make a lot of good progress, and I think we were quickly reaching solid grounds of a game.
 
-<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_climbing.webm"/></video>
+<video autoPlay controls loop>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_climbing.webm" />
+</video>
 
 After lunch, I took a bit time out to rerecord the sound effects. This was when I decided to throw out the 8-bit sounds and instead use my voice for all of them. I think it only made sense since the tentacle sound was done by me. It was actually really embarrassing recording my voice this time. I don't know what it is about recording, but constantly rerecording stupid sounds in the vicinity of my team just made me feel really uncomfortable. Oh well, I think the overall comedic effect was good. We didn't have original music but we certainly had original sound effects.
 
@@ -181,13 +200,19 @@ The console, with a little adjustment, worked well with Faye's version. Multi-li
 
 And that was pretty much it for the jam. Andrew made a build for the game, and we submitted it. Actually, speaking about builds, Andrew did a bunch more work after the jam ended to correct some crashing errors. Apparently, when certain people tried running the game, it would crash as soon it was opened. After investigating the issue for a while, he finally found a suitable fix.
 
-I'm not sure of the specifics, but it seemed like there were a couple things wrong with the building process. It could have been partly on Pygame's end, but it also seemed like cx\_freeze, what we used to generate the executable, also had problems. To fix the issue, he updated Python, Pygame, and cx\_freeze to all newer versions to support I think Python 3.4. Along with that, he also threw out any use of the Pygame font class and replaced it with Python's standard font class. These changes seemed to fix all the problems.
+I'm not sure of the specifics, but it seemed like there were a couple things wrong with the building process. It could have been partly on Pygame's end, but it also seemed like cx_freeze, what we used to generate the executable, also had problems. To fix the issue, he updated Python, Pygame, and cx_freeze to all newer versions to support I think Python 3.4. Along with that, he also threw out any use of the Pygame font class and replaced it with Python's standard font class. These changes seemed to fix all the problems.
 
 As for our results at the jam, I'm a little sad that we didn't place in the top 3. I thought we had a really polished game. The art and sound were all original and complete and I felt fairly well done. Maybe there were still crashing issues, and the game couldn't run on some people's computers. In the end I guess it boiled down to our game idea. As I've said before, maybe we didn't hone in on the theme enough.
 
 That's not to say the top 3 didn't deserve their spots. The 1st place finisher looked absolutely amazing and was made in 3D. 2nd place was a funny meme game, and they had a ton of good looking levels. 3rd place required a lot of strategy and seemed fun to play. Going Home is 1st in my heart though. Personal projects I've worked on are always the best.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/statacus_main.png" /><p className="caption">First place - <a href="http://vgdc-uci.com/index.php/2016-winter-game-jam/#Team11">Statacus</a></p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/statacus_main.png" />
+<p className="caption">
+  First place -{" "}
+  <a href="http://vgdc-uci.com/index.php/2016-winter-game-jam/#Team11">
+    Statacus
+  </a>
+</p>
 
 I have to say though, in some ways I felt we were gated programming and design-wise because we were a Pygame project. We had quite a bit more complex programming to deal with since we didn't have the quick accessibility that every single other project had, all made in Unity minus 1 which was in Unreal. I can see the efficiency of using an engine, but at the same time, I have a ton of fun and learn so much working with lower level and seemingly barbaric libraries. Andrew and I joke that we didn't mind doing another Pygame game jam together.
 

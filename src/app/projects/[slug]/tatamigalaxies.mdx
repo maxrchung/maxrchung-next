@@ -1,12 +1,15 @@
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/tatami_titlecard.gif" class="widthConstrain noBorder" />
+<img
+  src="https://maxrchung-rails.s3.amazonaws.com/uploads/tatami_titlecard.gif"
+  class="widthConstrain noBorder"
+/>
 
 Tatami Galaxies was an exploration game where one to two players explored procedurally generated rooms, trying to reach the end of each level and the end of the game. It was based on the anime [The Tatami Galaxy](http://en.wikipedia.org/wiki/The_Tatami_Galaxy), specifically the [ending theme](https://www.youtube.com/watch?v=ewICfFjc4CI) of the show.
 
-*   Made with: C# and Monogame
-*   Made by: Max Chung, Handerson Lee, and Masana Pawlan
-*   Special thanks: Grant Walker
-*   Download (Windows): [TatamiGalaxies.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/TatamiGalaxies.zip) (51.9 MB)
-*   Repository: [Tatami Doors](https://bitbucket.org/Gwalks/tatami-doors/)
+- Made with: C# and Monogame
+- Made by: Max Chung, Handerson Lee, and Masana Pawlan
+- Special thanks: Grant Walker
+- Download (Windows): [TatamiGalaxies.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/TatamiGalaxies.zip) (51.9 MB)
+- Repository: [Tatami Doors](https://bitbucket.org/Gwalks/tatami-doors/)
 
 ## Background
 
@@ -24,7 +27,8 @@ I don't think we're all to blame, although we definitely were pretty stupidly un
 
 Likewise, my team didn't bring much either and were in a similarly bad situation. Eventually we stacked eight chairs together near our working quarters to form a makeshift bed and took turns laying down on top. This little invention was inspired by the great George Wang because said George Wang would often do this in our club room.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/georgeWang.png" /><p className="caption">My mockup of the George Wang inspired bed</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/georgeWang.png" />
+<p className="caption">My mockup of the George Wang inspired bed</p>
 
 One would think that a typical game jam would share many similarities with a hackathon. That's certainly true, but we took for granted how in game jams one can freely leave and come back to work as he/she feels like. Here, we didn't realize that we wouldn't have a chance to go home.
 
@@ -44,11 +48,16 @@ Our futile attempt to find a game got so bad to the point that we started using 
 
 That had me crying hysterically for five minutes until we settled back into our failing routine of finding a game idea. And by crying hysterically, I mean about 80% truth to that. I'm almost 100% sure all of us lost our mind at some point during the hackathon. Due to a combination of lack of sleep, pressure to keep on working, and stress of thinking, let's just say we weren't in a perfectly great state.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/gameGenerator.png" /><p className="caption">Seriously, pretty good for laughs</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/gameGenerator.png" />
+<p className="caption">Seriously, pretty good for laughs</p>
 
 And then finally, roughly around midnight, like a gift from the heavens and completely out of the blue, Masana the god showed us the ending theme of The Tatami Galaxy. By this point, we were really pressured to start beginning, and seeing how this was a pretty good idea, we decided to just run with it and see what we could do with it. He showed us this video:
 
-<iframe src="//www.youtube.com/embed/-IcFDwygw-o?rel=0" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  src="//www.youtube.com/embed/-IcFDwygw-o?rel=0"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 What was different with this over the other ideas brought up was that we were presented with a really impactful visual style that immediately caught our attention. Furthermore, making a game based off of this seemed very promising and appropriate for a game jam/hackathon setting, as we had a lot of inspiration and story to already pull from.
 
@@ -90,13 +99,23 @@ Anyways, back to the definitely more optimistic story, I announced to the team t
 
 Since I've had tile experience before, making new patterns wasn't that hard. The process I developed was making a 3 by 3 grid and then drawing the main design in the center tile. Overlapping sections outside of the center piece are then cut back onto the center tile to create the illusion of overlapping tiles.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/tileMaking1.png" /><p className="caption">First make a grid and draw in an initial design</p><img src="https://maxrchung-rails.s3.amazonaws.com/uploads/tileMaking2.png" /><p className="caption">Then cut sections that overlap the outside tiles into the center one</p><img src="https://maxrchung-rails.s3.amazonaws.com/uploads/tileMaking3.png" /><p className="caption">Now the center tile can be used as a repeating tile for a game</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/tileMaking1.png" />
+<p className="caption">First make a grid and draw in an initial design</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/tileMaking2.png" />
+<p className="caption">
+  Then cut sections that overlap the outside tiles into the center one
+</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/tileMaking3.png" />
+<p className="caption">
+  Now the center tile can be used as a repeating tile for a game
+</p>
 
 The character sprite making wasn't too difficult. There were four directions and two characters, but each moving animation was only four frames at most. Even long after the game jam ended, we only had a single move animation for the characters, still four frames max. I also had to make a death sprite, but this was only a single frame, and the death explosion were just simple blobs.
 
 Characters don't have a death animation. They merely fade out while the death sprite fades in. To be honest I was trying to be as lazy as possible. At one point I even tried to convince the group that we didn't even need characters and only a single marker to indicate WASD movement or arrow key movement. I'm glad I ended up working on the actual characters, who definitely look a lot cuter.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/characters.png" /><p className="caption">All of our character moving sprites</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/characters.png" />
+<p className="caption">All of our character moving sprites</p>
 
 Traps also were not difficult since they were just static images. We decided on three types: a one tile spike that was like the typical trap you see spawning around, a larger 4x4 spinning blade that was just a larger version of the spike, and a shooting trap that shot a bullet out across the room.
 
@@ -110,7 +129,8 @@ Handerson also made a stupidly funny error that I'll always constantly remind hi
 
 But other than that, no major problems came up, although I'll leave with saying that during the hackathon, we pushed a lot of unnecessary files, so one of the first things I worked on after the hackathon was setting up a proper .gitignore to resolve these issues.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/master.png" /><p className="caption">This shall haunt you forever</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/master.png" />
+<p className="caption">This shall haunt you forever</p>
 
 While Masana worked on setting up the project with us, Handerson and Grant got together to start designing how the room/door/character/trap system would work. I'm not really sure what happened, but somehow the design they worked on ended up completely flawed during actual implementation.
 
@@ -122,7 +142,11 @@ I even jumped in to do a little bit of programming and was responsible for chara
 
 By the end of our 36 hours, everyone was burnt out exhausted. There was, I would probably say, a couple hours before the final deadline where we sat there, lifeless, tired beyond belief not doing anything. We were done, per se, in that we couldn't and didn't want to do any more. What we had was by no means a perfect game, but at least we got all the parts we wanted functional. Here is what we submitted to HackUCI:
 
-<iframe src="//www.youtube.com/embed/cCXAqvUSWGo?rel=0" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  src="//www.youtube.com/embed/cCXAqvUSWGo?rel=0"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 During the paneling, judging, and presentations, I felt, for some reason, freshly rejuvenated talking about the project and instantly got my energy back. The rest of my team relaxed and rested, but I was fired up, and I ecstatically talked to others about what we did. We had a lot of heartwarming responses and encouragements that kept up my enthusiasm. Of course, let's be clear though, Masana was the real breadwinner here for us in this hackathon.
 
@@ -144,7 +168,8 @@ Could we make it more kind of like an arcade mode? Where levels get progressivel
 
 The first thing we decided was to add collectables. We weren't really sure how they were going to be used, but we were going to add them anyways, because... uh... people liked collecting things? There were some very iconic items from the show: neko ramen, boobs, and castella for example, that we wanted to put into the game. Players would pick them up, although we didn't know for what purpose yet.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/collectables.png" /><p className="caption">The current items</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/collectables.png" />
+<p className="caption">The current items</p>
 
 We were thinking of possibly doing some network integration or something, perhaps some kind of high score system, but as we wanted to keep it simple, we threw out these ideas. We debated back and forth about whether to include UI, perhaps in conjunction with the collectables, but as I think we liked the very minimalistic style we had now and seeing how I would even admit to being a bit pretentious and artsy to wanting to keep the game perfectly UI free, we(I) decided against UI elements.
 
@@ -156,7 +181,8 @@ I wanted to use [Trello](https://trello.com/) because I think it's such a great 
 
 We decided to throw away the star for the end of each level and instead have stairs indicators. Each start or end of a level will have a staircase with a number on it, indicating the floor/level it directs to. The staircase was a reference to a brief shot of a staircase in the ED theme. You start on floor 11 and progress downwards to the first floor. Every end of the level will have a downward arrow, whereas the start of the level will simply tell you what floor you are on.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/stairs.png" /><p className="caption">Our various staircases</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/stairs.png" />
+<p className="caption">Our various staircases</p>
 
 We also had other things to do for the short term. I wanted to polish up a lot of transitions and add some more glow effects everywhere. Bad things are indicated by a black glowing aura whereas good things are indicated by a white spiraling aura. Traps, for example, glow black, whereas dead player bodies, consumables, the end, and the start glow white.
 
@@ -198,7 +224,8 @@ Note that I could not just have increased the wall to door distances, because th
 
 This weird solution actually gave rise to something completely on accident that wasn't present in the game. You can now see all the past doors you've been through, an interesting and very helpful mechanic to help players keep general track of where they've previously been. I decided to keep this accident.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/doors.png" /><p className="caption">Visible doors in action</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/doors.png" />
+<p className="caption">Visible doors in action</p>
 
 I wasn't too worried about performance issues with these visible doors, or really in general. The game actually runs quite efficiently because there are only up to two rooms visible at one time. Rooms only start updating and drawing if characters are present within them.
 
@@ -216,7 +243,8 @@ As for the other members, Handerson was actually the one to make the first coupl
 
 I also updated the traps by adding Ozu heads to all them. They previously only had a circle indicator, but by chance we could easily slap on a face to them where the circle indicators lay and not have too many problems.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/traps.png" /><p className="caption">Our lovely traps</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/traps.png" />
+<p className="caption">Our lovely traps</p>
 
 Handerson began fixing the camera problems, which included things like making sure it scaled properly but still left enough room for players to navigate safely in. The full list of camera bugs actually never really got fixed by him. He added too much complexity to the code to account for special edge cases. Towards the end of the project, I eventually went in and basically rewrote it all to something simpler.
 
@@ -234,7 +262,8 @@ Instead, he took an opacitated circle image and scaled it accordingly to the dea
 
 I made the fade circle perfectly circular instead of stretched, and combined both the fading rectangle and the fading circle together. The main problem with using Masana's version alone was that it was often difficult to know when exactly the fade would kill you. Adding in our fade rectangle would help solve that problem.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/fog.png" /><p className="caption">Our simple fade circle</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/fog.png" />
+<p className="caption">Our simple fade circle</p>
 
 And lastly, Handerson created the path finding system for the end game. I had a vision that I originally wanted for the game very early into the project, but I wasn't sure if we were going to be able to ever fully make it into reality. Basically, as a homage to the ED, I wanted to make a very stylized and cool ending to the game as well, rather than just the player hitting the ending and then just a simple exit().
 
@@ -250,7 +279,8 @@ We were offering two t-shirts as prizes to the first person to beat the game, so
 
 Traps could no longer spawn two tiles directly around a door, so people didn't accidentally run into one and kill themselves when entering a room. Shooting traps could also no longer be spawned to shoot the door directly. These changes were made so that the first tile after a door is always safe to walk into, no matter what type of room one entered.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/shirt.png" /><p className="caption">A little big... but here's my shirt!</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/shirt.png" />
+<p className="caption">A little big... but here's my shirt!</p>
 
 There was an extremely annoying bug and mostly error on our part that I must mention here. We had a very stupid system of drawing things, that really screwed me over particularly while I was trying to test and debug the level generation. Our problem was that we couldn't decide whether to draw from the top left corner or from the center. This was a problem that started off during the hackathon, and it only grew worse as time went on.
 
@@ -262,7 +292,11 @@ In the end, I just decided to play the dirty game and work with what we had. It 
 
 Before our first release, I thought it would be a good idea to make a trailer for the game, so I told Masana to try and handle the video making. I mistakenly thought that he was the one who made original the HackUCI video above, but it turned out to actually be Handerson who did that. So after clearing up some misunderstandings, Handerson ended up volunteering to do the video again. You can view it below:
 
-<iframe src="//www.youtube.com/embed/i8jalAI1EcE?rel=0" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  src="//www.youtube.com/embed/i8jalAI1EcE?rel=0"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 For a variety of reasons, we ended up not using it though. Upon first viewing, some of the reasons will be pretty obvious. The video capture quality is pretty rough, and the sound volume jumps unexpectedly towards the end. We could have tried to do retakes/edits to try and get a better video, but this would take too much time out of the other issues we needed to address right before release. In addition, we decided leaving the video out would be an interesting experiment to run, seeing how far people could get with little to zero introduction to the game.
 
@@ -270,7 +304,8 @@ We had to push along with the project. Handerson was going to leave by the first
 
 Well, what we didn't expect was that we would think of a ton of more things to add or change due to the feedback and discussion we got. We made roughly 10 patches to the game to try and make it more balanced. I've already mentioned some the major changes we made: fading simplified, ending crash fixes, camera updates, and level generation updates, but there were a lot of small things we also tackled.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/builds.png" /><p className="caption">All our various public builds</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/builds.png" />
+<p className="caption">All our various public builds</p>
 
 For example, one odd thing that bothered me was that the ending token spawned in a normal room, even though this room was considered a bathroom. It doesn't really make sense for you to regenerate in a normal room, so to make this more consistent, we spawned the winning token inside a bathroom instead. Another was that people didn't really have a good idea where to go or the specific game mechanics of the game. For instance, people didn't realize you could revive dead players by touching their dead bodies.
 
@@ -280,7 +315,10 @@ I don't think we ever really got through this teaching hump. Originally, we want
 
 I really felt out of place adding in any UI elements or instructions of any kind into the game we had now. We've worked so long on it without incorporating any on-screen or extraneous elements, so I wanted to keep it as is. At one point I relented by including basic movement displays on the first level, showing WASD and the arrow keys to prompt the player to move the two characters. However, in the final version, I opted to remove everything altogether and instead place a separate instructions.txt files for help.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/oldInstructions.png" /><p className="caption">Our old instruction overlays</p><img src="https://maxrchung-rails.s3.amazonaws.com/uploads/newInstructions.png" /><p className="caption">Our new instructions.txt</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/oldInstructions.png" />
+<p className="caption">Our old instruction overlays</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/newInstructions.png" />
+<p className="caption">Our new instructions.txt</p>
 
 For sound, we made some small modifications from our feedback. A small, but impacting change Handerson made was shortening the weird buzz at the end of the level song. We didn't realize it was so annoying since we usually played with volume off and when we did play with it on, we got used to the buzz sound. It was part of the original song, so as a result of I suppose artistic integrity, I felt a little bit disinclined to mess with it. Still, looking back on it, removing it in the long run I think was definitely for the better.
 

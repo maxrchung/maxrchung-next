@@ -1,9 +1,9 @@
 Crusaders In Virtuality is a project currently put on indefinite hold as I work on other things. Rather than a concrete thing, this project is more of an idea: to extend the osu! storyboard system to more than just a background animation for a map. It's gone through several phases and imaginings, transforming from a 3D shooter Time Crisis-like game to an audio surf-like clone.
 
-*   Made with: C++ and [OsuukiSB](https://github.com/maxrchung/OsuukiSB)
-*   Made possible with: osu!'s storyboard engine
-*   Made by: Max Chung, Brennan Lin, and Paxton Wong
-*   Repository: [Crusaders](https://github.com/maxrchung/Crusaders)
+- Made with: C++ and [OsuukiSB](https://github.com/maxrchung/OsuukiSB)
+- Made possible with: osu!'s storyboard engine
+- Made by: Max Chung, Brennan Lin, and Paxton Wong
+- Repository: [Crusaders](https://github.com/maxrchung/Crusaders)
 
 ## Background
 
@@ -31,7 +31,9 @@ Gun movement would be different than standard Time Crisis. Like a first person s
 
 This project began to take fruition towards the end of [Dualive](http://maxrchung.com/projects/dualive). As Dualive was wrapping up, I thought about what I wanted to do with my next project. The driving force was probably wanting to do increasingly more complicated storyboards. I also wanted to dive more into 3D graphics, so together, I thought this project would be a good challenging and learning experience to take on.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/get_over_the_american_mexican_border.mp4"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/get_over_the_american_mexican_border.mp4" />
+</video>
 
 With Thanksgiving break coming up as well, I thought it would be a good opportunity to work with a programming team again. For the past few projects, it's just been me toying away on my own code, and I miss working closely with people. I invited some coders from the osu! club to join along if they were free. Paxton and Brenn answered my call, and we were set to do a small storyboard jam. My goal was to jump start the project during our jam session and work through the remainder of it through the quarter.
 
@@ -43,7 +45,9 @@ One requirement to keep track of here was that this process required flexibility
 
 Specifically, I broke down 3D objects into faces, lines, and points. Faces contain lines, and lines contain points. Everything is held together by pointers, so that if a point is shared across 5 lines or 5 faces, everything points to the same shared thing. There are some special cases I had to take care of, mostly dealing with null.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/rebel.mp4"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/rebel.mp4" />
+</video>
 
 One other thing to keep in mind was order. The point order of each face needs to be consistent, either all clockwise or counter-clockwise. This is needed for future occlusion calculations. To detect if you need to draw a face, you can find the normal by cross producting two points of the face. Then you compare the normal with the camera direction and only draw the face if they face each other.
 
@@ -55,7 +59,8 @@ I set Brenn to do some easier tasks since he had the least experience with what 
 
 We ran into some pretty big, immediate issues a few hours in. Working with Brenn, we found ourselves unfortunately knee deep in some header circular dependency issues. The bulk of this occurred because of the ObjectPoint, ObjectLine, ObjectFace structure referencing each other. We sat down together and read through some basic header guidelines, and now I think I have a pretty confident grasp of how to include/forward declare things properly now.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/exte_hair.jpg" /><p className="caption">yall need to see this movie called Exte</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/exte_hair.jpg" />
+<p className="caption">yall need to see this movie called Exte</p>
 
 We used this [post](http://www.cplusplus.com/forum/articles/10627/) to point us in the right direction. To paraphrase, always use include guards, always include/forward declare as little as possible in the header file, forward declare over include whenever possible, and that, wala, should fix all your issues. To start from a clean slate, we removed all the inclusions from our header/source files and reconnected everything. A bit of a pain, but now everything is spiffy clean and working. But yeah, this unfortunately took a large chunk of our time.
 
@@ -65,7 +70,9 @@ There was another issue where if faces, lines, or points appeared out of the cam
 
 And couldn't figure it out is a true statement. It's frustrating, and a bit humiliating to say, but fast forward to the future, I never solved these issues down the line. They became the cracks that would eventually cripple the project, to the point where I've now completely abandoned it. After spending many nights looking at these 3D issues, I wasn't making progress, and I pretty stressed out and angry working on it. I took some time off to R&R myself before coming back to tackle it again, but I got nowhere.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/to_stand_in_the_rain.mp4"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/to_stand_in_the_rain.mp4" />
+</video>
 
 The best, or maybe the worst, thing to come out of the jam was probably our food situation. Similar to what I did for a past game jam, I wanted to do something like a hot pot, where we gather whatever ingredients we wanted and had a ready pot of food available whenever we were hungry. It seemed convenient, simple, and easy at the time.
 
@@ -103,4 +110,10 @@ I think that's a reasonable goal. Give up when you can't take it anymore. Hmm, w
 
 Wait a second. I completely forgot to talk about the title of this project. So while Dualive was being worked on, I started to listen to other songs by Quarks, the producing unit behind Dualive. Crusaders In Virtuality was one of my newer favorites by them, and to continue like a sequel to Dualive, I wanted to use this song. Brenn and Paxton thought the song alright too, so this was original song we were working off of.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PtSlekhObGc" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/PtSlekhObGc"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>

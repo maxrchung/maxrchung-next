@@ -2,9 +2,9 @@
 
 I'm Just an Average Magical Girl, Sorry. was osu! UCI's fall 2015 beatmap project. Our osu! map included an original background, storyboard, mania set, and two standard maps. The song was produced by [MikitoP](http://vocaloid.wikia.com/wiki/Mikito-P) and sung by [Sana](http://utaite.wikia.com/wiki/Sana).
 
-*   Made by: Max Kenneth Legaspi Chung, Matt Kenneth Legaspi, Kenneth Yam, Royce Sato, Nina Volkmuth, Don Tran, Justin Veyna, Kenneth Legaspi
-*   Download (osu!): [MikitoP ft. Sana - I'm Just an Average Magical Girl, Sorry.](https://osu.ppy.sh/s/367782)
-*   Repository (Storyboard): [MagicalGirlStoryBoard](https://github.com/maxrchung/MagicalGirlStoryBoard)
+- Made by: Max Kenneth Legaspi Chung, Matt Kenneth Legaspi, Kenneth Yam, Royce Sato, Nina Volkmuth, Don Tran, Justin Veyna, Kenneth Legaspi
+- Download (osu!): [MikitoP ft. Sana - I'm Just an Average Magical Girl, Sorry.](https://osu.ppy.sh/s/367782)
+- Repository (Storyboard): [MagicalGirlStoryBoard](https://github.com/maxrchung/MagicalGirlStoryBoard)
 
 ## Background
 
@@ -70,11 +70,23 @@ And last but not least was the content. This song was part of a larger album abo
 
 I think my fellow coworkers on the project could appreciate this kind of odd humor. All of us were pretty much anime nerds familiar with magical girls, so it was interesting to see a song and album like this exist. The original on the album was sung by Hatsune Miku, but the Sana version was released online at the same time separately.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/omfYMfK5Plg" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="1280"
+  height="720"
+  src="https://www.youtube.com/embed/omfYMfK5Plg"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 <p className="caption">Miku version</p>
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/Jz9ZWGF6aq8" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="1280"
+  height="720"
+  src="https://www.youtube.com/embed/Jz9ZWGF6aq8"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 <p className="caption">Sana version</p>
 
@@ -90,7 +102,9 @@ Anyways, we didn't find out about the mistake until a while later, and I'm sure 
 
 So now we have Matt Kenneth Legaspi, another Kenneth Legaspi, and to make things even more confusing we also had a completely separate Kenneth, Kenneth Yam, who goes by Kenny. We here at osu! UCI have a proud tradition of trolling and meming, so I too changed my Facebook name to join the party, and I became Max Kenneth Legaspi Chung for the next 60 days.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/bird_family.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/bird_family.webm" />
+</video>
 
 Kenneth, hereby the Canadian, said he would help out anyways as a mapper. He seemed okay with the song and just wanted to go with the flow I suppose. Unfortunately, he was pretty much a dead rock on the project. It was difficult to coordinate with him online, and after a while of not showing any work, we ended the quarter with nothing from him. Things happen. He was working remotely, so I can understand his lack of commitment. We still had other maps so it's not like anything important was hinging on him.
 
@@ -160,7 +174,9 @@ The first problem I encountered was finding a suitable graphics library to outpu
 
 My next choice was CImg. This one had problems too. The issue this time was that it did not have built in capabilities to handle custom fonts. Honestly, I may have been better off trying to work with lower level libraries like libpng and freetype. At least I'd learn a ton from that. On the other hand though, I could have dug myself deeper into a rabbit hole doing that so I wanted to find a library to suit my needs.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_this_is_my_life_now.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_this_is_my_life_now.webm" />
+</video>
 
 Eventually I settled back with the good old SFML. I was quite familiar with using this library for games, but it didn't hit me that it could help me out in text generation as well. Setting it up and getting it working took a lot less time than the other libraries since I was familiar with it already. Using the functionalities was also pretty easy for the same reasons.
 
@@ -216,7 +232,9 @@ There were other considerations as well. Perhaps the simulation would take too m
 
 I think the simulation would be an interesting project to work separately on. It might be cool to have some kind of GUI to work with and see things in action. Or hey, maybe I should just adopt another library for this kind of stuff. I've never worked with Box2D before, but from what I've heard it seems like a good option for this physics stuff.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_box_stuck.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_box_stuck.webm" />
+</video>
 
 Anyways, back to the storyboard, on top of movement, I also had to handle rotations of text lines. The local rotations were pretty easy to handle since osu! deals with that directly. Where it gets a little trickier is if you want something like a sprite rotating around a specific point.
 
@@ -238,9 +256,21 @@ That's pretty much it. This was a really fun project to do. I love making specia
 
 With the storyboard finished, the project was just about done, but I wanted to add one more piece to the puzzle. For Silicon Heart and Sweet Regret, we had playthroughs of the songs, and I wanted one for this map as well. Aaron was happy to help again, and he did two videos this time. One video was a playthrough of Kenny's map. The other was, upon my request, a video of the storyboard by itself. I was pretty proud of my work and wanted to have a snapshot of it saved somewhere.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/oQqMXtBaIVE" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="1280"
+  height="720"
+  src="https://www.youtube.com/embed/oQqMXtBaIVE"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/8nyENr-a93Q" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="1280"
+  height="720"
+  src="https://www.youtube.com/embed/8nyENr-a93Q"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 This concludes about everything. I had a ton of a fun working on the storyboard, and I would love to work on another one again given the time. I swear... I'll work on one again one day. After finishing all these project write ups I'll go back to storyboarding. One day, one day, I hope.
 

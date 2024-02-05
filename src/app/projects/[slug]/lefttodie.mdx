@@ -2,10 +2,10 @@
 
 Left to Die was a platformer inspired by traditional Mario and by some of its quirky spin-offs, namely [Syobon Action](http://en.wikipedia.org/wiki/Shobon_Action) (AKA Cat Mario), [I Wanna Be the Guy](http://en.wikipedia.org/wiki/I_Wanna_Be_the_Guy), and [VVVVVV](http://en.wikipedia.org/wiki/VVVVVV). It was made as part of [VGDC UCI](http://vgdc-uci.com/)'s 2015 winter quarter game jam. The theme of the jam was 'Choose a Side', and we decided to put our own spin on the platformer genre, where facing left inverses all the blocks the character interacts with.
 
-*   Made with: Python and Pygame
-*   Made by: Max Chung, Hector Martinez, Andrew Chau, Kinsey Lynaugh
-*   Download (Windows): [LeftToDie.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/LeftToDie.zip) (7.1 MB)
-*   Repository: [lefttodie](https://github.com/maxrchung/lefttodie)
+- Made with: Python and Pygame
+- Made by: Max Chung, Hector Martinez, Andrew Chau, Kinsey Lynaugh
+- Download (Windows): [LeftToDie.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/LeftToDie.zip) (7.1 MB)
+- Repository: [lefttodie](https://github.com/maxrchung/lefttodie)
 
 ## Background
 
@@ -41,7 +41,9 @@ We then decided what language to use. Python/Pygame seemed kind of a natural cho
 
 I did some quick brainstorming and wanted to task out individual parts of the game to everyone. For myself, I would be working on the art first. I wanted someone to make a very simple animation class because I know we'd need that for at least the character. This I gave to Andrew as a way to get used to Pygame's GUI and drawing. For now, all he would have to do is write code to be able to display an animation running on his local screen.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/dogs_teach_sit.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/dogs_teach_sit.webm" />
+</video>
 
 This seemed like a good separated task for him. I explained the concept of sprite sheets to him, and he seemed to understand it pretty well. Best case scenario, his animation class works great and we plop it into the game without a problem. Worst comes to worst we just abandon animations altogether and just have still frames, not a huge loss for this kind of game.
 
@@ -49,7 +51,8 @@ Kinsey I gave the task of making a level editor since I think she said she was i
 
 The text file matched the changes you've made, so if you made an entire stage full of spike blocks, the entire text file could be filled with, for example, 'S' characters, for spike. The same logic applied to normal blocks, perhaps an 'N'; or blank/no tiles, 'B'. Then on the game side, you read in these character text files and recreate the level onscreen.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/lefttodie_level1.png" /><p className="caption">Level 1, we used different character mappings</p>
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/lefttodie_level1.png" />
+<p className="caption">Level 1, we used different character mappings</p>
 
 This was essentially just a step further than editing text files directly. I thought this would be another good section for a member to specifically focus on and could be easily integrated into the game. This would fit Kinsey the best since she was planning on making levels anyways.
 
@@ -63,7 +66,13 @@ And that was mostly what I envisioned, but with Hector's code, basically everyth
 
 For me, art was not very intensive seeing how there were so few assets we needed. The most difficult task I had was really just deciding the aesthetics of the game. In homage to Mario, and mostly Cat Mario (Syobon Action), I worked in a pixel-art style and themed our character off of the main cat guy of Cat Mario. Animation was thankfully very simple. All I did was basically shuffle his body a little and move his eyebrows.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/AC2ym5sZ8Wk" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="1280"
+  height="720"
+  src="https://www.youtube.com/embed/AC2ym5sZ8Wk"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 Tiles were easy since they were just simple blocks, and we only needed two of them. The end goal, a flag, was the only other animation I needed to draw. I then made some background art like clouds and bushes. And to hone in more on the inverse aspect, I made a copy of all the assets I made and inversed their colors..
 
@@ -71,7 +80,9 @@ When facing right, you would have a normal colored, jolly old landscape, but whe
 
 Eventually I also worked on sounds for the game. Before this project I never contributed music or sounds for a project, so this was an interesting experience. It's not like I did anything too creative though. For music, I lifted off a pretty iconic theme from Cat Mario. The song's a bit annoying and repetitive but just what fitted the kind of game we're making. In addition, I put in a repeating sound track of static that would play when the player turned left and went into the inverse world.
 
-<audio controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/inverse.wav"/></audio>
+<audio controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/inverse.wav" />
+</audio>
 
 <p className="caption">You should probably lower your volume</p>
 
@@ -83,7 +94,9 @@ For almost the last entire day I worked on trying to make collisions work. In my
 
 The next part was resetting the player. If the player hit a normal block, then the player needed to be pushed out a certain distance based on which direction he came in from. To determine this, I kept track of a previous position value. The game saved this previous position, calculated the new predicted position, and then threw both of these values into the checkCollision function. For example, if a player collided on the left side of a normal block, he would need to be reset along the left side.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/dogs_run_around.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/dogs_run_around.webm" />
+</video>
 
 For some reason though, this didn't work. I tried for hours to figure out the issue, but by the end of the jam, I wasn't able to find a solution. This error probably costed us placing higher in the game jam rankings. We placed 3rd overall, which I'm not too sad about, but I felt like we definitely could have done better. To me, this was a really amazing and polished game that fit the theme really well. In my heart we were first.
 
@@ -93,7 +106,7 @@ What was happening was when I did previousPosition = playerPosition, then I upda
 
 Also what might have cost some points with the judges were errors running the executable. Apparently on some computers, the build couldn't open or crashed upon opening. At the time, none of us knew what was wrong, but now almost a year later, we think we've found a solution.
 
-Basically it boiled down to Pygame having problems and cx\_Freeze, what we used to build an executable from our Python files, having problems as well. I'll leave the details in [Going Home](http://maxrchung.com/projects/goinghome), the Pygame project in which we found the solution. Props to Andrew for figuring out the issues.
+Basically it boiled down to Pygame having problems and cx_Freeze, what we used to build an executable from our Python files, having problems as well. I'll leave the details in [Going Home](http://maxrchung.com/projects/goinghome), the Pygame project in which we found the solution. Props to Andrew for figuring out the issues.
 
 And that about wraps it up. This was a super cool project that I had a lot fun on and learned a lot from. I've been giving Hector some flak, but everyone was pleasant and cordial to work with regardless of experience. For some reason this project would lead me into basically doing Pygame projects for the next year or so in VGDC game jams. I don't know how I feel about this, but it's all in good fun.
 

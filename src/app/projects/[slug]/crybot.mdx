@@ -2,16 +2,18 @@
 
 This is a small Facebook/Discord chat bot that keeps track of the number of crying faces used in conversations it is a part of. Well, technically, it's supposed to be a :joy: face since there are better crying emojis out there, but I'm going to push those details aside. I also have to thank Michael with his work on [MikalBot](https://github.com/failedxyz/MikalBot), as that's what I used as a huge basis for this.
 
-*   Made by: Max Chung
-*   Made with: Node.js, facebook-chat-api, discordjs
-*   Facebook: [Cry Bot](https://www.facebook.com/itsyoboicrybot)
-*   Repository: [itsyoboicrybot](https://github.com/maxrchung/itsyoboicrybot)
+- Made by: Max Chung
+- Made with: Node.js, facebook-chat-api, discordjs
+- Facebook: [Cry Bot](https://www.facebook.com/itsyoboicrybot)
+- Repository: [itsyoboicrybot](https://github.com/maxrchung/itsyoboicrybot)
 
 ## Background
 
 Honestly, I'm not even sure I should even be writing about this project. This bot only has two features, !cry to send a cry emoji into chat and !count to return a count of crying faces so far. The whole thing is less than 50 lines long, and it cost me a couple hours to make. But I guess despite everything, some of the history behind this is pretty interesting at least to me, so I'll see it through.
 
-<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/stubby_showdown.webm"/></video>
+<video autoPlay controls loop>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/stubby_showdown.webm" />
+</video>
 
 So I'm part of a really active Facebook group chat with some of my friends. Most of these guys are from osu! UCI, though we do have an odd person or two who aren't a part of it. One day, one of us stumbled upon MikalBot and added it to our chat. It keeps track of how much you talk and interact in a group chat, with fancy charts and everything. Also, I know I wrote my past 30 projects in past tense, but we're going to stick with whatever tense I feel like now.
 
@@ -39,12 +41,16 @@ Some time has passed now, and I've just updated the bot to support Discord conve
 
 After df-ing and du-ing a while, I finally figured out after looking into hidden files that my forever log was something like 10 gigs, half of my server's total allocated space. I don't know why forever was logging so much, or if I should be concerned, but I just deleted everything, rebooted, installed updated, rebooted again, and everything just werked.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/alpaca_boop.mp4"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/alpaca_boop.mp4" />
+</video>
 
 Maybe possibly related but probably is the problem, I ran into an issue in the past with the chat bot, where it would blow up and disconnect for seemingly no reason. I couldn't figure out why it was dying, so every hour or so I think I made it relogin and reconnect. I don't know. Putting another bandaid on a gunshot wound, but whatever it works.
 
 Anyways, I looked into discordjs. It was pretty easy to follow and setup. I had a lot of reusable code from the Facebook bot, so I adopted that, and that's pretty much that. Fairly simple and just took maybe an afternoon's work.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/corgi_sweeper.mp4"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/corgi_sweeper.mp4" />
+</video>
 
 As of July 2017, I've decided to retire this and the CLG Retweet bot until further notice. I'm busy with other projects at the moment, and I want to focus my attention on those without having to fix and look at old issue. Thanks to all, my friends, who've been using it.

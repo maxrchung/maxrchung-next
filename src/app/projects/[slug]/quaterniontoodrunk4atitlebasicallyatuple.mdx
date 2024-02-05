@@ -2,10 +2,10 @@
 
 Quaternion: Too Drunk 4 a Title was a arena brawler where drunk people picked up various alcoholic abilities around the map and used them to attack each other. It supports both singleplayer and multiplayer modes. I'm not really sure what's going on with the title, but I wouldn't worry about it.
 
-*   Made with: Unity
-*   Made by: Max Chung, Alex Jett Lewis, Nina Volkmuth, Winston Liang, Theodore Won
-*   Download (Windows): [quaternion.rar](https://maxrchung-rails.s3.amazonaws.com/uploads/quaternion.rar) (36.3 MB)
-*   Repository: [gamethingey](https://github.com/maxrchung/gamethingey)
+- Made with: Unity
+- Made by: Max Chung, Alex Jett Lewis, Nina Volkmuth, Winston Liang, Theodore Won
+- Download (Windows): [quaternion.rar](https://maxrchung-rails.s3.amazonaws.com/uploads/quaternion.rar) (36.3 MB)
+- Repository: [gamethingey](https://github.com/maxrchung/gamethingey)
 
 ## Background
 
@@ -35,7 +35,9 @@ I wasn't really 100% set on a drunk brawler. I don't think fighting games appeal
 
 Next time, I'm not sure if I want to vet things through Winston, as he's only been pretty negative about my choices. For the next local game jam coming up, I chatted online with Alex about what to do, and he was a lot more receptive and helpful deciding things with. And I think having Alex on board with the project is the most important out of everyone on the usual team. He's definitely the most vocal and boisterous out of all of us, so keeping our emotional leader engaged and full of energy is important.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/no_no_no_no_no_no.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/no_no_no_no_no_no.webm" />
+</video>
 
 Come the day of this jam, most of everyone showed up on time and stayed for the entire time. Alex and Winston were the only ones who stayed overnight at my place, but outside of sleeping hours, everyone tried to be there. Alex had to unfortunately step in and out due to doctor appointments, as he was recovering from knee surgery and needed it checked out. Ted (Theodore) also came a bit late and went missing a more hours due to personal matters and distance.
 
@@ -71,7 +73,9 @@ There wasn't a lot of documentation and help online I could find explaining subt
 
 The nastiest bug I encountered was an issue where a parented network object that was spawned behaved very oddly. For some reason, when you spawned a new object as a child of another object, for instance, displaying a fire animation in front of your player when you activated a molotov cocktail, the animation would teleport off of your player and go to the (0,0,0) point of the overall map. The weirdest part was that this only happened on certain players' screens, either the client or the server, though I imagine the former.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/balloon_cat.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/balloon_cat.webm" />
+</video>
 
 I couldn't find out why this was the case. I thought maybe it had to do with an issue not calling Commands/ClientRpc calls correctly, but no matter what I did I couldn't find out how to fix the issue. If there was no parenting involved, it was fine. We could have the fire and punch animations be static animations that displayed, but the moment you wanted to attach these onto a player, you ran into problems.
 
@@ -99,7 +103,9 @@ A good thing about this project was how iterative it was. The number of characte
 
 On top of doing the art, she contributed a huge amount to the game code as well. Alex was inexperienced with Unity, so a lot of his guidance was helped through her. Tasks-wise, she handled pretty much all the states/animations and fixed a ton of awful, disgusting bugs like that of the parent spawning issues. There were a few bugs still lurking in the end that we couldn't figure out, like the fire animation flashing weirdly, but oh well, what can you do.
 
-<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/putting_out_car_fire.webm"/></video>
+<video autoPlay controls loop>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/putting_out_car_fire.webm" />
+</video>
 
 Alex worked on weapons and damaging players. Due to this lack of experience, he did comparatively less than what he put out on other projects, but I'd say he had a fun time with this project regardless. Rather than having to deal with the gnarliness of the usual Pygame, he found the entrance of Unity much more graceful and almost too easy. Later on, we did some paired programming/testing later on to fix some spawning issues and balance a lot of the game.
 
@@ -109,7 +115,9 @@ And last but not least was Ted. He decided to take on something often neglected 
 
 He made the entire background music through a MIDI synthesizer, if I recall, and the sound effects I want to say he generated from BFXR or JFXR. For a first time effort, I think he did a really good job, and I like the groovy track. Since having to work on sound on the next project, [Going Home](goinghome), I have total respect for anyone now who dives into sound and produces something by the end of it. Music production's not easy to jump in and get used to.
 
-<audio controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/DrunkFight.wav"/></audio>
+<audio controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/DrunkFight.wav" />
+</audio>
 
 Ted did a significant amount of programming too. He put all his sounds and music into the game and also started the movement and collision code for players. I think at one point he wanted to do some kind of drunk effect with the turning movement where you had trouble changing directions due to your drunkenness, but he couldn't get the math down for that. I think what happened was that a bug would pop up where you would randomly spin in circles. In the end, he removed it and kept the turning simple.
 
@@ -119,7 +127,9 @@ That pretty much covers most of our individual roles and most of the development
 
 I guess I should say something about the name. Because we never really had a concrete game idea, we didn't really have a name we wanted to go with. When we started talking about possible name ideas, I was coincidentally working on the camera rotations and movement. By then, I was working with quaternions for the first time, and they were pretty damn weird to understand. Actually using them was easy, but none of us really knew how the individual quaternion components worked.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/quaternions_wtf.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/quaternions_wtf.webm" />
+</video>
 
 So I said a phrase I picked up from other members of VGDC, where quaternions were basically just a tuple, don't worry about it. And as an inside joke, that became my/our response to everything. Why couldn't we fix this parenting bug? Quaternions, man, parenting's just a tuple. Naturally when we tried to decide a name, I responded with quaternion since I couldn't think of anything else. Eventually, it came time to actually put in the name, and Nina, throwing our inside jokes together, created what you see now, Quaternion: Too Drunk 4 a Title (Basically a Tuple).
 
@@ -129,6 +139,8 @@ I guess as a final note, I'll leave with the duck story. If you play the game a 
 
 The story behind this was that if I recall, Nina made a third character at one point to add on top of the normal male and female characters. This one was supposed to have a baseball cap, but the first thing we thought of when looking at it was that it looked like a duck. I think she tried to change it to look more normal, but without much luck. Eventually we decided to run with it.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/duck_duck_gun.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/duck_duck_gun.webm" />
+</video>
 
 Later on, Ted as a joke made a duck soundtrack by switching out all the synthesized sounds in the normal song to duck noises. We actually thought it was pretty funny, so we kept it in as a joke. I'm kind of actually amazed we pulled this off since there was a lot going on at the time. I guess if you want to meme, you sacrifice everything else to do so. Memes before dreams, people.

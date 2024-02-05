@@ -2,9 +2,9 @@
 
 Social Rejection was a defend your tower game where you protected yourself against enemies, monsters, and ultimately, yourself. It was made as part of the Video Game Development Club at UCI's 2016 Spring Game Jam, themed on using the [Tobii EyeX Controller](http://www.tobii.com/xperience/).
 
-*   Made by: Max Chung, Tyler Gemora, Tina Feng, Ian Tokuyama, Caitlin Creekmore
-*   Made with: Unity
-*   Repository: [Social-Rejection](https://github.com/itokuyama/Social-Rejection)
+- Made by: Max Chung, Tyler Gemora, Tina Feng, Ian Tokuyama, Caitlin Creekmore
+- Made with: Unity
+- Repository: [Social-Rejection](https://github.com/itokuyama/Social-Rejection)
 
 For reasons I'll later explain in the background, we couldn't make a build of the game. It basically boiled down to us doing something that Unity didn't like, and as a result, our levels failed to load. You'll have to download the project via the repo and open it up in the Unity editor if you want to play the game.
 
@@ -58,7 +58,9 @@ When we started working, it turned out that Tobii EyeX was not compatible with m
 
 I think I did a fair amount of good work on the character. I love spending a lot of time adding flair to make things pretty and feel natural. Shooting was basically the only interaction you'd ever do in the game, so I needed to make it as impactful as possible. My first task was to spawn arrows, and then I toiled around with making them fire in the right direction and rotate in mid air. Working with rigid bodies saved me a lot of time, so thanks Unity.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/bow_and_arrow_hunting.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/bow_and_arrow_hunting.webm" />
+</video>
 
 The math behind it wasn't too difficult because I've had plenty of vector practice from osu! storyboards and various past projects. I'm fairly comfortable at least 2D-wise handling vectors. I believe there're still some bugs here or there where arrows flip around incorrectly. I didn't catch some loose cases since I moved onto other tasks.
 
@@ -76,7 +78,9 @@ It was pretty simple once we had it going. The idea was that all we needed to kn
 
 After we figured out the camera we broke off and did separate tasks. Ian worked on sounds: finding, making, and putting them in the game. I moved onto the background, in which I wanted to do some parallax/scrolling scenery that would fade from night to day. Oh yeah, that's another thing. It was important that we started at night, you know, to represent man's darkest hour, and slowly fade into day overtime, eventually reaching a dawn of new beginnings.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/sore_sunrise.webm"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/sore_sunrise.webm" />
+</video>
 
 My first attempt at making the background was very clunky. My goal was to have two backgrounds side by side that moved together towards the left. When the leftmost image hit a certain threshold, it swapped over to the right to keep an illusion of a moving background. I tried to generate the background sprite by code from an empty object. It worked, but it was very bloated and difficult to modify.
 
@@ -96,7 +100,9 @@ Additionally, I did a lot of other miscellaneous changes. I put in Tina's artwor
 
 Also, I think I got sick or something because I couldn't stop sneezing and had a really bad/blocked/runny/uncomfortable nose that just got worse through the night. I don't know what happened to me. It seemed like maybe allergies, but I've never really had these kinds of symptoms until very recently. Maybe I was just super stressed/tired or something. When I got back home later, took a long shower, and rested, I felt a lot better.
 
-<video autoplay control="" loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/allergy_kid.webm"/></video>
+<video autoPlay control="" loop>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/allergy_kid.webm" />
+</video>
 
 In the last morning, I was extremely unproductive from being exhausted and sick through the night. The most I could do was explain what I did and double check some things with the other members. I worked with Ian to make sure all the sounds triggered at the right places and the camera worked properly with the Tobii EyeX. When Tyler arrived, I directed him to the GUI and levels problems.
 

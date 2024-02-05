@@ -2,10 +2,10 @@
 
 Flower Trip was the 2016 spring quarter beatmap project of osu! UCI. I no longer led these club projects since I was graduated, but I participated in a smaller role. This song features an original instrumental made by a friend of mine from the Video Game Development Club at UCI, as well as an original background, storyboard, and mapping.
 
-*   Made by: Max Chung, Adi Iyer, Royce Sato, Kevin Tyler
-*   Made with (Storyboard): C++
-*   Download (osu!): [Dravidian - Flower Trip](https://osu.ppy.sh/s/464199) (5.8 MB)
-*   Repository (Storyboard): [flowertrip](https://github.com/maxrchung/flowertrip)
+- Made by: Max Chung, Adi Iyer, Royce Sato, Kevin Tyler
+- Made with (Storyboard): C++
+- Download (osu!): [Dravidian - Flower Trip](https://osu.ppy.sh/s/464199) (5.8 MB)
+- Repository (Storyboard): [flowertrip](https://github.com/maxrchung/flowertrip)
 
 ## Background
 
@@ -15,7 +15,9 @@ I just wanted to hand off the reigns of the beatmap project to someone else and 
 
 There were a host of problems that cropped up. Royce, the official leader of the project, is partial to blame. He could have done a better job keeping tabs on people and checking on their progress. He's not really a confrontational guy, so maybe that's what's holding him back a lot of times. With people not pushed to do their work, the whole team started to slack.
 
-<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cats_doing_things.webm"/></video>
+<video autoPlay controls loop>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cats_doing_things.webm" />
+</video>
 
 Motivation seemed to fall across the board when we didn't really have clear week to week goals to keep track of and didn't know the status of what Adi, in particular, was doing. We began pushing a lot of tasks back until we finally tried to salvage whatever we could. By the end, I think everyone was left mostly "uninspired" to do anything and lost the gunghoness that we started off with earlier.
 
@@ -59,7 +61,9 @@ I did simplify a few things. All I needed to be able to do was represent points 
 
 Originally I was just going to make a static, non-moving spectrum, but as a challenge to myself and since I had some more time, I decided to try rotating the spectrum around its axes. This popped up a few more problems. The biggest one was probably how I calculated cross products. I used (0, 1, 0) as the base for many of these calculations, but this ran into some errors when what the base was crossed with was also (0, 1, 0). There were a quite a few edge cases that I made hack solutions for.
 
-<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/tripping_hair_balls.webm"/></video>
+<video autoPlay controls loop>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/tripping_hair_balls.webm" />
+</video>
 
 Additionally, what stumped me for some time was the conversion from 3D to 2D. All my 3D calculations were made with (0, 0, 0) in the center. osu!'s coordinates had (0, 0) at the top left corner, which meant also that the y axis was flipped. Very confusing when you have to go back and forth.
 
@@ -69,6 +73,14 @@ I'm probably missing a few points, but that's pretty much the gist of my work. M
 
 So that's pretty much my part and the most of the project. My storyboard's a little bland with just a blank black background, but I think the spectrum by itself is plenty cool enough. Overall, I'm happy things are over with. I badgered Royce for a while to upload and close this project fully, and I'm happy at least that's done with. I have some new ideas for the future, and I'll be hopefully working on a some new storyboards over summer once I've settled down at work.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/YwqXa2dkG00" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="1280"
+  height="720"
+  src="https://www.youtube.com/embed/YwqXa2dkG00"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
-<p className="caption">A random low quality video I made for the team showcasing the storyboard</p>
+<p className="caption">
+  A random low quality video I made for the team showcasing the storyboard
+</p>

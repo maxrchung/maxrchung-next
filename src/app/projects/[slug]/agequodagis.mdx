@@ -2,10 +2,10 @@
 
 Age quod agis was an osu! beatmap I helped work on with Royce, a friend I met through [osu! UCI](http://maxrchung.com/projects/osuuci). I handled programming the storyboard, while he worked on the map itself. We themed the song off snow and winter.
 
-*   Made by: Max Chung, Royce Sato
-*   Made with (Storyboard): C++ and SFML
-*   Download (osu!): [void - Age quod agis](https://osu.ppy.sh/s/409783) (12.5 MB)
-*   Repository (Storyboard): [age-quod-agis](https://github.com/maxrchung/age-quod-agis)
+- Made by: Max Chung, Royce Sato
+- Made with (Storyboard): C++ and SFML
+- Download (osu!): [void - Age quod agis](https://osu.ppy.sh/s/409783) (12.5 MB)
+- Repository (Storyboard): [age-quod-agis](https://github.com/maxrchung/age-quod-agis)
 
 ## Background
 
@@ -15,7 +15,13 @@ When spring arrived, Royce said he'd take charge organizing a club beatmap proje
 
 I remembered that Royce was working on a mania map in his free time, so I volunteered to help him storyboard that. He was working on a trancey/electronic song, Age quod agis. It's a pretty underground song, and I wouldn't say I'm a huge fan of the particular genre, so the music wasn't exactly right up my alley. Nevertheless, it wasn't awful by any means, and it was a good chance to work with a good friend on a side project.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/jiJJeyPK818" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="1280"
+  height="720"
+  src="https://www.youtube.com/embed/jiJJeyPK818"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 There was an idea I wanted to pursue on this storyboard. I wanted to map each key of input to some kind of graphical effect in the background. This I did through a snowflake theme. I chose a snow theme because the background Royce selected for the map was some kind of winter trees/forest picture. I don't really know why he picked it. I did offer at one point to draw a background for him, but he seemed to like the trees so I stuck with it.
 
@@ -35,15 +41,17 @@ The reason this was a little tricky to work on was because osu! behaves a little
 
 The problem with this, however, was that osu! didn't know how to handle a command if you declared a new instruction during the time frame of another one. This is probably for good reason because it does seem ambiguous if you try and alter a Sprite in two conflicting ways over the same period. To get around this, I needed to calculate the interpolation myself, find future points that a Sprite would move to, and move between those points individually.
 
-<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/im_gonna_merge_it.webm"/></video>
+<video autoPlay controls loop>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/im_gonna_merge_it.webm" />
+</video>
 
 With this resolved, there was one last thing I wanted to add that would end taking the most time for me out of this whole project: an audio spectrum. This actually took a bit of digging around and required a bit of research. From some basic Googling, I got a pretty good idea through stackoverflow posts about how to piece together a spectrum, but I wanted a more thorough understanding of sound and computers.
 
-I started reading an online textbook about sound, and I read up to and through an introduction of FFT. I never actually programmed the FFT myself, which I haven't really looked into. For this project, I used kiss\_fft to do the work for me. Everything else besides FFT was written by me though.
+I started reading an online textbook about sound, and I read up to and through an introduction of FFT. I never actually programmed the FFT myself, which I haven't really looked into. For this project, I used kiss_fft to do the work for me. Everything else besides FFT was written by me though.
 
 Following a guide, I did some WAV file parsing to get all the samples I needed. Then I applied a Hanning window on sections and performed an FFT over that. At one point, however, I reached a lull where I got stuck with some unusual results that stumped me.
 
-My logic was sound and the process I was using was correct, but a few small things tripped me up that I wasn't quite aware of. The first was using shorts instead of floats as input to kiss\_fft. Short was the default type given through WAVs, so to make my life easier, I just threw these shorts into the FFT function for processing.
+My logic was sound and the process I was using was correct, but a few small things tripped me up that I wasn't quite aware of. The first was using shorts instead of floats as input to kiss_fft. Short was the default type given through WAVs, so to make my life easier, I just threw these shorts into the FFT function for processing.
 
 Turns out, the FFT I believe only took in floats between -1 and 1, so I ran into some weird representation errors. There was no documentation I could find that explained the input ranges, so this was actually something I asked my roommate about. He seemed pretty sure that I needed to use normalized floats, and that fixed some of my issues.
 
@@ -61,7 +69,9 @@ The problem was that the storyboard just seemed too disconnected with the map. Y
 
 To be honest, at that point I wanted to just get done with this project and move on, but I after some reflection, I wanted to make sure I did a good job finishing this storyboard. I decided to throw much of the input action idea away and scrape what I had into something new. We talked about ideas for a while, and I came up with something slightly based on what I had before.
 
-<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/ping_pong_head.webm"/></video>
+<video autoPlay controls loop>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/ping_pong_head.webm" />
+</video>
 
 This time, all the key inputs controlled the snowflake explosions, but instead, each key shot only 1 snowflake out from the center. Color was to be controlled automatically, fading in and out. Rotations were specified at a certain rate at particular points in time. And scaling would be based off of the spectrum bass.
 
@@ -79,7 +89,9 @@ I do think in some sense I probably ended this project too early still. There we
 
 I'm pretty satisfied with my work here though. I learned a ton about spectrums and sound and how they all work together, and I'm confident I'll be able to go into my next project with a lot of good knowledge and code retained. I do feel a bit sorry for Royce since this was his baby project, and I didn't want to leave it in bad terms or anything. He seemed fine with the end result, though because he's a pretty happy go lucky person, I don't really know if fine is good enough.
 
-<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/two_bestest_friends.webm"/></video>
+<video autoPlay controls loop>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/two_bestest_friends.webm" />
+</video>
 
 I think one thing I'll definitely work on in the future is variety in storyboarding. Right now all of the storyboards I've worked on have a very central idea that is just repeated over and over. There's no variety in the content, and that can be quite boring and uninteresting. In my next projects, I'll spice up the storyboard with a few different concepts and see how that works out.
 
@@ -87,4 +99,10 @@ The last point I'll mention was that I actually had to do a surprising amount of
 
 That's about it. I think this project was a great learning experience, and I'd say we're happy with the results. I don't know about getting the map officially ranked though. Royce is pretty shy about asking for mods and looking for criticism, and that's where ranking mostly factors in from. The last thing to leave off with is a video playthrough of the song, captured and skinned by Royce.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/74wg9s5NXAk" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="1280"
+  height="720"
+  src="https://www.youtube.com/embed/74wg9s5NXAk"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>

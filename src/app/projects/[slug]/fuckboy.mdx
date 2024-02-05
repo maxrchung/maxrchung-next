@@ -2,7 +2,7 @@
 
 The Fuckboy was a DIY keyboard project. It's a Planck keyboard that features Zealios R4 78g switches, blank SA row 3 keycaps, orange 3mm LEDs, and to add on top, a custom USB cable/keyboard bag. Most iconically, it spells out Fuck through its keycaps, though any number of words can be arranged, probably the next of which would be Cuck.
 
-*   Made by: Me
+- Made by: Me
 
 ## Background
 
@@ -74,7 +74,13 @@ Fast forward to late November, it actually kind of surprised me when I was able 
 
 My working setup was kind of ghetto. I took one of our extra tables in the living room, which, by the way was not probably the most stable thing in the world, and brought that out to the small porch area outside. I set up a fan, a light, and the solder equipment there, where conveniently there was an outlet. I didn't have a thick mat to work on so a flattened cardboard box was my substitute. Also, it was pretty cold outside, so I had on like three layers of clothes to keep myself warm.
 
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/S2FApwzVxAQ" frameborder="0" allowfullscreen=""></iframe>
+<iframe
+  width="1280"
+  height="720"
+  src="https://www.youtube.com/embed/S2FApwzVxAQ"
+  frameBorder="0"
+  allowFullScreen=""
+></iframe>
 
 I pretty much followed Jack's guide to a tee. First I started with the switches. It took me two nights to put the switches in because I wasn't sure if the PCB could fit on correctly. This led to a lot of sore fingertips as I tried to force switches into the top plate. The switch holes in the top plate weren't cut particularly well. It's not like the switches couldn't go in, but it took a non-trivial amount of work to push the Zealios in.
 
@@ -84,7 +90,9 @@ Eventually, I removed all the switches from the plate/PCB and restarted again. T
 
 After the switches were done, I didn't move onto the LEDs immediately. Just in case I had any errors, I wanted to test and make sure what I had worked. Then came the challenge of setting up the software, and this was not simple and easy. The [QMK](http://qmk.fm/) firmware guide is a bit scattered in some parts and difficult to I think approach without prior knowledge of it. Having gone through the process once, I'm a lot more familiar with it, but I had quite a few problems starting off.
 
-<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/close_brush_with_death.mp4"/></video>
+<video autoPlay loop controls>
+  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/close_brush_with_death.mp4" />
+</video>
 
 The biggest issue was that setting up the build environment on Windows just flat out did not work. After tinkering and dabbling, I got MinGW set up properly, but when I tried to compile, I ran into issues with pathing where my environment started using MinGHC (Haskell related) that I installed almost a year ago. I have no idea why. I believe an error happens because the MinGHC directory path has a space in it, which is bound to occur because my computer name is Wax Chug da Gwad.
 
@@ -104,7 +112,7 @@ The most difficulty I had in the keymap came from figuring out how to manage mul
 
 This is problematic because I want to retain the same upper layer functionality when either the upper left or right key or both are held down. To solve this, I made two different layers for each of the uppers. The left and upper keys now go to the left upper layer and right upper layer respectively. What this does is that if one of the keys are released, the layer changes as well, but because there is another upper layer present, you won't drop down to the default layer.
 
-There were also some other small things I adjusted. I fixed a problem where A, B, and C failed to type characters because I set up some enumerations wrong and needed SAFETY\_RANGE set properly. I messed around with sticky keys and transfer keys to get some better flow with the modifiers. I may edit some more things in the future to my liking, but that's probably going to be kind of difficult now since I only have a single keyboard either here or at work. I think I'm getting used to this though and probably won't need to change any time soon. To see the final keymap, you can go to my [GitHub repo](https://github.com/maxrchung/Fuckboy) with the files I worked with.
+There were also some other small things I adjusted. I fixed a problem where A, B, and C failed to type characters because I set up some enumerations wrong and needed SAFETY_RANGE set properly. I messed around with sticky keys and transfer keys to get some better flow with the modifiers. I may edit some more things in the future to my liking, but that's probably going to be kind of difficult now since I only have a single keyboard either here or at work. I think I'm getting used to this though and probably won't need to change any time soon. To see the final keymap, you can go to my [GitHub repo](https://github.com/maxrchung/Fuckboy) with the files I worked with.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_programmer.jpg" />
 
