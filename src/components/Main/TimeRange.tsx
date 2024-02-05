@@ -1,4 +1,4 @@
-import { Small, majorScale } from "evergreen-ui";
+import { Small, majorScale, minorScale } from "evergreen-ui";
 
 interface TimeRangeProps {
   start: Date | string | number;
@@ -21,5 +21,9 @@ export default function TimeRange({ start, end }: TimeRangeProps) {
 
   const display = `(${startDisplay} - ${endDisplay})`;
 
-  return <Small marginTop={majorScale(-1)}>{display}</Small>;
+  return (
+    <Small fontSize={minorScale(3)} marginTop={majorScale(-1)}>
+      {display}
+    </Small>
+  );
 }

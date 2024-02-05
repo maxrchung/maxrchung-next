@@ -1,4 +1,4 @@
-import { Small, majorScale } from "evergreen-ui";
+import { Small, majorScale, minorScale } from "evergreen-ui";
 
 interface TimestampProps {
   time: Date | string | number;
@@ -13,5 +13,9 @@ export default function Timestamp({ time }: TimestampProps) {
     year: "numeric",
   });
 
-  return <Small marginTop={majorScale(-1)}>{display}</Small>;
+  return (
+    <Small fontSize={minorScale(3)} marginTop={majorScale(-1)}>
+      {display}
+    </Small>
+  );
 }
