@@ -1,5 +1,5 @@
 import Client from "./Client";
-import { blogConfigs } from "../blogConfigs";
+import blogConfigs from "../blogConfigs";
 
 export default function Page() {
   return <Client />;

@@ -1,7 +1,7 @@
 "use client";
 
 import { Pane, majorScale } from "evergreen-ui";
-import { blogConfigs } from "./blogConfigs";
+import blogConfigs from "./blogConfigs";
 import Timestamp from "@/components/Main/Timestamp";
 import MainLink from "@/components/Main/MainLink";
 import Header from "@/components/Main/Header";

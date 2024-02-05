@@ -5,7 +5,7 @@ interface BlogConfigs {
   };
 }
 
-export const blogConfigs: BlogConfigs = {
+const blogConfigs: BlogConfigs = {
   "5": { title: "Site Is Up(almost)!!!", time: "2016-01-23T00:00:09.328Z" },
   "6": {
     title: "Okay, Site Almost Not Up",
@@ -33,3 +33,5 @@ export const blogConfigs: BlogConfigs = {
     time: "2024-02-03T22:52:19.174Z",
   },
 };
+
+export default blogConfigs;
