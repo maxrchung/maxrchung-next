@@ -1,7 +1,14 @@
 import { ProjectConfig } from "@/app/projects/projectConfigs";
-import { Image, Pane, majorScale, Paragraph } from "evergreen-ui";
+import {
+  Image,
+  Link as EvergreenLink,
+  Pane,
+  majorScale,
+  Paragraph,
+} from "evergreen-ui";
 import MainLink from "./MainLink";
 import TimeRange from "./TimeRange";
+import Link from "next/link";
 
 interface ProjectDescriptionProps {
   projectEntry: [string, ProjectConfig];
@@ -11,8 +18,23 @@ export default function ProjectDescription({
   projectEntry: [slug, { thumbnail, title, description, start, end }],
 }: ProjectDescriptionProps) {
   return (
-    <Pane key={slug} display="flex" gap={majorScale(2)} alignItems="center">
-      <Image src={thumbnail} alt={title} width={128} />
+    <Pane
+      key={slug}
+      display="flex"
+      gap={majorScale(2)}
+      alignItems="center"
+      flexShrink={0}
+    >
+      <EvergreenLink is={Link} href={`/projects/${slug}`} flexShrink={0}>
+        <Image
+          src={thumbnail}
+          alt={title}
+          width={128}
+          height={128}
+          // Counteract main styling >_<
+          maxWidth="100%"
+        />
+      </EvergreenLink>
 
       <Pane display="flex" flexDirection="column" gap={majorScale(3)}>
         <MainLink href={`projects/${slug}`} name={title} />

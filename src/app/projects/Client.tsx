@@ -1,10 +1,7 @@
 "use client";
 
-import { Image, Pane, Paragraph, majorScale } from "evergreen-ui";
 import projectConfigs from "./projectConfigs";
-import TimeRange from "@/components/Main/TimeRange";
 import Header from "@/components/Main/Header";
-import MainLink from "@/components/Main/MainLink";
 import ProjectDescription from "@/components/Main/ProjectDescription";
 
 export default function Client() {

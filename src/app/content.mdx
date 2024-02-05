@@ -1,4 +1,5 @@
-import { Link } from "evergreen-ui";
+import { Link as EvergreenLink } from "evergreen-ui";
+import Link from "next/link";
 
 # Hi,
 
@@ -6,6 +7,6 @@ I'm Max(rchung). Welcome to my epic website for mostly personal stuff. This is
 where I host my [projects](projects), [resume](about), and (maybe? some more)
 [blogs](blogs). Thanks for stopping by! 🐸
 
-<Link href="/projects/theboy" alignSelf="center">
+<EvergreenLink is={Link} href="/projects/theboy" alignSelf="center">
   <img id="the-boy" src="/the-boy.jpg" />
-</Link>
+</EvergreenLink>

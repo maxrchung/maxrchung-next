@@ -1,4 +1,4 @@
-import { Link as EvergreenLink, Strong, majorScale } from "evergreen-ui";
+import { Link as EvergreenLink, majorScale } from "evergreen-ui";
 import Link from "next/link";
 
 interface MainLinkProps {
