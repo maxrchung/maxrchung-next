@@ -1,124 +1,338 @@
+import Caption from "@/components/Main/Caption";
+import { Link } from "evergreen-ui";
+
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/going_home_banner.png" />
 
-Going Home is a resource management game where the goal is to safely navigate your ship back home. You have a variety of components on the ship that you can activate, at the expense of costing power. Be careful of what you enable, however, as you have a limited energy supply that recharges only during the day.
+Going Home is a resource management game where the goal is to safely navigate
+your ship back home. You have a variety of components on the ship that you can
+activate, at the expense of costing power. Be careful of what you enable,
+however, as you have a limited energy supply that recharges only during the day.
 
 - Made with: Python and Pygame
 - Made by: Max Chung, Andrew Chau, Faye Jao, Kevin Wong, Khai Nguyen
-- Download: [Going_Home_Fixed.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/Going_Home_Fixed.zip) (39.0 MB)
+- Download:
+  [Going_Home_Fixed.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/Going_Home_Fixed.zip)
+  (39.0 MB)
 - Repository: [ThereIsNeverEnough](https://github.com/Kromis/ThereIsNeverEnough)
 
 ## Background
 
-Going Home was made as part of the Video Game Development Club at UCI's 2016 winter quarter game jam. The theme of the jam was There Is Never Enough. In total, I believe there was around a dozen teams of about 4-5 members each that participated in the game jam. Due to my past experience and knowledge, I was placed into a special group of Python/Pygame developers.
+Going Home was made as part of the Video Game Development Club at UCI's 2016
+winter quarter game jam. The theme of the jam was There Is Never Enough. In
+total, I believe there was around a dozen teams of about 4-5 members each that
+participated in the game jam. Due to my past experience and knowledge, I was
+placed into a special group of Python/Pygame developers.
 
-I don't know how I feel about being shoehorned into Pygame groups all the time. For one reason or another, all my last three game jams with VGDC have all been in Pygame, so I was looking forward to possibly work with something else this time. I guess part of it was my own fault since I didn't specify what I wanted while signing up.
+I don't know how I feel about being shoehorned into Pygame groups all the time.
+For one reason or another, all my last three game jams with VGDC have all been
+in Pygame, so I was looking forward to possibly work with something else this
+time. I guess part of it was my own fault since I didn't specify what I wanted
+while signing up.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/grown_here_enjoyed_everywhere.png" />
 
-Welp, in the end, things worked out fine I suppose. Better to have experience in a language and framework than not, and since I was supposed to play a more senior role in the group, knowing what I was doing would be better for us overall. I say supposed to play a more senior role, but I actually didn't quite end up doing that this time around. Most of my time was spent doing other tasks unrelated to the programming, and it was Andrew who did most of the leadership work.
+Welp, in the end, things worked out fine I suppose. Better to have experience in
+a language and framework than not, and since I was supposed to play a more
+senior role in the group, knowing what I was doing would be better for us
+overall. I say supposed to play a more senior role, but I actually didn't quite
+end up doing that this time around. Most of my time was spent doing other tasks
+unrelated to the programming, and it was Andrew who did most of the leadership
+work.
 
-It's actually really funny that I got a chance to work with Andrew again on a Pygame-themed project. Exactly a year ago we were together working on [Left to Die](lefttodie), also built in Pygame. In that jam, I was the one who played more of the leadership role and did most of the code heavy lifting and mentorship. Now Andrew was the one who taking over and managing much the game and team this time around.
+It's actually really funny that I got a chance to work with Andrew again on a
+Pygame-themed project. Exactly a year ago we were together working on [Left to
+Die](lefttodie), also built in Pygame. In that jam, I was the one who played
+more of the leadership role and did most of the code heavy lifting and
+mentorship. Now Andrew was the one who taking over and managing much the game
+and team this time around.
 
-While Andrew and I were pretty experienced with Pygame, however, the rest of the team was not. Faye and Kevin knew some Python, but they never used Pygame before. Over the jam, I think they picked it up pretty well though as Andrew and I helped them out and pair programmed at some points with them. Khai I think never touched Python before, so he struggled quite a bit with the whole project. He's a computer game science graduate, so there was some expectation that he would carry some weight, but unfortunately I have to say he didn't quite live up to his expectations.
+While Andrew and I were pretty experienced with Pygame, however, the rest of the
+team was not. Faye and Kevin knew some Python, but they never used Pygame
+before. Over the jam, I think they picked it up pretty well though as Andrew and
+I helped them out and pair programmed at some points with them. Khai I think
+never touched Python before, so he struggled quite a bit with the whole project.
+He's a computer game science graduate, so there was some expectation that he
+would carry some weight, but unfortunately I have to say he didn't quite live up
+to his expectations.
 
 <video autoPlay loop controls>
   <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/corgi_table_struggle.webm" />
 </video>
 
-Well, we'll get into that as we talk about individual responsibilities. I'll first talk about the start of the project. When we first got together, the first thing we did was hash out the main concept of the game. The theme was surprisingly difficult to think of an idea for, and I think even after we settled with an idea, we probably could have done better.
+Well, we'll get into that as we talk about individual responsibilities. I'll
+first talk about the start of the project. When we first got together, the first
+thing we did was hash out the main concept of the game. The theme was
+surprisingly difficult to think of an idea for, and I think even after we
+settled with an idea, we probably could have done better.
 
-I don't know what was so hard about the theme, but we just couldn't come up with great ideas that used it well. One of the first thoughts we had was of time: there was never enough time. This we thought could be implemented in some kind of race or other time based game. We also thought of something like there was never enough of some kind of object and possibly make a collection game based off of that. There were other possibilities we considered, like an endless runner of some kind or maybe something like a cookie clicker clone.
+I don't know what was so hard about the theme, but we just couldn't come up with
+great ideas that used it well. One of the first thoughts we had was of time:
+there was never enough time. This we thought could be implemented in some kind
+of race or other time based game. We also thought of something like there was
+never enough of some kind of object and possibly make a collection game based
+off of that. There were other possibilities we considered, like an endless
+runner of some kind or maybe something like a cookie clicker clone.
 
-Whatever ideas we had though, we felt were just too bland. I don't know. We had some basic generic gameplay ideas, but we had no interesting aesthetic to pair with it. So we tried working in the opposite direction. Since we were the Pygame group, we tried thinking of something with pies, a pun of Py, such as a pie collection game where you tried to collect/eat as many pies as you could. That showed a bit more promise, but we then ran into the problem of somehow making pie collection interesting, an issue we never really resolved.
+Whatever ideas we had though, we felt were just too bland. I don't know. We had
+some basic generic gameplay ideas, but we had no interesting aesthetic to pair
+with it. So we tried working in the opposite direction. Since we were the Pygame
+group, we tried thinking of something with pies, a pun of Py, such as a pie
+collection game where you tried to collect/eat as many pies as you could. That
+showed a bit more promise, but we then ran into the problem of somehow making
+pie collection interesting, an issue we never really resolved.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/no_pie.jpg" />
 
-In the end, we broke for dinner and tried to think of a concept over food. While waiting in line with Andrew and Kevin, I thought of another idea that I think we probably would have went with if it wasn't for Going Home. This idea was a block falling game, where blocks continued to fall and fall from the top of the screen. Your job was to stack these blocks and form a makeshift tower to climb upwards without getting squashed or trapped under. You get a high score based on height upon losing.
+In the end, we broke for dinner and tried to think of a concept over food. While
+waiting in line with Andrew and Kevin, I thought of another idea that I think we
+probably would have went with if it wasn't for Going Home. This idea was a block
+falling game, where blocks continued to fall and fall from the top of the
+screen. Your job was to stack these blocks and form a makeshift tower to climb
+upwards without getting squashed or trapped under. You get a high score based on
+height upon losing.
 
-I think this was a really interesting idea, and it fit really well with the there is never enough theme since you used these excessive blocks in order to climb higher. Theme-wise, I actually think this concept was better than Going Home. We chose to work with the latter, however, because we couldn't think of an aesthetic off the bat to pair the block concept with.
+I think this was a really interesting idea, and it fit really well with the
+there is never enough theme since you used these excessive blocks in order to
+climb higher. Theme-wise, I actually think this concept was better than Going
+Home. We chose to work with the latter, however, because we couldn't think of an
+aesthetic off the bat to pair the block concept with.
 
-Going Home started from a random suggestion by Kevin. He just kind of said out of the blue some kind of game with excessive wires and cables. I think he was thinking of something like defusing a bomb or connecting electric components with the correct wiring. That wasn't too bad of an idea. I want to say it was Andrew then that suggested something with electricity, like having a limited amount of energy to power components.
+Going Home started from a random suggestion by Kevin. He just kind of said out
+of the blue some kind of game with excessive wires and cables. I think he was
+thinking of something like defusing a bomb or connecting electric components
+with the correct wiring. That wasn't too bad of an idea. I want to say it was
+Andrew then that suggested something with electricity, like having a limited
+amount of energy to power components.
 
-Then I thought about scenarios where that would occur. My first idea was based on something like a company. The company had various sections and facilities, but due to some kind of electricity limitation, you could only power one part of it at a time. The goal was to make as much as money as possible, but you had to carefully decide which area you wanted working.
+Then I thought about scenarios where that would occur. My first idea was based
+on something like a company. The company had various sections and facilities,
+but due to some kind of electricity limitation, you could only power one part of
+it at a time. The goal was to make as much as money as possible, but you had to
+carefully decide which area you wanted working.
 
-I think this was okay, and since it seemed like a pretty concrete idea, the others liked it as well. But we ran into problems when we tried to think about what sections to power. I mean, what would you even be "powering" so to speak? The lights of the workplace? We couldn't think of any particularly unique properties to differentiate sections, so we threw away the company idea.
+I think this was okay, and since it seemed like a pretty concrete idea, the
+others liked it as well. But we ran into problems when we tried to think about
+what sections to power. I mean, what would you even be "powering" so to speak?
+The lights of the workplace? We couldn't think of any particularly unique
+properties to differentiate sections, so we threw away the company idea.
 
-Our next iteration is what you see now. With influence from FTL, I suggested some kind of ship that you had to power parts of. I never actually played FTL, but I saw little bits of it and understood the general gist of the game. Similar to FTL, you had certain facilities to control over, like engines, shields, and weapons. You faced enemies along the way and had to carefully micro your ship to defeat opponents and make it to your destination.
+Our next iteration is what you see now. With influence from FTL, I suggested
+some kind of ship that you had to power parts of. I never actually played FTL,
+but I saw little bits of it and understood the general gist of the game. Similar
+to FTL, you had certain facilities to control over, like engines, shields, and
+weapons. You faced enemies along the way and had to carefully micro your ship to
+defeat opponents and make it to your destination.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ftl_ss.jpg" />
 
-I think this idea was sound. It had a decent backstory and fit with the theme fairly well by having a limited amount of power that you could use. I don't know though, after finishing the jam, I think we could have linked the concept better to the theme somehow. Maybe we made the final version too easy or something, but I feel like something is just a little off. It's kind of hard to explain. It bugs me that the resource just seems kind of out of easily interchangeable and could be replaced with anything.
+I think this idea was sound. It had a decent backstory and fit with the theme
+fairly well by having a limited amount of power that you could use. I don't know
+though, after finishing the jam, I think we could have linked the concept better
+to the theme somehow. Maybe we made the final version too easy or something, but
+I feel like something is just a little off. It's kind of hard to explain. It
+bugs me that the resource just seems kind of out of easily interchangeable and
+could be replaced with anything.
 
-If we really wanted to focus on there is never enough power or there is never enough electricity for example, maybe we could done something like make all the components based on electricity and have like an electricity cannon or electricity shield. I don't know. It's food for thought. This would make the context of a ship a lot less believable, but in comparison, I like the block idea mentioned before more because it uses the excessive element, blocks, in a very straightforward manner to beat the game.
+If we really wanted to focus on there is never enough power or there is never
+enough electricity for example, maybe we could done something like make all the
+components based on electricity and have like an electricity cannon or
+electricity shield. I don't know. It's food for thought. This would make the
+context of a ship a lot less believable, but in comparison, I like the block
+idea mentioned before more because it uses the excessive element, blocks, in a
+very straightforward manner to beat the game.
 
-Well, with time running down, the team agreed that this was probably the best we had going forwards, so we stuck with it. Upon getting back, we started splitting up roles. Since Andrew was most familiar with the library, he handled most of the overarching code structure and helped the other programmers out with any Pygame questions. Starting off, he worked mainly on UI and displaying things.
+Well, with time running down, the team agreed that this was probably the best we
+had going forwards, so we stuck with it. Upon getting back, we started splitting
+up roles. Since Andrew was most familiar with the library, he handled most of
+the overarching code structure and helped the other programmers out with any
+Pygame questions. Starting off, he worked mainly on UI and displaying things.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/going_home_clouds.png" />
 <p className="caption">Andrew the undisputed cloud master</p>
 
-Faye seemed interested in working on game code, so she handled most of the main game logic dealing with components, damage, player, and enemies. Kevin was a little more lost since he was more inexperienced, and with a lot of major functionalities taken up by the others, he would work on very small things until I came in and peer programmed with him later. Finally, Khai worked on a console system that displayed messages on screen when given a string of text.
+Faye seemed interested in working on game code, so she handled most of the main
+game logic dealing with components, damage, player, and enemies. Kevin was a
+little more lost since he was more inexperienced, and with a lot of major
+functionalities taken up by the others, he would work on very small things until
+I came in and peer programmed with him later. Finally, Khai worked on a console
+system that displayed messages on screen when given a string of text.
 
-Since programming was pretty much all taken care of, I worked on all the artsy parts of the game. After getting back from dinner, I fleshed out all the concept design I wanted to do and decided what components we would have. In total there were five components, all of which got put in: engine, to move the ship; cannon, to attack enemies; shield, to protect against enemy attacks; health, to regenerate your overall ship health; and flashlight, to see during the night.
+Since programming was pretty much all taken care of, I worked on all the artsy
+parts of the game. After getting back from dinner, I fleshed out all the concept
+design I wanted to do and decided what components we would have. In total there
+were five components, all of which got put in: engine, to move the ship; cannon,
+to attack enemies; shield, to protect against enemy attacks; health, to
+regenerate your overall ship health; and flashlight, to see during the night.
 
-When we split up, I went back home with Khai. I had an extra mattress so I could conveniently house another person. I was really tired from the first night, but when I went to sleep, my poor sleeping habits kicked in, and I somehow woke up in the middle of the night. Sleep would definitely hurt my performance during this jam, as I felt randomly tired and sluggish throughout the day. I would try taking naps, but it was uncomfortable trying to sleep outside of home, and my body would just say nope, you're not going to sleep.
+When we split up, I went back home with Khai. I had an extra mattress so I could
+conveniently house another person. I was really tired from the first night, but
+when I went to sleep, my poor sleeping habits kicked in, and I somehow woke up
+in the middle of the night. Sleep would definitely hurt my performance during
+this jam, as I felt randomly tired and sluggish throughout the day. I would try
+taking naps, but it was uncomfortable trying to sleep outside of home, and my
+body would just say nope, you're not going to sleep.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/no_cat_sleep_for_you.gif" />
 
-I woke up at around 3, and since I was still at home, I could work on my desktop instead of my comparatively super slow laptop. I want to say I then had the most productive 4 to 5 hours of the jam where I grinded out pretty much all the art assets we needed for the project. When everyone was waking up in the morning, all the game play assets were pushed and for the most part finished.
+I woke up at around 3, and since I was still at home, I could work on my desktop
+instead of my comparatively super slow laptop. I want to say I then had the most
+productive 4 to 5 hours of the jam where I grinded out pretty much all the art
+assets we needed for the project. When everyone was waking up in the morning,
+all the game play assets were pushed and for the most part finished.
 
-During the night I also thought about how the game should work mechanics-wise, and the end result of the game is pretty close to what I imagined. There were some hiccups that popped up later along the way when the team wasn't on the same page or if we had to fix some broken parts, but for the most part I had a concrete direction of where I wanted the game to go. In hindsight, I think the current system works well. There's a lot of info and bars everywhere, but after playing the game a bit, I think it all comes make sense.
+During the night I also thought about how the game should work mechanics-wise,
+and the end result of the game is pretty close to what I imagined. There were
+some hiccups that popped up later along the way when the team wasn't on the same
+page or if we had to fix some broken parts, but for the most part I had a
+concrete direction of where I wanted the game to go. In hindsight, I think the
+current system works well. There's a lot of info and bars everywhere, but after
+playing the game a bit, I think it all comes make sense.
 
-The first bar and probably most important bar to keep track of was the energy bar. This recharged over the day but did not regenerate at night. Turning on any of the components drained power from this bar. The next bar was ship health. If this went to zero, you lost the game. The final bar under that was the cannon bar. If you turned on the cannon components, you started charging up the cannon bar to fire. Once it reached 100%, if there was an enemy on screen you shot and your cannon progress went back to 0.
+The first bar and probably most important bar to keep track of was the energy
+bar. This recharged over the day but did not regenerate at night. Turning on any
+of the components drained power from this bar. The next bar was ship health. If
+this went to zero, you lost the game. The final bar under that was the cannon
+bar. If you turned on the cannon components, you started charging up the cannon
+bar to fire. Once it reached 100%, if there was an enemy on screen you shot and
+your cannon progress went back to 0.
 
-On top of keeping track of these stats, each component had their own properties as well. Over time, a component lost its health, and only by turning it on and activating it does it regain health. If a component goes to 0, it becomes disabled, and only after recharging it pass I think maybe 25% health, did it activate again and do work. For the most part, all the components worked like this, though shields were a bit special. When the ship took damage, the shields were the first to receive damage. If both shields went down, you then received a lot more damage to your overall health and to all your components from attacks.
+On top of keeping track of these stats, each component had their own properties
+as well. Over time, a component lost its health, and only by turning it on and
+activating it does it regain health. If a component goes to 0, it becomes
+disabled, and only after recharging it pass I think maybe 25% health, did it
+activate again and do work. For the most part, all the components worked like
+this, though shields were a bit special. When the ship took damage, the shields
+were the first to receive damage. If both shields went down, you then received a
+lot more damage to your overall health and to all your components from attacks.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/dual_wield_shields.png" />
 
-I guess now explaining it, this can get quite a bit confusing. It's understandable if another developer or a player gets a bit lost from trying to comprehend what's going on. There're a lot bars everywhere, some that behave differently than others, with little differentiation. A lot of components have unique properties, and only after playing for a while does a player get used to the subtleties of the game.
+I guess now explaining it, this can get quite a bit confusing. It's
+understandable if another developer or a player gets a bit lost from trying to
+comprehend what's going on. There're a lot bars everywhere, some that behave
+differently than others, with little differentiation. A lot of components have
+unique properties, and only after playing for a while does a player get used to
+the subtleties of the game.
 
-I think the excessive amount of meters and bars was another reason why this game didn't follow the theme as well as it could. Our original theme, there is never enough power, feels like it gets lost when there's so many other things to worry about, i.e. health, components, etc. We might as well have changed it to there is never enough micromanagement and maybe focused more heavily on that. I don't know. I think as an overall game Going Home plays fine, but it lost the sense of the theme as we worked on it.
+I think the excessive amount of meters and bars was another reason why this game
+didn't follow the theme as well as it could. Our original theme, there is never
+enough power, feels like it gets lost when there's so many other things to worry
+about, i.e. health, components, etc. We might as well have changed it to there
+is never enough micromanagement and maybe focused more heavily on that. I don't
+know. I think as an overall game Going Home plays fine, but it lost the sense of
+the theme as we worked on it.
 
-Well anyways, when the team got back together in the morning to our working area, I explained all my work to them and presented a layout image describing how I wanted to see the UI pieced together. We then talked a little further about the game, and that was when I realized I forgot to include screen backgrounds, e.g. for the main menu or game over screens.
+Well anyways, when the team got back together in the morning to our working
+area, I explained all my work to them and presented a layout image describing
+how I wanted to see the UI pieced together. We then talked a little further
+about the game, and that was when I realized I forgot to include screen
+backgrounds, e.g. for the main menu or game over screens.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/going_home_layout.png" />
 
-So most of my morning was spent on making the screens. I was thinking about the title of the game as well, and I believe already from the first day, I wanted to call it Going Home, a nod to the indie game Gone Home. It was a pretty obscure reference though as half the team never heard of or played the game before, but I liked the connection. As the proejct progressed, I would end up taking quite a bit of inspiration from Gone Home.
+So most of my morning was spent on making the screens. I was thinking about the
+title of the game as well, and I believe already from the first day, I wanted to
+call it Going Home, a nod to the indie game Gone Home. It was a pretty obscure
+reference though as half the team never heard of or played the game before, but
+I liked the connection. As the proejct progressed, I would end up taking quite a
+bit of inspiration from Gone Home.
 
-For the main menu and title screen, I basically tried to mimic as closely as I could the Gone Home main screen. The Going Home title was hand drawn to match Gone Home's style. I put in the end house indicator that I worked on for the main game, now resized bigger and with a few edits. The trees I replaced with a bunch of tentacles. I think I did a good job, although I doubt many people would actually recognize the connection. Maybe someone will get parts of the joke if they've played the game before, but I think that's about it.
+For the main menu and title screen, I basically tried to mimic as closely as I
+could the Gone Home main screen. The Going Home title was hand drawn to match
+Gone Home's style. I put in the end house indicator that I worked on for the
+main game, now resized bigger and with a few edits. The trees I replaced with a
+bunch of tentacles. I think I did a good job, although I doubt many people would
+actually recognize the connection. Maybe someone will get parts of the joke if
+they've played the game before, but I think that's about it.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/gone_home_main.png" />
 <p className="caption">For comparison</p>
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/going_home_banner.png" />
 
-The other screens for win and lose were based off of the main menu. When you died, you found yourself at the game over screen where all the UI and ship were tipped and turned over. When you won, you found yourself at the got home screen. That about concludes all my art work. The rest of my art edits were made to adjust whatever I already did or add some small special effects.
+The other screens for win and lose were based off of the main menu. When you
+died, you found yourself at the game over screen where all the UI and ship were
+tipped and turned over. When you won, you found yourself at the got home screen.
+That about concludes all my art work. The rest of my art edits were made to
+adjust whatever I already did or add some small special effects.
 
-After going to lunch and coming back, I tried taking a nap on the couches in the lobby area. I even brought a pillow with me just for that purpose, but for some reason, I couldn't fall asleep even though I was getting pretty tired. After sitting there for an hour or so, I got back up and tried to work on other things.
+After going to lunch and coming back, I tried taking a nap on the couches in the
+lobby area. I even brought a pillow with me just for that purpose, but for some
+reason, I couldn't fall asleep even though I was getting pretty tired. After
+sitting there for an hour or so, I got back up and tried to work on other
+things.
 
-After art, my next task was sound, a usually neglected part of a project. I was somewhat inspired from Ted from my previous game jam, [Quaternion](http://maxrchung.com/projects/quaterniontoodrunk4atitlebasicallyatuple), to give music production a shot. The previous night I installed FL Studio, and that afternoon I started trying to use it to make music.
+After art, my next task was sound, a usually neglected part of a project. I was
+somewhat inspired from Ted from my previous game jam,
+[Quaternion](http://maxrchung.com/projects/quaterniontoodrunk4atitlebasicallyatuple),
+to give music production a shot. The previous night I installed FL Studio, and
+that afternoon I started trying to use it to make music.
 
-It was really hard diving into music production and trying to get something out of it. I looked up a few guides to help me out, but even with some basic direction, I guess I wasn't that musically inclined or something, and I couldn't make something I liked. I think without spending a lot of time getting into the program and trying to produce music, I wouldn't have a lot of success with making music.
+It was really hard diving into music production and trying to get something out
+of it. I looked up a few guides to help me out, but even with some basic
+direction, I guess I wasn't that musically inclined or something, and I couldn't
+make something I liked. I think without spending a lot of time getting into the
+program and trying to produce music, I wouldn't have a lot of success with
+making music.
 
-My team wanted something original and made from scratch, but after struggling a long time with that, I gave up on the idea and looked to try mixing songs and sound snippets together instead. My first attempt at this wanted to use space jam somehow since I was a big fan of space jam remixes, but I couldn't find something that paired well with it that fit the game as well.
+My team wanted something original and made from scratch, but after struggling a
+long time with that, I gave up on the idea and looked to try mixing songs and
+sound snippets together instead. My first attempt at this wanted to use space
+jam somehow since I was a big fan of space jam remixes, but I couldn't find
+something that paired well with it that fit the game as well.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/jamming_home.png" />
 
-It's kind of weird, but as chaotic as the game played, I wanted the background music to be very ambient and calming. I don't know. That was just the feeling I got from the game. I browsed through my calm music collection, looked through some Aria music, and I eventually settled with a song from Gone Home itself, the title and introductory music score I believe.
+It's kind of weird, but as chaotic as the game played, I wanted the background
+music to be very ambient and calming. I don't know. That was just the feeling I
+got from the game. I browsed through my calm music collection, looked through
+some Aria music, and I eventually settled with a song from Gone Home itself, the
+title and introductory music score I believe.
 
-I was going to just go with the Gone Home song, but my team on the other hand were still against using an already made song. I guess they were pretty adamant about wanting me to make a song from scratch, and in their eyes, I still had a day and half to complete it, so I didn't need to rush.
+I was going to just go with the Gone Home song, but my team on the other hand
+were still against using an already made song. I guess they were pretty adamant
+about wanting me to make a song from scratch, and in their eyes, I still had a
+day and half to complete it, so I didn't need to rush.
 
-But from my point of view, I felt like we were getting very pressured for time. Programming was not making a lot of easy progress. This game had no animations to worry about, which cut out some of the pretty factor and art work we needed to worry about, but the game logic was quite complicated since there were so many unique components and interconnecting parts. Fitting all our different parts together was proving to be difficult.
+But from my point of view, I felt like we were getting very pressured for time.
+Programming was not making a lot of easy progress. This game had no animations
+to worry about, which cut out some of the pretty factor and art work we needed
+to worry about, but the game logic was quite complicated since there were so
+many unique components and interconnecting parts. Fitting all our different
+parts together was proving to be difficult.
 
-Kevin was working with time I believe during the second day and handling when enemy spawns occurred. Andrew worked on displaying the UI on screen and managing bars and meters. Faye worked on the game logic code. By the second day's end, I think we had the basic groundwork of all our parts mashed together, but it was far from done, and with only a day left, I wasn't sure we could make it.
+Kevin was working with time I believe during the second day and handling when
+enemy spawns occurred. Andrew worked on displaying the UI on screen and managing
+bars and meters. Faye worked on the game logic code. By the second day's end, I
+think we had the basic groundwork of all our parts mashed together, but it was
+far from done, and with only a day left, I wasn't sure we could make it.
 
-Khai, on the other hand, seemed to be struggling the most of out of us. He only had one task, to make a console system that displayed messages into a window on screen, but throughout all of his many hours of work, he got nothing working. I mean, it wasn't like he wasn't putting in the effort. He worked solely on this functionality for all of Saturday and most of Sunday before he left early, but it just didn't click with him, and he left us with nothing.
+Khai, on the other hand, seemed to be struggling the most of out of us. He only
+had one task, to make a console system that displayed messages into a window on
+screen, but throughout all of his many hours of work, he got nothing working. I
+mean, it wasn't like he wasn't putting in the effort. He worked solely on this
+functionality for all of Saturday and most of Sunday before he left early, but
+it just didn't click with him, and he left us with nothing.
 
 <video autoPlay controls loop>
   <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/triple_goal.webm" />
 </video>
 
-I don't know. These kinds of things do happen I suppose. But as a long time VGDC member and a graduate of a computer science program, Khai should have a lot of experience under his belt. I think it's perfectly reasonable to expect some kind of basic output from him that he could do maybe not the simplest of tasks, but at least a single task, yet he betrayed my expectations. Maybe I'm being too harsh on him since he was new to Python, but he treats and holds himself up to be a capable developer, and this project certainly has changed my view of him. It's disappointing, really.
+I don't know. These kinds of things do happen I suppose. But as a long time VGDC
+member and a graduate of a computer science program, Khai should have a lot of
+experience under his belt. I think it's perfectly reasonable to expect some kind
+of basic output from him that he could do maybe not the simplest of tasks, but
+at least a single task, yet he betrayed my expectations. Maybe I'm being too
+harsh on him since he was new to Python, but he treats and holds himself up to
+be a capable developer, and this project certainly has changed my view of him.
+It's disappointing, really.
 
-Well anyways, returning back to my sound work, I decided to take a break from the music for now and work on the sound effects for the game first, then I could maybe return to the soundtrack later. The first sound I did was a recording of my voice. We decided the enemies of the game to be tentacles, and I coincidentally often voiced a characteristic slurping noise as a joke among my friends. So using my pretty crappy laptop, I looked for a quiet corner of the building to record the sound.
+Well anyways, returning back to my sound work, I decided to take a break from
+the music for now and work on the sound effects for the game first, then I could
+maybe return to the soundtrack later. The first sound I did was a recording of
+my voice. We decided the enemies of the game to be tentacles, and I
+coincidentally often voiced a characteristic slurping noise as a joke among my
+friends. So using my pretty crappy laptop, I looked for a quiet corner of the
+building to record the sound.
 
 <audio autoPlay controls>
   <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/tentacle.ogg" />
@@ -136,84 +350,243 @@ Well anyways, returning back to my sound work, I decided to take a break from th
 
 <p className="caption">Source</p>
 
-It's not the most professional of quality, but I think the slurp fit the game well as a joke. The other sound effects, like selecting/deselecting compartments, attacking, and receiving damage, were actually at first not recorded through my voice. I only wanted to record the tentacle sound because that was something particularly humorous of my me, but I didn't know if I wanted to record my own voice for the other effects too.
+It's not the most professional of quality, but I think the slurp fit the game
+well as a joke. The other sound effects, like selecting/deselecting
+compartments, attacking, and receiving damage, were actually at first not
+recorded through my voice. I only wanted to record the tentacle sound because
+that was something particularly humorous of my me, but I didn't know if I wanted
+to record my own voice for the other effects too.
 
-I tried used JFXR for some time to make the effects, but after tinkering for a while I couldn't get the right effects I wanted. Eventually I reverted back to using BFXR. I finished a full set of sound effects for the game that day, but I wasn't happy with the results and wasn't exactly sure how to fix the issue. It just felt off. The tentacle effect sounded out of place compared to the other 8-bit BFXR sounds. I wanted to keep the tentacle sound for sure for comedic value, but I wasn't sure what to do for the other effects.
+I tried used JFXR for some time to make the effects, but after tinkering for a
+while I couldn't get the right effects I wanted. Eventually I reverted back to
+using BFXR. I finished a full set of sound effects for the game that day, but I
+wasn't happy with the results and wasn't exactly sure how to fix the issue. It
+just felt off. The tentacle effect sounded out of place compared to the other
+8-bit BFXR sounds. I wanted to keep the tentacle sound for sure for comedic
+value, but I wasn't sure what to do for the other effects.
 
-By the day's end, the music and sound were left in a pretty shabby place. My goal was to fix and finish the sound issues the next morning as fast as possible. I wanted to switch over and start coding with team. I knew the other programmers were struggling a bit because of the complexity of the game, and they could use as much help I could offer.
+By the day's end, the music and sound were left in a pretty shabby place. My
+goal was to fix and finish the sound issues the next morning as fast as
+possible. I wanted to switch over and start coding with team. I knew the other
+programmers were struggling a bit because of the complexity of the game, and
+they could use as much help I could offer.
 
-I woke up very early again, though this time significantly later than the 3AM from before. My first task was to resolve the music issues. I decided to stick with the Gone Home song that I found earlier but also layer some additional effects over it. Looking for samples online, I found some generic ocean wave and seagull sounds and mixed these along with the main song. I'm pretty proud of the end result. It was close to what I wanted to achieve initially. My team I think may still be a little sad that it wasn't an original song, but time was running down and this was the best I could do.
+I woke up very early again, though this time significantly later than the 3AM
+from before. My first task was to resolve the music issues. I decided to stick
+with the Gone Home song that I found earlier but also layer some additional
+effects over it. Looking for samples online, I found some generic ocean wave and
+seagull sounds and mixed these along with the main song. I'm pretty proud of the
+end result. It was close to what I wanted to achieve initially. My team I think
+may still be a little sad that it wasn't an original song, but time was running
+down and this was the best I could do.
 
 <video autoPlay loop controls>
   <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/super_long_surf.webm" />
 </video>
 
-I actually didn't end up using FL Studio at all for final sounds. Since I wasn't producing music anymore, I did all my work through Audacity, a program that I was a little more familiar with since I used it briefly in the past. For all my cutting and recording purposes, it was through that program. I did gain a bit of experience with FL Studio from some tinkering with it, so I don't think my time with it was all wasted. We'll see in the future if I ever get a chance or want to take a stab at music again.
+I actually didn't end up using FL Studio at all for final sounds. Since I wasn't
+producing music anymore, I did all my work through Audacity, a program that I
+was a little more familiar with since I used it briefly in the past. For all my
+cutting and recording purposes, it was through that program. I did gain a bit of
+experience with FL Studio from some tinkering with it, so I don't think my time
+with it was all wasted. We'll see in the future if I ever get a chance or want
+to take a stab at music again.
 
-When we got back together, I started programming immediately. My first tasks were pretty basic, putting my music into the game and setting up a SoundManager class, AKA copying whatever work I did for another Pygame project over. There's an odd effect that happens where the music is pitched down in game, though the actual file is pitched higher. I don't know what's causing it. I'm pretty sure it's a problem with Pygame. This didn't affect the music too heavily, so I let the problem go.
+When we got back together, I started programming immediately. My first tasks
+were pretty basic, putting my music into the game and setting up a SoundManager
+class, AKA copying whatever work I did for another Pygame project over. There's
+an odd effect that happens where the music is pitched down in game, though the
+actual file is pitched higher. I don't know what's causing it. I'm pretty sure
+it's a problem with Pygame. This didn't affect the music too heavily, so I let
+the problem go.
 
-There was also another problem with the music where originally I used an OGG format because MP3 was a not well supported with Pygame and WAV had a much larger file size. Apparently, however, there was a bug where OGG files had problems with looping. I think it either didn't loop at all or there was an annoying buzz that sounded when the file looped over. To fix the issue I switched to WAV. One of the reasons why the size of the game is so big is because of that. Also, we didn't remove my PSD files from the Art folder, so that also contributed to some of the bloat.
+There was also another problem with the music where originally I used an OGG
+format because MP3 was a not well supported with Pygame and WAV had a much
+larger file size. Apparently, however, there was a bug where OGG files had
+problems with looping. I think it either didn't loop at all or there was an
+annoying buzz that sounded when the file looped over. To fix the issue I
+switched to WAV. One of the reasons why the size of the game is so big is
+because of that. Also, we didn't remove my PSD files from the Art folder, so
+that also contributed to some of the bloat.
 
-I then quickly put in a couple states to display the Start, Lose, and Win screens. We couldn't verify the transitions just yet, but it was simple to put them in, and I at least wanted to see my beautiful main screen when starting the game. After that, I moved on to do a lot of paired programming with Kevin. Kevin didn't seem to be doing much so far, so I wanted to collaborate with him to push him to work, have him explain what was going on to me, and help him if he had any Pygame troubles.
+I then quickly put in a couple states to display the Start, Lose, and Win
+screens. We couldn't verify the transitions just yet, but it was simple to put
+them in, and I at least wanted to see my beautiful main screen when starting the
+game. After that, I moved on to do a lot of paired programming with Kevin. Kevin
+didn't seem to be doing much so far, so I wanted to collaborate with him to push
+him to work, have him explain what was going on to me, and help him if he had
+any Pygame troubles.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/dogs_in_basket.jpg" />
 
-I actually really like coding with another person side by side. It's a lot of fun yelling at code together while picking our brains to fix an issue. You also keep on task better with someone lurking over you. I really want to encourage paired programming a lot more on future projects. It's great for teaching a junior coder what to do but is still incredibly productive when working with someone experienced.
+I actually really like coding with another person side by side. It's a lot of
+fun yelling at code together while picking our brains to fix an issue. You also
+keep on task better with someone lurking over you. I really want to encourage
+paired programming a lot more on future projects. It's great for teaching a
+junior coder what to do but is still incredibly productive when working with
+someone experienced.
 
-Kevin and I fixed a whole boatload of bugs and issues. Faye laid the initial groundwork for the game logic, but there were a lot of parts that needed adjustments and fixing. It was unfortunate that she couldn't make it to our meeting until later that day I believe, but it gave Kevin and I a chance to carveour way with the game programming however we liked.
+Kevin and I fixed a whole boatload of bugs and issues. Faye laid the initial
+groundwork for the game logic, but there were a lot of parts that needed
+adjustments and fixing. It was unfortunate that she couldn't make it to our
+meeting until later that day I believe, but it gave Kevin and I a chance to
+carveour way with the game programming however we liked.
 
-I wouldn't say Faye's programming was too terrible, though it was somewhat difficult to navigate. Some things were definitely hard to understand or find, but eventually after working with the code for a while together, I think Kevin and I got pretty familiar with it. We made a huge bug list to address and actually put Trello to good use by using it to track all the things we needed to look at.
+I wouldn't say Faye's programming was too terrible, though it was somewhat
+difficult to navigate. Some things were definitely hard to understand or find,
+but eventually after working with the code for a while together, I think Kevin
+and I got pretty familiar with it. We made a huge bug list to address and
+actually put Trello to good use by using it to track all the things we needed to
+look at.
 
-Some conflicts we had with Faye were matters of misunderstanding. I mentioned this before, but I probably didn't get my game mechanic ideas fully across to the team since there was a lot to take in, so there were some disconnects between how myself and the others approached the game. Since Kevin and I had free reign over the code, we started restructuring and throwing out a lot of parts of the game to bring it up to a stable state.
+Some conflicts we had with Faye were matters of misunderstanding. I mentioned
+this before, but I probably didn't get my game mechanic ideas fully across to
+the team since there was a lot to take in, so there were some disconnects
+between how myself and the others approached the game. Since Kevin and I had
+free reign over the code, we started restructuring and throwing out a lot of
+parts of the game to bring it up to a stable state.
 
-I don't remember if Faye got upset at us when we met back together since we gutted out a large chunk of her code. I think in the end she was fine with our changes and more worried about refamiliarizing herself with what we did. I wouldn't say Kevin and I made the cleanest of changes, as we wanted to at least try and preserve her code as much as possible by making some hack fixes. With the help of Andrew who was there to work out the UI kinks, we started to make a lot of good progress, and I think we were quickly reaching solid grounds of a game.
+I don't remember if Faye got upset at us when we met back together since we
+gutted out a large chunk of her code. I think in the end she was fine with our
+changes and more worried about refamiliarizing herself with what we did. I
+wouldn't say Kevin and I made the cleanest of changes, as we wanted to at least
+try and preserve her code as much as possible by making some hack fixes. With
+the help of Andrew who was there to work out the UI kinks, we started to make a
+lot of good progress, and I think we were quickly reaching solid grounds of a
+game.
 
 <video autoPlay controls loop>
   <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_climbing.webm" />
 </video>
 
-After lunch, I took a bit time out to rerecord the sound effects. This was when I decided to throw out the 8-bit sounds and instead use my voice for all of them. I think it only made sense since the tentacle sound was done by me. It was actually really embarrassing recording my voice this time. I don't know what it is about recording, but constantly rerecording stupid sounds in the vicinity of my team just made me feel really uncomfortable. Oh well, I think the overall comedic effect was good. We didn't have original music but we certainly had original sound effects.
+After lunch, I took a bit time out to rerecord the sound effects. This was when
+I decided to throw out the 8-bit sounds and instead use my voice for all of
+them. I think it only made sense since the tentacle sound was done by me. It was
+actually really embarrassing recording my voice this time. I don't know what it
+is about recording, but constantly rerecording stupid sounds in the vicinity of
+my team just made me feel really uncomfortable. Oh well, I think the overall
+comedic effect was good. We didn't have original music but we certainly had
+original sound effects.
 
-After adding the SFX, we played the first iteration of our game. We made a few changes and then reran it. And then we repeated this again and again, all the way up to the end of the jam. It turned out that balance would be a huge issue for us and we needed to do a lot of playtesting. There were a ton of interconnected parts in the game, so changing one feature could break everything else and throw the system into whack.
+After adding the SFX, we played the first iteration of our game. We made a few
+changes and then reran it. And then we repeated this again and again, all the
+way up to the end of the jam. It turned out that balance would be a huge issue
+for us and we needed to do a lot of playtesting. There were a ton of
+interconnected parts in the game, so changing one feature could break everything
+else and throw the system into whack.
 
-Kevin and I handled most of the balance changes as the other members had other tasks. Khai at this point left the jam early with his console messages still in a broken state. After a bit of contemplating, Faye said she would handle it and began reworking all the console code to a usable state. It took her about 3 hours to fix, but she managed to do it. Meanwhile, Andrew focused on adding in a few more complicated features like the light component of the ship.
+Kevin and I handled most of the balance changes as the other members had other
+tasks. Khai at this point left the jam early with his console messages still in
+a broken state. After a bit of contemplating, Faye said she would handle it and
+began reworking all the console code to a usable state. It took her about 3
+hours to fix, but she managed to do it. Meanwhile, Andrew focused on adding in a
+few more complicated features like the light component of the ship.
 
-At one point Kevin and I thought we were at a pretty stable state, so I went off to make an instructions menu that the team agreed should be put in to help the players. While we had some visual elements to help explain how parts related with one another, it was difficult to fully tell how everything worked, so we put in a basic screen right before the gameplay to explain how everything came together.
+At one point Kevin and I thought we were at a pretty stable state, so I went off
+to make an instructions menu that the team agreed should be put in to help the
+players. While we had some visual elements to help explain how parts related
+with one another, it was difficult to fully tell how everything worked, so we
+put in a basic screen right before the gameplay to explain how everything came
+together.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/going_home_instructions.png" />
 
-Meanwhile, Kevin was playtesting the game some more and out of the blue found a huge problem: abusing compartments. He found that if you only powered double cannons and a healing station, even though your shields died, you would still be able to defeat all the enemies while regenerating enough health and win the game. This really stumped us, because we wanted to make sure shields served a purpose.
+Meanwhile, Kevin was playtesting the game some more and out of the blue found a
+huge problem: abusing compartments. He found that if you only powered double
+cannons and a healing station, even though your shields died, you would still be
+able to defeat all the enemies while regenerating enough health and win the
+game. This really stumped us, because we wanted to make sure shields served a
+purpose.
 
-It was difficult to decide how to fix the issue. Should we lower the damage of the cannon? Should we lower the healing amount? Should we increase the damage of tentacles? Should we increase the amount of damage taken by your ship if your shields were down? It was all really confusing since affecting one thing affected a lot, and I actually don't even remember which one of the above paths we took to resolve the issue. Keep in mind we also had to keep normal play balanced as well.
+It was difficult to decide how to fix the issue. Should we lower the damage of
+the cannon? Should we lower the healing amount? Should we increase the damage of
+tentacles? Should we increase the amount of damage taken by your ship if your
+shields were down? It was all really confusing since affecting one thing
+affected a lot, and I actually don't even remember which one of the above paths
+we took to resolve the issue. Keep in mind we also had to keep normal play
+balanced as well.
 
-When we finally thought we reached a conclusion, I found another cookiecutter build, as we so called it, where this time if you did the opposite and only used shields and the healing station, you could sustain all damage. Again, I don't know what we did to address the issue, but after fixing both cannon and shield abuse, we thought we were at a pretty good state.
+When we finally thought we reached a conclusion, I found another cookiecutter
+build, as we so called it, where this time if you did the opposite and only used
+shields and the healing station, you could sustain all damage. Again, I don't
+know what we did to address the issue, but after fixing both cannon and shield
+abuse, we thought we were at a pretty good state.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/kitty_slide.gif" />
 
-The balance was disturbed yet again however, when Faye pushed her console code. Somehow her changes reverted the game back to an older state. We didn't realize this until we asked a third party to help playtest for us that the spawning rate was way too fast and tentacles were appearing right after one another. After trying ourselves, we couldn't beat the game again. We tried to copy back the old changes, but for some reason we couldn't get back to that sweet balanced spot from before.
+The balance was disturbed yet again however, when Faye pushed her console code.
+Somehow her changes reverted the game back to an older state. We didn't realize
+this until we asked a third party to help playtest for us that the spawning rate
+was way too fast and tentacles were appearing right after one another. After
+trying ourselves, we couldn't beat the game again. We tried to copy back the old
+changes, but for some reason we couldn't get back to that sweet balanced spot
+from before.
 
-Maybe it was all just a placebo and the old game was easier than we imagined or maybe we missed a change elsewhere. Regardless, with time running out, we decided the best solution was to make the game a little easier and fairly beatable for us. We changed the spawning rate to be a little slower than what we had before. In retrospect, I think this was a fine change. A lot of new players have no idea what's going on, so making the game a little more accessible was a bit more welcoming.
+Maybe it was all just a placebo and the old game was easier than we imagined or
+maybe we missed a change elsewhere. Regardless, with time running out, we
+decided the best solution was to make the game a little easier and fairly
+beatable for us. We changed the spawning rate to be a little slower than what we
+had before. In retrospect, I think this was a fine change. A lot of new players
+have no idea what's going on, so making the game a little more accessible was a
+bit more welcoming.
 
-The console, with a little adjustment, worked well with Faye's version. Multi-line messages also worked and using it we were able to create an intro story for the game. I wasn't a part of writing the story, but the others made some kind funny tale explaining how the infamous Wax Chug da Gwad was making her way home.
+The console, with a little adjustment, worked well with Faye's version.
+Multi-line messages also worked and using it we were able to create an intro
+story for the game. I wasn't a part of writing the story, but the others made
+some kind funny tale explaining how the infamous Wax Chug da Gwad was making her
+way home.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/going_home_story.png" />
 
-And that was pretty much it for the jam. Andrew made a build for the game, and we submitted it. Actually, speaking about builds, Andrew did a bunch more work after the jam ended to correct some crashing errors. Apparently, when certain people tried running the game, it would crash as soon it was opened. After investigating the issue for a while, he finally found a suitable fix.
+And that was pretty much it for the jam. Andrew made a build for the game, and
+we submitted it. Actually, speaking about builds, Andrew did a bunch more work
+after the jam ended to correct some crashing errors. Apparently, when certain
+people tried running the game, it would crash as soon it was opened. After
+investigating the issue for a while, he finally found a suitable fix.
 
-I'm not sure of the specifics, but it seemed like there were a couple things wrong with the building process. It could have been partly on Pygame's end, but it also seemed like cx_freeze, what we used to generate the executable, also had problems. To fix the issue, he updated Python, Pygame, and cx_freeze to all newer versions to support I think Python 3.4. Along with that, he also threw out any use of the Pygame font class and replaced it with Python's standard font class. These changes seemed to fix all the problems.
+I'm not sure of the specifics, but it seemed like there were a couple things
+wrong with the building process. It could have been partly on Pygame's end, but
+it also seemed like cx_freeze, what we used to generate the executable, also had
+problems. To fix the issue, he updated Python, Pygame, and cx_freeze to all
+newer versions to support I think Python 3.4. Along with that, he also threw out
+any use of the Pygame font class and replaced it with Python's standard font
+class. These changes seemed to fix all the problems.
 
-As for our results at the jam, I'm a little sad that we didn't place in the top 3. I thought we had a really polished game. The art and sound were all original and complete and I felt fairly well done. Maybe there were still crashing issues, and the game couldn't run on some people's computers. In the end I guess it boiled down to our game idea. As I've said before, maybe we didn't hone in on the theme enough.
+As for our results at the jam, I'm a little sad that we didn't place in the top 3. I thought we had a really polished game. The art and sound were all original
+and complete and I felt fairly well done. Maybe there were still crashing
+issues, and the game couldn't run on some people's computers. In the end I guess
+it boiled down to our game idea. As I've said before, maybe we didn't hone in on
+the theme enough.
 
-That's not to say the top 3 didn't deserve their spots. The 1st place finisher looked absolutely amazing and was made in 3D. 2nd place was a funny meme game, and they had a ton of good looking levels. 3rd place required a lot of strategy and seemed fun to play. Going Home is 1st in my heart though. Personal projects I've worked on are always the best.
+That's not to say the top 3 didn't deserve their spots. The 1st place finisher
+looked absolutely amazing and was made in 3D. 2nd place was a funny meme game,
+and they had a ton of good looking levels. 3rd place required a lot of strategy
+and seemed fun to play. Going Home is 1st in my heart though. Personal projects
+I've worked on are always the best.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/statacus_main.png" />
-<p className="caption">
-  First place -{" "}
-  <a href="http://vgdc-uci.com/index.php/2016-winter-game-jam/#Team11">
-    Statacus
-  </a>
-</p>
+<Caption
+  value={
+    <>
+      First place -{" "}
+      <Link href="http://vgdc-uci.com/index.php/2016-winter-game-jam/#Team11">
+        Statacus
+      </Link>
+    </>
+  }
+/>
 
-I have to say though, in some ways I felt we were gated programming and design-wise because we were a Pygame project. We had quite a bit more complex programming to deal with since we didn't have the quick accessibility that every single other project had, all made in Unity minus 1 which was in Unreal. I can see the efficiency of using an engine, but at the same time, I have a ton of fun and learn so much working with lower level and seemingly barbaric libraries. Andrew and I joke that we didn't mind doing another Pygame game jam together.
+I have to say though, in some ways I felt we were gated programming and
+design-wise because we were a Pygame project. We had quite a bit more complex
+programming to deal with since we didn't have the quick accessibility that every
+single other project had, all made in Unity minus 1 which was in Unreal. I can
+see the efficiency of using an engine, but at the same time, I have a ton of fun
+and learn so much working with lower level and seemingly barbaric libraries.
+Andrew and I joke that we didn't mind doing another Pygame game jam together.
 
-Welp, that's pretty much it. With this post finished, I've finally caught up to all my past projects. It took a draining 12 weeks to finish the site and these write ups, and I'm not even sure if it's worth the time in the end, but now I can breathe a sign of relief and lock these projects away. It's been an interesting quarter for me. My programming skills have certainly rusted away by now, but now it's full on coding here on out.
+Welp, that's pretty much it. With this post finished, I've finally caught up to
+all my past projects. It took a draining 12 weeks to finish the site and these
+write ups, and I'm not even sure if it's worth the time in the end, but now I
+can breathe a sign of relief and lock these projects away. It's been an
+interesting quarter for me. My programming skills have certainly rusted away by
+now, but now it's full on coding here on out.

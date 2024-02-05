@@ -28,7 +28,7 @@ export default function ProjectDescription({
       <EvergreenLink
         is={Link}
         href={`/projects/${slug}`}
-        width={128}
+        width={96}
         display="flex"
         flexShrink={0}
         borderRadius={majorScale(1)}
@@ -37,7 +37,7 @@ export default function ProjectDescription({
           <Image
             src={thumbnail}
             alt={title}
-            width={128}
+            width={96}
             // Counteract main styling, this looks pretty bad >_<
             style={{
               maxWidth: "100%",

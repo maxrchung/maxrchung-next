@@ -1,197 +1,248 @@
-This is a Twitter bot that retweets posts from CLG related Twitter accounts. Every five minutes, it looks for new Tweets from the above accounts and, if found, retweets them. It ignores reply Tweets. Neither this bot nor I are affiliated with CLG. This is a personal project I'm maintaining.
+import {
+  Paragraph,
+  UnorderedList,
+  ListItem,
+  Link,
+  majorScale,
+} from "evergreen-ui";
+
+This is a Twitter bot that retweets posts from CLG related Twitter accounts.
+Every five minutes, it looks for new Tweets from the above accounts and, if
+found, retweets them. It ignores reply Tweets. Neither this bot nor I are
+affiliated with CLG. This is a personal project I'm maintaining.
 
 - Made by: Max Chung
 - Made with: Node.js
 - Twitter: [CLG Retweet](https://twitter.com/clgretweet)
 - Repository: [clgretweet](https://github.com/maxrchung/clgretweet)
 
-## Currently Following
-
-<p>CS:GO (Blue)</p>
-<ul>
-  <li>
-    <a href="https://twitter.com/CLGFonzY">@CLGFonzY</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/clgkoosta">@CLGkoosta</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/CLG_Nahte">@CLG_Nahte</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/FNScsgo">@FNScsgo</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/reltuC">@reltuc</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/imapet1">@imapet1</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/schwartzbruder">@schwartzbruder</a>
-  </li>
-</ul>
-<p>CS:GO (Red)</p>
-<ul>
-  <li>
-    <a href="https://twitter.com/benitanov">@benitanov</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/dabearsniner">@dabearsniner</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/dianecsgo">@dianeCSGO</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/klaudiaxx9">@klaudiaxx9</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/missharvey">@missharvey</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/omgitspotter">@omgitspotter</a>
-  </li>
-</ul>
-<p>General</p>
-<ul>
-  <li>
-    <a href="https://twitter.com/bryanchen">@BryanChen</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/CLGHaru">@CLGHaru</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/CLG_HotshotGG">@CLG_HotshotGG</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/DevinNash">@DevinNash</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/KeitaroTime">@KeitaroTime</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/MaTTcom">@MaTTcom</a>
-  </li>
-</ul>
-<p>Hearthstone</p>
-<ul>
-  <li>
-    <a href="https://twitter.com/CLG_hoej">@CLG_hoej</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/CLG_Surrender">@CLG_Surrender</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/CLG_Xixo">@CLG_Xixo</a>
-  </li>
-</ul>
-<p>League of Legends (LCS)</p>
-<ul>
-  <li>
-    <a href="https://twitter.com/aphromoo">@aphromoo</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/Dardochlol">@Dardochlol</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/darshanu">@DarshanU</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/LoLHuhi">@LOLHuHi</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/plopgoldman">@plopgoldman</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/Stixxay">@Stixxay</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/zikzlol">@Zikzlol</a>
-  </li>
-</ul>
-<p>League of Legends (Challenger)</p>
-<ul>
-  <li>
-    <a href="https://twitter.com/clg_fill">@clg_fill</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/clgrico">@clgrico</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/fallenbandit">@fallenbandit</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/omargodlol">@omargodlol</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/Tuesday_lol">@Tuesday_lol</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/zaganox">@zaganox</a>
-  </li>
-</ul>
-<p>Overwatch</p>
-<ul>
-  <li>
-    <a href="https://twitter.com/CLGHydration">@CLGHydration</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/CLGiShiny">@CLGiShiny</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/CLGMikado">@CLGMikado</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/CLGMiso">@CLGMiso</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/shakeow">@shakeow</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/waffletastic_ow">@waffletastic_ow</a>
-  </li>
-</ul>
-<p>Smash</p>
-<ul>
-  <li>
-    <a href="https://twitter.com/CLGNAKAT_">@CLGNAKAT_</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/CLG_PewPewU">@CLG_PewPewU</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/gsmvoid">@gsmVoiD</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/samylol">@samylol</a>
-  </li>
-  <li>
-    <a href="https://twitter.com/SFAT">@SFAT</a>
-  </li>
-</ul>
-
 ## Background
 
-After finishing a [small bot](http://maxrchung.com/projects/crybot) that tracks Facebook group chats, I began thinking about other bot projects I could work on to support my personal hobbies and interests. Naturally that led to this, a hub that keeps up with CLG news and events. I've been a big fan of the team since watching them in League Season 1 and have been following them through the thick and thin ever since.
+After finishing a [small bot](http://maxrchung.com/projects/crybot) that tracks
+Facebook group chats, I began thinking about other bot projects I could work on
+to support my personal hobbies and interests. Naturally that led to this, a hub
+that keeps up with CLG news and events. I've been a big fan of the team since
+watching them in League Season 1 and have been following them through the thick
+and thin ever since.
 
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/everyone_else_is_trash.png" />
 
-The basic idea for this bot was to simply track the posts of CLG players and staff. By retweeting all their posts, I'd be able to keep up with CLG news, and also at a more personable level. From a cursory search, I couldn't find any site or feature that offered this kind of group following feature, so I wanted to implement my own. I do have my own Twitter account, but I follow so many people that it's not particularly helpful in keeping up to date with a particular organization or group.
+The basic idea for this bot was to simply track the posts of CLG players and
+staff. By retweeting all their posts, I'd be able to keep up with CLG news, and
+also at a more personable level. From a cursory search, I couldn't find any site
+or feature that offered this kind of group following feature, so I wanted to
+implement my own. I do have my own Twitter account, but I follow so many people
+that it's not particularly helpful in keeping up to date with a particular
+organization or group.
 
-I never had any experience with the Twitter API, so it was somewhat interesting digging into it. I chose to use JavaScript to follow my Cry Bot example, and I picked up the [TwitterJSClient](https://github.com/BoyCook/TwitterJSClient) library to help as a starting point. For the most part, I didn't really run into any problems using it, although it is a bit outdated. I ran into some authentication problems that were remedied by using custom API calls.
+I never had any experience with the Twitter API, so it was somewhat interesting
+digging into it. I chose to use JavaScript to follow my Cry Bot example, and I
+picked up the [TwitterJSClient](https://github.com/BoyCook/TwitterJSClient)
+library to help as a starting point. For the most part, I didn't really run into
+any problems using it, although it is a bit outdated. I ran into some
+authentication problems that were remedied by using custom API calls.
 
-The way the bot works is that it first scrapes this web page's Currently Following section to find the corresponding Twitter handles it should keep track of. Conveniently, this allows me to change the list of followers on the fly. I can edit this page in browser rather than having to mess with uploading/managing docs somewhere. This list includes mostly all CLG players, important staff, and managers. I've taken the liberty to leave off sponsors and some smaller roles like article contributors.
+The way the bot works is that it first scrapes this web page's Currently
+Following section to find the corresponding Twitter handles it should keep track
+of. Conveniently, this allows me to change the list of followers on the fly. I
+can edit this page in browser rather than having to mess with uploading/managing
+docs somewhere. This list includes mostly all CLG players, important staff, and
+managers. I've taken the liberty to leave off sponsors and some smaller roles
+like article contributors.
 
-Once it has the list of accounts, it uses the Twitter API/library to look for each person's recent Tweets. To stay in context, I've removed Twitter replies, as through testing I found these messages to be excessive and out of place. I've decided, however, to keep other people's retweets, as though these too could be somewhat irrelevant, they are more publicly viewable and often point to some interesting posts.
+Once it has the list of accounts, it uses the Twitter API/library to look for
+each person's recent Tweets. To stay in context, I've removed Twitter replies,
+as through testing I found these messages to be excessive and out of place. I've
+decided, however, to keep other people's retweets, as though these too could be
+somewhat irrelevant, they are more publicly viewable and often point to some
+interesting posts.
 
 <video autoPlay loop controls>
   <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/im_back_elevator.webm" />
 </video>
 
-Twitter keeps track of each individual Tweet with a special id. To help save some crunching time, I keep track of the most recent Tweet id that I've retweeted. The API allows a special parameter, since_id, that specifies from what point to send back responses. So, for instance, if I specified since_id 123, it will only give me back Tweets with id 124 and above.
+Twitter keeps track of each individual Tweet with a special id. To help save
+some crunching time, I keep track of the most recent Tweet id that I've
+retweeted. The API allows a special parameter, since_id, that specifies from
+what point to send back responses. So, for instance, if I specified since_id
+123, it will only give me back Tweets with id 124 and above.
 
-That's pretty much the gist of program logistics. The last step is to repeat the above process on a 5 minute timer. The Twitter API has a max request limit, so you can't just keep asking it for info. I also don't need to grab so many responses at once since people don't post that fast anyways. Saves some unnecessary computation time, so a win-win.
+That's pretty much the gist of program logistics. The last step is to repeat the
+above process on a 5 minute timer. The Twitter API has a max request limit, so
+you can't just keep asking it for info. I also don't need to grab so many
+responses at once since people don't post that fast anyways. Saves some
+unnecessary computation time, so a win-win.
 
-Overall, this was a pretty cool project. Outside of this, I don't really have another web-related project I'm cooking up right now, so I don't know if I'll do a lot more web dev in the foreseeable future. For now, I guess it's back to osu! storyboarding and maybe some game programming eventually, I don't know.
+Overall, this was a pretty cool project. Outside of this, I don't really have
+another web-related project I'm cooking up right now, so I don't know if I'll do
+a lot more web dev in the foreseeable future. For now, I guess it's back to osu!
+storyboarding and maybe some game programming eventually, I don't know.
 
-As of July 2017, I've decided to retire this bot in lieu of not really using it or maintaining it that well. There are Twitter lists that exist which better do its job anyways, see [kibou511's list](https://twitter.com/kibou511/lists/clg).
+As of July 2017, I've decided to retire this bot in lieu of not really using it
+or maintaining it that well. There are Twitter lists that exist which better do
+its job anyways, see [kibou511's list](https://twitter.com/kibou511/lists/clg).
+
+## Past following
+
+<Paragraph>CS:GO (Blue)</Paragraph>
+<UnorderedList marginTop={majorScale(-2)}>
+  <ListItem>
+    <Link href="https://twitter.com/CLGFonzY">@CLGFonzY</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/clgkoosta">@CLGkoosta</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/CLG_Nahte">@CLG_Nahte</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/FNScsgo">@FNScsgo</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/reltuC">@reltuc</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/imapet1">@imapet1</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/schwartzbruder">@schwartzbruder</Link>
+  </ListItem>
+</UnorderedList>
+<Paragraph>CS:GO (Red)</Paragraph>
+<UnorderedList marginTop={majorScale(-2)}>
+  <ListItem>
+    <Link href="https://twitter.com/benitanov">@benitanov</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/dabearsniner">@dabearsniner</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/dianecsgo">@dianeCSGO</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/klaudiaxx9">@klaudiaxx9</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/missharvey">@missharvey</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/omgitspotter">@omgitspotter</Link>
+  </ListItem>
+</UnorderedList>
+<Paragraph>General</Paragraph>
+<UnorderedList marginTop={majorScale(-2)}>
+  <ListItem>
+    <Link href="https://twitter.com/bryanchen">@BryanChen</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/CLGHaru">@CLGHaru</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/CLG_HotshotGG">@CLG_HotshotGG</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/DevinNash">@DevinNash</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/KeitaroTime">@KeitaroTime</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/MaTTcom">@MaTTcom</Link>
+  </ListItem>
+</UnorderedList>
+<Paragraph>Hearthstone</Paragraph>
+<UnorderedList marginTop={majorScale(-2)}>
+  <ListItem>
+    <Link href="https://twitter.com/CLG_hoej">@CLG_hoej</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/CLG_Surrender">@CLG_Surrender</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/CLG_Xixo">@CLG_Xixo</Link>
+  </ListItem>
+</UnorderedList>
+<Paragraph>League of Legends (LCS)</Paragraph>
+<UnorderedList marginTop={majorScale(-2)}>
+  <ListItem>
+    <Link href="https://twitter.com/aphromoo">@aphromoo</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/Dardochlol">@Dardochlol</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/darshanu">@DarshanU</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/LoLHuhi">@LOLHuHi</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/plopgoldman">@plopgoldman</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/Stixxay">@Stixxay</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/zikzlol">@Zikzlol</Link>
+  </ListItem>
+</UnorderedList>
+<Paragraph>League of Legends (Challenger)</Paragraph>
+<UnorderedList marginTop={majorScale(-2)}>
+  <ListItem>
+    <Link href="https://twitter.com/clg_fill">@clg_fill</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/clgrico">@clgrico</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/fallenbandit">@fallenbandit</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/omargodlol">@omargodlol</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/Tuesday_lol">@Tuesday_lol</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/zaganox">@zaganox</Link>
+  </ListItem>
+</UnorderedList>
+<Paragraph>Overwatch</Paragraph>
+<UnorderedList marginTop={majorScale(-2)}>
+  <ListItem>
+    <Link href="https://twitter.com/CLGHydration">@CLGHydration</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/CLGiShiny">@CLGiShiny</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/CLGMikado">@CLGMikado</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/CLGMiso">@CLGMiso</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/shakeow">@shakeow</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/waffletastic_ow">@waffletastic_ow</Link>
+  </ListItem>
+</UnorderedList>
+<Paragraph>Smash</Paragraph>
+<UnorderedList marginTop={majorScale(-2)}>
+  <ListItem>
+    <Link href="https://twitter.com/CLGNAKAT_">@CLGNAKAT_</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/CLG_PewPewU">@CLG_PewPewU</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/gsmvoid">@gsmVoiD</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/samylol">@samylol</Link>
+  </ListItem>
+  <ListItem>
+    <Link href="https://twitter.com/SFAT">@SFAT</Link>
+  </ListItem>
+</UnorderedList>
