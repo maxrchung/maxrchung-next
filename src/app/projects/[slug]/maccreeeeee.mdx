@@ -1,0 +1,116 @@
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/mc_banner.png" />
+
+MacCREEEEEE was a game jam project started by my roommate and I as a small summer project. It is inspired from the gameplay of Bloodline Champions and the characters of Overwatch. This is our quick stab at making a client-server top-down battle arena. We have working client-server communication, matchmaking, and basic combat going, but it's far from looking pretty or fun.
+
+For now, I'm going to rest this in peace as I dive into other projects I'm interested in, but I think we have a good base of a game here, and I might revisit this or at least the idea someday down the line.
+
+The download provided below is not an executable. You will need to install Python and Pygame to run the game. We used Python 2.7.9 and Pygame 1.9.2. Additionally, you'll need to adjust the IP addresses inside of Server.py and Client.py to the appropriate values of your LAN. To play, start one Server and then start multiple Clients to connect to it.
+
+*   Made with: Python and Pygame
+*   Made by: Max Chung and Victor Stolle
+*   Download: [MacCREEEEEE.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/MacCREEEEEE.zip) (8.95 KB)
+*   Repository: [samuslamujamu](https://github.com/maxrchung/samuslamujamu)
+
+## Background
+
+As of this time, I live with 3 UCI graduates. We're all CS related, 3 Computer Game Science majors and 1 Software Engineering major. And we're all game development related, 3 were in the Video Game Development club and 1 has done game projects with me before. I'm probably the only one out of us that actively codes and produces stuff in my free time, but since we have some game development background, there's always been we talks of doing a game together in our free time.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/black_dudes_and_girls.jpg" />
+
+One such instance was this summer. I don't really remember the original context, but I think we were out doing some grocery shopping. One thing led to another, and our conversation came around to doing a game jam together. During this time, I was in the middle of losing my mind doing [Tegami](http://maxrchung.com/projects/tegami) so I thought it would be a good change of pace to work on something else. It had been a while since I worked on something more fast paced with people, so I thought this was a good refresher opportunity.
+
+Victor and I decided pretty quickly that we wanted to do something similar to Bloodline Champions. It was a game we used to play together, and I've always wanted to make something inspired by it. I've talked about it before on this site, but here again, it's a top-down battle arena game where two teams run at each other; fight, fight, fight; kill each other and repeat that forever.
+
+Yeah, there's more skill involved than that. My preferred role and style, healers, had a unique twist in the game, where your main healing ability is a skill shot and requires more precise aiming to take effect on allies. Pretty interesting. I had a ton of fun playing it at its prime, with probably 400 to 500 hours spent into the game, but the game and player base died pretty quickly, and now, I guess its just a distant memory.
+
+Truly though, it was one of my favorite games. Something really clicked with me gameplay-wise, and I enjoyed how skill intensive and difficult the game was. That's probably why it was so hit and miss (mostly miss) for players though. If you didn't like a major part of the the kind of somewhat mindless bloodbathing combat, you probably didn't like the game.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/the_rest_of_us.png" /><p className="caption">I actually drew this for a dead clan in BLC</p>
+
+I kind of wonder why it didn't succeed to this day. For one I suppose, as mentioned above, if you didn't like the combat, you probably wouldn't stick around for any other part of the game. If you compare this to another top-down multiplayer battle arena game, like League of Legends for instance, there's a lot more going on and worry about. Items, farming, laning, team fighting, pathing, rotations, positions, and a huge variety of champions, there's a lot more stuff and variety to League.
+
+That's another thing that BLC (as I'll now call it) suffered from. It was labeled as a MOBA, which it technically is, but it really isn't. MOBA has extra baggage associated with it, like traditional lanes and minions/towers to kill, but those aren't in BLC, just excessive team fighting. I think the community prefers BLC to be known more as a brawler, something more similar to Smash and fighting games than its MOBA counterparts.
+
+Fighting games are also kind of interesting in that regard. They have their special own niche and following. I think BLC had some of that magic in that regard, but it wasn't able to stand up on its own with the test of time. And how do fighting games maintain it? I don't really know.
+
+One part is that most fighting game characters aren't really original. They usually come from other more popular games, and with that comes an already established fan base. Additionally, they are almost all focused on 1v1 style combat. There's an expectancy of player base and toxicity and other associated connotations jumping from 1v1 to the traditional 3v3 of BLC.
+
+Well, enough of nostalgia, if you're interested, the makers of BLC are revamping the game to BLC 2.0 AKA [Battlerite](https://www.battlerite.com/). Both games are really similar, though the latter looks a lot more modern. I gave it shot during its beta and had some fun, but as time has done to me, I moved on quickly again. I don't know, it wasn't unfun or anything, but now I think I just have other projects and things I'd rather do and play. I was never that great at BLC all things considered, and I felt like I plateaued in the game quite steeply.
+
+Anyways anyways, this isn't about BLC the game. This is about the BLC the game the game. Let's get back to the project. So Victor and I was set on doing that. We decided pretty quickly to use Python since we both worked with it before, and Victor had some special constraints where he had to program off of his Rasberry Pi. It didn't really matter what the content of the game was. We'd figure that out later.
+
+But Khang and Joey, the other two dudes, weren't really on board with working with Python. I think part of it was that they never worked with Python/Pygame before, and they were more comfortable using Unity instead. They were also more of the "designy" types, and wanted to spend more time designing something rather than working on more hardcore lower level things. So we decided to have a mini competition of sorts and split our teams 2 ways and go at it.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/kittens_can_be_pretty_scary.mp4"/></video>
+
+Actually, I'm just joking around. Their project never got off the ground. I think they have a repo that Joey made though, so there's that I suppose. I think at the time Darkest Dungeon was their fad game, and they wanted to make something based off of it, but I don't really know the exact details of what happened to them after that. I guess they lost interest pretty quickly, didn't want to do the jam, and just dropped everything.
+
+As for Victor and I, well, we had a kind of interesting jam. We decided to split up the initial work based on networking and not networking. I've done quite a few projects now with a bit of socket programming, so I could have picked up the networking bits, but in an effort to try something new, I actually wanted to do the more gamey portions, messing more around with gameplay elements and the such.
+
+Victor never really worked with sockets or networking before, so he wanted to use the chance to learn it. But, well, as I've now come to be accustomed with, Victor once again disappoints again, catastrophically. And this probably is the final straw to be honest. I think I've decided never to work with Victor again.
+
+It's one thing to not know anything about something and fail at trying to learn it, I get that. Victor had pretty much no knowledge or experience with sockets, as I'm just going to try and assume, so if he struggles with it, I understand that. Did he put in the effort to learn it? Maybe, I don't know, debatable. After two days of work, he was able to do some simple message passing from one side to another after copying code from somewhere.
+
+Well, he had some extraneous problems, hardware-wise. He didn't have a PC at the time, so he was working off of his Raspberry Pi. And somehow, he factory reset his OS. ??? Or something like that. He spent a good part of the first day trying to fix that. He also had some key bindings issues on his keyboard that he had to deal with. But it's all just so stupid. We had so much time before to get ready, and he somehow blew up his whole setup in the first hour.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cook_pc.mp4"/></video>
+
+Hardware problems, not the brightest learner, okay, fine, I can deal with that. But his attitude, god, was bad to work with. Sail pass his hardware problems, he worked for a short while and then just gave up, watched Game of Thrones Sunday night. Great. Great jam guys. Honestly, a part of me felt like the whole thing was a huge waste of time. I don't jam to work alone, I do it so I can work collaboratively with others, and there was no collaboration with Victor.
+
+Where we did do some discussion, was me trying to explain the whole networking concept to him. A separate thread to pick up messages. Processing the message queue in the main game loop. I explained my whole pattern many times over, and not only did he not really understand, he pushed back and argued random points with me. I'm sure he did his own version he envisioned and got nowhere.
+
+I feel like there's a part of him that doesn't respect and acknowledge me properly and acknowledge those around him properly. Above all else, I hate working with stubborn people who are too full of themselves. Ah, I'm probably just too frustrated right now. But this is how we budge every single time we're on a project together. I think it's only right that I give up trying to get across to him.
+
+Welp, I'm not perfect in any means. I'm not going to confront him face to face. I'll just keep on passive aggressively writing all this. To be honest, he probably brought up some valid points in our discussions. I'm just not smart or sure of myself to answer concretely. I guess before anything, I need to practice and better myself first. God, I'm going to work on more projects and learn more in my free time, not play games and watch anime all day, just to spite him.
+
+Alright, stop rant. All in all, Victor probably isn't a terrible person. I think he has a unique and loud personality that I'm going to clash passive aggressively on some occasions. There's nothing I can really do about that. I don't want to deal with that in a project, but if he's just hanging around in the background, I can just let that slide to the back of my mind and build up until I'm plotting 20 ways to kill him, hehe just joke dude.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/benihana.png" />
+
+I think the only code I used from him was a small snippet of setup code for sockets. Let's say give or take 20 lines. All things considered, I probably would have needed to look that chunk up anyways, so great, I saved a bit of time. Everything else was handled by me.
+
+I worked on the gameplay code first. My first goal was to set up a character and have him fire some generic bullets at another dummy character. The dummy character would take health damage and eventually die upon hitting zero health. Setting up Python and Pygame wasn't too hard. The only special thing to watch out for was the version. After checking with Victor, I uninstalled and switched my version twice.
+
+But it was fine, they weren't all too different I feel from one to another. The most I had to deal with was switching how the print statement worked. My first task was to get things on screen. It wasn't that hard getting back to the Pygame groove since I've worked on it plenty before. I drew characters and bullets as just simple circles to which they still remain in our final build.
+
+Moving things was just a simple velocity applied to the position of the character and bullet. I capped the framerate to 60FPS for a consistent experience. No, I wasn't going to look into doing more fancy sleep and delta stuff for time sake. Victor wasn't ready yet, so I worked on collision next.
+
+Bullet to character collision is a simple vector check comparing the two centers with their radii. Very simple, very fast and easy to make. Collision with walls was a little trickier, since I needed to make sure you didn't slide awkwardly and lose velocity incorrectly. Don't know if I did something fancy here, but it werks so trust me on that one.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/quintessential_me.jpg" />
+
+At this point, I decided to simulate my own network locally. I made a file that would hold a few global variables that a sample server and client could use. Using this, the server could pass things into client message queues held there and the clients would reply back into a separate server message queue.
+
+This required quite a bit of restructuring of my code. The server handled all the game processing, and every frame, it would send out a complete update of the characters and bullets. Not the most efficient as it requires repositioning things every frame. We didn't have too many things on screen though, so I think it's fine for now. One thing I did slim down on, however, was exactly what was sent.
+
+The Client's only job is only to render things. To do precisely this, what gets passed to the client from the server is simply just a rect (and a few state things). Only the server's version of a character has extra variables and functions that it needs to update its state, e.g. velocity and updating velocity. The same is true of bullets.
+
+This requires having a different ClientCharacter from ServerCharacter, which adds more complication, but there're less things that travel over the network, so that's a win there. Updating one side will likely require updating something in the other.
+
+After this I did some coloring to differentiate friend from foe. I also worked on basic matchmaking, throwing the first two people in a queue together for a match. This required also setting up some basic states to set players in matchmaking, in game, and transitions in between the two. I was able to start and end games and reenter games from this point.
+
+Victor was probably done at this point, I think, so? We started putting the networking portions in. I threw away the global message queue variables and moved everything to UDP sockets. After some tinkering, I got two clients and server running properly on my local machine.
+
+I wanted Victor's help in testing another client, but I'm pretty sure we found out that using my own laptop was a more efficient use of both of our times. Actually getting two clients on a local area network playing each other was kind of tricky for all the wrong reasons. I thought it had something to do with my router, but I couldn't get the two to connect to the server properly.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/boy_in_the_mirror.png" />
+
+I messed around with the router settings without success. Eventually, by some luck, I found that the solution was to host the server properly on its own IP. Apparently, I guess, if you just used localhost:someport, it didn't work. You have to bind it to the exact IP the PC is using.
+
+Great, awesome. We're pretty much nearing the end. Not much happened after that. I worked on a few small things at this point like a heartbeat packet that verified that a client was still connected. If a client stopped responding, the server kicked him out and handled game disconnects properly. Oh yeah, and I fixed a lag issue with inputs not being processed properly. Don't know how I exactly fixed that, but something with how the inputs were updated, hmm, probably.
+
+I should probably talk about Overwatch at some point, now I guess. Overwatch came into the picture when we wanted to put some flair into the game. Probably the simplest way was add additional abilities, like a scatter shot or something else. We started on working on a multiple ability system before giving up due to time.
+
+Well, the first full character I wanted to implement was a special guy I call MacCREEEEEE. That's 6 E's for 6 shots. While playing Overwatch, I had some interesting ideas of possible MOBA characters. One of them was MacCREEEEEE. The idea for him was very simple, he had 6 revolver shots, but each shot did something random chosen, like scatter, pushback, heal, etc. The idea was to put him into this game, but, obviously that fell through.
+
+Actually, besides MacCREEEEEE, there was only one other guy that's worth mentioning, Gengo. Gengo was the first of these abomination creations. He's a backstabbing healer that heals by stabbing his teammates with his healing knives. Backstabs and headstabs do more healing. He'd dart around the field healing his teammates and damaging opponents by stabbing them and then darting out. One day the As Of Yet Untitled MOBA will come to fruition. I'd play the hell out of a MOBA like this if it was filled with dumb characters.
+
+<video autoplay loop controls muted=""><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/genji_mcree_to_be_continued.mp4"/></video>
+
+As I've said before, I think this game jam is a fine base for a game. If I were to continue, I'd probably finish out the MacCREEEEEE character, add some dashingly cool art, and fully release it as a complete client and server product. But now's not the time, I got other projects I want to do.
+
+I do want to get back into the groove of working on projects with others, but I doubt that's happening soon. The current things I want to work on are all specific, special unique things I want to do. Maybe I'll join a UCI game jam one of these days, or maybe I should just interact more with groups of people. Maybe join a guild in a game or get more involved with osu! storyboarding.
+
+I don't know, for the foreseeable future I'm going to take a short break then finally start on S2VX.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/kitten_getting_tucked_in.mp4"/></video>

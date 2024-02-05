@@ -1,0 +1,240 @@
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/osl_logo.png" />
+
+The osu! UCI Summer League (OSL) was a 12 week long osu! league organized by osu! UCI officers and sponsored by Huion. Over a span of around 3 months, players from around the world competed each weekend. After 10 weeks of Swiss rounds, the league concluded with a weekend of elimination games.
+
+*   Organized by: Max Chung, Jimmy Zhang, Aaron Liao, Royce Sato, Victor Stolle, Justin Veyna, Bradley Shood
+*   Website: [osu! UCI Summer League](http://osuuci.com/tournaments/osl/)
+*   VoDs: [osu! UCI](https://www.youtube.com/channel/UCFKO5d-Q_htMcE8Bp3JW5Ag/videos?view=0&sort=dd&shelf_id=0)
+*   Repository (Website): [osuuci2](https://github.com/maxrchung/osuuci2/tree/master/tournaments/osl)
+*   Repository (Animation): [OSLAnimation](https://github.com/maxrchung/OSLAnimation)
+*   Repository (Programs): [OSLPrograms](https://github.com/maxrchung/OSLPrograms)
+
+## Background
+
+After the (mostly) successful [Press Start LAN](presstartlan) concluded, the osu! UCI officers were excited to work on more tournaments and wanted to do one over summer. We had a lot of fun at Press Start, and, most importantly, with the lessons we learned we felt confident we were capable of holding another competitive and engaging tournament for entrants. We started thinking about our next project, which would become OSL.
+
+Planning and preparations took quite a bit of time. It's interesting working in the back ends of a tournament because a ton goes on that's hidden from the public eye. From organizing the admins who have their own schedules and interests, to setting up spread sheets, updating brackets, maintaining a website, managing a stream, emailing a ton back and forth,referring matches, it's all very chaotic and not simple to keep track of.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/fight_light.webm"/></video>
+
+We first decided the format of the tournament. At first, we weren't sure if we wanted to a hold a league or a smaller tournament. With how we did at Press Start, we considered finding another LAN event to join and help out on, but because most schools and school clubs were inactive during summer, we didn't find any local opportunities on initial glance.
+
+So as a way to keep ourselves busy over summer, we decided to hold a lengthy, long spanning league over the months. We planned it to be around 10 weeks long, and our final time measure was 10 weeks of Swiss rounds followed by a break week and then a final weekend of single eliminations.
+
+We had a feedback form that we sent out after the league ended asking for comments/criticism about the tournament. Some complaints were directed at the length. The 12 weeks was something that everyone signed up for and agreed upon, but as the weeks went by, it did start to feel dragged out more than necessary. Some of our problems were tied to format issues.
+
+The OSL format was very similar to what we used at Press Start, just on a longer scale. The Swiss phase seemed to do pretty well for our last tournament. Importantly, it matched players with others around their level, and that's something we wanted to keep for the OSL, as we expected pretty big rank discrepancies between players. We considered Round Robin and other options, but we ultimately stuck with Swiss..
+
+The single eliminations also seemed to work fine in Press Start, but upon comparison between a one day LAN and league, the consequences between the two were night and day. The biggest thing was that the first 10 weeks of OSL felt, what's the right word, inconsequential, compared to the last single elimination weekend. There was ten million times the pressure to perform in a last half-hour elimination match than all the hours spent before.
+
+This was something I didn't really anticipate, but I can see how people felt a dejected by the end of things. Everything just ended extremely quickly over the course of a weekend, and it's unfortunate that some people got eliminated early, sometimes without a fighting chance. There were obviously other factors, but I believe altering the league format would change a lot of things for the better.
+
+The biggest suggestion I would make would definitely be throwing out single elimination at the end and considering double. This way, there would be more opportunities to play for a lot of players. Many people got screwed early because with how single elimination worked, the lowest seeds got placed with the highest ones, so there was a big disparity in skill. Shortening the league would also be good. I would prefer something like 7 to 8 weeks of Swiss followed by 2 weeks of double elimination.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/surprise_table.webm"/></video>
+
+Another thing I wanted to push for was an activity or event midseason. This was something I raised to the other admins, but because the tournament had already started by then, we were scared of making changes, so we decided not to do it. What I mean by a midseason activity was I wanted something to happen midleague to break the repetitiveness of Swiss and add some more pressure to the players.
+
+For example, I proposed cutting half the players out halfway into the league and proceeding with the top half of players. This incentivized entrants to play hard from the start and not get into a midseason lull. It also helped administration since we would have a lot less people to deal with. And it also removed no shows and low standing players that would probably not make it to the end anyways. Something like this. Or maybe some kind of makeshift elimination matches in the middle to break up the schedule.
+
+The other officers were uneasy about it. They didn't want to make drastic changes, and they were against automatic culling. We considered elimination matches of some sort, but these looked to be too much effort and involvement, and in the end they were just too complex to fit in without breaking our currently announced schedule.
+
+In terms of other complaints for the format, there was quite a bit of backlash, from myself included, for only having best of 3 rounds for Swiss. In my opinion, this was too small of a number for a competitive match, and I felt like it was not worth the time of a player to play each weekend for barely 15 minutes. I really pushed strongly for at least best of 5, but this suggestion was rejected multiple times.
+
+Again, one issue was that the tournament already started, and we did not want to make changes, but this was something I strongly felt was necessary to better the player experience and make matches more competitive. The main counterpoint was that best of 3 fit our stream and match schedule perfectly but even then I wanted to change it. In the end, the rest of the team strongly assured me that Bo3 was enough, so I relented. Even now though, I still believe Bo5 was the way to go.
+
+To fit work, school, and player schedules, we put all of the matches on the weekends. For 12 weeks from 8-10PM PDT/GMT-7 every Saturday and Sunday, we had our broadcast/matches going on. There were 4 time slots based on half hour divisions, 8PM, 8:30PM, 9PM, 9:30PM. Each slot had simultaneous matches going on at once.
+
+We made some good and bad decisions with our time management. 8-10PM PDT was in hindsight probably one of the worst times to host our tournament. The 2 hour total length was good. I think any less, and it wouldn't be much of a stream, and any more it would probably take a effort than we would like.
+
+The simultaneous matches was a really good decision. We were actually discussing for some time about whether to stream each individual match and have a very long broadcast, but we decided that we should save effort on our side and just do matches at the same time. This saved our butt a lot of times because as we'd find out later, no shows were a huge and pervasive issue.
+
+A huge problem we encountered were time zones. Originally, we wanted to limit the tournament to only local players, preferably around SoCal. But after reaching out and trying to find interested participants, we didn't think we could get a good sizable amount of people. For this tournament we aimed for around 64 to start. A lot of our friends were busy over summer and didn't want to dedicate a lot of time to the game. Out of osu! UCI, only Jason/leluffy played in the league.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/timezones.png" />
+
+We were also a bit conscious about sponsorship since Victor was messaging companies to see if they were interested in supporting us. So because of that, we decided to go international and allow anyone to join the league. There was no strict criteria for signups, but that they only be able to make our match and streaming times: 8-10PM PDT.
+
+As we found out, and after I warned my team of time conflicts, 8-10PM, as expected, turned out to be a very bad time for players. So first let's explain why we chose that time. Most of us were free during nights, and when osu! UCI held weekend events, they were usually around that time. Also, those hours were apparently "popular hours", whatever that meant. Someone explained these hours as the downtime after dinner where we would probably get the most exposure.
+
+I hate that term, popular hours, hot hours, or any of its synonyms. It gets passed around our officer group a lot, mainly as a reference to reddit's best hours to post. When we want to post something to reddit, we're scared to do so because we want the best optimal time and current viewers to be present. The end result is that we just push back the posting, sometimes indefinitely. Maybe two weeks down the line we finally post something, or maybe we never post at all. Really stupid. This's screwed us a number of times, and I'm never happy about it.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/driving_hard_mode.webm"/></video>
+
+Well anyways, when thinking of the time we forgot probably the most important group in mind, the players. The majority of our signups and future entrants would all be based in the Americas and Europe, and 8-10PM was not good for everyone. In the Americas, we had a lot of people 3 hours ahead of us in the EDT zone, so that's 11-1AM, a pretty bad time to be up and ready for a game.
+
+A few of us thought this was probably fine because of some gamer stigma and we stay up late all the time. This was a horrible basis and, not to mention, I don't think we really kept in mind people needing to sleep early for summer school or school starting early for some people. For most of the osu! UCI staff, things worked out okay since UCI barely started on the last week of OSL, but many people on semester systems or other systems started a lot early. All in all, it's not a great idea to have people stay up pass Monday midnight.
+
+But here's the kicker, Europe. Europe is about 7-9 or something odd hours ahead of us depending on the zone, and converting this from our 8-10PM was just absolutely horrid. This meant people were playing anywhere from 3 to 5 in the morning, which was unthinkably bad. Yeah, so the gamers-staying-up-all-night argument was starting to look not that great.
+
+If you're wondering why our main entrants group are from Americas/Europe, our primary form of outreach and engagement was through our reddit thread on /r/osugame, and most of the users there were English speakers. We also posted on the osu! forums and got a bit traction there, but the very large majority, regardless, were from these regions.
+
+There were a few signups from the Asian/Asian Pacific/Australian regions. But even for them, these time zones were not great. On the good sides, they would be playing around midday, but there was the still the problem of school. Matches on a Sunday for us converted to them would mean they were playing something like at noon, while at school. That's probably even worse than asking for players to play at 3 in the morning.
+
+I brought some of these issues up, but not forcibly enough. The rest of the team thought it was better to prioritize our own preferences, night times, and in the end, I'd say we made a huge mistake. Our compromise was to include a checkbox confirmation on our signups saying that all entrants would be for sure able to make the 8-10PM PDT time slot. Maybe this deterred some people from joining, but for the most part, I think it did nothing.
+
+I left it up to Victor to decide our entrants, and he did a frankly terrible job picking out people. I told him to prioritize region first, followed by rank. He completely ignored the first point and just picked the top 64 ranked players, which I could have just done myself. I asked him if he was sure he really wanted to pick these players just by rank, and he said the confirmation was probably enough.
+
+Looking back now, if I knew Europeans were going to be such a big issue, I would have put aside some of my time to pick players myself, but I decided to let it go. I was extremely swamped with work. Over the summer, I was doing a Blizzard internship which took up a huge chunk of my weekdays.
+
+Every day when I got back from work, I immediately worked on OSL, updating brackets, maintaining helper programs that I needed for the league. Even when the tournament started to progress stably, and I got used to the cycle of things, whatever free time I had was spent working on osu! UCI's summer beatmap project, [Sweet Regret](sweetregret).
+
+The amount of work for this tournament was super lopsided onto me. I not only had to do a huge chunk of everything but cover for people when they made mistakes. At one point I actually wrote a pretty angry post saying that this was unacceptable, and I shouldn't be the one to shoulder a huge burden considering all my activities, but the end result was just me still having to suck it up and stick through it.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/walking_home_today_pal.webm"/></video>
+
+Some problems were incompetency. We originally tasked email management, for example, to other people because that was something that could be easily given to someone else. However, the email managers did not do their job of email checking and responding. Not only did I have to handle a lot of the messages sent our way, but even the emails they did respond to were often forgotten about, and I had to remind them to follow up.
+
+Some miscellaneous tasks included getting referees to fill out the Challonge group scores. By the end, the score recording was alright for the most part, but early on not only were mistakes made here and there, but at one point the group was somehow completely destroyed and needed to be recreated. But recreating Challonge groups, as it turned out, was extremely difficult because of the way Challonge worked.
+
+Challonge has an annoying aspect about it that makes it work fine for LAN tournaments, but if you want to readjust past scores in a long term league, you're going to have a bad time. The way it works is that once a past round was completed, Challonge automatically generated a permanent new set of matches. These new matches could not be changed once they have been made, so if you changed previous match scores, the standings would change, but the new matchups would not.
+
+In our case, we made a mistake in the middle of the league maybe around 5 weeks in, and we needed to recreate the bracket to fix it. But because of the above issue, if we didn't sequence drop outs correctly and record scores properly, we had a bunch of mismatches. Victor, the reason why this accident occurred, tried to resolve the issue, but with no luck. I spent at least two entire nights fixing this stupid thing after carefully walking through our past matches with our brief tournament notes.
+
+I forgot specifically why we had to redo the brackets. I believe it may have been an issue with Victor accidentally removing someone when he wasn't supposed to. The player in question was a bit confused and thought he had upcoming matches, so we needed to add him back in. Once a Challonge tournament starts, however, you can't just simply add people back in. So in order to do that we had to make a whole new tournament.
+
+I think in retrospect, a lot of the work I put on myself was unavoidable. Some of it was brought on because of the way I structured things. For example, I handled all the website updating because no one else had web knowledge. Following our example in Press Start, I wanted to make a website for us that carefully followed the league, with all the necessary information provided week by week.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/shooting_myself.webm"/></video>
+
+This involved some asset creation. I spent time creating a logo and buttons. Along with this, I made the stream overlay/background, and I also wrote an animation program that showcased an animating OSL logo. This animation was sadly kind of thrown to the side since it was a little difficult to use. Regardless, I spent a fair amount of time working on it, and I'm fairly proud of it. I also wrote a separate CSS file to handle all the new buttons and colorings and that funky business.
+
+Writing is hard man. I wrote a lot of content covering new rules and regulations for this tournament and was responsible for setting up Challonge groups/brackets as well. It would have made my life so, so much easier if we used the Challonge embedding features, but for multiple reasons, we ended up not doing that. Instead, I wrote programs and copy pasted a lot of HTML to reflect the Challonge information onto the site. I wanted all the information to be provided in one place, which came at the cost of time and effort.
+
+What I did was I made individual pages for every single week, on top of a general section that explained the rules and showed the current standings of participants. All of these needed to be updated weekly after each set of weekend matches. I'll go through one weekend to kind of explain our process and show the work that needed to be done.
+
+So about half an hour before every match, we met up on the Mumble server I hosted alongside the site and prepared our two hours. This involved any points we wanted to raise, if we needed to cover for anyone in case people were missing, any specific matches we wanted to highlight, among other things. Once broadcast time got nearer, the casters and referees went into separate respective channels.
+
+Then the referees created lobbies for the people they were assigned for. This worked out pretty well compared to Press Start because there weren't too many matches going on at once, and we usually had enough referees to handle all our lobbies. In one time slot, there were at most 4 matches going on at once, and we usually had enough people to handle that. Sometimes people doubled up on games, and sometimes one of the casters, the non-broadcaster, handled games as well.
+
+As for divisions of responsibilities, Jimmy and Aaron handled casting and streaming. Aaron had the most experience so he usually took over broadcasting and VoD management. Victor, Justin, Brad, and I refereed matches, although we occasionally jumped into cast as well. It was a pretty easy going and stress free environment so we just did whatever and said whatever we wanted most of the time.
+
+About midsummer, I asked Royce, who at the time was doing the osu! UCI summer beatmap with me if he wanted to help out. A lot of officers had things going on so we needed one or two volunteers to fill their places. Brad, in particular, had shifting hours for his work so we were never sure if he could make it. Royce said sure, he'd be glad to. And after helping us out a lot and continually supporting us, he became an official officer of the club soon after.
+
+During each match, referees handled any disputes within their assigned lobbies. They ushered their people in and started the match for them. The starting rules were the same from Press Start. A !roll command was typed into chat. The higher roll chose the first official map whereas the loser picked a warm up map. Thereafter, the map loser picked the next map, and if it went to a third game, they played the tie breaker.
+
+On the side, we had a Google sheet with each week's matches. This sheet logged match scores, match histories, players, lobby names, assigned referees, and additional comments. Each referee filled in the respective information. Even if there were no shows, we wanted a record to at least prove that a no show happened.
+
+On Sunday night after all the matches ended, we had a map draw session. The way Swiss map selection worked was that we originally had a big pool of 130 maps. Each week, we selected 13 maps randomly from this set until we used them all. The songs broke down to 4 for each mod (No Mod, Hard Rock, Hidden, and Double Time), and 1 tiebreaker. To give the more proactive players some more time to practice, we drew for maps 2 weeks before they were to be played.
+
+To do the actual map picking, Victor wrote a GUI to generate the maps and show the results on screen. I asked him to do make this to relieve some of the general programming duties we had. His program involved remembering the past maps picked and choosing new ones not from a list. He spent a really long time on it, and it was pretty buggy the first couple times we used it. At some points it just crashes out of the blue. For the most part though, it worked, so we're not going to complain too much about it.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/kitten_bug.webm"/></video>
+
+The map generator also printed out an HTML file that I could then add easily to the site. Each week had its own sections with a lot of info I needed to update. Usually what I did first was set up a new week's page. I took the map pool HTML file and jammed it into a map section for the new week. Sometimes this took double checking for errors and the likes, mainly just small syntactical stuff.
+
+When Jimmy initially made the map pool list, he didn't exactly do a great job double checking spelling and values, so there were plenty of mistakes here or there. A lot of this couldn't be avoided since he hand picked and selected the maps by hand. Some errors came up because we were using .csv files and certain songs had commas in their title/artist sections.
+
+The list of new songs was also passed over to Justin who made a collection compilation file. Using a third party program, you could use this file to make a playlist in your osu! game that had all the correct songs. This third party program was quite buggy and somewhat complicated to use. In the future, we decided to throw it out since it took some effort to maintain and very few people actually used it.
+
+Next we'll start going into the dirty business, recording scores. So now we jump back to the previous week to record in all the scores that happened over the weekend. I checked over the refereeing sheet and compared to Challonge in case there were any errors that needed to be corrected. The referees were the ones who punched in the values into the web brackets. They were also the ones responsible for removing players from no shows.
+
+Oh yeah, that's another thing I think I'll get into now. We had a pretty massive problem with no shows and drop outs. Some of these cases were, of course, unfortunate circumstances: tablets breaking, computer dying, family emergencies. Some of them were just lack of foresight on both player and admin ends: school starting up, not being able to commit to waking up at 4AM to play match, lack of interest, things of such nature.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/scared_dog.jpg" />
+
+It really sucked for everyone. I don't know what to say if someone has to wait in a lobby for half an hour for someone to show up, and in the end no one gets to play any games. Those that showed up do get the free win, but it just doesn't feel right. I wanted to cut down on these cases as much as possible, but you can only do so much.
+
+After two weeks of no shows we automatically removed players from the tournament unless if messaged earlier about their situation. Some were a little more helpful to us and dropped out voluntarily, which was better since this usually gave us time to rearrange matches. By the end we lost more than half our players, from a whopping 64 to 26. The amount of emailing and contacting involved on my end to deal with this was not the greatest fun.
+
+This is something I'll definitely look out for in the future. I think if we fixed some of our format issues player retention could have been a lot better: changing match/stream times to be more flexible for the Americas/Europe, bumping up best of 3 to best of 5, lowering the length of the league so it wouldn't be too demanding on people's schedules. I'll keep this in mind going forwards.
+
+After the map drawing each weekend, we had a raffle in the stream. One of the things Victor did for us before the league started was send emails out to companies/organizations asking for sponsorship. We got a response back from Huion, a pretty well known maker of digital tablets. A lot of osu! players use their tablets, and they also produce the official osu! tablet. Huion sent Victor a package of 20 tablets as part of the deal. We decided to give the top 8 winners one tablet each and also raffle one tablet out every week.
+
+Prizing and tablets were a bit tricky to handle. The top 8 of the tournament were additionally awarded several months of supporter. We got this through contacting osu! staff who provided a certain amount to the top 4 winners. The rest we paid out of pocket, which was just a few couple bucks from us so it wasn't too bad. Unfortunately, those who placed 9th through 16th got nothing, which was kind of sad since they basically played 10 weeks for naught.
+
+Managing the tablets though was a much bigger challenge. Basically, it boiled down to Victor not doing his job properly and also not willing to ask for help from the other officers. It took about 3 months after the league ended for us to send out the tablets, and somehow we still have 4 tablets remaining that we apparently couldn't track down the winners for.
+
+It's kind of ridiculous because I had to physically walk with Victor to the Post Office in order to figure out how to ship things, and this was like halfway into Fall quarter. On top of that, I paid for all the shipping, which went upwards of $100 to $150. Victor lost contact with Huion after some time, so we never stayed in touch and maybe asked for more of their help.
+
+Victor's done some pretty awful things on my past projects, but his complete negligence of his duty here went to another level. You'd think his track record couldn't get any worse, but this task costed actual time, patience, and money, and quite a significant amount of all 3. It's frustrating and unacceptable. In combination with his poor attitude, where he superficially took responsibility for his actions, I don't think I can ever truly trust him again doing anything important or demanding.
+
+Due to the officers' pressure, his fading interests in osu!, and his general apathy, he stepped down from the board after completing his task with the tablets. Under different circumstances, I probably would have said something directly to him about stepping down, but because I was graduating that quarter, I didn't want to leave any unfinished business or ruin right before I left.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/photogenic_police_officer.jpg" />
+
+Looking back on the tablet situation, all this was way in the past now. At the time, I was really angry with the situation because it was just so unprofessional from us to delay this for so long, and, really, not even finish the job, seeing how we still have tablets somehow around. But since I stepped down from the club as well, its reputation and history are less meaningful for me now. I've learned to let things like this go. Victor and I still hang out, and it's not like I hold an infinite grudge against him, but man, every I think of him I just shake my head.
+
+So back to my tasks at hand. We finished the weekend matches, and now I needed to reflect the match results onto the site properly. This involved writing and using a Python script. I outputted the referee results as a CSV file, parsed that CSV with a program, and then updated the old HTML table with the right values and match histories. Some error checking was required because there were some weird cases with some matches having two more or more match histories, handling no shows with possibly one show, wrongly written/missing values, etc.
+
+You might be wondering if programming was even necessary. If this was a smaller tournament, the time and effort required to manually punch in values would be a lot less, though never completely trivial. This tournament, however, started off with 64 players, and that amount was just way too much to handle without automating some of the process. Especially since I was the only one managing the site, I would probably lose my mind doing everything by hand.
+
+Next, I needed to update the standings of the participants. This required going into the Challonge standings page, copying some of the HTML code there and then throwing it over to the site. After some replacements and fixes and double checks, everything should have been good to go on that end.
+
+And now probably the most time consuming part of the updates, setting up the next week's matches. In order to get this working, I wrote a web crawler Python program to parse the upcoming Challonge group matches. This found out all the match pairings that I needed to make between players. After getting these, I then generated a new HTML table that had these pairings listed along with a time slot, lobby name, assigned referee, and place holders for match history/score.
+
+Then came the really fun part, manual shifting of matches to account for player preferences. To do this, I referenced a Google sheet of our original entrants. One of the columns added here was a comments section I made to include anything about time preferences and day preferences.
+
+Originally, we admins said we were not going to worry about time conflicts because all the entrants signed up understanding they needed to be able to make the 8-10PM time slot. As time went on, however, this comments section grew and grew several folds as more people messaged me about time issues. For the sake of having a tournament where people would have a better chance to show up, I started rearranging matches every week.
+
+European matches were almost always the latest into the night because this would be very early morning for them. Some people couldn't make a certain day because of school or work. Other people preferred early since they stayed up later. It's not easy to satisfy everyone, but having multiple matches going on at once made planning easier. We had a few cases over the league where we had blank spots of no shows, and in these cases we did a fun show match or impromptu multiplayer lobby.
+
+Because I managed the schedules so closely, I ended up having to do a lot of communication work with the players, sending not just emails to them but direct osu! messages because the former often gets ignored. Trying to pass off this task to someone else just made my life harder since I was the central decider of everything. Better to let me handle it since I knew exactly what to reference.
+
+Then after that were some miscellaneous sections to be added. Aaron, in charge of the stream, checked to make sure VoDs of the week were created successfully. These were passed onto me, and I put them on the site. Jimmy at some point was writing writeups for each week. Turns out, as I've discovered too(!), writing is hard and very time consuming, especially if you're working on the writeups months down the line. I'm pretty sure he said he stopped after week 7 or something.
+
+All this would take at least an entire Monday night to complete. In the early weeks, I had to scramble to write all the necessary programs I needed, so often my work stretched later into the week. Later in the league things started to stabilize as I found my groove. If problems didn't occur, I could finish most of everything in one night, which, keep in mind, was still something like 5, 6 hours.
+
+<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/puppy_tentacle_bag.webm"/></video>
+
+For the rest of week, I handled some extra communication here and there. Reschedules were very common considering we had a huge number of people in the group with plans popping up, and sometimes I made mistakes planning the schedule. These could be tricky to handle because it required tracking down people and confirming a time properly, so a fair amount of back and forth was required. The best thing I could do was just reach out to the parties as fast as I could.
+
+And that long winded explanation concludes a general weekend for Swiss. I get a few nights off where I mostly worked on the summer osu! beatmap and then it's right back to the chopping block with a new set of matches and updates. Awesome. Also, working my internship definitely took its toll on me.
+
+My sleeping patterns are always pretty screwed up, and it wasn't good back then either. Each night I slept pretty late since that was just how my body operated, and I woke up super tired going to work, was even more tired when I got back, and this only made coming back home and trying to do OSL stuff even more difficult. It's a vicious, never-ending cycle.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pepe_house.gif" />
+
+I don't know if it's exactly worthwhile doing a retrace through the Swiss rounds week by week. Usually I do a chronological walkthrough of a project, but the whole league is a pretty big blur to me now. I'm going to save myself the trouble of watching through VoDs and trying to remember what happened.
+
+I will mention some memorable events, however. Of note was that I actually got a chance to cast a couple times. There was definitely some pressure at first but for the most part the entire tournament was just a trolly, joking environment, so no one really took casting too professionally or judged with strict standards. We weren't really high ranked players so we couldn't offer in depth commentary. Most of our small talk was just inside jokes between admins, sometimes at the detriment of a clueless viewer.
+
+Casting can be pretty exciting, but it's probably not my calling. I love talking about anything, but I don't think I have a particularly sexy voice; Jimmy pulls that off best out of all of us. It's fun to do once in a while though, and I don't mind putting myself out there. I was actually once pretty shy speaking on stage, but ever since I joined VGDC and did quite a bit of (sometimes unexpected) public speaking, I've had a lot less anxiety talking. I know I have the support of a development or admin team behind me so I'm more comfortable and familiar with myself.
+
+There was one week where we happened to lose a huge number of our admins. The situation got so bad that I was actually put in charge of streaming. I don't think my settings/hardware were configured the best so the quality was a bit shoddy, but we pulled off the bandaid stream pretty alright, despite some game breaking issues.
+
+I ran into a weird, bizarre problem where my maps somehow got corrupted after redownloading files. The backgrounds switched out to different ones, and for some of the songs, there was no sound at all. I tried to fix things on stream and after an hour of tinkering around, the issues got solved, but my god was it a pretty high pressure situation to work out on the fly. I think we handled it pretty well though and didn't lose our cool too much.
+
+Probably the most viral event to come out of the tournament was a warm up match between kennyyam and \[Neetwork\]. We didn't realize it was preplanned at the time, but they parodied a pretty famous osu! video of some Japanese guy and his buddy jamming out to Rockefeller Street Dance. Everyone had a good laugh that night, and the highlight video of that game has something around 15K views as of now.
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/JPVIgshtOag" frameborder="0" allowfullscreen=""></iframe>
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/rrDe4AVfExc" frameborder="0" allowfullscreen=""></iframe>
+
+Maybe of worth mentioning were some problematic entrants in the tournament. We had a lot of drop outs but there were a few in particular that caused some grief for the admins. One dude was super heavily offended by the map choices we had in the tournament, and he was not only pretty vocal but also intrusive and abrasive about it.
+
+I'm not a big mapper or really good player so I can't really say too much about our map selections, but it's not as if his concerns came out of nowhere. He was definitely on the extreme side, but there was plenty of feedback we got criticizing our map pool. Our DT songs of note were overall way too easy for the skill level of player. Very few of the hard rock maps were also played; a lot of them were extremely punishing because of drain and difficulty.
+
+You can't satisfy everyone, so I don't know if I'll linger on this topic too much. One of the problems was that, as mentioned before, we had a pretty huge rank discrepancy of players. We wanted to satisfy a large number of players and give them the chance to play against others of similar level. As we closed in towards the end of the tournament, however, we realized that having a lack of rank limitations made for some lopsided games.
+
+Natalia was the top player of the league by a considerable margin. He was at ~50 rank at the time compared to the next best at somewhere like 500. Without a doubt, he steamrolled the entire tournament and almost never dropped a single map. The admins specifically wanted to broadcast his games just for the chance of an upset.
+
+It wouldn't come as a surprise then that he took the entire thing. Some people were upset that we allowed such a disparity to occur, but I think we made the best out of situation. We simply took the top 64 players that signed up, and things just happened to work out as it did. Natalia was also a really supportive and active entrant. He showed up to all his games and was active in chat. There wasn't any reason to consider even kicking him, on the contrary it'd probably help us more if he stayed.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pretty_boy.jpg" />
+
+We had one tournament entrant who got banned. I'm not going to say too much about that, just that it's not our discretion to charge and remove players because of controversy; that's up to osu! staff to decide. There were some talks of removing him and even accusations sent our way from one distressed player, but we ultimately decided not to do anything until osu! formally banned him.
+
+I think that's pretty much it. There weren't too many things different in the top 8 brackets than Swiss to be honest. The only drastic thing that really happened was Ecliptus somehow not waking up on the final day for his matches. That put us in a bit of an awkward position. After failing to contact him, we ended the stream earlier.
+
+By the end of things, we were pretty burnt out. It was exhausting prepping every week and assuming responsibilities. For me especially, it was a ton of work to update weeks and communicate information. But through the thick and thin, we ended on a pretty good note. The last weekend was an exciting finale commemorating the long summer season.
+
+There's a lot to take away from this experience. From planning more properly to better task and people management, I definitely learned a lot from my time here. Online tournaments are a lot stranger to organize than ones in person. A lot of problems crop up because it's difficult to put accountability on players and admins when you can't see each other in person.
+
+And I think this ends the story. This writeup has been pretty weird for me to write. I basically just talked about a bunch of different aspects of the tournament one by one as they came to me and said something about each part. It's not a straightforward chronological retelling from start to finish like my other projects. I apologize if this writeup comes off scattered all over the place.
+
+Perhaps the only thing to mention after the fact was that Aaron and Jimmy started getting involved with HSL, High School Star League, and managing a long osu! league for them. I don't know I feel about it. In some ways, I felt like HSL was poaching the osu! UCI officers, and I should have maybe looked into it or said more.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/osu_hsl.jpg" />
+
+The only formal decision I made was that I wasn't going to be interested in helping out. There's a lot more to osu! UCI than just hosting tournaments, and I couldn't afford/didn't want to spend a huge amount of effort and time helping other organizations with their competitive scenes. I wanted to focus everything I had for the university club and the club only.
+
+So I told them if they wanted to form a separate group to handle such tournaments or if they wanted to help HSL on their own, I wasn't going to stop them. Jimmy and Aaron decided to jump onto the HSL project individually and are currently helping them with their year long osu! league, with a finals happening sometime in Spring.
+
+It looks like a ton of work since there were a ton more signups to handle, but I'm pretty sure they're not broadcasting all the matches, so it's just mainly reporting and communication they'd have to worry about. I'm not too sure of the details since I haven't talked to them too much about it.
+
+Alright, for real now that should conclude everything. I don't want to write anymore. Though... as a last word, I just want to thank the team for their work and effort. Even though I felt like I did a disproportionate amount of work, this couldn't have been pulled off with the efforts of everyone. Streaming was something I had little experience in, so thanks Jimmy and Aaron for taking care of that. And thanks to all the referees for taking care of matches.
+
+Everyone sacrificed a big portion of their summer plans to pull this off. I've been ragging a lot on Victor for his poor performance this summer, but truth be told he probably put in the most time after me. Admins had family, school, and work priorities to take care of, so to see them each weekend was warming enough. Thanks everyone again, this tournament wouldn't have been a success without you all.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/osl_staff.jpg" /><p className="caption">Epic resolution</p>

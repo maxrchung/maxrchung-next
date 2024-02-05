@@ -1,58 +1,22 @@
 <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/sad_panda_baby.png" />
 
-It's been quite some time, and quite a lot's changed. Life update, I'm back in
-the bay now and now working at AWS. I'm writing this post to note down some
-interesting changes that are happening to my projects, including this site. As
-an AWS learning exercise and a way to more consistently organize my projects,
-I've decided to move everything to AWS.
+It's been quite some time, and quite a lot's changed. Life update, I'm back in the bay now and now working at AWS. I'm writing this post to note down some interesting changes that are happening to my projects, including this site. As an AWS learning exercise and a way to more consistently organize my projects, I've decided to move everything to AWS.
 
-I think this is pretty straightforward, but I'm making some things a bit more
-complicated than necessary, partially to keep costs low and partially to learn
-new things. Let's take this first project, this rails site, as an example that
-I've successfully migrated over. Before, it was sitting on a Digital Ocean
-droplet that cost about $5 a month. The first thing I did was move static assets
-out into s3. I had about a gig or two of assets that was stuffed into my
-repository, and that made cloning quite a hassle.
+I think this is pretty straightforward, but I'm making some things a bit more complicated than necessary, partially to keep costs low and partially to learn new things. Let's take this first project, this rails site, as an example that I've successfully migrated over. Before, it was sitting on a Digital Ocean droplet that cost about $5 a month. The first thing I did was move static assets out into s3. I had about a gig or two of assets that was stuffed into my repository, and that made cloning quite a hassle.
 
-Next I moved out the database, which was originally just sitting on the droplet.
-Looking at my options, RDS, the cheapest managed database, was still
-(relatively) too expensive at something like $15 a month for a Postgres
-database. That isn't too much bad, but I have to keep in mind that I'm going to
-also need to support MongoDB separately for THRUSTIN, and the cheapest managed
-MongoDB/DocumentDB offering started to hit the hundreds, so no thanks.
+Next I moved out the database, which was originally just sitting on the droplet. Looking at my options, RDS, the cheapest managed database, was still (relatively) too expensive at something like $15 a month for a Postgres database. That isn't too much bad, but I have to keep in mind that I'm going to also need to support MongoDB separately for THRUSTIN, and the cheapest managed MongoDB/DocumentDB offering started to hit the hundreds, so no thanks.
 
-After some thought, I just decided to run my own databases on the smallest EC2
-(T4G.NANO). I put in a backup script/system to upload daily dumps to s3 just so
-I can sleep easier at night. In the future I'll add to this database EC2,
-putting in Mongo for THRUSTIN and adding another Postgres database for
-Functional Vote. For any newer projects, I plan on using Dynamo.
+After some thought, I just decided to run my own databases on the smallest EC2 (T4G.NANO). I put in a backup script/system to upload daily dumps to s3 just so I can sleep easier at night. In the future I'll add to this database EC2, putting in Mongo for THRUSTIN and adding another Postgres database for Functional Vote. For any newer projects, I plan on using Dynamo.
 
-Next, some domain stuff. I'm never going to give up maxrchung.com, so that's
-always staying as is. One thing I did do was transfer the domain ownership from
-GoDaddy to AWS Route 53. Not too difficult, I did this once already for
-s2vx.com. Route 53 comes with some nice AWS service integration, like to setting
-up trust for SSL/TLS certificates. Speaking of domains, I'll probably give up on
-the thrustin.rs and functionalvote.com domains and just make them subdomains of
-maxrchung. I'll probably still keep s2vx.com for now, as sentimental value if
-anything.
+Next, some domain stuff. I'm never going to give up maxrchung.com, so that's always staying as is. One thing I did do was transfer the domain ownership from GoDaddy to AWS Route 53. Not too difficult, I did this once already for s2vx.com. Route 53 comes with some nice AWS service integration, like to setting up trust for SSL/TLS certificates. Speaking of domains, I'll probably give up on the thrustin.rs and functionalvote.com domains and just make them subdomains of maxrchung. I'll probably still keep s2vx.com for now, as sentimental value if anything.
 
-And now probably the most interesting part, I'm moving all web server and long
-running processes to containers. Originally I was going to try EKS, but it's too
-expensive and honestly probably too big brain for me. AWS encourages other
-cheaper services anyways so I went with ECS and Fargate. I containerized my
-rails project, put it onto DockerHub, and after deploying some container related
-services, I was surprised things just kind of worked.
+And now probably the most interesting part, I'm moving all web server and long running processes to containers. Originally I was going to try EKS, but it's too expensive and honestly probably too big brain for me. AWS encourages other cheaper services anyways so I went with ECS and Fargate. I containerized my rails project, put it onto DockerHub, and after deploying some container related services, I was surprised things just kind of worked.
 
-Did I mention I'm using CDK? I'm still pretty new to Cloud Formation templates
-and CDK, but I'm loving the IaC capabilities so far. You can check out all my
-project and CDK related code below:
+Did I mention I'm using CDK? I'm still pretty new to Cloud Formation templates and CDK, but I'm loving the IaC capabilities so far. You can check out all my project and CDK related code below:
 
-- [maxrchung_rails_old](https://github.com/maxrchung/maxrchung_rails_old)
-- [maxrchung-rails](https://github.com/maxrchung/maxrchung-rails)
-- [maxrchung-rails-cdk](https://github.com/maxrchung/maxrchung-rails-cdk)
-- [maxrchung-cloud-cdk](https://github.com/maxrchung/maxrchung-cloud-cdk)
+*   [maxrchung\_rails\_old](https://github.com/maxrchung/maxrchung_rails_old)
+*   [maxrchung-rails](https://github.com/maxrchung/maxrchung-rails)
+*   [maxrchung-rails-cdk](https://github.com/maxrchung/maxrchung-rails-cdk)
+*   [maxrchung-cloud-cdk](https://github.com/maxrchung/maxrchung-cloud-cdk)
 
-Next up, time to migrate my other projects. Since I've done this once already,
-it should be easier now. For THRUSTIN, I'll move the frontend probably to
-Amplify, the backend to Fargate, and the database to my EC2. For Functional
-Vote, I'll do the same thing.
+Next up, time to migrate my other projects. Since I've done this once already, it should be easier now. For THRUSTIN, I'll move the frontend probably to Amplify, the backend to Fargate, and the database to my EC2. For Functional Vote, I'll do the same thing.

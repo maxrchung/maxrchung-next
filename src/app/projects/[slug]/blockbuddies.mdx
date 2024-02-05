@@ -1,0 +1,138 @@
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/blockbuddies_banner.png" />
+
+Block Buddies was a multiplayer Tetris Attack game made for my major's capstone project. With guidance from Blizzard mentors, we worked over two quarters to create a game together. This game's not the most polished or prettiest thing I've made, but it was a decent effort for a small and fairly inexperienced group.
+
+*   Made with: C++ and SFML
+*   Made by: Max Chung, Tommy Tran, Hector Martinez, Ted Franowicz, and Anthony So
+*   Download (Windows): [BlockBuddies.rar](https://maxrchung-rails.s3.amazonaws.com/uploads/BlockBuddies.rar) (99.1 MB)
+*   Repository: [TetrisBuddies](https://github.com/maxrchung/TetrisBuddies)
+
+The rar contains both the Block Buddies client and server. By default, the IP (indicated in IP.txt) of the server is set to your local computer.
+
+## Background
+
+Ideally, I'm going to try and not put any class projects on this site. I've thought about it, and for the most part what I worked on in classes hasn't been particularly exciting or at the very least memorable. To be honest, I didn't get much out of my classes and major at UCI. Most of what I learned these couple years was from my own personal tinkering around, e.g. all of my web development knowledge, or from working on projects outside of academia, i.e. VGDC and my personal jams.
+
+I have to draw the line somewhere. If I went into the tiniest of minute details of my life, I'd probably talk about all the major programming assignments I did in school and the art illustrations I previously worked on. All these writeups take a super long time to write, so I want to limit my content to some extent. The projects I'll put on here will generally be programming projects and/or group projects I've put in a significant amount of effort for in my free time. For anything smaller, I'll just make a shorter blog post for it.
+
+The exception to my class project rule will probably only be this capstone project. For those who don't know what a [capstone course](https://en.wikipedia.org/wiki/Capstone_course) is, it's basically a final project to cap off, so to speak, one's major and education. Putting those couple of years education to use. Seeing its importance, I think it's worth noting it here.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_escape.webm"/></video>
+
+Not all courses have capstones, but my Computer Game Science major at UCI had one, and its capstone project was, naturally, to make a game with individuals of the same class. The course stretched across two quarter, for about 20 weeks. I was kind of an outlier within this class because usually seniors were the only ones who take it, but since I was ahead of my program, I took it during my junior year.
+
+Before the class started, the professor, and overseer of the class, requested game pitches for projects. At the same time, some teams were already getting together to get a head start on forming groups. A lot of these people were friends that I knew really well, mostly from the Video Game Development Club. I'd say at least around two thirds of the class were involved in VGDC, so I knew a good chunk of people pretty well. There weren't, however, any direct invitations for me to join teams, though I wasn't particularly looking for one.
+
+I think at the time I just wanted to kind of go with the flow. Having spent a lot of time in VGDC, where random groups were put together all the time, I thought meeting new people would be pretty fun instead of working with people that I already closely knew. You know, stretch your boundaries and that stuff, right? Plus, if I really did like another team's or a friend's pitch, I could just try and request their group.
+
+The two biggest groups worth mentioning were Project Goliath and Hocus Pocus. Goliath was a new project that quite a few people were already starting to plan together since the year before. It was inspired by Shadow of Colossus and was a platformer about a small hero defeating a larger giant. The hero progressed through levels that were representative of parts of the giant's body. This was I think the biggest group by far and was the only one to have extra artists from LCAD to help them out.
+
+Since I probably won't have a chance to talk more about them, I'll say a little bit about what happened with Goliath. These guys unfortunately ran into a lot of trouble with their artists. They did get artists who helped them out, but these artists, funnily enough, didn't know how to animate sprites and could only give them concept art or still frames. Not the most practical for a 2D game, I would say. So they suffered a lot because of that.
+
+The main interesting mechanic in Goliath was a grappling hook that was used to traverse the level. This seemed pretty tricky to implement, but they pulled it off pretty well. Their whole team was basically programmers, so on that end they were pretty solid. It's kind of unfortunate we only had 2 quarters to complete the capstone when our full year composes of 3. I think with another quarter a lot of our games would definitely be a lot more polished.
+
+The other project I'll mention, Hocus Pocus, was kind of an odd project. I don't know the exact going-ons of their group that well, but their project was pretty much a carry over from the previous year. Somehow they were able to get it passed as a game pitch by mentioning they had a subset of the team working on GATE, a game agnostic tile editor, on the side. Capstone projects were supposed to be completely new IP, so I'm surprised they continued working on a past idea.
+
+There were other projects worth mentioning here but these were the ones that had the majority of my friends in them, and that I probably was most keen on joining. But in a somewhat odd turn of events, I didn't end up joining other projects. Impulsively, on the first day of class, I actually pitched for myself a new project without planning for it beforehand. My game idea was simply networked Tetris, and this would later become Block Buddies.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/get_pig.webm"/></video>
+
+I was thinking about it for some time, and I really wanted to work on a game that was more, in fact, about the things surrounding that game. For example, most games I made before then were just that, standalone games. These often neglected some key features, for example the multiplayer interaction between players, databases keeping track of detailed account information, social aspects between players, etc.
+
+To get a chance to work on these aspects, I wanted to pitch a simple game, Tetris, that my team could iterate and build off of, e.g. create Tetris player accounts, implement 1v1/multiplayer modes, maybe have some form of chat/communication, and so on and so forth. In addition, I wanted to work with low level C++, both for practice and so that I could get a firm grasp of the individual components for the game. Specifically, I wanted to work directly with sockets and work with some low level graphics libraries.
+
+By next week, I met up with my assigned team to talk about the game further. I knew Tommy pretty well since we previously worked on [Wings of Rage](http://maxrchung.com/projects/wingsofrage) together, but the rest of the team were new faces. I reiterated to them what I wanted to do with the idea, and then we discussed what we wanted to do from there.
+
+At the time, Mari, who was then a part of the team, raised a pretty innocent point that caused some tensions among us. She wanted to change the original game idea from Tetris to something else. Personally, I was always set on doing Tetris since that seemed like the easiest and yet most competitive game to model off of. I was a little taken aback that they would want to change what I pitched so quickly.
+
+This was coming from Mari though, whose set of skills were mainly in game design and not particularly with programming. For this project, which looked to be very programming intensive, her skill set wouldn't really suit it. Because of that, I talked with her and the professor about possibly changing teams for her, and she would leave soon after.
+
+But the points she brought up remained. Pretty much all the members besides myself agreed that Tetris was too simple, so relenting, I guess I had no choice but to do as the rest of the team wanted. We decided to spend a week or two deciding what to do while we set up C++ and our project in the mean time.
+
+I guess I was a bit salty, but I never really wanted to give up the Tetris idea. In the coming winter break, I basically strong-handed my local group of friends to work on networked Tetris with me, and we made a very successful and well polished multiplayer Tetris game, [Tetris Buddies](http://maxrchung.com/projects/tetrisbuddies), that probably was more complete than what came out of this project.
+
+But back to Block Buddies. Mari left at this point, and the team then started to immediately butt heads with one of our members, Ted. Ted wanted to have a completely original idea for the game rather than doing Tetris or any kind of already made IP. So on that end, he started developing his own game idea to use for the game.
+
+I don't remember what it completely was. I think it was kind of snake spin-off with rotating circles that you had to follow or something like that. Either way, I started poking holes, I think fairly, everywhere in his design. He didn't take kindly to that. At our next in person meeting he pretty much blew up at me, saying that I was singling him out and didn't fully understand the idea, which followed into a pretty rough, tense argument.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/tryhard_tic_tac_toe.png" />
+
+Eventually, with the rest of the team not favoring his idea either, he conceded, albeit definitely not satisfied. Ted, I don't now how I feel about him. He can be pretty spirited and pumped up which is good, but I feel like he can be really difficult to work with at times. Maybe it's just something about me, but it's hard to trade ideas back and forth with him without feeling like I have to tiptoe with my words and make sure I don't offend anyone. He can be pretty stubborn too, and often not for the better.
+
+We eventually reached the deadline we set ourselves to pick an idea, and our best suggestion we went with was, wait for it, Tetris Attack. Not exactly a great step up in my opinion from Tetris, but it seemed like most people were fine with it, so we settled with Tetris Attack. Tetris already had plenty of multiplayer games available for it, but as far as we knew there were no multiplayer Tetris Attack games, and we could be one of the first.
+
+We would make one addition though to Tetris Attack, suggested actually by George Wang when I talked to him about it, which was to allow four directional swapping. Traditionally in Tetris Attack you could only switch pieces left or right, so four way movement could be pretty interesting. I think with these points in mind, everyone was pretty satisfied, and we got to work.
+
+The first task we did was to break up responsibilities. We wanted to break up all our programmers into specific parts they were interested in to divide work up. Hector worked on networking, since he wanted to get more experienced with it. Tommy took on databases because he wanted to play around with sqlite. Ted said he would take on game logic programming. And Anthony, who didn't seem to have a preference, was put on graphics.
+
+As for me, I worked on UI and stringing all the game parts together. Much of this involved general project setup as well. But funnily enough, before I could even open up Visual Studio to get working, I was already having problems. We decided to use Visual Studio 2013 since that was the most recent version at the time. The other members didn't have any problems installing and setting it up, outside of just waiting around for the long installation to finish.
+
+But I ran into problems immediately. Every time I tried to open my downloaded Visual Studio installer, the program immediately crashed and sent me back to my desktop. I spent the next couple of days to a week trying to figure out what was wrong. I don't know how I eventually discovered the solution, but upon crossing some random stackoverflow post, one person suggested that it could be a fonts issue, of all things.
+
+I'm not really sure how the fonts could have affected the installer, but that's what ended up being my problem so I'm not going to question it too much. To fix it, I asked my friend for a copy of all of his fonts in a giant zip. And then I took that folder and replaced my own with his. When I made the switch, the first thing that happened was that I couldn't see any words on my screen anymore because my fonts were destroyed. But after restarting my computer, everything was fine again, and the installer magically worked.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/spark_mouth.gif" />
+
+With that dealt with, I started to get SFML hooked up with the game. This took some time to figure out because the precompiled binaries of SFML did not work for Visual Studio 2013 for some reason. In order to get SFML working I had to compile not the stable source provided on their site but a more recent snapshot directly from their repository.
+
+Compiling things by source was a little tricky. It had been quite a while since I last did it, but I've gained quite a bit of experience with it through this project. After a lot of tinkering around I eventually got things to work, only to have to repeat the process again because we wanted to get static SFML libraries working. I'm not sure why we wanted static so adamantly, but I suppose it was less clutter so I was determined to make it work.
+
+Originally, we were planning on using even lower level libraries than SFML. It became very apparent, however, that this would be pretty impossible if we wanted a workable game by the end of the quarters. We simply lacked too much time/experience to work with low level components.
+
+This decision was mostly made because of Anthony, who was our replacement for Mari. Anthony just, I don't know, just didn't program a lot. He often didn't know what he was doing. He wasn't really actively involved in VGDC or programmed that much in his free time, so he struggled on this project, and asking him to do C++ and low level graphics stuff was pushing his limits.
+
+So because he had trouble handling his tasks, we decided as a team to just use SFML and go as low level as SFML would provide for us. Which was alright I suppose. Doing this would speed up our development a lot more and get things more polished out. If we went the other route we may not even have a game right now. Anthony was moved on instead to helping create animation and particle effects, I think, I'm pretty sure.
+
+That's not to say he was alone though. Hector and even Ted I would say didn't have the same game development experience that Tommy and I shared from all the projects we did in VGDC. Their lack of experience would show in their code and progress later on. Whether it was code that simply didn't work, didn't behave as intended, was messy, or hanging on by a thread.
+
+That's what I heard from Tommy though. As the project wore on, I started to get less and less involved in other people's code and just managed/added to my own. I pretty never touched the gameplay code since I was working on things around it. Was that a good idea in retrospect? I'm not so sure, but when there're 4 other people already looking into the gameplay code, I don't think it's the right decision to plop myself in as well.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/drifted_out_to_see.webm"/></video>
+
+My job was mainly to design the overall screen management system that encompassed the game. This entailed setting up all the different screens, UI, and the general structure of the program as well. Basically, everything that wasn't the gameplay, I probably took a part in writing. I made a very simple blank play screen where the rest of the team could just dump their gameplay code into. Things worked out pretty smoothly, and everything I think was plug and play without too many problems.
+
+This involved setting up a lot of UI elements as well, and I created my own TextBox, TextInput, Button classes to handle transitions and placements. It was a lot more complicated than I first expected. One of the first problems, for instance, I tried to tackle, was scaling on any screen and resolution. This was not very easy to account for, at least the way I did it.
+
+I wanted to have perfect scaling based on height. My solution was to save a scale value that was based off an arbitrary number compared to the height of the screen and then have all the UI in the game scaled according to that set value. But in order to get to this work, I had to manually scale a UI element whenever I created it, which quickly got out of hand and probably left errors everywhere. I don't know if there's a better solution or if there's a cleaner way to do it, but I'll have to definitely rethink how to do scaling in the future, or not do it at all.
+
+By quarter 1, I pretty much had the basic layouts functioning. After collaborating with Tommy, we got the login/register working fine locally, and databases were all finished on his side. He actually finished really fast since all he had basically do was make a database and do some simple adding to it. He would then I believe move onto gameplay code and try and work with the others to get more things working.
+
+I think by the end of the first quarter, we had a local game working, but not well. There was basic block cursor movement if I remember correctly and matches could be made, but Ted was still missing a lot of features core to Tetris Attack. For example, we didn't have pauses, combos, and sending of lines.
+
+I thought we were really behind schedule in my mind, as I hoped that the game would be pushed out very quickly so that we could spend the majority of the time working on other important features like multiplayer and social interactions of that kind. But with things working this slow, I had to change my mindset and expect something much simpler by the end.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/drunk_elevator_kick.webm"/></video>
+
+At the start of quarter 2, I actually had to go in and carve out the network code to work correctly. Hector had... some kind of semblance of sockets working, but not well, and importantly, not usable. Very basically, you could connect to a server I believe, but I think that was pretty much it. There was no system for packet sending/receiving back and forth.
+
+I added a ton to his code and redid the networking more properly with multithreading. Both the server and the clients have a separate thread for receiving packets. These packets get thrown into a queue within a network manager where they can be grabbed individually and processed however the program would like. Also included are ways to of course send packets between the client and server.
+
+I then started on the basic functionalities for the network. Namely first connect and disconnect with the server, i.e. logging into the server and having it keep track of you. If you logged out or exited the game, the server should remember to remove you. In addition, both parties continuously ping each other with alive packets, and if one party does not receive a response after some time from the other, he would break the connection.
+
+Next I worked on logging in and registering accounts. I had some experience with databases and sqlite, so I didn't really need Tommy's guidance too much here. The game should be able to keep track of registered accounts and logged in accounts. And in addition, there should be a profile page that shows some of the account stats that a player holds, e.g. win/loss.
+
+And the last thing I worked on for networking was matchmaking. This was a very simple algorithm which just put the first two queued players together into a match. It was actually not that complicated. Most of the work here actually came from setting up the UI properly on my end. It was tough doing UI in general because I had to hardcode all the screens, text, and button locations. Not exactly the most valuable use of my time constantly compiling/running the game constantly.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/gta_biking_tank_wall.gif" />
+
+That was basically it for networking. I didn't do any of the in game packet sending. That was left up to the other 4 to work out. I simply made the groundwork that they could follow off of. For the rest of the quarter I just let them handle the gameplay. At this point, it was so far in, I might as well just leave it to the other guys who've been working on it already. I just polished up UI and added more features in to add some more flair to the game.
+
+In the background, I added a block shower effect where blocks just flew down the screen. I added fading between transitions. When you clicked between screens, the current screen falls downward and fades away while the new screen falls in and fades in. It took some complicated maneuvering to get this all working, but for the most part it looks pretty good.
+
+I also added some random blocks around the borders of each screen. They look alright except somehow I didn't catch a small error here or there where they overlap slightly. I thought I fixed these issues but it looks like they still appear time to time. Kind of a shame, I'm a little disappointed about it, but it's after the fact now.
+
+I probably missed some details of implementation here or there. Some of it is just stuff I can't remember, but I think I hit most of the things I worked on. I don't want to go through the hassle of digging through my commits and figuring what I did in the past so I'll go as my memory serves me.
+
+I honestly don't think I can say too much more though. The gameplay code is still somewhat of a mystery to me. I know Tommy added some sound effects and graphics to spice up the game a little. I think with another quarter we'd probably be in a lot better shape. The gameplay has the basic elements in there, but I probably would need to help them make UI elements to place things more fashionably.
+
+Overall, I'm not too sure how to feel about this project. The end product we had was not too bad, but I did expect more from us. Maybe I just expected too much. I probably should have just went into this like any other VGDC project. The lack of experience from some of the members hurt us to some extent, slowing down the development and requiring others to cover their work.
+
+I think personally it was pretty stressful and tense working with these guys sometimes. It could be just the class structured format, but it felt kind of uptight at times working with my team. I didn't have as much fun or motivation compared to my other VGDC or game jam projects, and I don't think I connected as personally with my teammates.
+
+I think it might just be the fact that the members on my team just didn't really feel excited about our game in general. A lot of them were maybe just forced into my group since we were short on people. There was the incident after all early in the quarter where pretty much all the others didn't really want to work on a simple game, Tetris, that had already been done before.
+
+I didn't mind because I was interested as a programmer to work on the systems surrounding the game, but this capstone, keep in mind, was half a game design course, and I'm sure some people were looking forward to creating an original game. Tommy expressed that to me; Ted of course tried his own idea but I shot him down completely. And because of that, we had a game that we weren't really passionate to work on. I should have identified this and sacrificed my own wants to change more of the game.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/giving_up.png" />
+
+I guess that's something I'll keep note of in the future. Other people's well being is my well being, right? I'm responsible for starting and leading quite a few projects these days so I do want to keep everyone I'm working with happy and satisfied. One person's complaints can shutdown an entire group's morale and motivation, and that's not something I want to have to fight through.

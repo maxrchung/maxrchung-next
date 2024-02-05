@@ -1,0 +1,90 @@
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/aga_banner.png" />
+
+Age quod agis was an osu! beatmap I helped work on with Royce, a friend I met through [osu! UCI](http://maxrchung.com/projects/osuuci). I handled programming the storyboard, while he worked on the map itself. We themed the song off snow and winter.
+
+*   Made by: Max Chung, Royce Sato
+*   Made with (Storyboard): C++ and SFML
+*   Download (osu!): [void - Age quod agis](https://osu.ppy.sh/s/409783) (12.5 MB)
+*   Repository (Storyboard): [age-quod-agis](https://github.com/maxrchung/age-quod-agis)
+
+## Background
+
+After working on the [Magical Girl](http://maxrchung.com/projects/imjustanaveragemagicalgirlsorry) storyboard, there was a lull where I didn't have any osu! projects to work on. osu! UCI was going through some restructuring, so there were no club beatmap projects over winter quarter. I had my own business writing up entries for this site, so I wasn't exactly available either.
+
+When spring arrived, Royce said he'd take charge organizing a club beatmap project. You can read more about that under [Flower Trip](http://maxrchung.com/projects/flowertrip). Before that got fully underway, however, I wanted to get back into the groove of storyboarding and also work on my C++, so I decided to work on a storyboard separately.
+
+I remembered that Royce was working on a mania map in his free time, so I volunteered to help him storyboard that. He was working on a trancey/electronic song, Age quod agis. It's a pretty underground song, and I wouldn't say I'm a huge fan of the particular genre, so the music wasn't exactly right up my alley. Nevertheless, it wasn't awful by any means, and it was a good chance to work with a good friend on a side project.
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/jiJJeyPK818" frameborder="0" allowfullscreen=""></iframe>
+
+There was an idea I wanted to pursue on this storyboard. I wanted to map each key of input to some kind of graphical effect in the background. This I did through a snowflake theme. I chose a snow theme because the background Royce selected for the map was some kind of winter trees/forest picture. I don't really know why he picked it. I did offer at one point to draw a background for him, but he seemed to like the trees so I stuck with it.
+
+There was a centerpiece snowflake that stayed in position in the middle of the screen. When you pressed one key, an explosion of smaller snowflakes popped out from the center. Another key controlled scaling, which expanded all the snowflakes by a small amount. The third key rotated all the snowflakes, and the explosion snowflakes also moved in a spiraling pattern. Finally, the last key handled coloring, changing a slight amount on each press.
+
+I thought this was a pretty unique and interesting idea. It also required a bit of parsing of the beatmap file for note timings, something I never did before, so I wanted to try that out. Reading in the times and doing the four actions wasn't too difficult. A good chunk of my time was actually working on the art assets for this project, where I made snowflakes by scratch.
+
+There were about 20 snowflakes in total, each made individually through Photoshop and a bit through programming. To make them, I worked with a 1/6th slice of a snowflake and mirrored/copied the section via code six times to make the snowflake shape. This process was pretty fast for iteration, and with Royce's comments I modified a few that looked out of place.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/aga_snowflakes.png" />
+
+Next time I'll look into Photoshop scripting to see if I can take advantage of Photoshop doing more of the tedious work for me. This time I used SFML to generate the complete images, but I still needed to run the resulting files through Photoshop again to apply a specific blur filter. Working with Photoshop scripts was made at a suggestion of a high school storyboarder, Clayton, that I met through osu! UCI, thanks m9.
+
+Implementing the four keys wasn't too hard, but to spice up the beatmap some more I wanted to add additional effects. Probably the most difficult task at this stage was trying to figure out how I could both move an explosion snowflake outwards and also change its path when a rotation input caused it to spiral a different direction.
+
+The reason this was a little tricky to work on was because osu! behaves a little oddly when you have overlapping commands for a particular Sprite. For example, when an explosion occurred, a particle would be set to move from its beginning to end from the center of the screen to its destination out of the screen. You did this by declaring the start time, end time, start position, and end position of the Sprite. osu! handled the interpolation in between steps.
+
+The problem with this, however, was that osu! didn't know how to handle a command if you declared a new instruction during the time frame of another one. This is probably for good reason because it does seem ambiguous if you try and alter a Sprite in two conflicting ways over the same period. To get around this, I needed to calculate the interpolation myself, find future points that a Sprite would move to, and move between those points individually.
+
+<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/im_gonna_merge_it.webm"/></video>
+
+With this resolved, there was one last thing I wanted to add that would end taking the most time for me out of this whole project: an audio spectrum. This actually took a bit of digging around and required a bit of research. From some basic Googling, I got a pretty good idea through stackoverflow posts about how to piece together a spectrum, but I wanted a more thorough understanding of sound and computers.
+
+I started reading an online textbook about sound, and I read up to and through an introduction of FFT. I never actually programmed the FFT myself, which I haven't really looked into. For this project, I used kiss\_fft to do the work for me. Everything else besides FFT was written by me though.
+
+Following a guide, I did some WAV file parsing to get all the samples I needed. Then I applied a Hanning window on sections and performed an FFT over that. At one point, however, I reached a lull where I got stuck with some unusual results that stumped me.
+
+My logic was sound and the process I was using was correct, but a few small things tripped me up that I wasn't quite aware of. The first was using shorts instead of floats as input to kiss\_fft. Short was the default type given through WAVs, so to make my life easier, I just threw these shorts into the FFT function for processing.
+
+Turns out, the FFT I believe only took in floats between -1 and 1, so I ran into some weird representation errors. There was no documentation I could find that explained the input ranges, so this was actually something I asked my roommate about. He seemed pretty sure that I needed to use normalized floats, and that fixed some of my issues.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/must_be_a_float.png" />
+
+There were more problems, however, mainly dealing with scaling and frequency ranges. The FFT returned back an array of linear frequency buckets. I knew that frequency ranges were logarithmic so directly using the buckets was incorrect. I didn't realize, however, that the difference between the two would be drastic.
+
+I couldn't find out what my problem was Googling around and looking up posts. Eventually, I decided to email someone that previously worked on spectrums. Clayton, mentioned before, directed me to the source code of an osu! audio spectrum library written in Python. After reviewing the code, I had a lot of questions and still needed help, so I messaged the author directly.
+
+His suggestions probably helped me out the most. He strongly advised me to account for the logarithmic differences in the FFT buckets. His advice was pretty spot on, and after I accounted for the frequencies, the results weren't perfect, but they looked much better. After fixing the scaling, the spectrum looked pretty presentable. I was really happy to reach the end of this. The entire spectrum process took me about 5 days of work: reading, working, debugging, and asking around for help.
+
+I hooked up the bars with the 4 keys, and after polishing things up, I thought everything looked alright and presentable. I showed the final product to Royce, and I thought we would finish soon after that with a few minor adjustments. But after reviewing the storyboard for a while, Royce wasn't satisfied with the result, and I agreed with him in the end.
+
+The problem was that the storyboard just seemed too disconnected with the map. You couldn't really tell what key corresponded to what action in the background, and while you could feel to some extent the link between the two, it too often felt like the background was randomly spazzing out rather than corresponding properly with input.
+
+To be honest, at that point I wanted to just get done with this project and move on, but I after some reflection, I wanted to make sure I did a good job finishing this storyboard. I decided to throw much of the input action idea away and scrape what I had into something new. We talked about ideas for a while, and I came up with something slightly based on what I had before.
+
+<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/ping_pong_head.webm"/></video>
+
+This time, all the key inputs controlled the snowflake explosions, but instead, each key shot only 1 snowflake out from the center. Color was to be controlled automatically, fading in and out. Rotations were specified at a certain rate at particular points in time. And scaling would be based off of the spectrum bass.
+
+The most difficult out of these changes was the spectrum bass. I didn't really know how to follow the bass kick of the music properly. I tried choosing a specific frequency band to keep track of, but while at certain parts of the song the scaling seemed okay, other parts felt completely off. In the end, I decided to scrap the bass kick idea and just have a steady scaling on every so and so beat, with an option to specify ranges to turn the scaling off.
+
+I had things at a pretty good state, but I ran into nasty bugs that took a long time to fix. These were a side effect of the interpolation problems mentioned earlier. Like the spiraling snowflakes, the bars had their own issues to account for. When rotating constantly, they needed be moved discretely in order to have a smooth rotation path. At the same time however, they needed to be scaled out when appropriate, which required moving as well. These two conflicting actions required a lot of time and analysis from me to fix.
+
+I'll gloss over most of the bug details, but the biggest bug was probably figuring out some float issues. Turns out if you do a lot of float additions, you'll start to have quite a few round off errors. It took me a while to find out this was even happening, though hacking a fix was pretty simple by adding some buffer room.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/prove_you_are_human.png" />
+
+I fixed up a lot of edge cases where the storyboard behaved oddly when you were just about to change into or out of a rotation range or scale off range. And with that I was pretty much done for sure with the project. Royce and I looked over the storyboard, and he wanted to add some small edits here or there. I rejected a few of them but the simpler changes we went through with.
+
+I do think in some sense I probably ended this project too early still. There were definitely a few things I could additionally look at and more things to implement, but I was ready to move on at this point. There was the club beatmap to worry about and also my own job searching and programming practice I wanted to get to.
+
+I'm pretty satisfied with my work here though. I learned a ton about spectrums and sound and how they all work together, and I'm confident I'll be able to go into my next project with a lot of good knowledge and code retained. I do feel a bit sorry for Royce since this was his baby project, and I didn't want to leave it in bad terms or anything. He seemed fine with the end result, though because he's a pretty happy go lucky person, I don't really know if fine is good enough.
+
+<video autoplay controls loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/two_bestest_friends.webm"/></video>
+
+I think one thing I'll definitely work on in the future is variety in storyboarding. Right now all of the storyboards I've worked on have a very central idea that is just repeated over and over. There's no variety in the content, and that can be quite boring and uninteresting. In my next projects, I'll spice up the storyboard with a few different concepts and see how that works out.
+
+The last point I'll mention was that I actually had to do a surprising amount of optimization in order to fit the beatmap under the size limit. Turns out that working on a 5 minute map with a lot of discrete Sprite movements is not good for the storyboard file size. After some tweaking around, I got things to fit better albeit working a little worse.
+
+That's about it. I think this project was a great learning experience, and I'd say we're happy with the results. I don't know about getting the map officially ranked though. Royce is pretty shy about asking for mods and looking for criticism, and that's where ranking mostly factors in from. The last thing to leave off with is a video playthrough of the song, captured and skinned by Royce.
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/74wg9s5NXAk" frameborder="0" allowfullscreen=""></iframe>

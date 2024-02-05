@@ -1,0 +1,174 @@
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ps_banner.jpg" />
+
+osu! UCI was asked by Press Start LAN to help organize an osu! tournament over the weekend event. We held a two phase tourney over Sunday, split up into 4 rounds of Swiss followed by a single elimination bracket for the top 8 placers.
+
+*   Organized by: Max Chung, Jimmy Zhang, Victor Stolle
+*   Website: [Press Start](http://osuuci.com/tournaments/pressstart)
+*   Repository (Website): [osuuci2](https://github.com/maxrchung/osuuci2/tree/master/tournaments/pressstart)
+*   Repository (Animation): [osuanimation](https://github.com/maxrchung/osuanimation)
+
+The tournament website was added as a subpage of our osu! UCI site. The above repository link points to the specific Press Start LAN section. The osu! UCI animation was an animation display I made for the tournament, code also provided.
+
+## Background
+
+Press Start was definitely an interesting event to work in. This project was very different from everything I've done in the past, which only composed of game development or beatmapping. This was my first time organizing a tournament along with the rest of the team, so there were definitely a lot of growing pains.
+
+I don't know how I feel about tournaments overall. It's a lot of work if you want to make it as smooth and pretty as possible. Hosting tournaments is something I probably wouldn't consider actively doing in my free time. But holding tournaments as part of osu! UCI was an exception because they're a big part of club activities.
+
+I'm not entirely sure how we initially got contacted by Press Start. The club was only a quarter old before we were approached, and we only had maybe a half dozen to a dozen active members, so I imagined we weren't terribly well known. Maybe they found our name when looking through the UCI club organizations. I know the LAN grabbed help from a lot of clubs on campus to handle different games: TAG, Smash, Dota 2(?), CS:GO, League of Legends, StarCraft II, and I guess we were included.
+
+Maybe Jimmy had some friends involved that asked him. I know he's definitely a lot more buddy to buddy with the other gaming clubs and knows a lot of the people working in them. So they may have exchanged word that osu! UCI was up for tournaments. We actually had a casual showing in a LAN, All Systems Go, during winter quarter. But there, we decided to just have a free play area instead of a tournament. Perhaps some of the admins from there also worked on Press Start and remembered us, I don't know the full details.
+
+To speak up about the casual play some more during that LAN, there were a couple reasons why we didn't want to do a tournament then. We didn't have a lot of competitive members then, so we didn't think we could hold a sizable tournament. At the time, we didn't know about other osu! players or communities in the area, so we expected a pretty low turnout.
+
+Not only did we not have a lot of people, but the people who would be interested would have huge rank discrepancies, and this would make map selection, rule sets, and format difficult to plan. And to add on top of that, none of the officers on the osu! UCI board had any experience or particular desire to hold tournaments. So all these reasons led us to scrap organizing anything competitive and just have a casual free play area to get some exposure for the club.
+
+One of the thankful things to come out of All Systems Go was that we met Jimmy, who immediately joined the club and would soon become an officer to help us handle events. Press Start was probably the first biggest task he took on for the club, and he was really excited to get started working on it. I think with him pumped up and on board, I was pretty confident we could do a decent job holding a tourney.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/wew_food.webm"/></video>
+
+At the time, Jimmy didn't have experience organizing tournaments, but he was definitely down to give it a shot. Particularly, he was interested in making the map pool for the LAN. He was the who was first approached to help out by Press Start, I think it may have been with Kevin or one of the more general tournament admins. Technically he's the head osu! organizer, and I'm a helper organizer, or something like that, I'm not entirely sure.
+
+By the time Jimmy told me about the opportunity, I think we had less than a week to submit a proposal and schedule for the tournament. This was pretty short notice, but mostly due to the fact that I think osu! was one of the last games to be added to the LAN. At the time, the osu! UCI officer board consisted of Jimmy, Justin, Brad, and myself. Justin and Brad were planning on joining the tournament, so Jimmy and I took up the responsibilities of planning and adminning it.
+
+Aaron and Victor joined the officer team within the next coming weeks, but by then most of the planning was already finished. Aaron was working on the StarCraft division of Press Start and Victor would help us a volunteer on the day of the event. The planning was mostly done by Jimmy and I.
+
+Since this was the first time we did this, there was a lot of brainstorming and potential ideas to consider. Everything from the format, to the maps, and rules we had to decide. And to make things a little harder, osu! the game itself kind of doesn't have the greatest support for LAN type events, which I'll get into later.
+
+I was the one who made sure to get the format and schedule of the tournament down. Jimmy just double checked my ideas and gave me his thoughts. For format, I had a tough time deciding between single/double eliminations, Swiss rounds, among others. The first idea we considered was just the most popular I've seen in a lot of esports tourneys: double elimination. At first glance, it may look like there weren't too many problems with this, but it could get gnarly pretty fast.
+
+The first problem was time. Double elimination matches all rely on each other because you need to know the results of previous matches before you could progress forwards. For a 32 person bracket, which we were planning for, this would require something like a rough count of 18 rounds to complete. If we did 30 minutes per round, that's 9 hours still to complete, and this is assuming best of 3's only.
+
+Keep in mind we wanted to limit ourselves to only one single day of games instead spreading over the two day weekend. I'm pretty sure this was because there were a ton of events already going on the previous day, and we didn't want to interfere with our potential attendees who may have had conflicts.
+
+I will say now though that our eventual player count was only around 16. This would considerably reduce the rounds if we chose to do double elimination, to around a dozen I believe, but that's still 6 hours with 30 minute matches alone, and I don't think that was acceptable. Not to mention, I don't think it would be professional to heavily alter our schedule after a reduction of players.
+
+We kept double elimination as a backup, but I decided to throw it out when we encountered another problem, rank discrepancy. The attendees for the tournament would range anything from around double digits to 50,000~. Because of the nature of double elimination, it would only fair that the best players were seeded against the lowest ranked players. But this would mean that low ranked players would have a very rough tournament as they would most likely their first rounds. This applies even more so for single elimination, where they would get eliminated right off the bat.
+
+As a side note, it might be a little weird how I'm using the term low ranked. The way ranking works in osu! is that the smaller the number the better you are, but I'm using the term in the wrong way by referring to low ranked players as actually higher ranked players. Okay, I'm kind of confusing myself now, but it's the spirit of the words that counts, not the actual meaning. Or something like that.
+
+Anyways, to continue, some of the discrepancy problems could be helped by choice of map pool. If we made the starting rounds have a lot easier songs, then the lower ranked people would have more a chance. But it's hard to be competitive as well and make sure everyone was challenged to a good extent. After thinking of solutions, we eventually settled on doing, instead, Swiss rounds.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/swiss_cheese.png" />
+
+Swiss was my favorite alternative because it allowed people to eventually play against other people of a similar caliber. It would also let them play at the very least a certain number of rounds so they wouldn't just be finished off in two. And time-wise, this fitted us very well, since all the Swiss rounds could be run at the same time.
+
+The cons to Swiss were that while you could eventually reach a conclusion of top players through points, there were no storylines or hyped matches to follow. With elimination rounds, you slowly weeded out players until you reached a exciting grand final. We wanted to still have this knockout finale, so we split the tournament into two parts. The first section was all Swiss rounds, and the top 8 of the groups was put into a single elimination bracket.
+
+Jimmy decided to make quite a few map pools, one for Swiss, one for top 8, one for semifinals, and one more grandfinals. Swiss rounds were all no mod maps, and top 8 had separated mod maps. Personally, I think it's a little excessive to make so many sets for the top 8. I believe this was pretty common tradition among osu! tournaments to do such a thing, but usually these tourneys were spread across weeks, so you had plenty of time to practice each round beforehand.
+
+I don't think it makes as much sense if every round is just played in less than an hour. But on the good sides, it was cool to see ramping and progression through the tournament, as the maps got more difficult over time. I'd imagine it was a lot more work on Jimmy's side. Overall there was something like 70-80 maps picked.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_food.png" />
+
+The Swiss rounds were best of 3. The top 8 was best of 5, semifinals best of 7, and grandfinals best of 9. We put in some additional rules to help decide who picked what map first. We used the ingame !roll command which returned back a number from 0 to 100. The higher roll chose the first map while the lower roll chose a warmup map, any song less than 5 minutes that wasn't in the map pool. Thereafter, the loser of each map picks the next one.
+
+The next rule was kind of difficult to explain in a few words. And for our most recent tournament, we decided to throw it out mostly because of all the explanation we had to do. The rule was that if you won on a certain mod, you couldn't pick it again. This was to promote the use of all mods and to make sure you couldn't steamroll everyone by being a specialized player. For better or for worse we removed this rule because we got a lot of questions and accidents surrounding it.
+
+The next thing we tried to decide was how to record scores. This got a fair bit more complicated than I would have liked, mainly because I couldn't think of a way that was easy and efficient for everyone involved to ensure proper security. The other officers brought up the fact that we probably could have afforded to be more lax in our records since we were going to know everyone involved. I thought this was pretty unprofessional for a tournament, so I tried to put in place some protective measures.
+
+Most of our problems with recording would be in the Swiss rounds, because if we had, let's say, a target of 16 players, then we had up to 8 rounds going at once. At the day of the event, we would have an unknown, probably very small number of tourney volunteers to watch over the matches, so we couldn't safely do 8 rounds at a time. Even if we staggered the Swiss rounds, which was something we eventually did, and had them play in 2+ Swiss groups, this would help alleviate the problem but not, more importantly, ensure one-to-one referee to match pairings.
+
+We considered traditional paper printouts that required signatures. The idea was that the players would play through their matches and record their scores. At the end, both players would sign off and a referee would double check and also sign off. This was probably my best plan, but I it could get messy. Ideally, I'd like players to have to do as little work as possible, and I don't think we wanted to handle a lot of paper, so we considered other options.
+
+There are official digital records of multiplayer osu! lobbies called match histories that are provided within the game and accessed through the osu! website. Accessing them, however, is not particularly straightforward. Players do not have public match histories that we can access to see what games they've been playing in. A match history corresponds only to a single lobby's game history, and only players that are present within the lobby have access to them.
+
+This makes it difficult for an admin to track games, because unless if an admin made the game himself, it's up to players to submit their own match histories to us, which I imagine could have quite a few accidental and security consequences. And, again, we did not have enough tournament volunteers to ensure that an admin was always the first to make matches.
+
+Our final solution, which I feel was still kind of complicated, was to have a list of lobby name/passwords corresponding to each match. Players had the responsibilities of creating each match as we designated. Once underway, the admins then went into the matches themselves and grabbed the match history.
+
+This wasn't terrible, but it required a lot of explaining, and I think people were still kind of confused at the end. We also ran into a few issues with people ninja joining matches that they weren't allowed to, but overall, as the other officers pointed out earlier, we really didn't run into any major problems that I was cautious for. In future LAN tournaments, we decided to be a little more lax and just require a match history as soon as possible. If we didn't receive one, we badgered players for them.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/taking_a_picture.jpg" />
+
+To actually record the scores, we put everything on Challonge, which had a lot of utilities for setting up groups and brackets. We could have taken advantage more of the tools they provided, but we okay with just using a bare minimum for now. For later tournaments, we looked into more features.
+
+During this time, I was starting a website which was an added subsection of our osu! UCI site. The LAN tourney was a big and new part of our club that I wanted to let everyone know about, and of course I wanted a centralized location for registration, information, pools, and contact.
+
+Looking back on the site, it doesn't look particularly pretty, but it fit our needs at the time. The linking system specifically was kind of awkward since I didn't want to jam everything on a single page. I want to say there's been improvements on future tournaments. The summer league and the fall LAN have been better because I was able to work from this base. I made a lot more original assets and wrote special CSS.
+
+Once the site was up to a reasonable degree, the next big step was marketting and getting the word out. We had maybe a half dozen members from osu! UCI's side, but we still wanted a lot more to fill our goal of 32. When it came to LAN time, we only reached half our goal from all our work, but we were still able to hold a pretty exciting tourney I'd say, not to mention meet a lot of osu! friends in person that we'd keep in contact in the future.
+
+Press Start advertised us a little bit, but they were definitely a lot more focused on the other games, understandably, that had up to something like 100 times our prize pool. League of Legends had a huge $10,000 pool, and Smash was super big because they had a ton of high profile players coming over.
+
+Most of our entrants came from other outlets. We had a really successful Reddit thread that gained a lot of traction. It got the word out about us, and we actually contacted quite a few big names that would help us out. Remco/HappyStick, who was I think at least top 20 at the time, maybe at single digits at one point, messaged us saying he'd be in the area and would love to compete with us. He's originally from the Netherlands, so it was an interesting and lucky coincidence.
+
+The other notable high ranked entrants from here were Andrew and Scott in the three digits, who we still keep in contact to this day. Andrew hooked us up with osu! North America, a pretty popular Facebook group that Andrew managed with about 100 to 200 members. Their circle of osu! friends was also located in SoCal, and a lot of them made it out to the event.
+
+I think what screwed a lot of our potential entrants was having a really high entrance fee into Press Start. I think it was something like $20 or $30 for a normal seat if I remember correctly. If you used promo codes early you could cut that down to $5, but these spots filled up pretty fast. So while we got a lot of members early, later on that dropped by a significant amount, for us and the overall LAN when the discount ended. I couldn't convince any of my friends to come when the price bump jumped up so high.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ayy_lmao_dwag.jpg" />
+
+In comparison to other games, osu! only had a meager $100 for first place and $50 for second provided by Press Start. It paled in comparison to other games' prizes, but we, or at least I, weren't so necessarily offended by it. osu! just in general doesn't have big tournaments. Even the official osu! world championships, until recently, did not have cash prizing, so we'll take anything given to us.
+
+We also contacted osu! staff for additional prizing, and though they were a little hard to get in touch with, were perfectly willing to help us out. They offered offered us some months of osu! supporter, its membership system, that we could give to winners. And more importantly, they gave us access to the tournament client, which was needed in order to broadcast games.
+
+At the time, we didn't have a lot of streaming experience. Aaron probably knew the most out of all of us, but his hands were tied mainly with StarCraft II. He helped Jimmy get set up with OBS and scenes, but it would be mainly Jimmy and later Victor trying to configure the stream properly. I backed away completely from handling streaming since I only had a crappy laptop and couldn't test it very well. I wouldn't have a suitable rig for streaming until early summer.
+
+That about concludes our preparations. We had a few more management things in the background, like a bunch of Google sheets to keep track of everything, and a couple meetings to run through the LAN, but the format and everything mentioned above were the most important parts.
+
+I think we were pretty nervous about the event, and I kept thinking of worst case scenarios. I was thinking what happened if the network shut down, in case someone tried to screw us over in a bunch of different ways, etc. But as always, you can't account for everything, so we'd have to handle things as they came.
+
+Right before the LAN started, the tournament organizers had to be there early to set up. For osu!, Jimmy and I were the organizers, with him as the main admin. We also had the help of Victor, who was signed up as a tournament volunteer specifically to help us. The other osu! UCI officers were either playing in the tourney or involved in other parts of the LAN.
+
+The first couple hours were just spent setting up chairs. Pretty tedious work, but after that we sat around doing nothing for a bunch of hours. Apparently we couldn't go into the building before midnight, and the rest of our stuff hadn't arrived yet, so everyone just separated for dinner and reconvened later. When we finally got let in, we then started the long moving process of arranging chairs, tables, and the whole shebang.
+
+By the time we finished it was probably 2 or 3 in the morning. There were still things to do, but at least for us osu! people we were dead tired. I think we were pressured and advised to stay and work throughout the night. Apparently, organizers stayed up 24/7 for LANs. But I don't believe in working on lack of sleep, and Victor was getting cranky, so we walked half an hour back home while booming Fear, and Loathing in Las Vegas.
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/4dQW7CSGPr0" frameborder="0" allowfullscreen=""></iframe>
+
+We probably could have afforded to stay since we had nothing planned on Saturday. Saturday was mostly going to be a test day for us. We didn't have any events planned except for maybe a casual lobby later at night. The reason we chose to leave Saturday open was because we knew a lot of our entrants would be involved in the other big game events that had a lot more prizing on the line. We would probably lose a lot of attendees if we tried to take up Saturday too.
+
+On the first night, we got to meet a bunch of the osu! people already. A lot of them played League and were signed up for that as well. Due to some annoying Press Start rules, we had a makeshift hostel system going on to provide housing for our entrants. I think it's because of fire hazards or something, but the LAN event didn't officially allow sleeping inside the building, so all attendees needed to find housing elsewhere.
+
+Some of the more high profile teams had hotel rooms set up for them, but a lot of people had nowhere to stay. We tried to help the osu! tourney folks by offering our own rooms to them. I know some organizers paid out of their own pockets to get hotel rooms. It was all kind of a messy situation, and in the end I think a lot of people got away with just staying overnight anyways.
+
+Saturday did take quite a bit of time from us though. We had to do our own preparations at the osu! booth. We helped move Victor's TV over to the LAN along with grabbing everyone's gear that we needed. I brought basically my whole computer setup, monitor and all, and I even brought a couple extra laptops as backups. Unfortunately, my backups actually all failed and broke, so that wasn't of much use to me, but my main computer was fine.
+
+Jimmy was planning on bringing his whole computer, but in the end he decided to just bring his laptop. This was a mistake as we soon found out his laptop wasn't really strong enough, if I recall, to stream effectively. Or maybe it died. Yeah maybe it was that, I forgot. Luckily, Victor's laptop was good enough, so we quickly got together all the files we needed and transferred all the streaming duties to his computer.
+
+That night we had a pretty fun lobby session with most of the osu! players. I think I held up alright even though I was definitely on the low side of the pack. We also tested streaming during this, and with a few good runs and adjustments we looked pretty good to go. Our tourney would officially start the morning of the next day.
+
+The first step was checking in players. We had about an hour and a half sign in period where people could sign up or check in to their spots. As this finished up we realized we had a lot less people than we anticipated, but 16~ was still good enough to run our tournament, so we didn't feel like we had to drastically change too many things.
+
+It took me about another 15-20 minutes to set up the Swiss groups. We made 2 Swiss groups and had their matches go on in 30 minute staggered periods. This meant one Swiss group played on the hour and the other on the half hour. Each Swiss round was a best of 3 so this should take less than half an hour, but there was extra time in case of emergency or to practice/relax.
+
+During the Swiss rounds, I needed to update scores and matches directly onto the website. In the future, we would use Challonge embedded tables to help us out more. Grabbing the match histories wasn't too difficult, but we did run into odd problems time to time. For instance, someone made two matches because a player accidentally quit the lobby, so we needed to figure that out.
+
+Probably the most interesting thing that happened during Swiss was a double SS score by both Andrew and Michael. I mean, it's not totally unexpected because both the players were probably leagues better than the Swiss pool we provided them, but it was still a really close and entertaining match nonetheless. Unfortunately, because of the lack of admins, we didn't want to overburden ourselves and stream the Swiss rounds. All the top 8 would be streamed, however.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ps_ss.png" />
+
+But between the Swiss and top 8 bracket, we were actually requested to do a quick show match on the big stage. We called it UCI vs UCSD even though there were quite a few people who weren't from those schools respectively. I was too embarrassed to go up and play, so we put in Remco as my ringer who may or may not have carried our matches. We swept UCSD, of course, and it was a pretty fun match to just show everyone what osu! was like.
+
+The elimination bracket definitely got a lot more intense as we narrowed down our players. Justin/Shintomo was actually supposed to be out of the tourney due to his Swiss placing, but because one of the players couldn't make the top 8 due to a family occasion (it was Mother's day), Justin took his place.
+
+Somehow, somewhere, in his first match, he beat Remco, 3-1. That was probably the biggest upset of the whole LAN. Justin chocked it up to picking some maps that he knew some tricky sections on and Remco not prepping beforehand. Good practive on Justin's side I suppose.
+
+We started the top 8 bracket well, without any problems. The stream was pretty lively, and I think Jimmy and Victor, though a little nervous, were casting alright. I refrained from joining in since I was more worried about updating the matches. When we reached the grandfinals, however, somehow everything just broke down. A problem came up on the stream, and we couldn't fix it.
+
+A person who managed on the Press Start stream tried to help us as well, but he only made the problem worse by somehow deleting our scenes. And we needed to reset them. That just took way too long, so after some half an hour or more of not doing anything we decided to shutdown the stream. By this time, everyone was just dead tired and wanted everything to end.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/tech_support_cat.jpg" />
+
+Pretty unfortunate. I mean these accidents do come up, and I think Jimmy and Victor do have to own up to some of the blame for letting this happen without a backup. The stream was probably one of our biggest priorities, but it just completely crapped itself in the end. To make up for it though we did have a very fun last match between Michael/35000vr and John/jawnmewn with a bunch of us huddled over them. It went all the way to a gripping 5-4, with Michael taking the match.
+
+And that concluded the tournament. We spent a while cleaning up afterwards before heading back home and getting some good needed sleep. We actually missed a staff raffle giveaway that for the last remaining members. Aaron won a new graphics card, so apparently the prizes were pretty damn good. Welp, whatever, it was a really fun and lively experience being an admin, and I definitely enjoyed the LAN a lot.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ps_staff.jpg" />
+
+Planning it, probably not as much fun, but going forwards, we had a lot of previous knowledge and plans to draw from. Once things settled down, the other officers and I started planning our next competitive event, which would be a huge, long spanning [osu! league](http://maxrchung.com/projects/osuucisummerleague).
+
+I guess worth mentioning after the event ended was that we actually ran into some trouble with prizing. On one side were the months of supporter that osu! staff granted us. There was some miscommunication, and we we didn't get as many free months as we asked for. So as a result we reduced the number of months top winners got on top of paying out of our pockets for a few months as well.
+
+I think definitely the worst aspect I mismanaged in osu! UCI was handling money. I tried to run as non-profit as possible, but a lot of times random fees just came up and screwed me over. There was this case, of course, but in the past I also royally screwed up calculating shirt prices from forgetting shipping, among other things. I personally shouldered a lot of the club's debt though, and when I left the club, I took that with me.
+
+I actually paid Michael and John their cash prizes from Press Start because after 3 months, they apparently still didn't receive any word or money. When I told Jimmy about this, he immediately tried to rectify the situation and went banging on the old Press Start organizer doors to correct the problem. I then got word that the two winners were officially paid, and they were able to refund my transactions.
+
+I don't know what happened on Press Start's side of things. Maybe they just forgot about us in the midst of having to worry about a half dozen other games, who knows. We contacted Press Start multiple times about the issue, but I didn't want to go any further than what we had. So thanks Jimmy for somehow fixing the problem. And that pretty much sums everything up and leads into our summer league.
+
+Oh yeah. I almost forgot. I actually worked a couple days on making an animation display to show on our TV. This was a simple background with osu! circles popping up around the screen. It was written in Python/Pygame. I don't think the rest of the crew was as excited about it as me since we got rid of it some time into the LAN, but regardless I think it looks pretty pretty. We did have some minor use for it in displaying important announcements, which required just switching the background.png.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/osuanimation.png" />
+
+The actual programming of it wasn't too difficult, but I did into some issues with lag if I used too many circles. After tinkering with it for some time and having Victor test some of it, I'm pretty sure this was an issue with Python/Pygame running slowly. Or maybe I didn't configure something properly. Dunno.

@@ -25,20 +25,33 @@ export default function ProjectDescription({
       alignItems="center"
       flexShrink={0}
     >
-      <EvergreenLink is={Link} href={`/projects/${slug}`} flexShrink={0}>
-        <Image
-          src={thumbnail}
-          alt={title}
-          width={128}
-          height={128}
-          // Counteract main styling, this looks pretty bad >_<
-          style={{
-            maxWidth: "100%",
-          }}
-        />
+      <EvergreenLink
+        is={Link}
+        href={`/projects/${slug}`}
+        width={128}
+        height={128}
+        flexShrink={0}
+      >
+        {thumbnail && (
+          <Image
+            src={thumbnail}
+            alt={title}
+            width={128}
+            height={128}
+            // Counteract main styling, this looks pretty bad >_<
+            style={{
+              maxWidth: "100%",
+            }}
+          />
+        )}
       </EvergreenLink>
 
-      <Pane display="flex" flexDirection="column" gap={majorScale(3)}>
+      <Pane
+        display="flex"
+        flexDirection="column"
+        gap={majorScale(3)}
+        alignItems="start"
+      >
         <MainLink href={`projects/${slug}`} name={title} />
         <TimeRange start={start} end={end} />
         <Paragraph marginTop={majorScale(-1)}>{description}</Paragraph>

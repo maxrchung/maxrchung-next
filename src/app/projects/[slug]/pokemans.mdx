@@ -1,0 +1,117 @@
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pokemans_banner.jpg" />
+
+POKEMANS was basically Pokemon with naked people. It's a TCP networked version of Pokemon's Battle Frontier/Battle Tower/Battle Factory where players, er, sorry, rich men, drafted 3 naked men and fought other rich men with them. Or something like that. Also, I use the term "TCP networked" very loosely because I'm pretty sure I try catched pretty much all my network code to ignore errors.  
+¯\\\_(ツ)\_/¯
+
+*   Made with: Python and Pygame
+*   Made by: Max Chung, Alex Lewis, Winston Liang, Victor Stolle, Carl Glahn, Vince Chen, Derek Leung, Anni Huang
+*   Download (Python 2.7/Pygame 1.9.1): [POKEMANS.rar](https://maxrchung-rails.s3.amazonaws.com/uploads/POKEMANS.rar) (121 KB)
+*   Repository: [POKEMAN](https://github.com/maxrchung/POKEMAN)
+
+When I first published this game on my website almost a year ago, I built an exe for the client, but not the server. The idea was to run the POKEMANS server along with the server hosting my website. We were planning on making a few additional changes to make everything stable, but that never really panned out. So on that end, I've just made the download include all the source files. To run, make you are using/have Python 2.7 and Pygame 1.9.1. You will need to edit the TCP\_IP value within NetworkManager.py to connect to a specific server.
+
+## Background
+
+After [Tetris Buddies](http://maxrchung.com/projects/tetrisbuddies) finished, the crew didn't have another idea we wanted to do for the next jam. I keep a doc of game ideas that I sometimes add to, but a lot of these ideas are more personal rather than something I think would fit a game jam. Usually we already have an idea pre-planned before our jams, but it wasn't until a few weeks before this one that we got an idea we all liked.
+
+For this game idea I think I have to give credit to Victor. It may have been a stupid idea that I thought about some time in the past, but it was Victor who brought it up again and inspired the theme of the jam. We were walking to get dinner after osu! club one day, and we were talking about Pokemon. Victor then said something stupid about Pokemon with people instead, and I was like, damn, that's real good.
+
+I think the story went something like I came across a short post or video online comparing Pokemon with slavery. I mean if you think about it, Pokemon is definitely a little weird. The game is basically capturing these semi-aware entities into balls and using them to fight each other until they're all knocked out. Not exactly the most humane thing to do, perhaps. And to put it in another perspective, well, what if instead of Pokemon you caught other human beings to fight. Probably not okay.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pokemon.jpg" />
+
+Immediately after that, I wanted to do that for the jam and started messaging people to gather them over break. Pokemon was something all of us had played and loved, and I'm sure we'd all be down to make something akin to it, and if not the POKEMANS idea perhaps something similar. I liked POKEMANS a lot though. The idea was as bizarre as our last string of crazy games, so I was hyped for it.
+
+Usually, spring break is a bad time to hold these jams because my local friends are a mix between quarter and semester systems. Since my breaks were over quarter break, I don't see semester break people until around summer or winter. The larger majority of my friends are quarter system though, so I tried to get people for this one. Another thing is that spring break is usually very short, only about one week long, so it can be hard to plan for that.
+
+Nevertheless, most of the usual crew showed up. Alex, probably my most trusted person on the team to always make it, was available. He then asked Carl to come since they were close friends at Davis. I don't really know Carl that much or well, and he hasn't been the most productive or stand-out member on my jams, so I just kind of leave it up to Alex to pass off the word to him.
+
+Victor and Winston, who were from UCI, also made it to this one. Winston did a pretty good job last jam on Tetris Buddies, so I was glad to have him back. Victor had... always kind of let me down, but he was a staple member within the group so I guess it was fun for him to show up. And the last few members were kind of just pop-in members who showed up a little bit, namely Derek, Vince, and Anni.
+
+I think in this jam we set a precedent time-wise for future jams to come. If I recall, in the past we always had pretty screwed up jam times because I either scheduled too little time or arranged the start of a jam to be at some ridiculous hour at like midnight. For this one I believe we started on a Friday morning and then finished to the end of the weekend. All of my future jams basically followed the same format, and fom the looks of it, we're going to keep it way.
+
+If we do any shorter, then we're going to have a really bad time trying to get a game done. Usually we use the entire weekend because people potentially have classes or work on the weekdays, so best to use all the time we can. If we go more than a weekend, it might cut into people's schedules and my parents can get pretty grumpy about really loud people making noise all the time. I do want to give a longer jam a shot since it does provide a lot more iteration, but I don't think practically we can do that.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/dog_clothes.webm"/></video>
+
+I'm down for a change in location too. I'm pretty sure my parents don't take too kindly to us, so maybe I shouldn't hold a jam every single quarter break at home. Although, that would mean someone else would need to be the organizer for these things, which I don't think anyone is really that committed to doing. Things are probably okay for now, so no too big of a reason to change.
+
+Come the day of this jam, we didn't have a solid idea yet for the game. We had the theme, with Pokemon with people, but we weren't too sure where to go from there. We thought about something like an overworld and maybe like a simple story concept where we beat one gym leader. That was my suggestion, but it did seem a bit difficult.
+
+Programming and drawing not only a battle phase but also an overworld and some scripted events didn't seem trivial, and we wanted to reduce our workload as much as possible. So we cut out the overworld and decided to just focus on the battle phase as the most important part of the game.
+
+This was when Alex brought up Battle Frontier/Battle Tower/Battle Factory from Pokemon. I didn't really play the series that much outside of maybe the early Yellow and Gold versions, so I didn't know what these were. These modes were a special game type where you picked random Pokemon and faced other opponents with them.
+
+We settled on making a networked version of this. I believe we had some kind of dumb story to follow this up. Basically, POKEMANS was a form of fun entertainment for the rich, and you played as one of these rich men who participated in these events. To play the game, you picked out three fighters and fought other players in the arena.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/assassination_classroom_stench_of_poverty.png" />
+
+By fighters, we have categories ranging from criminals to delinquent children to rappers. Somehow, they're supposed to use the arena system as a way to gain freedom, of debt or responsibility or whatever. Uh, also I'm really sure how but capitalism and Kappatalism are involved somehow. If you won I think 5 games in a row, you gained the freedom for your players and of course gained fame for yourself. Not too bad for a dumb storyline to explain our game, and so we went with that.
+
+We wanted to have player versus player, and in order for this to work, we needed to have networking. And since I was pretty much the only one out of this group with any experience with that, I was put to the job. Turns out, it was actually a lot simpler than I expected because I essentially copy pasted a huge chunk of the code from Tetris Buddies into this game and just refitted it to our needs.
+
+For this game we decided to use TCP instead of UDP. It makes more sense in this situation with taking turns in battle back and forth. Honestly, it wasn't too different working with one or the other. But in this game I had to do some hackery to make sending/receiving TCP messages work, which definitely is the wrong way to do it, but I didn't want to spend too much time looking for the right way.
+
+The way I got messages working was that I basically try catched every section that I sent or received messages from. This was pretty bad, and usually, you wouldn't need to do this, but I believe there were some cases where if a person disconnected, you could potentially send or receive a corrupted packet. And because the program didn't know how to handle such a packet, it crashed and exited the game. So to circumvent this quickly, I just ignored all these errors and continued on like nothing happened.
+
+It's been a while so I can't recall many smaller details for my parts. I know generally that I was responsible for setting up the basic framework for the game, similar to Tetris Buddies. This essentially meant handling the general structure for the program. I made a state system where we switched states from the selection, to queue, to play. This way I could easily direct the rest of the team to put their specific code in particular areas.
+
+For this game, we made it client-server because we wanted to potentially host the game onto my website after the game ended, though this was not a reality that ended up happening. I decided to do this as just an alternative format to the peer-to-peer of Tetris Buddies and to try something new. Networking did get a bit tricky when trying to organize well with the others, who had vastly different code to write.
+
+The team was broken up to work on specific sections. I of course did networking, which in addition to setting it up also handled basic connect/disconnect with the server. Victor, I believe was single handedly taking care of UI and the client side of things. This meant working in the battle menu, displaying things properly, selecting moves, picking pokemans, and fleeing.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/dog_tasks.gif" />
+
+Meanwhile, most of the other guys were handling game logic. But before they could do that, they spent a good time brainstorming and designing how gameplay should work. This involved basically everyone else in the group. Winston, Alex, and partially even Carl, Derek, and Vince all were working on that. I say partially because these guys only came for a little bit, helped out some on the design and then just jump shipped and left for their own plans.
+
+They probably had their own going-ons and didn't place this project as a high priority. That's fine, to be honest. Obviously it would be much better if everyone stayed instead of coming and going constantly but at least they showed up, right? It was nice to see, in particular, Derek again since we hadn't been keeping in contact much recently.
+
+These guys took a long while planning the design before getting started. I wasn't involved in this so I can't say too much, but I can imagine starting from scratch that they had a lot of things they wanted to decide. Basic things like how much should be borrowed from Pokemon, in terms of stats, moves, and move types. How much damage and defense should everything have. How to calculate weaknesses or strengths, super-effectives, etc.
+
+They also had to write out a move list for all potential moves, which got pretty interesting. We had everything from Vandalize to Defecate to Driveby. Later as well, we decided to make Pokeman names random, and Winston made a list for that, including such masterpieces as Jalapeno, Jlam Slam, and Maccachrooni.
+
+After they got a rough design down, they started coding. Their sections would all belong to the server, since we only wanted the server to handle calculations and things of that nature. I believe they started locally and then after a while we got together and tried to fit everything together. After working a bit with networking on Tetris Buddies, they had some grasp of how it worked, so I explained to them the client-server architecture, and they handled their sending and receiving on their own carefully.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_wire.webm"/></video>
+
+I pretty much never touched the game logic that they wrote or the UI code that Victor wrote. These were just left up to the respective writers, or at the end of the jam, left up to other people to try and fix. What actually really cut into our time was that Victor left for the last day and wasn't available, and that led to quite a few problems.
+
+His code was difficult to navigate and make sense of. Without him there to help out, we had to spend a lot on our own time trying to figure out how to work around or fix things properly. Alex was pretty mad about working with his code and started a Victor bug sheet to tally the things he had to fix. I'm pretty sure we got upwards of 30 before retiring that list.
+
+After I set up the bare bones for the networking, I got started with a bunch of art assets. Earlier in the weekend we had Anni helping us out, who is a year older than us that I invited over to help with [Katana Shoujo](http://maxrchung.com/projects/katanashoujo). The only assets in the game we needed were characters. We needed two images, front and back, for each category of player.
+
+She tried her best, but I think she said she was definitely out of practice because she doesn't draw much anymore. And also this was more akin to pixel art than traditional drawing because there was very limited space to work with. For front facing images, they had to be 128x128, and for the back, 256x256. She didn't really have that much experience drawing so small, so she was a bit unhappy with her work.
+
+I don't think rest of the team particularly liked or disliked it either. I mean, it was free assets from her so we weren't going to complain. We gave her as much freedom as she wanted to draw the Pokemans as she'd like. So she did a kind of half-Pokemon, half-human hybrid that combined the two species together. I mean, I guess its okay and pays some homage to the original.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pokemans_anni.png" />
+
+The problem was she wasn't able to complete much after her first day working with us, and unfortunately, she couldn't make it for the rest of the weekend even though there was still a lot of work that had to be done. So after I finished networking, I moved onto characters. At first I was trying to copy Anni's style, but I couldn't really think of unique ways to combine Pokemon and people together, so screw it, I decided I'd just do people.
+
+I started drawing just basic people in poses, but I really didn't like how simple or static the characters started to look. Thinking about dynamic poses, I thought about [JoJo's Bizarre Adventure](http://myanimelist.net/anime/14719/JoJo_no_Kimyou_na_Bouken_TV), which I recently just caught up to, and which by the way has just an amazing, amazing part two. Taking inspiration from that I made the stupidest looking poses I could think of and completed the people based off of that.
+
+As I typically draw people, I always structure out a basic skeleton of people first, then start drawing parts of the body, before finally adding in clothes or accessories on top. Well, to really just save me time, I just cut out the last step and left everyone naked. I mean, c'mon, it's saving me time, it might as well fit along our stupid theme as well, and I think the team appreciated this funny addition, or subtraction I guess.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pokemans_people.png" />
+
+And also to note I was able to do some black shading to hide all the private areas that I needed to. I'm a particularly big fan of heavy black shading everywhere so even better and more fun for me to work with. I finished all the characters pretty quickly through the night. There weren't too many pictures in total I had to deal with, less than a dozen.
+
+After that I tackled the UI. Victor made a very, very rough UI in MSPaint that was aligned improperly and had some missing parts. I didn't have too much trouble recreating it in Photoshop since I had the help of some helpful tools. And after throwing it into the game with the new naked Pokemans characters as well, I have to say I was pretty happy and excited about how it looked.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pokemans_battle_menu.jpg" /><p className="caption">Original gangster</p>
+
+Then I started going into programming. I'm pretty sure I was the one who added in screenshake. I could be wrong, maybe there isn't any shaking, but if there is, it's probably from me. Funnily enough though, like all my recent Pygame projects, putting in screenshake code equates to stealing some old code that Winston actually stole from someone else and put into Tetris Buddies. So thanks to him I guess for getting that working.
+
+After that I took some time to figure out how to do text scrolling. This involved both the typing out of the messages, which appeared one character at a time; and lines getting separated to the next row properly. In addition, I also added in a blinking cursor at the bottom right, similar to the traditional Pokemon.
+
+That's pretty much all the major things I did that I can recall. Once we had text scrolling done correctly and really started to play test the game, we immediately ran into logic errors, some that we haven't ever been able to fix. Just weird things would happen, probably with improperly sending things over the network and back, where people got hit and didn't die, characters had different statuses on different computers, and other general bugs.
+
+The fixes for these were not simple to make. It involved going through code that different people wrote and trying to not only make sense what was going on but fix it appropriately too. To compound things further, Alex had to leave towards the end of the jam as well, so it was just Winston and I trying to fix things up at the end. Both of us, tired, and myself not really familiar with other people's code, I think we sort of gave up. We tried to fix up what we could, but obviously there are issues still remaining.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/disappearing_truck.webm"/></video>
+
+And so we reached the official end of the jam. At the time, I wanted to really get it up on the site and have the game publicly available to play on, so I tried to push for a few more fixes afterwards. But expectedly, after the jam ended, progress declined tremendously. I tried to work on it myself, but found myself busy with other things. The other guys were a little wishy washy about continuing, and as of now it's kind of left in limbo, so I'm calling it quits.
+
+At one point there was a POKEMANS server running on my server, but that should be closed now. We never got around to fixing all the bugs entirely so I think it's just best to leave it standalone rather than putting something up incomplete and buggy. I don't think we'll ever touch it again. As is tradition, we're moving onto the next game jam game.
+
+Overall, this was a great game jam. I think we probably overcomplexified the game with networking, as by the end we still had something pretty ridden with bugs. But nevertheless, we still had a semi-functional game going and I just really love the concept, design, and art we put into it. With some more time and polish, I'm sure it'd look a lot better, but I think we're fairly happy where it is now.

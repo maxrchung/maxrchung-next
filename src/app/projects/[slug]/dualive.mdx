@@ -1,0 +1,400 @@
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/GDIxvM5PHqE" frameborder="0" allowfullscreen=""></iframe>
+
+<p className="caption">(Epilepsy Warning)</p>
+
+Dualive was a beatmap project started up between Royce and I over summer that extended, for me, pretty much all the way to Thanksgiving. My portion of the project, the storyboard, became a lot more jumbled and complicated as I got further into it. It's a variety effects storyboard themed around triangles, and features triangles, tetrahedrons, spectrums, 3D spectrums, moire spinning, branching lyric effects, epileptic coloring, and more triangles.
+
+*   Made by: Max Chung and Royce Sato
+*   Made with (Storyboard): C++ and [OsuukiSB](https://github.com/maxrchung/OsuukiSB)
+*   Repository (Storyboard): [dualive](https://github.com/maxrchung/dualive)
+*   Download (osu!): [Quarks - Dualive](https://osu.ppy.sh/s/525470) (6.9 MB)
+
+## Background
+
+<img style="margin-left: 0; margin-bottom: 0" src="https://maxrchung-rails.s3.amazonaws.com/uploads/cryface.png" /> - Royce Sato
+
+<img style="margin-left: 0; margin-bottom: 0" src="https://maxrchung-rails.s3.amazonaws.com/uploads/cry_cry_face.png" /> - Me
+
+The [Flower Trip](http://maxrchung.com/projects/38) osu! UCI beatmap project left a bit of a sour taste in everyone's mouth to those who worked on it. The gritty details of what happened are in that write up, but its aftermath was important to the birth of Dualive. On Flower Trip, we had something, at the very least, by the end, but it wasn't something to write home about. None of us I think were particularly excited working on the project, and rather than something fun, it felt more like hard work.
+
+A lot of things contributed to that. The originally produced song for it wasn't exactly terribly exciting. We also didn't really pipeline our process that well and as a result a lot of people had to wait on others to finish their work. People initially wanting to contribute lost their interest. In the end, we had a skeleton of a song, background, storyboard, and mania map.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/take_care_of_the_baby.mp4"/></video>
+
+I suppose the takeaway was that most of us on Flower Trip, myself included, were wary of wanting to join in another big original project. It's kind of funny, because I always wanted to do the most bizarre game projects, but things kind of fell apart when I've been working on beatmaps with others. On the surface, beatmap making shares a lot with game making. Creative teams come together and contribute what they can to specific parts of the project. But the difference is that beatmap making seems at least to me a lot more restrictive, and that can cause some problems.
+
+If people don't like the music they're working on, whether that's BPM, genre, rhythm, style, or whatever, that's an instant turn off to a beatmapper. And at the end of the day, mapping is what's most important in a beatmap, in fact probably the only important thing in a beatmap. You can have the greatest artistic team back a project, but without an actual map, you can't really call it a complete project.
+
+But all said and done, on Flower Trip I personally was pretty satisfied with my work. There was a very specific effect I wanted to achieve, a 3D spectrum, and after a lot of tinkering around, I was able to get it working. After that, I wanted to continue working on storyboards, and see what else I could make. I really wanted to break my shell of just working on a single effect. Every single thing I made so far was solely focused on one idea and concept, whether that'd be lyrics throughout the whole thing or a spectrum, and I wanted to combine all these ideas together.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/max_thumbs_up.jpg" />
+
+At the time, I never really looked at other storyboards that much, and I still don't really to this day. It'd be nice if there was some kind of simple storyboard searching feature, where you could look for songs that have (fairly well-received) storyboards or whatnot, just to get references and fresh ideas. Most of the storyboards I see are passed to me by word of mouth or are already extremely popular.
+
+To be honest, I don't really know where my various storyboard ideas come from. It's a mix of seeing what other storyboards have done, looking at random music videos, probably some things from anime, not sure. I record every decent idea I think I have down on a Google doc, and I look through that occasionally for some inspiration. Anyways, what I really wanted to say here was that trying to make a variety-style storyboard was something mostly influenced by looking at other people's works. It's boring as I realized to only have a single effect, and I wanted to break from that mold.
+
+Going into this project, I knew it was going to be pretty damn hard. Seeing my track record of storyboards, where each one already took something like a month to make, if I wanted to create something that combined a bunch of these concepts together, that probably would equal a lot of time. Of course, since I'm possibly reusing a lot of my past stuff, I'll have some things already finished, but I always want to experiment with new effects as well.
+
+Before things got started, I stumbled upon a a random [reddit post](https://www.reddit.com/r/gonwild/comments/41m80y/2_grids_1_rotation/) in [/r/gonwild](https://www.reddit.com/r/gonwild/) that demonstrated a moire spinning effect. And right after I also found a Numberphile video that showed off the similar effect with rotating patterns overlaid on top of each other. It looked really, really cool, and seemed easy to translate over to osu! as well. It's just 2 images put on top of each other, with the top one turning about. No 3D was involved though it did have an interesting 3D effect(?) illusion(?).
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/QAja2jp1VjE" frameborder="0" allowfullscreen=""></iframe>
+
+<p className="caption">This guy's is pretty cool I guess</p>
+
+Looking back on this, the moire spin effect probably had the most impact on the overall storyboard theme. 100%, I decided I was going to jam this effect into the storyboard in some way or fashion, regardless of song choice. And from there, since simple moire patterns were made up of simple shapes, I suppose it was easy to see how the storyboard would come to be built up of simple primitives like a triangle, or potentially a square or circle.
+
+I decided to try and work with Royce again on this project, although I wasn't really considering anyone else. I value his feedback, and he's probably the most active mapper I know personally and locally. I'd say we had an alright time working solo on [Age quod agis](http://maxrchung.com/projects/agequodagis), apart from the normal osu! UCI group. By ourselves, we had a lot more control, time, and investment in the project, so the end product in my opinion was on the better.
+
+His situation was a little odd though over the summer. He was going to Japan for some kind of research internship learning vacation lab something, so his time was going to mainly invested into that. I maybe possibly probably forced him to tag along with this project out of my own interests, as I don't have much mapping talents. But he agreed, and we got started picking out songs.
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/Mh5LY4Mz15o" frameborder="0" allowfullscreen=""></iframe>
+
+<p className="caption">sorry if this is too popular</p>
+
+Our picking process was actually pretty interesting. Normally, this part of the project can get a bit touchy. At the time, I don't think there was a single song both of us were equally really into, so there was no obvious choice to select from. Since Royce picked Age quod agis last time, I also wanted some more input on this time's song, but at the same time I didn't want to just force something onto us. So what we decided to do was hold an RNG tournament to make our decision.
+
+Each of us chose 4 songs, and we had the choice of banning out one of the other person's selections. Royce chose not to ban, so I guess I'm the bad guy. Then we held a Bo3 Swiss group with 7 songs followed by a single double elimination top 4. To decide the result of each round, we flipped coins and reported the result. Obviously, there's room to cheat here, but I think we could trust each other to not butcher the results to our liking. And surprisingly, after digging around some, I found the original brackets:
+
+<iframe src="http://challonge.com/summer2016songs/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+
+<p className="caption">Swiss</p>
+
+<iframe src="http://challonge.com/finalsyo/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+
+<p className="caption">Top 4</p>
+
+This is a pretty fun way to resolve decisions, definitely a lot less forceful and less potentially toxic than some alternatives. That being said, I don't know if I'm in the position to speak since my picks made it further than Royce's. I picked some scattered number of random songs I had some interests in, and I think like 2 or 3 of my songs them made it to the end. Royce chose mainly, if I recall, Nekomata Master/SDVX songs he liked. Dualive I'd say was a safe and good choice in the end though. It could have gone sour if one of us didn't like the end choice, but I think both he and I got around to very much liking it.
+
+Then we pretty much went our separate ways. I bunkered up for the next four to five months to work on my side of the project. My first task was to, funnily enough, storyboard the storyboard and draft up some effects I wanted to do. I knew I was going to do the moire pattern spinning no matter what, but I needed to fill out the other sections with ideas as well.
+
+I started a [Google doc](https://docs.google.com/document/d/1LIMaoR_afjeQLN1yeeZGmDLWM-hm7LdPaaQr22RhL8s/edit) to jot down some ideas. I blocked out time sections to indicate good points for making and transitioning effects. For the most part, I'd say the majority of what I planned in these parts made it to the end. The 2D spectrum/generation phase was finalized at this time. The rest of the sections were kind of up in the air, though I had some placeholder ideas.
+
+The lyrics tunnel section after was something I considered then. It made it in to the end, although I think overall, this might be the weakest section. I probably could have polished it more and made it look more 3D or better scaled, but nevertheless I was glad to have a section showing off the text. This was partially because I worked with some lyrics in the past and wanted to have this added in, but it was actually more because I found a font completely made up of triangle lines.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/aroly_font.png" /><p className="caption">A</p>
+
+It's actually kind of hard to make out the individual triangles because the lyrics ended up pretty small-sized. But regardless, this font became important both in this section and in the last section. And yes, if you couldn't tell already, I decided to make triangles the center theme of the storyboard during this time. It fit well with the moire pattern, and seeing the Quarks logo in the shape of a triangle reinforced the decision. ▲▲▲
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/quarks_logo.png" /><p className="caption">Quarks logo</p>
+
+Ah, I suppose I should take a small detour and explain some of the history behind this song. Quarks, the guys behind Dualive, is a two man unit composed of [kradness](http://utaite.wikia.com/wiki/Kradness) and [Camellia](https://remywiki.com/Masaya_Oya). The former is a pretty popular utaite (cover singer). I don't really follow him that much. I'm not a particular boisterous fan of his high pitchier kind of scratchy voice, but he has some pretty dope original collaborations with producers, like this one. My favorite song of his is maybe something more recent and decent off his new album (at this time at least):
+
+<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293086096&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+
+<p className="caption">Produced by some guy lapix I've never heard of</p>
+
+Camellia is a really popular producer, at least in Japanese rhythm game circles and that kind of scene. He's really well known in osu!, and Royce, myself, along with a lot of our friends are big fans of his songs. He can have some pretty dramatic genre shifts between his works, but, as I tell others, if I can't enjoy Camellia properly, I'll just enjoy his stuff ironically. I'd say maybe my favorite Camellia song is, ehh Dualive since I've been so invested in it. But here's another couple good stuffs.
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/qGvrmNtnr94" frameborder="0" allowfullscreen=""></iframe>
+
+<p className="caption">Nanahira's pretty okay good awesome</p>
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/GamQsYV_-2Q" frameborder="0" allowfullscreen=""></iframe>
+
+<p className="caption">I don't know this randomly came up in the car</p>
+
+Dualive is featured in SDVX, or Sound Voltex, or SOUND VOLTEX III GRAVITY WARS, and definitely not Sound Vortex. I think Royce has been trying to pass the hardest difficulty of this song since day 1, and, at least at this time, still has not done that. We chose to use the SDVX version of the song rather than the full song which is about twice as long. Really, it was just to save myself some work and to really save myself. So we decided to strip it down to 2 minutes with the No SFX SDVX version.
+
+There's actually some pretty cool Dualive songs on osu! using the original song with a slight twist. People figured out that the Intro of the album released along with Dualive actually flowed pretty well into the song, so what they did was combine the two together and mapped the longer mix. Not a single Dualive song has seen ranked status in osu!, so I can't comment too much on the quality of these maps, but it's the idea that counts right.
+
+Anyways, let's move back to the brainstorming. I knew I definitely wanted to add in a 3D spectrum somehow, seeing as how I worked on it in Flower Trip. This time though we'd be using tetrahedrons/triangular pyramids(? this is too long so whatever I'm just going to use the former) instead of cubes/rectangular prisms. How to get there was the bigger question, since the lyric tunnel didn't seem like it could flow directly into it. I thought about it for a while and came up with the center tetrahedron idea. It also let some time be where the tetrahedron could have its own section for something else.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/basketball_people.webm"/></video>
+
+<p className="caption">This is kind of 3D, and I'm running out of pictures, so yeah</p>
+
+Finally, there's the last section after the 3D spectrum. At the time, I had no idea what I wanted to fill here. There was actually quite some pressure to try and make this as cool as possible since this would be the very last section. Maybe that prohibited me from solidifying a concrete idea. Since it would be a while until I reached here, I just temporarily said I would do some kind of complex 3D exploration stuff with lyrics. Didn't quite pan out doing this though.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/welcome_youve_got_mail.webm"/></video>
+
+<p className="caption">These are kind of cool so here is one more</p>
+
+Okay, so let's get started. I worked chronologically through the project, and all together, going through the entire storyboard with a first draft took about 4 months. This involved roughly arranging everything I wanted in black and white. The last month was dedicated to coloring, fixing any changes I wanted to make, bug fixing, and optimization.
+
+The 2D spectrum was fairly easy to set up. I already had code on Flower Trip and Age quod agis that dealt with music analysis, so I reused that without much problems. The only extra step I did was move the music analysis class officially into OsuukiSB. To be honest, after looking briefly at [Storybrew](https://github.com/Damnae/storybrew), a much more complete and polished and better storyboard editor, the way I've set up music analysis is maybe not ideal.
+
+In my library, I made it so that I pre-generate all the music data into a text file, and then I read that text file in whenever I want to load music data. For every single bar (or I guess triangle in this case) of the spectrum and at every tick of a so and so snapshot rate that can be specified, there is a value that determines what amount to scale by. In Storybrew, these values are not precalculated and instead done on the fly. I don't know if performance-wise this suffers any issues, though I can't imagine it would by that much.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/panda_luminati.png" /><p className="caption">ok i ran out of pictures</p>
+
+Triangles and the moire pattern was made via a GUI utility. I did not use Photoshop. I used VB.NET and Winforms to make a basic form that let me save out a large triangle as well as a background pattern. VB.NET and Winforms were chosen because at work I'm potentially going to be working a bit with these two. I never really worked with forms before, so it was pretty interesting getting a start into it.
+
+Besides this triangle generation utility, I also made a text render form that read in a text file and generated images out of it with a chosen font. This was mainly for the lyrics tunnel section where I loaded a bunch of lines of lyrics and needed rendered images of them. Overall, I think the learning experience was good, but I'd rather just code things directly. I don't know, for these small things, it doesn't seem like a great, efficient use of time to make completely separate GUI utilities for something that could have been directly put in solution. Who knows though, forms and GUIs are a bit interesting. I may come back to it.
+
+Triangles though. Equilateral triangles are a bit of a pain to work with, and I hacked quite a few parts together to get some things working. So here's the problem. Take a normal square, and it's fairly easy to work with. It's equal on both sides. The center is fairly is easy to find. You can half the sides to get a rough estimate. And once you've found the center, you can rotate the whole square around that center quite easily.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/illomanity_confirmed.jpg" />
+
+The same isn't true of an equilateral triangle. You see, if you had a square space and tried to plot a triangle on it with the bottom left corner, bottom right corner, and top center side as points, the connected sides wouldn't be equilateral, but rather isosceles. I don't remember the exact calculations, but for an equilateral triangle the height is going to be a bit shorter than the width. Seems obvious, but it's annoying.
+
+This leads into another couple problems. With this reduced heighted triangle, the center of that triangle may not be where you think it is. If you try and take the center as you would with the square, finding half the triangle width and half the triangle height, you'll discover that this point you've found is not actually the rotational center of the triangle. The rotational center is some distance below this point.
+
+With some trigonometry, you can figure out where the rotational center is, and you probably want to use that as your actual center point so rotations and movements don't become lopsided or janky. I probably should have made some kind of triangle class to do these calculations for me, but I'm pretty sure I just hardcoded a fix everywhere I needed. Whatever. It works so I'm not going to complain that much.
+
+The 2D spectrum triangles and moire pattern background had to be adjusted to account for this. If you looked at the image files also, you may notice that the moire pattern background is something like 1500 by 1507. The extra 7 pixels is needed so that the image will rotate correctly with the offset. Kind of a pain to work with, but what can you do.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ilerminaty_ceiling.png" />
+
+Outside of the tinkering with the offset, the actual spinning of the moire pattern was, predictably, not that difficult to work with. It's just a simple rotation. I added in the stop-and-go(?) spinning later at the request of Royce. By far in my opinion, this was the coolest and, somewhat ironically, simplest effect throughout the whole storyboard. It's not like I don't have any other favorite parts, but I feel like the other parts maybe don't live up to the pattern spinning's reputation.
+
+With the rotation working, I started the generation portion. This would be in the 2D spectrum area where triangles would generate in the background to make the eventual moire pattern. This part had quite a few problems that I hacked and hardcoded some parts through. The main problem was that I never got the triangles to line up perfectly with the pattern. I tried my best to get as close as I could to the original, but some kind of 1 pixel error always seemed to sneak up somewhere.
+
+In the end, I got lucky in being able to hide the transitions through some other effects. At the point when the generation first changes to the image, there is some super intense flashing going on, so I doubt anyone could catch the quick change. Later on, I was able to easily switch the image back to the triangles because I had a moment where the storyboard faded to completely black.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/aluminaty.png" />
+
+The lyrics tunnel section was also kind of maybe hackslashed together a bit. Originally, I wanted a fully fledged 3D cool tunnel effect where the lyric lines would come at you according to their 3D coordinates, but I decided to just settle for mimicking 2D rotations where after each movement, the scale and opacity got stronger. Most of this section was pretty easy to make, though I feel like everything's kind of hanging on a thin thread. If I change something small, everything could blow up.
+
+Not my favorite section, but I don't think the effect is terrible. It led pretty well into the tetrahedron section, where the middle center turned out, wow, to be a 3D object all along, tricked you guys. And here, before I could even get things to the storyboard, I needed to spend quite some time fixing some 3D stuff. I needed to make a tetrahedron class so all the lines and such could be manipulated together. I also wanted to add projection, and for that, I didn't exactly fully get there, but I did make a basic perspective function that converted 3D to 2D perspectivified(?) points.
+
+When I started to spin the tetrahedron though, I ran into a nasty issue: conversion. My 3D calculations were all performed with (0, 0, 0) set at the center of the screen, like traditional math coordinates. Positive X pointed right, positive Y pointed up, and positive Z pointed towards you. The problem was that when switching to 2D, osu! used a more typical screen coordinate system. (0, 0) was at the top left corner. Positive X pointed right and positive Y pointed down.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pharoah_ilerminatied.jpg" />
+
+What ended up happening was that some of the tetrahedron lines spun in weird directions and the whole object failed to stay together. In Flower Trip, I spent quite some time hardcoding areas to flip the y value and properly convert the coordinates to 2D space. I tried to replicate the same for here, but I couldn't quite get things to work efficiently and was sick of the idea of having to hardcode the coordinates in the first place.
+
+So I decided that the best course of action was to just switch everything to math coordinates and do a conversion step at the very end. 2D coordinates were now structured around having (0, 0) at the center and positive Y going up. At the very last step in OsuukiSB, when the library readies a string to print to the osb file, we do a conversion in all affected areas to switch to screen coordinates.
+
+The result of this was that I had to fix all the past sections I worked on, but it was a small price to pay since the 3D tetrahedron sections now, well worked, and not only worked, but worked a lot easier. So now the tetrahedron spin section was in pretty good shape. And to brighten up the bland background a bit, I added in the moire pattern degeneration in the back to spice things up.
+
+I thought about how to transition to the 3D spectrum from this phase. I didn't want the outer spikes to just pop out from nowhere. My eventual solution was to keep a set number of triangles from the degeneration phase and move these triangles to the correct positions to become spikes. Since I added a bit of perspective calculation, the transformation from 2D to 3D took a bit of tinkering to get right. I think out of frustration I eventually just hardcoded some parts of it.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ilerminaty_belly_button.jpg" />
+
+Oh yeah, and I guess I'll take another detour and randomly spend some time talking about code organization. So my code was broken up into Phase header files where most of the scripting was done. I got lazy making CPP files, so most of the Phase sections were mostly just bloated header files. Yeah, probably bad practice. I'm most likely not going to do the same next time.
+
+Following my past examples, I had a static global config class where I could store any general variables or functions. The more I've been reading though, the more static seems to be despised for its global access. Next time, I'll try parameter passing everything and see how far that takes me. Another problem I had was trying to access another Phase's variables. Sometimes, I would like to be able to know the spectrum tetrahedron's width for example from another class, but I couldn't easily access it due to the strictly separated structure. I'll look into correcting these points in my next overhaul.
+
+There's not much else weird stuff I can think of code-wise. It's all a work in progress, in better design and a better OsuukiSB. I'll probably make a few changes in between storyboards and update the situation then. Moving on, the 3D spectrum was not too difficult to make. It was basically the same exact thing as Flower Trip, only now with tetrahedrons. Royce suggested that I try my hand at fixing overlaps, or better known as hidden line removal. I was tempted to at the time, but decided not to do it for the sake of less work.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/love_live_sucks.png" />
+
+I think by now I was already many weeks and maybe months into the project. My motivation was up and down and I was working on and off, so I didn't want to stress myself out any further. I think the way it looked then was fine, so any additional features would just be enhancements. Next time though, for sure, I'm going to invest into more crazy 3D stuff. Hidden line removal, to maybe some basic texturing, and who knows what else.
+
+But on the topic of stressing out, boy did the last section do just that. I decided to scratch the original idea I had during the brainstorm, which was some kind of triangle exploration, and do something a little more close to home that I previously worked on. If you check out the [I'm Just an Average Magical Girl, Sorry.](http://maxrchung.com/projects/imjustanaveragemagicalgirlsorry) project, I made a 2D lyric effect where the lyrics were procedurally generated and moved themselves around the screen.
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/8nyENr-a93Q" frameborder="0" allowfullscreen=""></iframe>
+
+<p className="caption">Cinema video</p>
+
+I wanted to do a similar thing here, but with a few twists. First, I wanted to try 3D movement and collision detection instead of just 2D. This actually never panned out. Turns out 3D movement gets way too cluttered due to overlapping sections, and even after adjusting fading, I didn't like how it looked. Oh well, I think the 2D movement is still pretty dope, though I don't think it flow as well as the Magical Girl storyboard, mainly due to the center text being so static.
+
+The next twist I wanted to add was branching, and this became kind of a nightmare. Since the font was made up of individual lines, I wanted to make an effect where lines started radiating out from a single point and formed individual letters. How to do that was the bigger problem. My first attempt was through image analysis. After some mind boggling tinkering around I built [libpng](http://www.libpng.org/pub/png/libpng.html) from source and started using it, only to realize I didn't really know what I was doing.
+
+I could loop through the pixels and get their color values, but I didn't know how to keep track of points and lines from it. It's not as if lines were at 1 pixel thickness, and I got stuck trying to think of a workable algorithm. That's when it hit me that maybe I was maybe missing the target completely. Rather than look at resulting images, what if instead I digged a little higher and instead analyzed the actual font file?
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ilerminaty_reaction.jpg" />
+
+And this was what I ended up doing. I looked into the whole structure of fonts and using [FreeType](https://www.freetype.org/) to grab info about letters. I'm definitely no master of fonts, but I'll share what I know. To be honest, there's probably a lot of parts that could be optimized in my process. I doubt though I'll come across another project that will remotely try and do the same thing here, so if it works, it works.
+
+So inside fonts, to represent letters there are contours that describe borders where areas should be colored in or removed. These contours are represented with points. Some points are actual points that are on the path of the contour, while others are control points that are there to describe curvature in the path. If you really wanted to, you can learn the format of the binary font file and analyze the contents yourself, but with something like FreeType, you have a lot of that power built for you already.
+
+There was definitely a bit of a learning curve trying to work with FreeType. Some places were well documented, like the basic code to get a project started and font processed. But I ran into a roadblock trying to figure out how to iterate through the contours and get their values. And by this I mean I struggled trying to figure out the syntax for it. I would imagine that, oh, the contours would be arranged in listed order, but no, that's far from the case.
+
+I don't remember the exact details, but the contours have something like indices to another structure that contained info about points. And according to the site, the contours list was "\[a\]n array of ‘n\_contours’ shorts, giving the end point of each contour within the outline. For example, the first contour is defined by the points ‘0’ to ‘contours\[0\]’, the second one is defined by the points ‘contours\[0\]+1’ to ‘contours\[1\]’, etc."
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/50_shades_of_illuminati.jpg" />
+
+Yeah, I don't really get what that means, and I'm not sure why they set it up this way, but the gist is that getting contour info is more complicated than at first glance. There's actually a separate function in FreeType that helps you "decompose" these contours to the correct form. It's structured so that you pass in a number of function pointer callbacks that respond to each type of contour that is decomposed.
+
+I don't really know why they set it up this way either, but I had quite a few troubles getting the decomposition to work properly. I'm not very familiar working with function pointers and the weird casting and passing screwed with me for a bit. I'll have to thank several really [random](https://repository.unm.edu/bitstream/handle/1928/23168/jeff_bowles_font_rendering.pdf?sequence=1) [sources](http://svn.openscenegraph.org/osg/OpenSceneGraph/branches/OpenSceneGraph-2.6/src/osgPlugins/freetype/FreeTypeFont3D.cpp) I found in getting me to the right direction and eventually getting the proper contour info I needed.
+
+But getting the contour info was just the tip of the iceberg though. There was a lot of extra processing to be done. For the most part, contours in the Aroly font were made up of very thin rectangles that described each line's path. I say for the most part, however, because there were some strange exceptions to this where contours were represented completely differently. I don't know why.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/aroly_a_glyph.png" /> <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/aroly_r_glyph.png" /><p className="caption">thanks opentype.js.org, ur da best</p>
+
+One example is the letter R. I used [opentype.js.org](http://opentype.js.org/) to help examine font files and the glyph each letter was composed was. I found out that on a few letters such as R, the contours were not in fact rectangles and were set up instead as triangles. Instead of describing where each line should be, they described the missing space where lines should not be.
+
+On these missing triangle space font contour letter things, there was also one gigantic contour that outlined the entire letter. In order to not mess up future processing, I hardcoded the removal of these contours. The next step in processing was reduction. This required two cases, one to handle the rectangle contours and another for the triangle contours. The idea was to reduce the rectangle or triangle to as few lines as possible.
+
+The contours were not perfect. Some supposed-to-be thin rectangle contours for instance had 5 or 6 or more points in them, though the rough structure it was supposed to represent was still there. The same was true of the triangle contours. The idea of the reduction step was to get rid of the unnecessary lines we didn't want to care about.
+
+For rectangle contours, the simplest solution was to find the pair of points with the longest distance and only use that for calculations. Obviously this isn't going to be the best fit line describing the whole rectangle, but it was good/simple enough for my purposes. I only needed a rough estimate anyways. Most of the triangle contours were set up properly, but there were a few that had an extra 4th or 5th line them. I just took the 3 longest lines to use in these cases.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/illuminati_tetrahedron_march.mp4"/></video>
+
+After reduction, it was time to form "pockets." The problem was that the start and end point of each reduced line needed to be hooked up with other line points in order to form a full fledged path. Line points did not necessarily stack exactly on top of each other, so I needed some kind of structure to hold a bunch of close points together and eventually localize these to a single point. This was the idea behind pockets. Line points would be thrown into these structures, and in the end, these pockets would average all of its points together and give back a final position.
+
+Once the pocket information was processed, I saved all this data into a text file to be read in by the actual storyboard project. The storyboard project controlled the actual branching of the path. Using the data for each letter, a path was formed by traversing the pockets. Sprites were accordingly moved and scaledvectored and timed into position to display branching. And that's pretty much it. Slap a bunch of these letters together and you've got your string and a line of lyrics to use.
+
+The algorithm behind all this branching was not super, super painful I'd say. What I had the most trouble with was probably figuring out how to best structure everything. In the end, I had a difficult time working with vector of vectors of vectors of probably more vectors of points. All the nesting became super confusing. I tried alleviating some of this burden by typedeffing a couple intermediate structures, and it helped to some degree though not drastically. Next time I'll be a lot more vigilant in organizing such code, because it can get to be a very big mess.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/california_fire.mp4"/></video>
+
+This whole processing probably took a couple weeks to get finished. I'd say the end effect is pretty close to where I want it to be. I wanted the branching to last longer so you could appreciate seeing each lyric line build out, but due to the nature of the song, a lot of this was sped up. Whatever. It's still cool, and a few people have told me they like where it's at.
+
+Next was the collision and moving. As I've said before, I wanted to first try 3D movement and rotation, a step up from Magical Girl's storyboard. After researching a bit, it seemed like I could use a modified version of what I worked with in Magical Girl to calculate 3D rectangle collisions. The idea was to extend the Separate Axis Theorem code I used in Magical Girl with a bunch more axes.
+
+And that actually worked and was surprisingly simple and easy. All it required was adding in good number more cross product axes to check on, and that was pretty much it. I thought it'd be a ton more complicated since I struggled quite a bit to get the original collision working in Magical Girl. Well, there was an eventual problem though, as I mentioned before, and that was that it just looked bad.
+
+Kind of a shame. Maybe I could have tweaked things further, but with so much time spent already, I just wanted to simplify things and go with something tried and true. The end result doesn't look that bad, but it's a step down from Magical Girl. In Magical Girl, the rotations were a lot more fluid, and it looked more like everything was moving together. In Dualive, it's more static, mainly because I couldn't afford to rotate the text lyrics as much as I wanted to.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/spin_kid.gif" />
+
+And afford is probably the right word here. I was getting pretty paranoid about space issues at this point. The 3D spectrum took a lot of file space since it was rendering every like 100 milliseconds to the OSB file, and the lyrics were turning out to be a giant space hog as well. You can imagine with so many tiny lines making up each lyric, how costly it is to move around. I wanted to avoid more rotations so the file wouldn't get more bloated. It's a necessary price to pay.
+
+Okay, so with the lyrics finished, it was time to go through everything again and get to coloring. I'm not much of a color guy, so I didn't make any special swatch color pallette theme patterns or anything for this storyboard. I basically threw out a bunch of random colors, made sure they were bright, jarring, and contrasting, and just continued with that. It was quite a tedious process, and altogether I had something like 120+ colors.
+
+Each color had its own original name that for the most part described its color. Sometimes these got modified later on so that color combinations were a bit more appealing to me. I didn't use anything special to pick out colors, only Photoshop to color a background and put a different colored dot or two on top. If I liked the combination, I saved the colors down into the solution. Here's an exhaustive list if you're interested in what colors were made.
+
+*   PINK
+*   CYAN
+*   GREEN
+*   NAVY
+*   PURPLE
+*   YELLOW
+*   ORANGE
+*   BLUE
+*   SUNLIGHT
+*   TOMATOSAUCE
+*   MUSTARD
+*   BUBBLEGUM
+*   CHEWEDBUBBLEGUM
+*   INDIGOPRIDE
+*   LEMONGRASS
+*   TURQUOISE
+*   FOREST
+*   SPIDERMANRED
+*   SPIDERMANBLUE
+*   CLOUD
+*   PEACH
+*   MAROON
+*   VOMIT
+*   ICE
+*   BURGANDY
+*   LAVENDER
+*   NEONGREEN
+*   SHALLOWSEA
+*   ELECTRICITY
+*   COTTONCANDY
+*   SEAFOAM
+*   GOLD
+*   IRONGRIT
+*   CHERRY
+*   LEATHER
+*   MOSS
+*   DIAMONDSHINE
+*   OPENSIGN
+*   FAKEINDIGO
+*   RUST
+*   FLUFFPINK
+*   ANGRYBLUE
+*   WARNING
+*   BABYGREEN
+*   STEELBLUE
+*   COUPLEMONTHSWORNBASKETBALLORANGE
+*   ALIENWARE
+*   MOSSYAQUARIUM
+*   GOLDENGATERED
+*   SANDPAPER
+*   SUICIDEAD
+*   BRUISE
+*   HAPPYNESS
+*   SADNESS
+*   TRAFFICONE
+*   AQUAMARINE
+*   PARADELIGHTS
+*   PARADENIGHT
+*   EMERALD
+*   COALMINE
+*   STOICROCK
+*   TENSIONSENVELOPMENT
+*   CROW
+*   SKYFALL
+*   FLAMINGROCKET
+*   THELIGHTOFSPACE
+*   SATURN
+*   URANUSDEATH
+*   MARBLEGUMBALL
+*   LIPSTICK
+*   THEFORESTFIRE
+*   THEFORESTTHATBURNED
+*   IFPLUTOWASAPLANET
+*   PUMPKINPIE
+*   GREENPASTURE
+*   WATERCOMBUSTION
+*   BADMAGMA
+*   DABOMB
+*   NUCLEARGLOW
+*   ILOVEYOU
+*   INANYEVENT
+*   NEONFOLLOWER
+*   DARKNESSBEFALLS
+*   MERCURYINMYDRINK
+*   NAKEDJUICE
+*   NORMALTORCH
+*   SOHOTITSBLUE
+*   IMAGUY
+*   IMAGIRL
+*   SHITTYCHRISTMASRED
+*   SHITTYCHRISTMASGREEN
+*   CACTUS
+*   DESERTSAND
+*   OYSTERFISH
+*   DEEPSEATOO
+*   MORNINGSTAR
+*   SKYRISE
+*   ICKYJUICE
+*   BATTERYACID
+*   BORINGBROWNCHOCOLATE
+*   EXOTICPINKWRAPPER
+*   STRIVINGREACHINGBUTNOTSUCCEEDING
+*   MELLOWCONTENTION
+*   STUDYFORTHEFUTURE
+*   TRAPPEDROOM
+*   THEACTOFCARING
+*   ROOMMATESPEE
+*   GAYNESS
+*   SOPHISTICATION
+*   WHOAMI
+*   BUTTHEDECORATION
+*   BREATH
+*   BREATHING
+*   ITHOUGHTITWOULDBEALRIGHT
+*   BUTTHEN
+*   EVERYTHING
+*   FELLAPART
+
+I like the colors. Maybe it would have been better to stick to some more generic color theme, but I think it all worked out in the end. I did run into some slight troubles with switching colors back and forth. So save some time, I made a SwitchColor function to more easily go from color to color back and forth. And besides that, I don't think there's too much else to say on this topic other than the fact that it took a long time. 120 is a big number.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/hair_extensions.jpg" />
+
+After coloring, I addressed optimization. At this point, I couldn't even upload my beatmap anymore because it was way pass the upload limit. A lot of things contributed to this. The 3D spectrum and branching text were very expensive, and adding color on top of all of that skyrocketted the file size. After talking with some other storyboarders about my issues, I decided to look at trying to optimize the branching text first.
+
+One helpful suggestion, thanks Starrod, was that after finishing the branching for the text generation section, I switch the many-sprites-lyric out for a full image rendering of the same thing. This would free up a ton of space since I wouldn't be moving a bunch of sprites together, and rather only a single image. I had thought about doing something similar earlier. I considered this again, but I ultimately decided another method.
+
+There's the question of how exactly would I do this. One method was rendering out the lyrics onto the storyboard with a green screen background. Then I could take a screen shot of this, put it into Photoshop, remove any green parts I found, and put it back into the storyboard with the right scaling. This was probably the most straightforward solution I could think of to get this to work. I could have potentially tried to program some kind of other solution. That could have been interesting.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/bottle_smash.gif" />
+
+One thing really bothered me though, and this was that I was afraid of losing quality trying to render, green screen, and scale back the text. I didn't want there to be any noticeable shift when I change from the many-sprite-lyric to a solid image. I could have probably hidden the switch with some kind of effect, but I didn't want to this except as a last resort.
+
+Another thing I didn't like about image replacement was that it didn't take advantage of all the work I put into the branching effect. Since I worked so hard on it, I wanted the effect to last longer, so I thought about having some of the branching effect carry over into the later sections. That's what I ended up implementing, and I think it looks pretty good. It took some time tinkering and throwing some code around around to get it the way I wanted, but overall a great improvement.
+
+Most importantly, this shaved off quite a bit of space. Since roughly half of all the lines of a branched lyrics disappear on a single move, there're a lot fewer commands to have to write into the OSB file. This didn't quite clear the 30MB threshold though. I next looked at trying to make coloring more efficient, since that was what bulked up the majority of the program very quickly.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/paper_airplane.mp4"/></video>
+
+There was one thing common across all colored sprites, and that was the function I mentioned before, SwitchColor. In this function, I manually switched colors back and forth every so and so frequency. At the time, I had no idea there was a Loop command in osu! that could automate this process much more efficiently. A storyboarder mentioned it in passing conversation, and I thought it'd be very helpful in SwitchColor to save a lot of space.
+
+And save a lot of space it did. It took a while to get the function operating exactly as it was before, but once I figured it out, many megabytes were trimmed off, and I had enough to space to even implement some more effects. Notably, this was when I added in the lined triangle background section behind the 3D spectrum. Royce and I thought the 3D spectrum was quite bland by itself, so I thought of something to add there.
+
+I was under the limit now, but I still wanted to go further, just to be "right." After reading the [ranking guidelines](https://osu.ppy.sh/wiki/Ranking_Criteria), I decided to cut pretty much every single image to about half their size. I don't think this shaved off that much space, but some images were so gigantic that they were illegal. The original moire spin pattern was something around 3000x3000, way above the 1920x1200 limit.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/suicide_nade.webm"/></video>
+
+That's pretty much it on the storyboard. I took several Cinema videos of the storyboard using OBS. This took a few tries to get the best results, since I experimented with settings. I looked up a few basic guides to point me to the right direction. The current final version is 1080 60FPS. 2 minutes of capture costed about 1.7GB. Seems about right. A few parts of the video look a little bit rough, especially when there's a ton of chaotic stuff on screen. I recommend watching it through osu! directly for the best results.
+
+I spent a couple days working with Royce to finalize the map. This included updating map settings for the storyboard, deciding on naming, along with going through miscellaneous settings and picking the best options. Royce also gave me some feedback, and I fixed a few minor bugs. This was also when I found/made the background for the map. Originally, I wanted to create some art from scratch, but god knows how long that would take. I decided to take a triangle twist of one of my favorite iconic characters, [Punpun](https://myanimelist.net/manga/4632/Oyasumi_Punpun), and go with that.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pyramid_punpun.png" /><p className="caption">heh</p>
+
+It's done. It's finished. I'm going to call it quits here. To wrap it up, I had a ton of fun throughout. It was pretty difficult, very time consuming, but I'm proud of what I achieved. It sucks that this project probably won't move much further from here. We might see a guest difficulty from mah boi [Harrharrqi](https://osu.ppy.sh/u/2744592), but that might be a shoot in the blue moon, and maybe possibly Royce might fix some additional stuff up. I don't know.
+
+I have a few more projects lined up that I'm committing myself to. Over Thanksgiving, I'm working with a few friends to create some kind of crazy 3D storyboard concept over 4 days. It's pretty super complicated, and we don't really have the greatest tools to accomplish it. I guess we'll have to wait and see how well we'll do. The other guys are busy trying to pick up what they can of my OsuukiSB library. It's not the most friendly library to use, so I'm trying my best to guide them in the right direction.
+
+After that, I think I'm going to try for ranked, by myself. Working with osu! UCI and Royce has been fun, but I feel like I'm stagnating if I don't try to reach further than I am now. I want to reach a larger audience, get more feedback, improve on my creative skills. Yeah, I'll even pick up mapping and try to take this all the way. A lot of small dreams, but as long if I'm focused, I'm going to work to get there. My next project will be JoJo's [Crazy Noisy Bizarre Slam](http://maxrchung.com/projects/crazynoisybizarreslam).
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/DwvA3gIw5Js" frameborder="0" allowfullscreen=""></iframe>"
+
+Ok, hello everyone. Reporting in mid-2017. Forget the above, I'm never gonna get to Crazy Noisy Bizarre Slam. what was I thinking lmao. hahaxd kill me I want to die. Ok not really. But like for real I'm working on other stuff instead okay holy moly. stay tuned???

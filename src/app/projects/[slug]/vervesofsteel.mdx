@@ -1,0 +1,68 @@
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pressShootToStart.png" />
+
+Verves of Steel was a bullet hell game made for the Video Game Development Club's spring 2014 game jam. The theme of the jam required all games to use special [VERVE](http://myinxus.com/welcome/verveall/) sensors as input. Though you can play Verves of Steel standalone on keyboard, we made a makeshift joystick controller out of the VERVE sensors specifically to be used with the game.
+
+*   Made with: Java
+*   Made by: Max Chung, Sean Creveling, Jerico Vargas, Handerson Lee, Arzang Kasiri, Jonathan Shokoor
+*   Download (Java): [VerveOfSteel.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/VerveOfSteel.zip) (22.6 MB)
+*   Repository: [Verve of Steel](https://bitbucket.org/handersl/verve-of-steel/src)
+
+## Background
+
+This game jam was one of my favorites overall. I learned a tremendous amount from it, and the theme, team, and process I worked with was all really awesome. I've never been in a game jam with as stringent of requirements as this one, using special sensors. While there were a lot of different sensors to choose from, it was actually quite difficult to make a coherent game out of them.
+
+We thought about maybe a simulator of some sort that required using different actions or maybe a puzzle kind of game. None of our early ideas, however, seemed great or exciting. We looked at the design problems we were having and pinpointed our issues as a difficulty in inputs. Because although there were a lot of sensors, none of them really matched traditional game inputs like a keyboard, mouse, or controller.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/puppies_going_fast.webm"/></video>
+
+So working along that route, we tried to see how to make a more sensible controller out of what we had. I then brought up the idea of an up, down, left, right controller using four magnets. We would place the four magnet sensors in a cross-like fashion and then moving a magnet over the sensors would cause you to move in that direction.
+
+And to follow up on that, I suggested a bullet hell game. The directional controller can be used to management movement, and we can use a button sensor as a way to shoot bullets. That's the idea we eventually settled with, but the controller actually went through a number of different iterations.
+
+Jerico and Sean were the designers for the project, kind of funny because they're respectively normally a programmer and producer. One of their jobs for this project was to make the controller. This should have seemed easy since the magnets just needed to be spread apart. But from what they found, they couldn't get the magnets and input to easily work together. There were problems with spacing and detecting multi-directional movement.
+
+Worst comes to worst, they would stick with the magnets, but they played around with other options. Eventually they found some luck with the motion sensor. The motion sensor triggers input from tilting, but this was only in two directions, and we needed four. In a stroke of a genius, they stacked two motion sensors on top of each other like a cross, and that allowed movement in the needed directions. And for a more ergonomic grip, they engineered in an expo marker on top of the cross to form a makeshift joystick.
+
+The shooting was managed by a button sensor that you could click. We wanted to also add directional shooting so we put the button sensor on top of an expo marker. We were going to add motion sensors to it as well, but we eventually ran out of time and just opted with single direction shooting. We wanted to also just let you hold down the button indefinitely to keep on shooting, but we also ran out of time for that, and now you have to repeatedly press to shoot.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/verves7.jpg" />
+
+I really liked the smaller teams for this game jam. In total, we only had a half a dozen members, and there were only also only half a dozen groups for the jam as a whole. With these groups, it was a lot easier to split off tasks and to get to know your team better on a more personal level. Sean and Jerico, the oldest of us, did a great job hack engineering and making the controllers. They did a bunch of a playtesting and QA as well.
+
+We ran into some unfortunate Git problems this jam. Handerson wasn't experienced with merging so there was a lot of copy pasting around code and referencing old files back in time. Some pretty gnarly stuff. At the time, I was very new at Git myself so I wasn't of much help (if not the root of the problems). Jerico helped out with merging when he could.
+
+Handerson was the main force of programming on the team. Since he was leading the coding, he chose Java since that was what he was most familiar with and what the rest of us had a bit of experience in. None of us really knew Unity that well, so we didn't choose that route, although the majority of projects in the game jam, as always, was Unity based.
+
+Arzang was a freshman with very little experience in programming, but regardless he tried to do the best he could. He partnered with Handerson for much of the time to get familiar with Handerson's structure and coding, but even he contributed to the code as time went on. I believe he was the one responsible for adjusting the level generation and the different attack patterns for enemies.
+
+Jonathan was kind of a mystery, and I'm not even sure if he actually did anything for the project. I think he worked a bit on one day but for the most part missed a lot of the meetings. I wanna say maybe he worked on UI or something, but I'm pretty sure Handerson ended up doing much of that anyways. I'm honestly not really sure, haha.
+
+And as for me, this was another great project I fell in love with and worked hard for. For the first day and a half I worked on purely art. It was a really good chance to redeem myself because a year earlier I was working on [Wings of Rage](http://maxrchung.com/projects/wingsofrage), which didn't quite go so well. I finished up a bunch of fighter craft, ships, bullets, and power ups that I'm relatively proud of.
+
+But then on the second day I made the decision to switch out of art. Learning from my past faults in [String Theory](http://maxrchung.com/projects/stringtheory), I realized that with just two and a half somewhat inexperienced people coding, there was no way they could afford time to put in more things that I made. So I switched to programming.
+
+It was actually kind of scary, because until this point I was pretty much always known as an artist, and art was always solely what I contributed to on projects. But with guidance from Handerson and support from the team, even I contributed some smaller parts to the game. I added in screenshake to the game, which was pretty funny actually because it started off as window shake. Honestly, I liked it as it was before since it was a little more meta, but screenshake was what we went with.
+
+Most of my other coding work was just adding in my own stuff. I added in turning to the enemy planes for the animations I made, and I also put in boosters when the player moved up or the enemies moved down. And then I did some small bug fixes where I could. I'm pretty sure a large section of the last day wasn't so productive for me since I stayed up really late the day prior. Now that I think about it, a lot of my projects have pretty bad last days for me because of sleeping problems.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/kitty_daytime_nighttime.gif" />
+
+Overall, we placed 1st out of 6 groups, which I'm definitely happy about. We won I would say mostly due to the design of our controller, as out of all the projects, we probably had the best use of the sensors put together for a game. It's not saying much out of 6 groups, but I think this is the only first place I've ever gotten from a game jam.
+
+This project holds a special place in my heart because I started feeling a lot more comfortable coding after this. Pretty much all the projects I've worked on after this has had me contributing in code in some fashion. I've focused on art for pretty much all of 2014 and maybe half of 2015. And currently I'm in a weird state where I'm trying to catch back up on all the lost programming time I've had. I do art very irregularly still, maybe a little here or there for a game jam or a small project, but not much in my free time anymore.
+
+Oh yeah, I never really talked about the name. Verves of Steel is just a pun on Nerves of Steel. Handerson I think made a mistake calling it Verve of Steel, so that's why our repository and zip is kind of weird, but Verves is the official title I'm going with.
+
+I also found a few pictures of the Verves adventure that Sean helped take of us. I'll dump the rest here.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/verves2.jpg" /><p className="caption">Filtersss</p><img src="https://maxrchung-rails.s3.amazonaws.com/uploads/verves3.jpg" /> <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/verves4.jpg" /> <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/verves5.jpg" /> <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/verves6.jpg" /> <img src="https://maxrchung-rails.s3.amazonaws.com/uploads/verves1.jpg" />
+
+One last thing, I looked over the Facebook group we had and saw that we actually had an internal high score competition going on between the developers (mostly just Sean and I). I was able to get a high score after exploiting the game a little. The game's play mode is right now an infinite mode where a set of enemies constantly spawn and grow in number to a certain point.
+
+The game only becomes hard when a bunch of red enemies appear because these shoot a ton more bullets than the other planes. It becomes difficult if not impossible to dodge the red bullets later on. However, when a new wave just arrives there's a window where you can take advantage of the timing and immediately try and kill off the planes as fast as possible. This obviously works best with the maxed out damage stat.
+
+Unfortunately, you can't actually beat the game like this forever. After a couple minutes, you start to feel some lag seeping into the game, and eventually, the game will crash. We think this is because Handerson and crew messed up a little on the spawning code, and there is a chance that things can spawn outside of the screen. The problem with this is that these objects never get deleted. Eventually memory overflows, and the game breaks.
+
+As such, I took a bunch of screenshots as I was playing, and this is currently the highest score for the game, beating out Sean's old record, hehe.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/verves_highscore.jpg" />

@@ -1,0 +1,112 @@
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/minutestomidnight_banner.png" />
+
+Minutes to Midnight was a platformer made over 2 days during VGDC's 2015 Spring game jam. The game was about a hero trying to reach the top of a clocktower by climbing rotating clock gears. At the top waited the princess who... uh, was either in deep peril and needed the hero's help or was eating cake by herself and wouldn't save any for the hero if he didn't make it!
+
+*   Made with: Python and Pygame
+*   Made by: Max Chung, Theodore Won, Dustin Wang, Iryna Sulimova, Steven Nguyen
+*   Download (Windows): [MinutesToMidnight.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/MinutesToMidnight.zip) (12.5 MB)
+*   Repository: [clocktower](https://github.com/maxrchung/clocktower)
+
+## Background
+
+Minutes to Midnight was a game made during VGDC's 2015 Winter Game Jam. The theme of the jam had two parts. The primary theme was "randomness" and to tack onto that each team had a secondary theme that was randomly chosen for them. Our secondary theme was "beat the clock".
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/dwag_shark.webm"/></video>
+
+We had a relatively small team, but I believe all the members of our assigned group showed up, so that was good. I knew Theodore, who will henceforth be called Ted as he prefers, beforehand. He was a long time artist/programmer in the Video Game Development Club, and I'm fairly close with him. He's currently my roommate for my 4th year at UCI. He would soon be moving out of VGDC though as he would become new president of Animation Anteaters, UCI's animation club.
+
+He and I are big game jammers, and coincidentally we got put on the same team. I'm pretty sure every quarter VGDC holds a game jam, we've always tried to be involved with it. He's even actually come to a local game jam I've held pretty recently, [Quaternion: Too Drunk 4 a Title (Basically a Tuple)](http://maxrchung.com/projects/quaterniontoodrunk4atitlebasicallyatuple), since he lives pretty close to me.
+
+The rest of the team I didn't know personally, but oddly enough, I'm pretty sure some of them knew me. Dustin, for one, actually had a pretty funny back story. He was friends with Jimmy, who was an active member and future officer I met through the osu! club. Jimmy actually told him about me beforehand, so he already knew a little bit about me. And actually, I'm not even sure but apparently we may have met beforehand at an event, but I don't quite remember those details.
+
+He was new to game development and game jams, but he enjoyed programming and wanted to give a game jam a shot since I'd assume he heard some good things about it. I don't think he had the free time to work on a long term VGDC project, so doing a game jam was a kind of compromise. I know he's involved, pretty heavily sometimes, in other activities, for example, High School StarLeague and the community built around that.
+
+I'll talk about Iryna next. Apparently, she only goes by Ira and gets annoyed if we use her full first name, so I'll call her that then. Her background was pretty similar to Dustin's. I think she too has other activities going on but wanted to give game jams a go and see what they're about. She didn't have a lot of development experience and wanted to learn what she could over the weekend. I don't think she knew me beforehand, probably the only one out of the group actually.
+
+And lastly was Steven, who was kind of an odd fellow. He's been hanging around VGDC for a while now, but he's kind of a shy and stuttering kind of guy. It's difficult to sometimes get things across to him or vice versa. I'm pretty sure I've seen him around a couple of times, but I never really talked with him outside of brief exchanges.
+
+And now to jump into our development. The start of the jam was somewhat rough. Turns out narrowing down randomness to a specific game idea isn't exactly the simplest task. The secondary theme, beat the clock, helped us a little better, but we couldn't think of something right off the bat that we all liked. We didn't settle with an idea until pretty late in the night.
+
+From beat the clock, we thought about a couple of time constraint concepts: racing to a goal before a timer runs out, getting to the goal as fast as possible, things of this nature. But while gameplay-wise this narrowed things down, we didn't have an aesthetic for the game to make it more appealing. We brainstormed some more, trying to relate clock with other objects.
+
+Eventually, we landed on clock tower. We could create a bunch of levels representing different floors of a clock tower, and the goal was to reach the top by some time limit. Naturally, we thought of what could be contained inside of a clock tower, and this led us to gears. So the goal of the game was to climb gears, progress through levels, and reach the top floor.
+
+This was all really, really good, but it wasn't quite enough. We wanted to explain why someone was the climbing the tower under time constraints, and we decided to go with something pretty generic, a hero/prince racing up to a princess situation.
+
+I don't think we ever decided if we wanted to be serious or not though. One story suggestion was about a hero having to save a princess at the top of a tower from danger. This probably makes the most sense, but it gets kind of complicated because we probably needed to introduce side bad characters and such.
+
+The second idea was a princess enjoying cake by herself at the top of the tower, and you had to race up to get a chance to eat some with her before the cake ran out. I like this one better, but it's a little weird too, considering you're putting your life in danger climbing dangerous gears just for some cake. I don't know. Maybe kind of just mixed the two ideas and called it a day.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/portal_cake.jpg" />
+
+I liked this idea as it was. It followed our secondary theme really well, although the primary theme, randomness, wasn't particularly well represented. We wanted to make sure we made pre-generated levels and randomized levels, because of how the gears worked. The gears ranged from small, medium, to larger sizes. To climb them, you made contact with the gear, and you then started rotating along its perimeter as it spun.
+
+The catch comes when you come in contact with two gears that rotated into each other. If you got crushed in between two, then you died and lost the game. We could have tried to make randomly generated levels that used these gears, but it seemed like a ton of tedious checking for errors and edge cases. Better to just generate some nice looking levels and use them for the game.
+
+To link back to the primary theme, we tried to throw some randomness into our current clock tower idea where we could. For now, we would just have a random set of levels that you encountered when you played the game. These would reset every time you died or restarted the program.
+
+Not particularly random, but it was the best we thought of. Maybe explaining it somehow through story would better, for example, traversing the evil clock tower maze that imprisoned the princess. Ted ultimately had a good idea and randomly set the speed of the gears later in the weekend.
+
+Thinking about the hero and princess idea, I wanted to tackle art on this project. It reminded me of fairy tales, and I wanted to try something inspired by that. The style I wanted to do was like paper cutouts. Every character and gear in the game was surrounded by a cut out paper edge. One cute side effect was that when the main character moved left or right, his cutout spun with him.
+
+The art looked alright to me in the end. It wasn't exactly how I wanted to match the game with, but regardless I think it's a unique and pleasant looking style. Given more time, I'd like to expand on the fairy tale book aspect some more. As of now, the picture edges seem kind of out of place.
+
+The idea was that this game was part of a fairy tale story. The story came to life when the book pieces get ripped out from the pages, and you then need to manually help our hero reach the princess. An intro explaining this would fit pretty well, but under time constraints, we had no time for that.
+
+Art was not that difficult since I had a good direction of where I wanted to go. We didn't have too many assets to worry about, so that benefited me. After our first night, I immediately got started on character designs and made the hero/princess pair pretty quickly. Animations were simple on my end since all I had to do were still images, to fit with the paper cut out idea. The only complicated animations were death and flipping, though both just involved a lot of simple transformations and no redraws.
+
+The gears were fairly simple once I got the hang of it. There were 6 gears in total, two directions for small, medium, and large gears. To show the contrast between spinning directions, I inversed the colors. All bluish gears I believe spin clockwise and all orangey gears counterclockwise. Aligning the gears so that they rotated around their centers took a little work since I hand drew everything, but they look fine now in game.
+
+To keep track of status and show your remaining time, we put in the clock tower on the right. There're five floors before the princess to represent each level. The background of the game was all gears as well. It took a while to get the shading correct on this because colors look different on different computers, probably due to gamma. On my laptop it looks lighter, but on other computers it's much darker. And then for some quick menus, I hand wrote a bunch of screens. They look kind of bad, haha, but I think they're a good time cost to effort ratio.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/mtm_lose.png" />
+
+In retrospect, however, putting me on art was a bad idea. The team decided to use Python/Pygame because Python was something that all of had experience in, and myself especially now I suppose. But I was the only one out of the group, I believe, that actually used Pygame before. The program lead, Ted, said he was down to try something new since all the VGDC projects recently were of Unity flavor.
+
+The Python, Pygame combo did give us a lot of trouble, but if we could go back in time, I don't know if the team would want to do something different. If we wanted the best results, for sure, putting Ted onto Unity and leading a group through that would have been better. Perhaps putting me on programming instead and having someone else do art would have been an option, but I had a very clear idea of where I wanted to go with art. Regardless, I'm sure everyone learned a lot about Python and Pygame so as an educational experience this jam wasn't too bad.
+
+I'll talk about Dustin first since his role was pretty disconnected from everyone else's. Similar to my experience with [Left to Die](http://maxrchung.com/projects/lefttodie), I wanted Dustin to work on a level editor like Kinsey did. I explained the concept of making simple text files with characters in them to indicate where to place gears. I wanted him to just use Pygame, but he actually went up and beyond to make his editor.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/mtm_level1.png" /><p className="caption">Level 1</p>
+
+I don't remember completely, but I'm pretty sure he incorporated an explorer interface to pick files for saving/loading levels. Pretty indepth stuff. He definitely worked hard on it. He told me he was interested in UI/UX stuff in general, and even customized his own Windows shell to a good extent. Because of that, he tried to make the editor as polished as he could.
+
+He cut it pretty close getting his parts finished, but he did complete it by the end. It may have better for him to try and finish the editor more simply and move onto other stuff, but at least for him personally, I think he got a lot out of concentrating on his work. Things move really fast anyways in a jam, so it's understandably difficult to jump onto another section and help out immediately.
+
+Ira I assigned with Andrew's old task in Left to Die, getting animation working. I thought I explained sprite sheets and the concept fairly well to her, but her animation class didn't turn out as I expected. I only glimpsed at her and the gameplay code for a little bit since I was working on other stuff, so I can't say much, but I recall Ted having trouble integrating her animation to his code.
+
+From what I understand, Ira tried to put too much into the animation class that wasn't needed, for instance, state management. I wanted her to just make a very simple update the current frame, draw current frame, etc. but her class included a lot more extra fluff, like handling character direction switches or jumping. Because of that, I believe the gear animations were handled differently than the player.
+
+She also worked on making the clock tower's clock work. This involved some calculations to rotate the hands properly. We started at five minutes, but after she implemented it, we realized that it's just too small/difficult to tell when 5 minutes passed. We probably should have just used a whole hour to indicate time, but we didn't have time to change that. Overall, she had some mishaps here and there that probably could have been avoided if we worked closer on the code, but I'm sure she learned a lot about Pygame in the process, for better or worse.
+
+Steven did some odd jobs for us. I assigned him to make a sound manager and input manager that we could use to keep track of sounds and inputs respectively. He seemed to really struggle with these, even though they seemed fairly straightforward to make. I think I eventually showed him so reference code of my old projects that had everything working. He then made/found some sound effects for us. And he also tried to move onto game code, although without too much luck.
+
+He's kind of an interesting, quiet fellow. He's one of those guys who definitely puts in a lot of effort to try and contribute, but it just doesn't always pan out in the end. I don't know. I've seen a couple of these kinds of guys already, Jordan springs to mind, and it's a bit upsetting in some sense. Maybe it's the way of thinking, or maybe something else is wrong, but I really want to see these guys succeed since they put in a lot of effort into projects.
+
+Ted had the most programming experience out of all of us, so he was responsible for setting up the general structure of the game and putting everything together. I think he pretty much had been solely working with Unity for quite some time now, so it was definitely a bit jarring for him to switch out of the engine and into coding from scratch again.
+
+Unfortunately, he had his fair share of troubles for the project. He wanted to use a lot of the more complicated Pygame features that he glossed over when looking through the documentation. Not the greatest idea when you haven't used the library before. One of the things he looked at was masks, for maybe pixel perfect collision. This, however, turned out to be a wild goose chase that ended up being scrapped late into the project, costing us a lot of time.
+
+He handled all the physics of the game, worrying about the movement, rotations, and attachment. There was a lot of pressure put on him to get things fixed and working, but without much help from the rest of us, we didn't complete our game fully by the end of the jam. It was almost working. I think with another couple hours, it probably would have been playable and more polished.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/firefox_bug.webm"/></video>
+
+We had a game breaking bug in our submission where gears were not deleted when you reset a level. Graphically, they were not visible, but in the game, they were still present. Obviously, this meant you couldn't complete some levels because you got blocked off. We were rushing at the end of the jam to fix things, and we didn't catch this error since we were just playing one level at a time. Kind of sucks, but it is what it is.
+
+A couple other things also affected us negatively. Source control was fairly manageable but still problematic. We had some problems with merging conflicts, but specifically merging on some people's computers. I don't know command line git very well, but I was fairly familiar with Tortoise Git. I knew how to handle merging to a reasonable degree on there.
+
+I believe Ira had a Mac, which didn't support Tortoise. She and someone else used Source Tree instead. The problem was that Source Tree did not have manual merging, at least that we could find, so the automatic merges destroyed a lot of code and required some backtracking to fix. Overall, it wasn't as bad as some previous projects, but it did slow down our progress considerably.
+
+Another thing that affected some people, and particularly me, was sleep. Ira has a very consistent pattern of sleeping very early and waking up early. Because of her schedule, we cut our first night a bit short and opted for early meetings. Having to wake up early though was definitely a challenge for me. My sleeping pattern is pretty erratic, but it usually suffers even more during game jams.
+
+It's just something about game jams that makes it hard for me to sleep properly. I think it's just being too excited about the game. There's always something to think about and more things to plan, and I can't sleep with so many things spinning in my head. Sometimes people urge others to work without sleep and just push through it, but I find myself thinking very poorly without sleep and losing a ton of working motivation, on top of being extremely cranky. These are traits I would say don't necessarily benefit a team, so I try and sleep when I'm tired.
+
+With our broken game, we didn't end up placing in the jam, as expected, but we wanted to at least correct our mistakes and fix the game to a reasonable degree before the next meeting. This ended up just being Ted fixing the game as much as he could. He fixed up the level bugs, balanced it a bit, and we pretty much just left it at that.
+
+That about sums it up. I really liked this game idea. I think it was pretty solid and fit the themes well. It's not something I would continue working on after a jam, unless the whole team was really motivated to do it, but everyone moved on to their own things. I hope everyone had fun working on it and learned a lot from it. Biggest take away for me was probably budgeting time wisely and simplifying things instead of trying to make complicated ideas work.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/minutestomidnight_coolswag.jpg" />
+
+Oh yeah, I almost forgot about the name. The name was thought up by me to represent a couple of things. Of course, it relates to the game itself, how there's only a few minutes to midnight for the hero to reach the top. But also, it represents how stressful our last minutes were before midnight trying to cram in as many fixes into the game. Oh yeah! And if you look at the title, you notice the two standing opposite of one another. One way to look at it is if our main hero character was named Minutes and the princess Midnight. Pretty ingenious right?
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/mtm_title.png" />

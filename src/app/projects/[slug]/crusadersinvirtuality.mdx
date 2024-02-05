@@ -1,0 +1,106 @@
+Crusaders In Virtuality is a project currently put on indefinite hold as I work on other things. Rather than a concrete thing, this project is more of an idea: to extend the osu! storyboard system to more than just a background animation for a map. It's gone through several phases and imaginings, transforming from a 3D shooter Time Crisis-like game to an audio surf-like clone.
+
+*   Made with: C++ and [OsuukiSB](https://github.com/maxrchung/OsuukiSB)
+*   Made possible with: osu!'s storyboard engine
+*   Made by: Max Chung, Brennan Lin, and Paxton Wong
+*   Repository: [Crusaders](https://github.com/maxrchung/Crusaders)
+
+## Background
+
+Crusaders was an unfortunate project. The concept behind it, I think, was very good, and contained some of my, I'll say, better ideas. One day I'd like to see what I've visioned in here be fleshed out, but I don't know when the next time I'll return back to this will be. Some difficulties weighed down on me during this project, and more than anything I think this is a burden I'd like to let loose and leave behind.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ayy_lmao_puppy_fire.jpg" />
+
+Crusaders is an unfinished project that's morphed from one design to the next. At its core, yes, it's an osu! storyboard, but it represents a special kind of storyboard. With this project, I wanted to elevate storyboards from just a decorative background element to instead the main draw of the map.
+
+I realized after working a bit with 3D, that osu! storyboarding could really just be used as a primitive 3D graphics/rendering engine. You could represent 3D wireframes by constantly moving, rotating, and scaling lines. And that thought slowly led to one thing to another. Thinking like this opened up a whole new world of 3D possibilities, such as, well, why not make a 3D game inside of osu! storyboarding?
+
+There were limitations of course. Even with just representing wireframes, if you rendered a scene at a high frame rate per second, you would probably easily surpass osu!'s 30MB file size limit. To get around a limit, a user would have to generate the storyboard themselves. They'd download a suspicious executable from this suspicious website and run a utility to produce a (flexibly) massive storyboard file.
+
+On top of just lines, I did put some thought into adding color, but decided that would be too complicated/expensive. I'm just a novice when it comes to this graphics stuff anyways, so I wanted to use this chance to start basic and learn more as I go. The furthest I'd consider going was applying some form of primitive line occlusion.
+
+Now, the first idea I wanted to do for Crusaders was a 3D game. Rendering would be taken care of through storyboard, audio by osu!, but a big problem remained: How would you register inputs for the game? It wouldn't be much of a game, and more a simulation, if you only viewed what was going on. To take care of that, I thought, well, let's just use the beatmap to register inputs.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/dimension__.jpg" />
+
+The idea was to take a standard beatmap, get the individual note and slider information from it, and register those as inputs. Then we would generate a storyboard that ran through a simulation with those inputs. I thought about different types of games you could associate this with, and after some brainstorming, I decided on something akin to Time Crisis.
+
+The storyboard game would match with a music track, and the goal was to clear obstacles that would pop up in time with the music. We'd draw some primitive gun shooting bullets and enemies that would attacking you. You'd have health to keep track of, and if the enemies damage you enough, it's game over. Towards the end of the song, we'd throw in some boss that you'd have to fight various stages of.
+
+Gun movement would be different than standard Time Crisis. Like a first person shooter, the gun would be focused to the center of the screen. Taking inputs from the beatmap, a single note shot a bullet. Sliders rotated the gun. Horizontal slider movement turned the camera left or right. Vertical slider movement turned the camera up or down. No movement controlled rolling the camera view. Spinners reloaded your bullets.
+
+This project began to take fruition towards the end of [Dualive](http://maxrchung.com/projects/dualive). As Dualive was wrapping up, I thought about what I wanted to do with my next project. The driving force was probably wanting to do increasingly more complicated storyboards. I also wanted to dive more into 3D graphics, so together, I thought this project would be a good challenging and learning experience to take on.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/get_over_the_american_mexican_border.mp4"/></video>
+
+With Thanksgiving break coming up as well, I thought it would be a good opportunity to work with a programming team again. For the past few projects, it's just been me toying away on my own code, and I miss working closely with people. I invited some coders from the osu! club to join along if they were free. Paxton and Brenn answered my call, and we were set to do a small storyboard jam. My goal was to jump start the project during our jam session and work through the remainder of it through the quarter.
+
+The jam went... okay. Some things definitely contributed to a lack of progress. Brenn and Paxton weren't very well versed in 3D, C++, my storyboard library, or osu! storyboarding, and all that makes a not so great combination. Their contributions were minimal, but at the very least, I think the experience gave them a basic understanding of what goes into making 3D work and the low level things you have to do to get it working.
+
+Our first goal was to make basic cubes appear on screen. The easiest way I figured we could do it was to hardcode sides of the cube into a source file and then load it into a generic 3D object container. Relatively, the point parsing was somewhat complicated, so I handled and wrote this section.
+
+One requirement to keep track of here was that this process required flexibility to support more than just cube shapes. In the future, these hardcoded points would be updated with more complicated structures to form interesting enemies, bosses, projectiles, etc. My task was to correctly parse this down from a given list of points.
+
+Specifically, I broke down 3D objects into faces, lines, and points. Faces contain lines, and lines contain points. Everything is held together by pointers, so that if a point is shared across 5 lines or 5 faces, everything points to the same shared thing. There are some special cases I had to take care of, mostly dealing with null.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/rebel.mp4"/></video>
+
+One other thing to keep in mind was order. The point order of each face needs to be consistent, either all clockwise or counter-clockwise. This is needed for future occlusion calculations. To detect if you need to draw a face, you can find the normal by cross producting two points of the face. Then you compare the normal with the camera direction and only draw the face if they face each other.
+
+After the parsing was the handling of the object. Each generic object must be transformed, similar to a Sprite, by a few familiar functions: moving, scaling, rotating, coloring, and fading. This involved applying a few operations on all the points within the generic object, and because points compose the lines which compose the faces, editing just the points was enough to nicely handle everything.
+
+Since Paxton had some 3D knowledge, I had him handle the positioning of the gun and the rotation/movement involved. He would first slave labor hardcode the faces of the gun. Then after it can appear properly, work on coordinating this with rotation. And after getting rotation down, he would parse the beatmap for notes and sliders to know when to shoot and when to rotate the gun/camera.
+
+I set Brenn to do some easier tasks since he had the least experience with what we were working with. I asked him to create some sort of spawning engine/code to coordinate the creation of enemies. This meant involving him in managing enemy classes, stats, etc., as well as slave labor hardcode cubes for different types of enemies/bosses.
+
+We ran into some pretty big, immediate issues a few hours in. Working with Brenn, we found ourselves unfortunately knee deep in some header circular dependency issues. The bulk of this occurred because of the ObjectPoint, ObjectLine, ObjectFace structure referencing each other. We sat down together and read through some basic header guidelines, and now I think I have a pretty confident grasp of how to include/forward declare things properly now.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/exte_hair.jpg" /><p className="caption">yall need to see this movie called Exte</p>
+
+We used this [post](http://www.cplusplus.com/forum/articles/10627/) to point us in the right direction. To paraphrase, always use include guards, always include/forward declare as little as possible in the header file, forward declare over include whenever possible, and that, wala, should fix all your issues. To start from a clean slate, we removed all the inclusions from our header/source files and reconnected everything. A bit of a pain, but now everything is spiffy clean and working. But yeah, this unfortunately took a large chunk of our time.
+
+Paxton and I ran into some other issues. There was a problem that we couldn't figure out about rotation. If you rotated something by the X, Y, or Z axes individually, there was no problem, but the moment you applied a two axes rotation, everything fell apart. Things started getting out of sync, and points and lines started improperly flying all over the place.
+
+There was another issue where if faces, lines, or points appeared out of the camera's cone of view, odd behavior started to occur. My camera projection did not account for lines where one of the points lay out of camera view, leading to some very odd behavior. Apparently there's supposed to be some magic functions to help break down all the lines properly to the max extent of the perspective projection, but I couldn't figure it out.
+
+And couldn't figure it out is a true statement. It's frustrating, and a bit humiliating to say, but fast forward to the future, I never solved these issues down the line. They became the cracks that would eventually cripple the project, to the point where I've now completely abandoned it. After spending many nights looking at these 3D issues, I wasn't making progress, and I pretty stressed out and angry working on it. I took some time off to R&R myself before coming back to tackle it again, but I got nowhere.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/to_stand_in_the_rain.mp4"/></video>
+
+The best, or maybe the worst, thing to come out of the jam was probably our food situation. Similar to what I did for a past game jam, I wanted to do something like a hot pot, where we gather whatever ingredients we wanted and had a ready pot of food available whenever we were hungry. It seemed convenient, simple, and easy at the time.
+
+Our hot pot, though, quickly became sad pot. Joey, my roommate, read somewhere that you could use a slow cooker as a hot pot, and we tried that. Welp, 30 minutes after turning the slow cooker to max, it wasn't close to getting hot or boiling. Hmm, great, turns out Joey didn't read the fine print that said to boil the broth elsewhere and then pour that into the slow cooker.
+
+Alright, so we did the next best thing. We split the cooker into two pots and put those on the stove top, then stood around as 4 waiting to pick out our food. Not the greatest of situations, hence the sad pot. To make matters worse, our vegetable to meat ratio felt something like 10:1, and I spent a week after the jam eating cabbage and-other-assorted-vegetables hot pot, which, to be honest, wasn't that awful.
+
+Overall, all things considered I think our jam went fine. I wasn't that concentrated about our progress since this was just supposed to be a jump start anyways. By the end, we had some cubes representing enemies that displayed and could die properly. A rectangular gun was able to show up on screen and could shoot small cube bullets. Most importantly though was the experience. I think the Brenn and Paxton had a fine introduction to working with 3D, and oh yeah, how to work with header inclusion.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/gotta_go_faster.jpg" />
+
+Afterwards though, our team pretty quickly fell apart. Through it all, I don't think the two were that interested in 3D or storyboarding, and while I was ready to work on it full time, they weren't as committed. I could understand. Not everyone was going to enjoy working on this niche kind of project, and after confronting them about staying, Brenn decided to tap out first, followed by Paxton sometime after.
+
+Due to the issues above, I started to slow my progress and eventually stop completely. It's tough talking about it, so I'm only going to abbreviate the gloominess of the project. This project, in particular bore zero fruits of my labor. I debugged, wrote some unit tests, but couldn't figure it out. I was rewarded with nothing but wonky colored lines exploding all over the place.
+
+As a kind of desperation attempt to save my sanity and also to possibly ring back Brenn and Paxton (which didn't work), I tried switching the idea to something a little more easy to work with: audio surf, or I suppose, osu! surf. osu! surf is a 3D storyboard visualization that reads in a beatmap and produces a 3D tunnel.
+
+In first person view, the camera twists and turns through a drawn path depending on its beatmap inputs. Horizontal slider movement rolls the camera left/right. Vertical slider movement pitches the camera up/down. Notes draw an encompassing circle along the path. Spinners are just an extended rolling motion.
+
+I worked off the beatmap parsing code that Paxton started on, learning a bit about Bezier curves to understand how sliders were constructed. I never fully implemented slider parsing correctly, but I got a good chunk done, and now have a very rudimentary understanding of Bezier math. As reference, I read through a few introductory chapters to this [online resource](https://pomax.github.io/bezierinfo/).
+
+But as it continued, this project continued to weigh on me. It was a struggle to work on this by myself, and it felt like a difficult chore just to open the solution. With Dualive, at least I had my boy Royce to complain to. I missed having a team, or anyone really, to discuss and work with, and I feel like that's a huge part of my motivation to work on a project.
+
+Eventually, I finally just gave up. Summer was coming around. I made little to no progress. Every night I felt bad not working on it, but I just couldn't motivate myself. I don't know. It's a complicated feeling. The idea was amazing, and as with every bit of Dualive, I felt the drive to work on it, but I couldn't act on my drive. I fell back into a petty sick loop of gaming and anime.
+
+So really, I have to thank Royce to some extent for bringing me basically out of the shell of the ground and giving me a bit of life again. Without [Tegami](http://maxrchung.com/projects/tegami), I'd probably still be working on Crusaders and at a very unsightly low in life right now. Man, I think this really makes me want to reevaluate some of my priorities a bit and take care of myself a little better, mentally and physically.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/fall_light_cat.jpg" />
+
+Maybe solo projects just aren't my thing. I felt I lost my mind at some point working on Crusaders. I mean damn, the ideas and concepts I thought up of, I think they're all great, but I don't think I could bring myself to work on something like this again. Which makes me worried moving onto S2VX, a solo rhythm game project that I have next lined up to work on.
+
+But, you know, I've thought about it a bit, and here's what I think I'm planning on doing. Crusaders is a dark blot in my projects timeline. I will likely never return back to that. But S2VX is something fun, new, and exciting that I can and want to approach with a more open mind. I'll start on it, and I'll try, remember foremost, that it's okay not to work feverishly on it. I may get bored. I may lose motivation, probably. And that's fine. I'll take a relaxer and work on something else with people, and I'll come back. Or maybe I'll drop it too, that's okay.
+
+I think that's a reasonable goal. Give up when you can't take it anymore. Hmm, well, I don't know about that one, but let's just see how it goes. Right now, I'm free of all obligations, and I just want to go where I want to. S2VX is an interesting idea that I've talked up for months, years now, so let's see if I can get it to a good place.
+
+Wait a second. I completely forgot to talk about the title of this project. So while Dualive was being worked on, I started to listen to other songs by Quarks, the producing unit behind Dualive. Crusaders In Virtuality was one of my newer favorites by them, and to continue like a sequel to Dualive, I wanted to use this song. Brenn and Paxton thought the song alright too, so this was original song we were working off of.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PtSlekhObGc" frameborder="0" allowfullscreen=""></iframe>

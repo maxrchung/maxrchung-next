@@ -1,0 +1,174 @@
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/killerself_banner.png" />
+
+networking\_why is it black-killer-self was a 2nd person shooter a few friends and I attempted to make during a game jam I hosted. For one reason or another, the project completely collapsed in on itself and our end product was nothing close to what we set out to achieve. Basically though, choosing to use Unreal was our first and last mistake.
+
+*   Made with: Unreal Engine 4
+*   Made by: Max Chung, Alex Lewis, Nina Volkmuth, Joshua Lin, Winston Liang, Emerson Sridhar
+*   Download: [networking\_why is it black-killer-self.zip](https://s3.amazonaws.com/lolmypics/networking_why+is+it+black-killer-self.zip) (503.4 MB)
+*   Repository: [killer-self](https://github.com/maxrchung/killer-self)
+
+## Background
+
+By this point I was already a quarter graduated, so I wasn't sure if I would be able to host a jam during this break. If I had a job, it would make these weekend game jams difficult to organize and set up. But because I was working on this site so much, I had the time to go back and forth between NorCal. I'll worry about job searching later...
+
+The planning for this jam was mostly decided between Alex and I. Since besides myself he was usually the most vocal, regular, responsive, and committed member of these game jams, getting his input and approval was valuable. Also in the past, having his lack of presence on past projects hurt us, so I wanted to make sure he could make it and was on board with what we were doing.
+
+He was pretty open with doing anything, which didn't really help much, but I brought up a few old ideas we could narrow down. One of them was Lizard Entertainment Presents Earthrock, a parody of Hearthstone where lizards played rocks against each other vs heroes playing cards. Another was IDOLM0NSTER, a parody of IDOLM@STER and idol games where you managed monsters instead of idols.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/my_singing_monsters.jpg" /><p className="caption">Welp, apparently it looks like someone's on the right track</p>
+
+Alex was more partial to the former, but I also brought up some even older ideas, like a 2nd person shooter. This was a stupid idea that I had been brewing for years, where the game was about a 1v1 scenario where you tried to kill yourself. The catch was that your head was swapped with the opponent's, so you watched as you struggled to move your body around and attack your head.
+
+I didn't want to do this for a multitude of reasons. The biggest was because I was scared of diving into 3D. This mostly came from experience with the Video Game Development Club, where I saw many 3D projects fail. Personally, I haven't been on any 3D projects with the club myself, but I don't think I've seen a single successful 3D game come out from VGDC.
+
+Alex really liked the 2nd person game idea, however, and after giving it some thought, I said let's do it. 3D was a big unknown we could worry about when we got it. The other somewhat complicated parts of it, however, seemed manageable . Networking, for example, was not going to be a trivial component, but because I had plenty of successful experience implementing networking in the past, I was confident I could do all the networking if need be.
+
+Here's where we made the fatal mistake. We decided to use Unreal. At the time, we didn't think switching engines and languages would be very difficult. When we switched to Python from Java, it was a bit difficult learning the new syntax but not impossible to deal with. We later switched from Python to Unity, and the many features embedded in that only made our life easier. Welp, Unreal unwound all of our good luck.
+
+<iframe width="960" height="720" src="https://www.youtube.com/embed/-vKm2rGFe3w" frameborder="0" allowfullscreen=""></iframe>
+
+I thought it was comparable to Unity, so I imagined the transition wouldn't be too bad. It also used C++, of which many of us studied, so that seemed appealing. Alex was down to try it out since he too was interested in it, so we settled on it. I don't think any of the members, Alex or I and any future coming people, had any experience with Unreal, and we mistakenly didn't let that bother us.
+
+With the setup finished between Alex and I, I started inviting people to the jam. I asked my usual group of friends, and most were happy to come back if they didn't have scheduling issues. Through the jam we had a total of about half a dozen people working, a just about good enough number for us. Nina and Winston were available. Victor made a visit, though he didn't contribute anything. A few people couldn't make it due to unforeseen accidents.
+
+The only new people were Emerson and Josh, friends of Winston. Emerson I didn't get a great chance to talk a lot with since we worked on completely different parts of the project, and also somewhat literally too, across the table. He lacked a lot of development experience, so he couldn't do very much for us and maybe perhaps caused more problems in the end. But regardless, he's a pretty chill dude, and I think he had a fun experience on the jam.
+
+Josh on the other hand was a lot more knowledge and very vocal. He contributed a lot to the project and conversation. I think he familiarized himself easily and quickly into our quirky odd group of friends. And as we started to roll on the floor crying about our failures towards the end of the project, he was right there rolling with us.
+
+Emerson and Josh were great additions to the team and good committed members to the project. They definitely diversified our member group and removed some of the staleness of repeated projects with the usual people. It's unfortunate that their first project with us was a gigantic disastrous failure, but I'd love to have them back and hopefully make something better next time.
+
+So before I get into the first day of the project, I have to mention the huge extra baggage that comes with Unreal. I spent a very long time installing and updating the engine hours before the event. The base download was big enough already, but for some reason when I tried to make a project, the program crashed because I needed to configure Visual Studio 2015 properly. Very odd. So I spent another hour and many gigabytes installing that, only to find out that somehow updating VS2015 magically uninstalled my Unreal.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/memory_analysis_failure.png" />
+
+So I spent my entire night trying to set up a project and constantly redownloading and reinstalling everything. Going into this jam, my sleeping schedule was completely screwed up, so when people started to come in the morning, I was already up for maybe 12 hours. The lack of sleep hurt me. During the jam I wasn't sure if I was tired or not even though I'm pretty sure I felt tired. When I tried to go to sleep, I couldn't, so I worked a lot of the time in a half dazed phase. Not recommended.
+
+When everyone first got together, we started talking about the game idea and grounding it more concretely. Very quickly we ran into a communication problems explaining what was going on in the game. When you meant "your head" or "your body" for example, people didn't know what exactly you were referring to, not even yourself. Over time this dialogue got better and as everyone agreed on certain game mechanics.
+
+The biggest issue we encountered here was to finding a way to fix character input. There's an inherent problem with the game if you just try to play with a keyboard and mouse. The problem was that your mouse needed to control two sources of direction. It needed to handle the camera movement of your head, but it also needed to direct the motion of your body. You couldn't handle both at the same time without feeling awkward.
+
+My solution was to have a way to switch between responsibilities. By default, your mouse controlled the camera movement. When you held down right click, you locked your camera and started directing your body. This wasn't a great solution, but it was one. In the end, Alex just added additional rotational keys. You used WASD to traditionally move your body half forward and back and strafe. Q and E rotated the body.
+
+Then after some discussion it was the addition of two ideas, credited mostly I want to say to Josh, that promoted this 2nd person shooter idea to probably be one of the greatest ideas to come out of this group. He wanted to add two things. One was virtual reality. With a VR headset, you could address the problem of multi-input by having the headset worry about camera motion and have the normal keyboard and mouse movement handle the character.
+
+We actually went so far as to buy a Google Cardboard as a cheap solution to VR that worked on our phones. It's sad really, to think we actually invested money this to this abomination of a project, but oh well, we were hyped at the time. Last I heard they were trying to find a way to return it, but who knows, VR may come back on a future project.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/vr_roller_coaster.webm"/></video>
+
+We didn't think about it at the time, but the Cardboard had its fair share of problems. Never mind the issue of actually implementing the camera properly and getting the 2nd person perspective working, which, if it would surprise you, we never got to. We didn't really think about the intricacies of deploying to mobile, hooking up the game with the gyroscope, and the difficulties inherent in that. We never got close to the end result we wanted to achieve goal. Again, I apologize to not only our souls but also our wallets.
+
+Josh's next improvement also bump up the game on another level. Originally the idea was to use a gun to shoot each other with, but his suggestion was to instead use our head. What if instead of having to awkwardly move and aim with your blind character to shoot you, you took control over your head and shot with where your camera was pointing?
+
+This changed the gameplay significantly, which I wasn't too happy about, but it had a lot better upsides to carry with it. First, it solved the awkward aiming issue by a significant amount. Second, it opened up more gameplay options. By allowing you to throw your head around, you could more easily locate your other half of the body. To pair with this we wanted a recall feature when you could call your head back to your body.
+
+Lastly, it also solved an aesthetic/art problem of explaining why guns were in the game by cutting the feature out completely. The story changed from two people trying to for some reason shot each other to trying to reunite as fast as possible with your body, which would still kill you(?) anyways(?). Err, I guess we never concretely or coherently defined a story for the game, though I don't think there's anything particularly brilliant you could say about second person games anyway.
+
+This left a problem with gameplay though. I didn't think it was particularly interesting finding your other character as fast as possible and easily reconnecting the two parts together. It left out a lot of the fun difficulties to a 2nd person game. My suggestion was to allow you to also teleport your body to your head to make gameplay more interesting. This together was the end result of what we wanted to have.
+
+Unfortunately though, we never got close to achieving this. In fact, I'd go ahead and say we never even took off the ground. A lot of problems latched onto us, but the main one looming over everything was using Unreal when none of us had good experience with it. By the suggestion of some members who had basic exposure to it, we threw out the C++ programming and only worked with blueprints.
+
+This, I think, was a big mistake. None of us had experience with visual scripting, and messing with so many string connections quickly led to what literally looked like and what we would later call spaghetti code. It was very disorienting working with blueprints for the first time, and everyone had trouble with it.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/blueprint_tree_house.jpg" />
+
+Don't get me too wrong though. Personally, I don't think I'm as adverse to blueprints as the other members were. Maybe that's just because I didn't have to do as much programming on the project. I think with a little more experience with it, it can be a fast and fun tool to use. Starting blind with it, however, can bring up a pretty big barrier for entry. The way you think and reason with it is very odd and different, and doing basic things like loops can seem complicated and tedious.
+
+We would have probably been better off coding in Unreal's C++, although that too can open its own can of worms. There wasn't a lot of good documentation we could find, and most of what everyone learned was off of video tutorials. It's very time consuming, however, watching long series, and we were especially strapped for time in a game jam. In the end, I think the tutorials pointed us in the right direction, but we still got stuck floundering around accomplishing nothing.
+
+Pretty much every single one of us was a programmer, so to see everyone having trouble with Unreal and making no headway was pretty disheartening. We can chock up half our problems to Unreal's complexity and our unfamiliarity, but the roots of our problem lay somewhere deeper than that, in working with the framework itself.
+
+The biggest issue we had was trying to get networking to work, a feature we never got around to despite half the group separately and together taking a stab at it. A lot of problems got in our way, both inherent with Unreal and with our logic. As a desperate attempt to salvage a broken project, we tried to rectify our mistakes last minute and remove networking and altogether at the end of the project.
+
+Part of the problem was of course our understanding of Unreal and its network system. With time, however, this probably could have been addressed. Winston was the first one out of us to tackle networking. Originally, I was going to do it, but it seemed like networking was something Winston was interested in, so I let him do it. I, as I'll talk about later, took a stab at 3D.
+
+I was a bit sad actually that Winston wanted to do it. Usually, I'm the networking master of the group, so I expected to do it again. Now in retrospect, I'm not so sure I would have had a good time trying to fix the problems that came up. Maybe if I had the entire jam to work on it, I could of found a solution, but by the end of this jam none of us were even close to tackling the issues. Nina tried to help out without luck, and on the last half of the last day, I too tried to take a look but only met failure.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/fallout_kill_yourself.webm"/></video>
+
+The biggest issue was trying to make 2nd person work. If this was just a normal first person shooter, we would have had a much easier time trying to get multiplayer working. Unreal comes automatically with an FPS template project, but as we would joke, they didn't come with a 2nd person shooter template to help us out.
+
+So in order to build our 2nd person shooter game, we started from the 1st person template and tried to morph it to our liking. This was a lot harder than it looked. Alex by the end of the jam managed to get a rough local version of the game working where you could move another body around with the WASDQE keys while keeping your separate head camera. The way he implemented it was by directly referencing the other body through a variable.
+
+This, however, translated very poorly for some reason to a networked game. My guess of why this is is because Unreal dislikes when you try and modify other characters, as all characters should only be in control of themselves at all points of the game. We should have tried to maybe work in the other direction by readjusting your camera always to instead be on your opponent's head, but Alex already arranged everything to be the former and other problems got in the way.
+
+We had trouble identifying the other character. There was no easy way that we could search through a list and identify the other player in the game. And to make things even weirder, for some reason our server just did nothing every time we tried to start a new game. So with all these problems in play, we couldn't get networking to work by the end and unfortunately had to abandon it.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/have_you_tried_killing_the_process.jpg" />
+
+I don't know what we could have done. Maybe if I tackled networking right from the start, we would have more luck, but I had other important responsibilities to take care of. For the most part, although we were programmers, we were able to split roles pretty evenly between everyone. Winston, as mentioned, worked on networking. Nina and Alex took care of gameplay. Josh and Emerson made maps. That was pretty much it. This was a simple game at its core, and we thought we wouldn't run into problems with it.
+
+I was pushed onto 3D, something I was somewhat nervous about. I basically up to that point had never done 3D before. Thinking it was a good opportunity to dive in and try my hand at it though, I volunteered for the role. Nina and Josh apparently had some previous 3D experience, but they gladly shoved it out of their hands when I voiced my interest.
+
+I guess I can say that after working with it, 3D's pretty interesting. I'm definitely not great or gifted at it, and I don't think I made anything amazing for this project, but I learned a lot about the process and I'm not really scared any longer to dive into it if I have to, just don't expect the greatest results. It's not something I would say is super duper fun, so I wouldn't do it recreationally, but if it's for the odd personal or casual project here or there, I'd love to give it another go.
+
+So my 3D adventure began with a ton of downloading. I sacrificed yet some more gigabytes and freed up extra space (goodbye 40GB SC2) to get more software. First I started with 3ds Max since that actually had my name in it. I was very committed to learning the program, but for some reason it wouldn't stop crashing on my computer after minutes of using it, so I eventually removed that and picked up Maya instead, which I then used throughout the jam.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/256_cats.jpg" />
+
+It's really weird getting used to new software. Maya definitely had its share of complicated tools and features, and whenever some random error popped up, it took me ages to fix. But I finished the jam with the animations I set out to do and extra time to spare. Not everything of mine got put in, though to be honest I'm pretty happy something even did make it to the end.
+
+Modeling wasn't too difficult for me since the character I planned to make was very simple. I wanted to make a very simple blob mannequin that I could work with. Most of the blob guy was just morphed spheres pieced together. The end result doesn't look particularly appealing, but I'm glad I decided to choose something easy to work with.
+
+It took me probably the whole first day to get modeling down. Not only did I have to get used to all the controls and tools I needed to work with, but I also ran into some minor catastrophic problems of accidentally losing a lot of work by saving wrong projects over my existing ones. I also spent a really long time learning how to work with textures and materials in Maya, mainly for putting the Kappa and PogChamp faces on the heads. Ultimately this ended up not even mattering in the end since I later handled this in Unreal.
+
+Out of all the random issues that popped up, the most memorable and poignant one was the Why Is It Black problem. This was a weird thing that came up towards the end of my modeling when I wanted to convert parts of the model to polygons. I was using NURBS previously because all the parts of the model were curvy, but I needed to convert them to polygons later, I don't recall for what reason.
+
+Well, an odd thing happened where the resulting polygons turned black. I couldn't figure out what was wrong for a long time until I tried looking at the polygon from the inside and realized that the inside surface had correct texturing. On a whim, I thought the polygon surface was flipped, and after another while of attempted fixes, I corrected it.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/why_all_the_black.jpg" />
+
+After yelling about why is it black for probably half a day, it became an inside joke that stuck throughout the project. These kinds of issues are extremely painful to deal with. Unlike code, where you could at least make small steps of progress and debug for errors, this felt like I was blindly shooting in the dark for answers. It's incredibly time consuming and frustrating.
+
+After modeling was rigging. This, I think I probably did poorly, which I guess may have hurt later me down the line, but I didn't really need anything terribly complicated and only something that worked. I set up a basic skeleton and did some very simple skin paint correction. From what I glimpsed of tutorials, it's recommended to set up controls and stuff to allow easier animation, but with the rig functioning with just the bones, I didn't want to bother with the process much longer.
+
+Animation was surprisingly easier and a lot more rewarding. Once I got the hang of key frames I had a good bit of fun moving the character around and animating him. I don't think my rigging was too terrible, made a lot easier by the fact that all the body parts were so separated.
+
+What did make my life kind of awkward was figuring out how to split up the body. Because of the 2nd person point of view, the arms needed to be separated from the body. By then, I was already well into making animations for the full body, so there was a lot of tedious work I needed to do to separate animations and make sure the arms and body were separate.
+
+I think the animations were okay. I tried to make them all follow from a central pose, which made some movements look quite awkward. I'm almost certain, however, I did something very technically wrong somewhere down the line because some animations had like something like 600 key frames (including in-betweens). This didn't seem to affect file size though, and after a speed up in Unreal, they looked fine.
+
+<iframe width="960" height="720" src="https://www.youtube.com/embed/UmPmpUTr22c" frameborder="0" allowfullscreen=""></iframe>
+
+The most time consuming part of working with 3D was ironically not within Maya itself but rather trying to successfully export animations out of Maya and import into Unreal. There're a lot of hoops you have to jump through to make sure you don't screw anything up, and I had to do a lot of trial and error in order to get something functional in the game. At least having done it once, I'm a lot more familiar with the process, and if I do something like this again, I'll be more ready.
+
+After I had animations properly hooked up, I turned my attention back to coding. By then, this was already the third and final day, and things were definitely not looking fantastic. Networking was making negative progress and gameplay was tricky to figure out. On the good sides, Josh and Emerson seemed to be making headway with the level and tiles, and Winston was helping out on that too with his own texturing.
+
+I don't remember how exactly they wanted to make the levels, but from what I understand Josh wanted a 3x3 9 tile grid that interchanged tiles every so often to freshen up the game landscape. They, as with everyone, ran into quite a few hurdles trying to cooperate with Unreal, though in their case it was with the level editor. It would have been nice if they finished their work early and were able to contribute to other parts of the project, but that was too much to ask for.
+
+By the end, after salvaging their work, they managed to quickly throw a single level together combining all 9 tiles they made. No randomization happened here, but at least you could explore the scenery and see a bit of the animations I made. I guess our game turned into a weird first person explorer. Not too terribly exciting, but at least you can enjoy the trippy experience.
+
+After finishing all the 3D assets, I wanted to move onto networking. The animations weren't in the project yet, but I thought one of the other programmers could handle it. Besides, networking was the most important and neglected part of the project, and I was confident that I, with my past experience, could get something together. Man, how wrong I was.
+
+I watched like 3 or 4 hours of tutorial at least in the morning. One series was on blueprints and the other covered networking. I wouldn't say they didn't help me. At the very least they familiarized me with the engine. Overall, however, I don't think anything could have really prepared me for trying to make a networked 2nd person game functional. I ran into the networking issues mentioned earlier in the post and hit a roadblock.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/men_vs_roadblock.webm"/></video>
+
+After several hours of fiddling around, I got nowhere and felt lost in the program. The monstrous beast of Unreal swallowed me up, and I couldn't find my way out. I encountered the same problems that Winston, Nina, and Alex had trying to tackle the game. To help remove clutter, I tried working from scratch in a separate project, but that led to nowhere.
+
+With less 6 hours left in the project and time ticking down, we started having talks of salvaging what we could and try to at least present something half working. Winston and Nina worked on removing networking and 2nd person code. Josh worked on fixing tiles and making a makeshift level. I worked on putting in animations.
+
+Animations I struggled again for quite a bit with but managed to get working after haphazardly referencing tutorials and playing around with my own. I needed to make a special animation blueprint to properly set up triggers for each animation state. Some fumbling around occurred and out popped what you see now. I guess if you look at it in a way, the game is still kind of a second person game since you always face Kappa man. Oh yeah, his antler things used to be his arms, but it looks better this way.
+
+Nina was the one who put in the Barkley face and space jam background music. These two parts were inside jokes of the group. The Barkley face was originally supposed to be a heartbeat feature we wanted in the game. You were supposed to hear a thumping heartbeat to indicate where you other half of the body was. With time running down we didn't exactly get the effect we wanted, but instead if you're facing another character, the Barkley face pops up. And for some reason, only on my computer, his face flashes and freaks out in my editor.
+
+<video controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/why_is_it_black.mp4"/></video>
+
+As for the music, that was just a stupid joke that Winston likes. I don't know what his fascination with it is, but he really likes the 800% slowed down version of the song, ironically or not, I'm not sure. It was probably more pain than it was worth trying to fit it into the game. You can imagine how much of a hassle it is trying to put in a 40 minute WAV file into not only our game but also our repo. I'm pretty sure when we last checked it clocked into something like 400 MB.
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/3CdanQx427Q" frameborder="0" allowfullscreen=""></iframe>
+
+And, well, that's pretty much the game. By the end we had some kind of overly bloated satanic world explorer of sorts. It's a shame to see our project fall to such a low after we had such great aspirations, but what's done is done. As good as this idea was/is, I don't imagine us revisiting it anytime soon unless something miraculous happens. With this group of friends, none of us worked on our games after we finished the jam, and I doubt anyone would want to work with the abomination that is networking\_why is it black-killer-self.
+
+I should probably talk about the name too. The name was suggested by Josh. I guess at the end we just didn't care anymore. All of us were exhausted and broken by the last night. I'm pretty sure Josh was awake for over 24 hours. We were all tired of this game and just wanted to see this project crashed and burned forever.
+
+The name was born from that deep, burning hatred. Maybe from now on all of our game projects will have ridiculous titles, following [Quaternion: Too Drunk 4 a Title (Basically a Tuple)](http://maxrchung.com/projects/quaterniontoodrunk4atitlebasicallyatuple)'s example. Honestly, I'm not too adverse to that. Thinking up names is always difficult. While having a stupid title like networking\_why is it black-killer-self is indeed pretty stupid, it's something all its developers remember it by. In the end, the game is made half just for us anyways.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/daughter_name.jpg" />
+
+I should mention that the original name, Killer Self, was something that Alex and I thought of and was one of the main factors that drew us to picking this game. Originally, we wanted to call it the very simple Kill Yourself, another inside joke usually directed towards me. But with a quick spin of syllables, Killer Self was born from that, and that seemed to fit our game well.
+
+Well, lesson learned I suppose. Don't try and stretch your boundaries too far. Learning a new engine on top of networking on top of 3D was not a good combination. If any one of those were removed, I would say our work would have been a ton easier. Which is why I joked with the others that I think next time we should make another 2nd person game, this time in Cry Engine. It even has cry in the title.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/top_nop.png" />
+
+Oh yeah, also I have to mention the obligatory, where's Vince?

@@ -1,0 +1,109 @@
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/i_hate_you_all_reject.png" />
+
+Social Rejection was a defend your tower game where you protected yourself against enemies, monsters, and ultimately, yourself. It was made as part of the Video Game Development Club at UCI's 2016 Spring Game Jam, themed on using the [Tobii EyeX Controller](http://www.tobii.com/xperience/).
+
+*   Made by: Max Chung, Tyler Gemora, Tina Feng, Ian Tokuyama, Caitlin Creekmore
+*   Made with: Unity
+*   Repository: [Social-Rejection](https://github.com/itokuyama/Social-Rejection)
+
+For reasons I'll later explain in the background, we couldn't make a build of the game. It basically boiled down to us doing something that Unity didn't like, and as a result, our levels failed to load. You'll have to download the project via the repo and open it up in the Unity editor if you want to play the game.
+
+## Background
+
+Similar to the previous year, this VGDC spring game jam had a hardware theme where teams used special controllers as inputs for their project. Last year I made [Verves of Steel](vervesofsteel) using VERVE sensors. In a feat of engineering we made custom joystick controllers for Verves by combining motion sensors together. I've got to hand it to the VGDC officers for finding these unique opportunities. These were very interesting projects to work on, albeit difficult in other ways.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/tobii_eyex_wow.jpg" />
+
+For Social Rejection, my team ran into a major issue right off the bat: deciding an idea. We spent the first night of the jam completely absorbed in trying to think of a good way to use eye tracking. We hit road blocks immediately, the biggest which was probably the fact that eye tracking was never going to be as accurate or responsive as mouse movement. This meant that we couldn't really make game that relied on precision, and we had to remove a lot of action oriented options.
+
+Our best idea that we didn't go with was a staring simulator game. This was where the Social Rejection title originally came from. The idea was to physically stare at other characters in the game to make them feel uncomfortable and somehow gain points through that. But after racking our brains for a long time, we couldn't make this work as a solid game idea.
+
+One option we considered was some kind of visual novel-esque format, where you were presented with a certain scene on a bus or train and stared at people on screen. This never panned out, because we couldn't think of a way to generate value through staring at people. Our other idea was a top down kind of game where it played out more like stalking simulator. The goal was to go around a map staring and stalking people. I don't know, something about finding your killer as a ghost or something. That didn't work out either.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/stalking_picnic.jpg" />
+
+I think it's worth mentioning that there were a few constraints we had to keep in mind. First, this jam would end early Sunday at noon because judges would be coming in the afternoon to deliberate our games. This meant we only had about 36 hours to work on the project, less than usual. And also, we had to use keyboard/mouse input in some way and we could not make a standalone eye tracking game. Finally, we could only (realistically) use Unity for the game.
+
+The last point, Unity, hurt me in particular because I'm not that well versed in the engine. Usually all my projects are started from scratch, and I don't have the familiarity using Unity's many features. This in effect also hurt my team because I took up one of the experienced member slots in the group. In this project, I exclusively did programming, and my productivity was not as great as it probably could be. Luckily, Tyler picked up the slack, and he undoubtedly knew Unity much better than all the rest of us.
+
+At the end of the first night, we decided to go with our backup plan Z idea that Tyler brought up very early on. This was a defend your tower game where you had a tower in the middle of the map to protect against waves of small creatures attempting to latch on and damage your tower. I don't remember the specifics of the game, but I believe you either chose to look at the tower to stabilize it or looked away to another screen to be able to fire at enemies.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/lego_towers.jpg" />
+
+The reason we didn't go with this immediately was because there wasn't really a great aesthetic to pair with it. That, and it didn't seem exactly ground breaking or very fun. Maybe we were being too selective/picky about our game idea, sure, but game jams and games are most fun to work on in my opinion when you initially think of something exciting to rally on together. We were determined to make our favorite idea, staring simulator, work, but it just didn't pan out as we'd like.
+
+After trying to build on the tower design some more, there were also a few things I didn't like about the idea. Personally, I didn't like the screen switching because it seemed very difficult to keep track of spawning enemies and while periodically looking back at your tower to check its status. We considered something like only one screen and thought about some stat building progression through levels.
+
+Eventually, in an effort to simplify our game so that we could polish it well enough by Sunday, I tried to strip away a lot of the fluff we were talking about and thought about the basics of a defend your tower game. This was when I realized we could potentially link up our old Social Rejection idea. At its core, defending your tower by yourself against waves and waves of enemies was kind of some way a very lonesome and sad experience.
+
+I saw the story unfold before me. Socially rejected by those around you, your last option was to hole yourself up in your tower and fight off everyone that came near. At first, you fended off other human beings. But soon you also met waves of monsters and boss creatures. These were representative of your inner fears and demons coming to light and your struggle against them.
+
+Eventually, you reached a level where there were no enemies at all. The true enemy, afterall, was just yourself. Finally, in the last level the waves of human beings come back again, but this time you can't attack them. They collide into your tower; you win the game; and you're finally socially accepted. This game describes, as I put it, the betrayal, war, and romance of social rejection to social acceptance. #deep
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/mariana_trench_deep.jpg" />
+
+I can't speak for the others, but I really liked this idea and pushed for it through to be made. The others seemed pretty apathetic about the situation, but since I was pretty excited about it and seemed like I knew what needed to be done from start to finish, I think they settled along with me.
+
+There were a few things I wanted to change from Tyler's tower idea, namely how the camera movement worked and the tower itself. The eye tracking functionality would be very simple now, just letting you pan around the screen some more and see more of the map. I wanted to shrink the tower to a very small size, to emphasize the you vs. the world dynamic some more.
+
+After deciding the idea, we went home and came back pretty early the next day. Usually on most projects I would do all the art, but since Tina was an artist only, she handled everything on that end. I think she did a fine job. I'm not a particular fan of her cartoony style, but that's just a matter of taste I suppose. I was perfectly fine with programming, and I could always use more experience in Unity anyways.
+
+We split up our work pretty evenly between the rest of us. I was to work on all the parts relating to Tobii EyeX. Ian took care of player shooting. Tyler handled enemy spawning. Caitlin was unfortunately in a pretty bad position because she was very new to game development and had no experience with Unity and Git. Unity isn't exactly the easiest to get familiar with on first glance. We couldn't afford to spend time helping her that much, so she mostly pair programmed with Tyler, the most experienced out of us.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/cat_pole_reversed.gif" />
+
+For this project, Git was slightly problematic though not at all unmanageable. We used the default Git ignore provided by GitHub, but apparently this ignore file was itself incorrectly set up, so we still ended up with a lot of conflicts. Though it's definitely a little scary and tedious merging all our work, we never really ran into issues because we all worked in separate script files. As always, we had to redo our changes in the inspector/hierarchy each time, but this was a small price to pay.
+
+When we started working, it turned out that Tobii EyeX was not compatible with my computer. Apparently it didn't work on USB 2.0. Because of this, Ian and I switched roles and I worked on the tower instead. Going into it, I was somewhat anxious about working in Unity, and the player controller was very important, so I thought I had a lot of weight on my shoulders. It wasn't that bad though after tinkering around here and there.
+
+I think I did a fair amount of good work on the character. I love spending a lot of time adding flair to make things pretty and feel natural. Shooting was basically the only interaction you'd ever do in the game, so I needed to make it as impactful as possible. My first task was to spawn arrows, and then I toiled around with making them fire in the right direction and rotate in mid air. Working with rigid bodies saved me a lot of time, so thanks Unity.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/bow_and_arrow_hunting.webm"/></video>
+
+The math behind it wasn't too difficult because I've had plenty of vector practice from osu! storyboards and various past projects. I'm fairly comfortable at least 2D-wise handling vectors. I believe there're still some bugs here or there where arrows flip around incorrectly. I didn't catch some loose cases since I moved onto other tasks.
+
+I added the power shot feature to control shot strength by holding down the shoot button. This gave a little more variance to the arrow firing. To indicate power, I put in a reticle that expanded when the button is held down. There were a lot of variables I exposed to tweak things like attack speed, max charge time, fire speed, etc. I spent quite some time testing values here and there.
+
+Meanwhile, the rest of the team were busy with their duties. Tina was doing alright. There wasn't really that much art we needed, so she had a lot of freedom to do whatever she'd like at a leisurely pace. Tyler was okay too, though he soon realized that he had a lot more to do than planned. After working on enemy spawning, he needed to make some kind of system to make specialized levels. He settled on using an external text file to determine levels and spawns.
+
+Ian on the other hand had a lot of trouble figuring out how to make the camera movement work. He looked at some other project and tried to figure out how they coded the eye tracking but without much luck. It wasn't so much as configuring the Tobii EyeX properly with Unity more so than understanding the actual math behind it. He wasn't that used to vectors or lerping.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/patron_saint_of_programming.jpg" />
+
+So I sat down with him and pair programmed with him. This was an occasion where I think it probably would have been a lot faster if I just worked alone on it. I understood the math and concepts better than Ian did. But because my computer was not compatible with the hardware, we worked together through his computer to figure it out.
+
+It was pretty simple once we had it going. The idea was that all we needed to know was where our eyes were looking at on the screen every frame. Once we had this position, we moved the camera towards that point in world space using a lerp to make the transition smooth. The actual implementation required a few more checks. The first was a bounding box to make sure you didn't look outside of the map and too far away from the tower. The second was to only start moving the camera if you viewed past the 75% or so mark from the screen.
+
+After we figured out the camera we broke off and did separate tasks. Ian worked on sounds: finding, making, and putting them in the game. I moved onto the background, in which I wanted to do some parallax/scrolling scenery that would fade from night to day. Oh yeah, that's another thing. It was important that we started at night, you know, to represent man's darkest hour, and slowly fade into day overtime, eventually reaching a dawn of new beginnings.
+
+<video autoplay loop controls><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/sore_sunrise.webm"/></video>
+
+My first attempt at making the background was very clunky. My goal was to have two backgrounds side by side that moved together towards the left. When the leftmost image hit a certain threshold, it swapped over to the right to keep an illusion of a moving background. I tried to generate the background sprite by code from an empty object. It worked, but it was very bloated and difficult to modify.
+
+By the time I finished this up, it was already midnight, and we were kicked out of our area to go home. I still had a lot I wanted to do, like adding in the sun/moon/clouds, making the night-day cycle, putting in Tina's new art, and polishing some mechanics up. With so little time left, I decided to pull an all nighter and fix what I could.
+
+Usually, I'm a proponent of always sleeping properly, but I think I'll let this slide this time due to the shortened time circumstances. If I decided to actually sleep during this time, there was no way I could done as much as I could. On the flip side, it was somewhat easier working at home when I had no conflicts to be careful of and a clear goal I wanted to work for.
+
+My first task was to redo all my previous background work. It was too messy to work with, and I was sure there was an easier way to do things. Instead of instantiating objects in code, I premade the background game objects in the hierarchy so I didn't have to do painstakingly create objects by scratch.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/sore_background.png" />
+
+Not only did this make things a lot simpler and cleaner, but it made modifications a lot easier as well. I got the background images working to a reasonable state and moved onto clouds/suns/moons next. These were just floating objects that behaved similarly to the background. They moved across the screen at a certain rate, and upon reaching a left threshold, they reappeared on the right side at a random height and a new speed.
+
+To implement the night and day cycle, I overlayed a darkened image over everything that gradually lightened over time. Originally, I wanted to indicate in the levels somewhere to change the overlay's darkness, but because I couldn't talk to Tyler about how to do this and I was short on time, I decided to just put the cycle on a variable timer. I think right now it's set so that after something like 5 minutes, you hit day time. Once day time was hit, all the moons switched to suns.
+
+Additionally, I did a lot of other miscellaneous changes. I put in Tina's artwork for the main menu graphic. I switched out the cursor for the bow and arrow. I rescripted all the text to be more memey and #deep, including the iconic "you were the monster all along" win message. By the morning, there were still some things I wasn't sure how to handle, like the GUI buttons and levels, but most of that should be taken care of when Tyler arrived.
+
+Also, I think I got sick or something because I couldn't stop sneezing and had a really bad/blocked/runny/uncomfortable nose that just got worse through the night. I don't know what happened to me. It seemed like maybe allergies, but I've never really had these kinds of symptoms until very recently. Maybe I was just super stressed/tired or something. When I got back home later, took a long shower, and rested, I felt a lot better.
+
+<video autoplay control="" loop><source src="https://maxrchung-rails.s3.amazonaws.com/uploads/allergy_kid.webm"/></video>
+
+In the last morning, I was extremely unproductive from being exhausted and sick through the night. The most I could do was explain what I did and double check some things with the other members. I worked with Ian to make sure all the sounds triggered at the right places and the camera worked properly with the Tobii EyeX. When Tyler arrived, I directed him to the GUI and levels problems.
+
+I actually left earlier than the official deadline because I was feeling pretty terrible. The other guys handled building the project to them and stayed for the judging later. Apparently they actually ran into an issue with building where the game failed to load the level text document in for processing. From what they explained to me, it seemed like an error with Unity not being able to read outside text documents. They should have used the built in Text Asset or hardcoded the information. This is why we don't have an official build of the game.
+
+Apparently we got the Most Expressive award out of all the projects. I don't know if it means that much though. As far as I know every single team received some kind of award in name, but there was only one Overall Best award. I'll take it though, so congrats team for being the most expressive.
+
+Overall, this was a pretty bumpy project. We struggled to get a solid foothold into an idea we all liked. Our final idea, which I think was alright, didn't really in my opinion live up to what we originally wanted: some kind of staring simulator. Nevertheless, we did end up with a pretty solid and complete game, and I got a lot of good experience with Unity through it. Here's to being Socially Rejected.
+
+<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/sore_story.png" />
