@@ -29,15 +29,15 @@ export default function ProjectDescription({
         is={Link}
         href={`/projects/${slug}`}
         width={128}
-        height={128}
+        display="flex"
         flexShrink={0}
+        borderRadius={majorScale(1)}
       >
         {thumbnail && (
           <Image
             src={thumbnail}
             alt={title}
             width={128}
-            height={128}
             // Counteract main styling, this looks pretty bad >_<
             style={{
               maxWidth: "100%",
