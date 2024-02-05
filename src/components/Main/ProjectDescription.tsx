@@ -31,8 +31,10 @@ export default function ProjectDescription({
           alt={title}
           width={128}
           height={128}
-          // Counteract main styling >_<
-          maxWidth="100%"
+          // Counteract main styling, this looks pretty bad >_<
+          style={{
+            maxWidth: "100%",
+          }}
         />
       </EvergreenLink>
 

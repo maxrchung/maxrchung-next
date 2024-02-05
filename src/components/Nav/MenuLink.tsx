@@ -8,12 +8,7 @@ interface MenuLinkProps {
 
 export default function MenuLink({ href, name }: MenuLinkProps) {
   return (
-    <EvergreenLink
-      is={Link}
-      href={href}
-      color="neutral"
-      padding={majorScale(1)}
-    >
+    <EvergreenLink is={Link} href={href} padding={majorScale(1)}>
       {name}
     </EvergreenLink>
   );

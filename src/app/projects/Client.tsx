@@ -7,8 +7,19 @@ import ProjectDescription from "@/components/Main/ProjectDescription";
 export default function Client() {
   const data = Object.entries(projectConfigs);
 
-  const current = data.filter(([_, { end }]) => !end);
-  const past = data.filter(([_, { end }]) => !!end);
+  const current = data
+    .filter(([_, { end }]) => !end)
+    // Sort descending based on start time
+    .sort((a, b) => {
+      return Date.parse(b[1].start) - Date.parse(a[1].start);
+    });
+
+  const past = data
+    .filter(([_, { end }]) => !!end)
+    // Sort descending based on end time
+    .sort((a, b) => {
+      return Date.parse(b[1].end ?? "") - Date.parse(a[1].end ?? "");
+    });
 
   return (
     <>
