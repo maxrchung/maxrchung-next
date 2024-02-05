@@ -45,7 +45,7 @@ const turndownService = new TurndownService()
         // Properly render attributes
         .replace('controls=""', "controls")
         .replace('loop=""', "loop")
-        .replace('autoplay=""', "autoplay");
+        .replace('autoplay=""', "autoPlay");
 
       // Some audio uses src attribute instead of source tag
       if (replaced.includes("<source ")) {
@@ -62,7 +62,7 @@ const turndownService = new TurndownService()
         // Properly render controls
         .replace('controls=""', "controls")
         .replace('loop=""', "loop")
-        .replace('autoplay=""', "autoplay");
+        .replace('autoplay=""', "autoPlay");
 
       // Also some videos use src attribute instead of source tag
       if (replaced.includes("<source ")) {

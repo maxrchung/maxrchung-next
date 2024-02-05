@@ -46,7 +46,7 @@ const turndownService = new TurndownService()
         // Properly render attributes
         .replace('controls=""', "controls")
         .replace('loop=""', "loop")
-        .replace('autoplay=""', "autoplay");
+        .replace('autoplay=""', "autoPlay");
       return "\n\n" + replaced + "\n\n";
     },
   })
