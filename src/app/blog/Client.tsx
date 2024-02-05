@@ -1,18 +1,19 @@
 "use client";
 
-import { Heading, Link, Pane, majorScale } from "evergreen-ui";
+import { Pane, majorScale } from "evergreen-ui";
 import { blogConfigs } from "./blogConfigs";
 import Timestamp from "@/components/Main/Timestamp";
 import MainLink from "@/components/Main/MainLink";
+import Header from "@/components/Main/Header";
 
 export default function Client() {
   const data = Object.entries(blogConfigs);
 
   return (
     <>
-      <Heading is="h1" size={900}>
+      <Header is="h1" size={900}>
         Blog
-      </Heading>
+      </Header>
 
       {data.map((_, index) => {
         // Go in reverse order because using number as config key will always

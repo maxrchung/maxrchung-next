@@ -2,9 +2,9 @@
 
 import { useParams } from "next/navigation";
 import { blogConfigs } from "../blogConfigs";
-import { Heading } from "evergreen-ui";
 import Timestamp from "@/components/Main/Timestamp";
 import dynamic from "next/dynamic";
+import Header from "@/components/Main/Header";
 
 export default function Client() {
   const params = useParams<{ slug: string }>();
@@ -14,9 +14,9 @@ export default function Client() {
 
   return (
     <>
-      <Heading is="h1" size={900}>
+      <Header is="h1" size={900}>
         {title}
-      </Heading>
+      </Header>
       <Timestamp time={time} />
 
       <Content />

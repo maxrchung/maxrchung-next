@@ -1,10 +1,8 @@
-export interface BlogConfig {
-  title: string;
-  time: string;
-}
-
 interface BlogConfigs {
-  [slug: string]: BlogConfig;
+  [slug: string]: {
+    title: string;
+    time: string;
+  };
 }
 
 export const blogConfigs: BlogConfigs = {
