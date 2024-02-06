@@ -147,8 +147,8 @@ export const projectConfigs: ProjectConfigs = {
     thumbnail: "https://maxrchung-rails.s3.amazonaws.com/uploads/icon.png",
     title: "maxrchung",
     start: "2014-09-01T07:00:00.000Z",
-    end: undefined,
-    description: "Personal website",
+    end: "Feb 2024",
+    description: "Personal website rebuilt with Ruby on Rails",
   },
   tegami: {
     thumbnail:
@@ -424,6 +424,20 @@ export const projectConfigs: ProjectConfigs = {
     start: "2011-06-01T07:00:00.000Z",
     end: "2011-08-01T07:00:00.000Z",
     description: "Probably the worst game ever (not) made",
+  },
+  maxrchungnext: {
+    thumbnail: "",
+    title: "maxrchung - Next",
+    start: "Jan 2024",
+    end: undefined,
+    description: "Personal website rebuilt with Next.js and Evergreen UI",
+  },
+  theboy: {
+    thumbnail: "",
+    title: "The Boy",
+    start: "Oct 2018",
+    end: undefined,
+    description: "The Boy",
   },
 };
 
