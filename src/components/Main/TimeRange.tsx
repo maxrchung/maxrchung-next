@@ -1,4 +1,4 @@
-import { Small, majorScale, minorScale } from "evergreen-ui";
+import { ArrowRightIcon, Small, majorScale, minorScale } from "evergreen-ui";
 
 interface TimeRangeProps {
   start: Date | string | number;
@@ -19,7 +19,10 @@ export default function TimeRange({ start, end }: TimeRangeProps) {
       })
     : "Present";
 
-  const display = `(${startDisplay} - ${endDisplay})`;
+  const display =
+    startDisplay === endDisplay
+      ? startDisplay
+      : `${startDisplay} - ${endDisplay}`;
 
   return (
     <Small fontSize={minorScale(3)} marginTop={majorScale(-1)}>
