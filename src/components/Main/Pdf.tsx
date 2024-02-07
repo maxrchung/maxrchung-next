@@ -1,14 +1,25 @@
 import { Document, Page } from "react-pdf";
 import { Pane, Spinner } from "evergreen-ui";
+import { useState } from "react";
 
 interface PdfProps {
   file: string;
 }
 
 export default function Pdf({ file }: PdfProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <Pane className="is-hidden-mobile" border="1px solid #474d66">
-      <Document loading={<Spinner />} file={file}>
+    <Pane
+      className="is-hidden-mobile"
+      border={!isLoading && "1px solid #474d66"}
+    >
+      <Document
+        loading={<Spinner />}
+        onLoadSuccess={() => setIsLoading(false)}
+        onLoadError={() => setIsLoading(false)}
+        file={file}
+      >
         <Page
           pageNumber={1}
           renderTextLayer={false}
