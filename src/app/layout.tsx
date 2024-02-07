@@ -1,24 +1,31 @@
 "use client";
 
-import { Inter } from "next/font/google";
 import "./reset.scss";
 import "./global.scss";
 import NavBar from "@/components/Nav/Nav";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Main from "@/components/Main/Main";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
+  // Meme solution to fix initial flicker xD
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  useEffect(() => {
+    setIsInitialLoad(false);
+  }, []);
+
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <NavBar />
-        <Main>{children}</Main>
+      <body>
+        {!isInitialLoad && (
+          <>
+            <NavBar />
+            <Main>{children}</Main>
+          </>
+        )}
       </body>
     </html>
   );

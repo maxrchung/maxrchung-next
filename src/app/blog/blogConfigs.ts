@@ -34,7 +34,7 @@ const blogConfigs: BlogConfigs = {
   },
   "24": {
     title: "Some reflection",
-    time: "6 Feb 2024",
+    time: "7 Feb 2024",
   },
 };
 
