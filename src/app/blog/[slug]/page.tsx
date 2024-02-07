@@ -1,19 +1,24 @@
 import Client from "./Client";
 import blogConfigs from "../blogConfigs";
 
-export default function Page() {
-  return <Client />;
-}
-
-interface BlogParams {
+interface BlogProps {
   params: {
     slug: string;
   };
 }
 
-export function generateMetadata({ params: { slug } }: BlogParams) {
+export default function Page({ params: { slug } }: BlogProps) {
+  return <Client slug={slug} />;
+}
+
+export function generateMetadata({ params: { slug } }: BlogProps) {
   const blogConfig = blogConfigs[slug];
   return {
-    title: `maxrchung - ${blogConfig.title}`,
+    title: `${blogConfig.title} - maxrchung`,
   };
+}
+
+export function generateStaticParams() {
+  const params = Object.keys(blogConfigs).map((slug) => ({ slug }));
+  return params;
 }

@@ -6,5 +6,5 @@ export default function Page() {
 }
 
 export const metadata: Metadata = {
-  title: "maxrchung - Blog",
+  title: "Blog - maxrchung",
 };

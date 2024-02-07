@@ -7,5 +7,5 @@ export default function Page() {
 
 // Metadata is only supported on server side
 export const metadata: Metadata = {
-  title: "maxrchung - Projects",
+  title: "Projects - maxrchung",
 };

@@ -145,7 +145,7 @@ export const projectConfigs: ProjectConfigs = {
   },
   maxrchung: {
     thumbnail: "https://maxrchung-rails.s3.amazonaws.com/uploads/icon.png",
-    title: "maxrchung",
+    title: "maxrchung (Rails)",
     start: "2014-09-01T07:00:00.000Z",
     end: "Feb 2024",
     description: "Personal website rebuilt with Ruby on Rails",
@@ -427,7 +427,7 @@ export const projectConfigs: ProjectConfigs = {
   },
   maxrchungnext: {
     thumbnail: "",
-    title: "maxrchung - Next",
+    title: "maxrchung (Next)",
     start: "Jan 2024",
     end: undefined,
     description: "Personal website rebuilt with Next.js and Evergreen UI",

@@ -1,19 +1,24 @@
 import Client from "./Client";
 import { projectConfigs } from "../projectConfigs";
 
-export default function Page() {
-  return <Client />;
-}
-
-interface ProjectParams {
+interface ProjectProps {
   params: {
     slug: string;
   };
 }
 
-export function generateMetadata({ params: { slug } }: ProjectParams) {
+export default function Page({ params: { slug } }: ProjectProps) {
+  return <Client slug={slug} />;
+}
+
+export function generateMetadata({ params: { slug } }: ProjectProps) {
   const projectConfig = projectConfigs[slug];
   return {
-    title: `maxrchung - ${projectConfig.title}`,
+    title: `${projectConfig.title} - maxrchung`,
   };
+}
+
+export function generateStaticParams() {
+  const params = Object.keys(projectConfigs).map((slug) => ({ slug }));
+  return params;
 }

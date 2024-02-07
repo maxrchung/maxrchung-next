@@ -1,17 +1,22 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import blogConfigs from "../blogConfigs";
 import Timestamp from "@/components/Main/Timestamp";
 import dynamic from "next/dynamic";
 import Header from "@/components/Main/Header";
 import BreadcrumbLink from "@/components/Main/BreadcrumbLink";
+import { Spinner } from "evergreen-ui";
 
-export default function Client() {
-  const params = useParams<{ slug: string }>();
-  const { title, time } = blogConfigs[params.slug];
+interface ClientProps {
+  slug: string;
+}
 
-  const Content = dynamic(() => import(`./${params.slug}.mdx`));
+export default function Client({ slug }: ClientProps) {
+  const { title, time } = blogConfigs[slug];
+
+  const Content = dynamic(() => import(`./${slug}.mdx`), {
+    loading: () => <Spinner />,
+  });
 
   return (
     <>
