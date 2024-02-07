@@ -21,7 +21,7 @@ export default function ProjectDescription({
     <Pane
       key={slug}
       display="flex"
-      gap={majorScale(2)}
+      gap={majorScale(3)}
       alignItems="center"
       flexShrink={0}
     >
