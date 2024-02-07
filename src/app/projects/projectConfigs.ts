@@ -24,7 +24,7 @@ export const projectConfigs: ProjectConfigs = {
       "https://maxrchung-rails.s3.amazonaws.com/uploads/skr-thumbnail.png",
     title: "skr",
     start: "2023-07-01T07:00:00.000Z",
-    end: "Sep 2023",
+    end: "2023-09",
     description: "skribblio clone",
   },
   love: {
@@ -428,14 +428,14 @@ export const projectConfigs: ProjectConfigs = {
   maxrchungnext: {
     thumbnail: "",
     title: "maxrchung (Next)",
-    start: "Jan 2024",
+    start: "2024-01",
     end: undefined,
     description: "Personal website rebuilt with Next.js and Evergreen UI",
   },
   theboy: {
     thumbnail: "",
     title: "The Boy",
-    start: "Oct 2018",
+    start: "2018-10",
     end: undefined,
     description: "The Boy",
   },
