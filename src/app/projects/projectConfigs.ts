@@ -435,6 +435,8 @@ export const projectConfigs: ProjectConfigs = {
   theboy: {
     thumbnail: "",
     title: "The Boy",
+    // Note my preference is something like Oct 2018, but this doesn't seem to
+    // work for Firefox/iOS
     start: "2018-10",
     end: undefined,
     description: "The Boy",
