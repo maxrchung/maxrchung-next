@@ -1,4 +1,11 @@
-import { DocumentIcon, Image, Link, Pane, minorScale } from "evergreen-ui";
+import {
+  DocumentIcon,
+  Image,
+  Link,
+  Pane,
+  majorScale,
+  minorScale,
+} from "evergreen-ui";
 import Caption from "@/components/Main/Caption";
 import Timestamp from "@/components/Main/Timestamp";
 import Pdf from "@/components/Main/Pdf";
@@ -36,6 +43,9 @@ games at home, or watching anime, or I hope eating/sleeping.
   />
 </Pane>
 
-<Pdf file="https://maxrchung-rails.s3.amazonaws.com/uploads/maxrchung-resume.pdf" />
-
-<Caption value="Holy PDF viewer 🙄" />
+<div className="is-hidden-mobile">
+  <Pane display="flex" flexDirection="column" gap={majorScale(3)}>
+    <Pdf file="https://maxrchung-rails.s3.amazonaws.com/uploads/maxrchung-resume.pdf" />
+    <Caption value="Holy PDF viewer 🙄" />
+  </Pane>
+</div>
