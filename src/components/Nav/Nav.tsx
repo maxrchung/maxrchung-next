@@ -11,6 +11,7 @@ import NavIcon from "./NavIcon";
 import NavLink from "./NavLink";
 import MenuLink from "./MenuLink";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function NavBar() {
   const navIcons = (
@@ -25,6 +26,8 @@ export default function NavBar() {
       <NavIcon href="https://osu.ppy.sh/users/S2VX" src="/osu-logo.png" />
     </Pane>
   );
+
+  const [isMenuShown, setIsMenuShown] = useState(false);
 
   return (
     <Pane
@@ -65,11 +68,26 @@ export default function NavBar() {
       <Popover
         position={Position.BOTTOM_RIGHT}
         minWidth="auto"
+        isShown={isMenuShown}
+        onOpen={() => setIsMenuShown(true)}
+        onClose={() => setIsMenuShown(false)}
         content={
           <Pane display="flex" flexDirection="column">
-            <MenuLink href="/projects" name="Projects" />
-            <MenuLink href="/blog" name="Blog" />
-            <MenuLink href="/about" name="About" />
+            <MenuLink
+              href="/projects"
+              name="Projects"
+              onClick={() => setIsMenuShown(false)}
+            />
+            <MenuLink
+              href="/blog"
+              name="Blog"
+              onClick={() => setIsMenuShown(false)}
+            />
+            <MenuLink
+              href="/about"
+              name="About"
+              onClick={() => setIsMenuShown(false)}
+            />
           </Pane>
         }
       >
