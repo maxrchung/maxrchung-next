@@ -9,6 +9,7 @@ import {
 import Caption from "@/components/Main/Caption";
 import Timestamp from "@/components/Main/Timestamp";
 import Pdf from "@/components/Main/Pdf";
+import s3 from "@/s3";
 
 # About
 
@@ -39,14 +40,14 @@ games at home, or watching anime, or I hope eating/sleeping.
 <Pane display="flex" gap={minorScale(1)} alignItems="center">
   <DocumentIcon />{" "}
   <Link
-    href="https://d1yx06f4zik90o.cloudfront.net/uploads/maxrchung-resume.pdf"
+    href={s3("uploads/maxrchung-resume.pdf")}
     children="maxrchung-resume.pdf"
   />
 </Pane>
 
 <div className="is-hidden-mobile">
   <Pane display="flex" flexDirection="column" gap={majorScale(3)}>
-    <Pdf file="https://d1yx06f4zik90o.cloudfront.net/uploads/maxrchung-resume.pdf" />
+    <Pdf file={s3("uploads/maxrchung-resume.pdf")} />
     <Caption value="Holy PDF viewer 🙄" />
   </Pane>
 </div>
