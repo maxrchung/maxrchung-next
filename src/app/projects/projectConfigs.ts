@@ -419,7 +419,7 @@ export const projectConfigs: ProjectConfigs = {
   },
   maxrchungnext: {
     thumbnail:
-      "https://maxrchung-rails.s3.amazonaws.com/the-boy/the-boy-circle.png",
+      "https://d1yx06f4zik90o.cloudfront.net/the-boy/the-boy-circle.png",
     title: "maxrchung (Next)",
     start: "2024-01",
     end: undefined,
@@ -427,7 +427,7 @@ export const projectConfigs: ProjectConfigs = {
   },
   theboy: {
     thumbnail:
-      "https://maxrchung-rails.s3.amazonaws.com/the-boy/the-boy-phone.jpg",
+      "https://d1yx06f4zik90o.cloudfront.net/the-boy/the-boy-phone.jpg",
     title: "The Boy",
     // Note my preference is something like Oct 2018, but this doesn't seem to
     // work for Firefox/iOS
