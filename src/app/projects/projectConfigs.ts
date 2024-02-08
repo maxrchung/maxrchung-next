@@ -426,14 +426,16 @@ export const projectConfigs: ProjectConfigs = {
     description: "Probably the worst game ever (not) made",
   },
   maxrchungnext: {
-    thumbnail: "",
+    thumbnail:
+      "https://maxrchung-rails.s3.amazonaws.com/the-boy/the-boy-circle.png",
     title: "maxrchung (Next)",
     start: "2024-01",
     end: undefined,
     description: "Personal website rebuilt with Next.js and Evergreen UI",
   },
   theboy: {
-    thumbnail: "",
+    thumbnail:
+      "https://maxrchung-rails.s3.amazonaws.com/the-boy/the-boy-phone.jpg",
     title: "The Boy",
     // Note my preference is something like Oct 2018, but this doesn't seem to
     // work for Firefox/iOS
