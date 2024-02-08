@@ -91,17 +91,19 @@ export default function NavBar() {
           </Pane>
         }
       >
-        <Pane
-          width={majorScale(4)}
-          height={majorScale(4)}
-          marginRight={majorScale(-1)}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          cursor="pointer"
-        >
-          <MenuIcon className="is-hidden-tablet" />
-        </Pane>
+        <div className="is-hidden-tablet">
+          <Pane
+            width={majorScale(4)}
+            height={majorScale(4)}
+            marginRight={majorScale(-1)}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            cursor="pointer"
+          >
+            <MenuIcon />
+          </Pane>
+        </div>
       </Popover>
     </Pane>
   );
