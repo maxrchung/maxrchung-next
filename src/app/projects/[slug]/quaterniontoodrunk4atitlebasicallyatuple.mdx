@@ -1,10 +1,10 @@
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/quaternion_banner.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/quaternion_banner.png" />
 
 Quaternion: Too Drunk 4 a Title was a arena brawler where drunk people picked up various alcoholic abilities around the map and used them to attack each other. It supports both singleplayer and multiplayer modes. I'm not really sure what's going on with the title, but I wouldn't worry about it.
 
 - Made with: Unity
 - Made by: Max Chung, Alex Jett Lewis, Nina Volkmuth, Winston Liang, Theodore Won
-- Download (Windows): [quaternion.rar](https://maxrchung-rails.s3.amazonaws.com/uploads/quaternion.rar) (36.3 MB)
+- Download (Windows): [quaternion.rar](https://d1yx06f4zik90o.cloudfront.net/uploads/quaternion.rar) (36.3 MB)
 - Repository: [gamethingey](https://github.com/maxrchung/gamethingey)
 
 ## Background
@@ -15,7 +15,7 @@ The concept behind this game was a total mess, but somehow in the end it worked 
 
 It's not like I didn't have ideas I wanted to do. I think my best one was Lizard Entertainment Presents Earthrock, a parody of Hearthstone. In this game, a bunch of lizards played what would be cards against each other. But instead of cards, they played with rocks they carried around in their rock sack, what would be a deck. On the rocks were carved inscriptions describing their stats and effects. At some point, I think Alex was interested in doing a card game for a game jam, so he might be interested in doing this kind of jam and working out card mechanics.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/lizard_rocks.jpg" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/lizard_rocks.jpg" />
 
 Another great idea I had was a parody of idol games, called IDOLM0NSTER. Instead of playing to improve and find idols, you played to find monsters. Rather than a manager, you were more something like a monster handler. And that's pretty much it, I guess the the rhythm game aspect would stay the same. We've never done a rhythm game before either, so I thought that could be fun for a jam.
 
@@ -25,7 +25,7 @@ Well anyways, all my suggestions were rejected. Winston, my roommate that lived 
 
 We ended up deciding that we'd try and figure something out during our car ride back to NorCal, a 6 hour journey with a lot of space jam in the background. Since everything I wanted to do was rejected, we started with what he wanted to do and worked from there. After talking a while, he wanted to do some kind of game based around drunkenness, maybe a fighting game, where your power(s) changed depending on how drunk you were.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/drunken_master.gif" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/drunken_master.gif" />
 
 So we thought up of a couple different variations of this. One concept was a game where the point was to keep on hitting the other person until they sobered up, and the first one to sober up lost. Thinking of the orientation also changed things too. Rather than a simple Street Fighter style side by side fighting game, we considered Super Smash Bros., which offered a larger map and item pickups, in this case alcoholic pickups, that could change your drunk state.
 
@@ -36,7 +36,7 @@ I wasn't really 100% set on a drunk brawler. I don't think fighting games appeal
 Next time, I'm not sure if I want to vet things through Winston, as he's only been pretty negative about my choices. For the next local game jam coming up, I chatted online with Alex about what to do, and he was a lot more receptive and helpful deciding things with. And I think having Alex on board with the project is the most important out of everyone on the usual team. He's definitely the most vocal and boisterous out of all of us, so keeping our emotional leader engaged and full of energy is important.
 
 <video autoPlay loop controls>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/no_no_no_no_no_no.webm" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/no_no_no_no_no_no.webm" />
 </video>
 
 Come the day of this jam, most of everyone showed up on time and stayed for the entire time. Alex and Winston were the only ones who stayed overnight at my place, but outside of sleeping hours, everyone tried to be there. Alex had to unfortunately step in and out due to doctor appointments, as he was recovering from knee surgery and needed it checked out. Ted (Theodore) also came a bit late and went missing a more hours due to personal matters and distance.
@@ -47,7 +47,7 @@ The simplest idea to go for was a Street Fighter style game where we had 1v1 loc
 
 We considered something more like Super Smash Bros., where on top of a basic move set you could find abilities around the map to use. I think it was then that Alex suggested we look at Stick Arena. Stick Arena was a popular game back in the day that, if I remember, was on Kongregate and Addicting Games. It was a multiplayer battle arena game where you played as stick figures in an arena that went around the map picking up weapons to use and attacking each other with them.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/stick_arena_ss.jpg" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/stick_arena_ss.jpg" />
 
 Winston was a bit put off by the top down view of the game, a perspective we didn't think too much about because he wanted to focus on fighting with the profile view's traditional high, mid, low attack variations. However, Stick Arena's gameplay fit our idea well. Instead of weapons, we could pick up abilities around the map and use these to attack each other with.
 
@@ -65,7 +65,7 @@ Unity mainly offered two types of network wrappers. The first, called Transport 
 
 Using the HLAPI was very weird. I felt a considerable loss of control not being able to know what exactly was being sent back and forth between computers. Instead of sending and receiving packets like I was used to normally, most of what you did was slapping on a Network Identity component to Unity objects and hoping that everything synced properly.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/commitsuicide_unity.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/commitsuicide_unity.png" />
 
 The way it was designed made it so that you could start your project by writing a single player version of the game. Once that was finished, you added Network Identity attributes to variables/classes, and the multiplayer aspect would seemingly magically work. Yes, magic might be the right term here. The online tutorials to some basic extent explained what was going on, but a lot of it was trusting that the system worked and hoping what you were doing was correct.
 
@@ -74,7 +74,7 @@ There wasn't a lot of documentation and help online I could find explaining subt
 The nastiest bug I encountered was an issue where a parented network object that was spawned behaved very oddly. For some reason, when you spawned a new object as a child of another object, for instance, displaying a fire animation in front of your player when you activated a molotov cocktail, the animation would teleport off of your player and go to the (0,0,0) point of the overall map. The weirdest part was that this only happened on certain players' screens, either the client or the server, though I imagine the former.
 
 <video autoPlay loop controls>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/balloon_cat.webm" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/balloon_cat.webm" />
 </video>
 
 I couldn't find out why this was the case. I thought maybe it had to do with an issue not calling Commands/ClientRpc calls correctly, but no matter what I did I couldn't find out how to fix the issue. If there was no parenting involved, it was fine. We could have the fire and punch animations be static animations that displayed, but the moment you wanted to attach these onto a player, you ran into problems.
@@ -89,7 +89,7 @@ I couldn't figure out how to get a custom lobby manager going by itself, and loo
 
 While I was working on networking, the rest of the group worked on the main game. The first thing to do was flesh out the abilities. I don't really know if all of them were thought up of then, but by the end we had 5 item/ability pairs. The default ability was a basic fist that did small amounts of damage. You switched to this if you used up all the charges of other abilities.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/quaternion_weapons.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/quaternion_weapons.png" />
 
 The next was a vomit projectile that shot across the screen and disappeared if it hit a wall. Then we had a poop ability that set a poop trap underneath your character when you used it. If another player ran over the poop, they took damage and were slowed. This poop interacted with the next ability, a fire attack that hit in a cone shape where you aimed it. You can clear poop on the ground by firing over it. The final ability was a heal to regenerate your drunk bar. You slowly lost drunkenness over time and needed to refill to keep it up.
 
@@ -104,7 +104,7 @@ A good thing about this project was how iterative it was. The number of characte
 On top of doing the art, she contributed a huge amount to the game code as well. Alex was inexperienced with Unity, so a lot of his guidance was helped through her. Tasks-wise, she handled pretty much all the states/animations and fixed a ton of awful, disgusting bugs like that of the parent spawning issues. There were a few bugs still lurking in the end that we couldn't figure out, like the fire animation flashing weirdly, but oh well, what can you do.
 
 <video autoPlay controls loop>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/putting_out_car_fire.webm" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/putting_out_car_fire.webm" />
 </video>
 
 Alex worked on weapons and damaging players. Due to this lack of experience, he did comparatively less than what he put out on other projects, but I'd say he had a fun time with this project regardless. Rather than having to deal with the gnarliness of the usual Pygame, he found the entrance of Unity much more graceful and almost too easy. Later on, we did some paired programming/testing later on to fix some spawning issues and balance a lot of the game.
@@ -116,7 +116,7 @@ And last but not least was Ted. He decided to take on something often neglected 
 He made the entire background music through a MIDI synthesizer, if I recall, and the sound effects I want to say he generated from BFXR or JFXR. For a first time effort, I think he did a really good job, and I like the groovy track. Since having to work on sound on the next project, [Going Home](goinghome), I have total respect for anyone now who dives into sound and produces something by the end of it. Music production's not easy to jump in and get used to.
 
 <audio controls>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/DrunkFight.wav" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/DrunkFight.wav" />
 </audio>
 
 Ted did a significant amount of programming too. He put all his sounds and music into the game and also started the movement and collision code for players. I think at one point he wanted to do some kind of drunk effect with the turning movement where you had trouble changing directions due to your drunkenness, but he couldn't get the math down for that. I think what happened was that a bug would pop up where you would randomly spin in circles. In the end, he removed it and kept the turning simple.
@@ -128,7 +128,7 @@ That pretty much covers most of our individual roles and most of the development
 I guess I should say something about the name. Because we never really had a concrete game idea, we didn't really have a name we wanted to go with. When we started talking about possible name ideas, I was coincidentally working on the camera rotations and movement. By then, I was working with quaternions for the first time, and they were pretty damn weird to understand. Actually using them was easy, but none of us really knew how the individual quaternion components worked.
 
 <video autoPlay loop controls>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/quaternions_wtf.webm" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/quaternions_wtf.webm" />
 </video>
 
 So I said a phrase I picked up from other members of VGDC, where quaternions were basically just a tuple, don't worry about it. And as an inside joke, that became my/our response to everything. Why couldn't we fix this parenting bug? Quaternions, man, parenting's just a tuple. Naturally when we tried to decide a name, I responded with quaternion since I couldn't think of anything else. Eventually, it came time to actually put in the name, and Nina, throwing our inside jokes together, created what you see now, Quaternion: Too Drunk 4 a Title (Basically a Tuple).
@@ -140,7 +140,7 @@ I guess as a final note, I'll leave with the duck story. If you play the game a 
 The story behind this was that if I recall, Nina made a third character at one point to add on top of the normal male and female characters. This one was supposed to have a baseball cap, but the first thing we thought of when looking at it was that it looked like a duck. I think she tried to change it to look more normal, but without much luck. Eventually we decided to run with it.
 
 <video autoPlay loop controls>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/duck_duck_gun.webm" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/duck_duck_gun.webm" />
 </video>
 
 Later on, Ted as a joke made a duck soundtrack by switching out all the synthesized sounds in the normal song to duck noises. We actually thought it was pretty funny, so we kept it in as a joke. I'm kind of actually amazed we pulled this off since there was a lot going on at the time. I guess if you want to meme, you sacrifice everything else to do so. Memes before dreams, people.

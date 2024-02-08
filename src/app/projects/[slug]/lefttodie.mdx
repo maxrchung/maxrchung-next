@@ -1,10 +1,10 @@
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/lefttodie_banner.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/lefttodie_banner.png" />
 
 Left to Die was a platformer inspired by traditional Mario and by some of its quirky spin-offs, namely [Syobon Action](http://en.wikipedia.org/wiki/Shobon_Action) (AKA Cat Mario), [I Wanna Be the Guy](http://en.wikipedia.org/wiki/I_Wanna_Be_the_Guy), and [VVVVVV](http://en.wikipedia.org/wiki/VVVVVV). It was made as part of [VGDC UCI](http://vgdc-uci.com/)'s 2015 winter quarter game jam. The theme of the jam was 'Choose a Side', and we decided to put our own spin on the platformer genre, where facing left inverses all the blocks the character interacts with.
 
 - Made with: Python and Pygame
 - Made by: Max Chung, Hector Martinez, Andrew Chau, Kinsey Lynaugh
-- Download (Windows): [LeftToDie.zip](https://maxrchung-rails.s3.amazonaws.com/uploads/LeftToDie.zip) (7.1 MB)
+- Download (Windows): [LeftToDie.zip](https://d1yx06f4zik90o.cloudfront.net/uploads/LeftToDie.zip) (7.1 MB)
 - Repository: [lefttodie](https://github.com/maxrchung/lefttodie)
 
 ## Background
@@ -15,7 +15,7 @@ I'm not 100% sure how they decide groups now, but we used to use a random genera
 
 On Left to Die I did work in almost all parts of the game, doing art, programming, then sound, and back to programming again. It kind of had to be done because we had so few people on the team. Out of the half a dozen or so that we were assigned, only 4 of us showed up. But we made the best out of our situation.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/dog_faces.jpg" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/dog_faces.jpg" />
 
 Andrew was a first year who wanted to jump into a game jam for the first time. I thought he would probably be our weakest link for this project due to his lack of experience, but he pulled himself together really quickly, picked up knowledge on the fly, and really contributed a lot of work for us, to my surprise. He mainly worked on animations, background parallaxing, and game logic.
 
@@ -27,7 +27,7 @@ Funny story though, somehow Hector was using TortoiseSVN successfully to push hi
 
 The start of the weekend was somewhat rough. I think we were a little dismayed that we didn't have a full team and that a good chunk of us were quite inexperienced in jams. We also couldn't think of a great idea for the theme. But I think as we kept on discussing ideas, we gained back morale as got to know each other better. Kinsey and Andrew were definitely the talkative bunch and constantly gave suggestions/feedback.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/kid_protection.jpg" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/kid_protection.jpg" />
 
 We started off thinking about genres. Eventually we landed on puzzle games and specifically platformer puzzle games. These are the kind of games went around a map and then activated objects affect the game. I believe we were discussing some kind of platformer where you had to choose either the left or the right side of a map to navigate and activate things. And once you've beat both sides, you then beat the level.
 
@@ -42,7 +42,7 @@ We then decided what language to use. Python/Pygame seemed kind of a natural cho
 I did some quick brainstorming and wanted to task out individual parts of the game to everyone. For myself, I would be working on the art first. I wanted someone to make a very simple animation class because I know we'd need that for at least the character. This I gave to Andrew as a way to get used to Pygame's GUI and drawing. For now, all he would have to do is write code to be able to display an animation running on his local screen.
 
 <video autoPlay loop controls>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/dogs_teach_sit.webm" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/dogs_teach_sit.webm" />
 </video>
 
 This seemed like a good separated task for him. I explained the concept of sprite sheets to him, and he seemed to understand it pretty well. Best case scenario, his animation class works great and we plop it into the game without a problem. Worst comes to worst we just abandon animations altogether and just have still frames, not a huge loss for this kind of game.
@@ -51,7 +51,7 @@ Kinsey I gave the task of making a level editor since I think she said she was i
 
 The text file matched the changes you've made, so if you made an entire stage full of spike blocks, the entire text file could be filled with, for example, 'S' characters, for spike. The same logic applied to normal blocks, perhaps an 'N'; or blank/no tiles, 'B'. Then on the game side, you read in these character text files and recreate the level onscreen.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/lefttodie_level1.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/lefttodie_level1.png" />
 <p className="caption">Level 1, we used different character mappings</p>
 
 This was essentially just a step further than editing text files directly. I thought this would be another good section for a member to specifically focus on and could be easily integrated into the game. This would fit Kinsey the best since she was planning on making levels anyways.
@@ -81,7 +81,7 @@ When facing right, you would have a normal colored, jolly old landscape, but whe
 Eventually I also worked on sounds for the game. Before this project I never contributed music or sounds for a project, so this was an interesting experience. It's not like I did anything too creative though. For music, I lifted off a pretty iconic theme from Cat Mario. The song's a bit annoying and repetitive but just what fitted the kind of game we're making. In addition, I put in a repeating sound track of static that would play when the player turned left and went into the inverse world.
 
 <audio controls>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/inverse.wav" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/inverse.wav" />
 </audio>
 
 <p className="caption">You should probably lower your volume</p>
@@ -95,7 +95,7 @@ For almost the last entire day I worked on trying to make collisions work. In my
 The next part was resetting the player. If the player hit a normal block, then the player needed to be pushed out a certain distance based on which direction he came in from. To determine this, I kept track of a previous position value. The game saved this previous position, calculated the new predicted position, and then threw both of these values into the checkCollision function. For example, if a player collided on the left side of a normal block, he would need to be reset along the left side.
 
 <video autoPlay loop controls>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/dogs_run_around.webm" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/dogs_run_around.webm" />
 </video>
 
 For some reason though, this didn't work. I tried for hours to figure out the issue, but by the end of the jam, I wasn't able to find a solution. This error probably costed us placing higher in the game jam rankings. We placed 3rd overall, which I'm not too sad about, but I felt like we definitely could have done better. To me, this was a really amazing and polished game that fit the theme really well. In my heart we were first.
@@ -110,6 +110,6 @@ Basically it boiled down to Pygame having problems and cx_Freeze, what we used t
 
 And that about wraps it up. This was a super cool project that I had a lot fun on and learned a lot from. I've been giving Hector some flak, but everyone was pleasant and cordial to work with regardless of experience. For some reason this project would lead me into basically doing Pygame projects for the next year or so in VGDC game jams. I don't know how I feel about this, but it's all in good fun.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/puppy_window.jpg" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/puppy_window.jpg" />
 
 Oh yeah, one more thing. The 2 in the introductory level was put there because we couldn't fit 'to'. I guess if we maybe made the 'to' letters smaller and spread them diagonally we might have been able to fit them in, but the 2's fine and more readable I suppose.

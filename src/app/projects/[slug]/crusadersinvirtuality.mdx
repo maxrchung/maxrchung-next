@@ -9,7 +9,7 @@ Crusaders In Virtuality is a project currently put on indefinite hold as I work 
 
 Crusaders was an unfortunate project. The concept behind it, I think, was very good, and contained some of my, I'll say, better ideas. One day I'd like to see what I've visioned in here be fleshed out, but I don't know when the next time I'll return back to this will be. Some difficulties weighed down on me during this project, and more than anything I think this is a burden I'd like to let loose and leave behind.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/ayy_lmao_puppy_fire.jpg" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/ayy_lmao_puppy_fire.jpg" />
 
 Crusaders is an unfinished project that's morphed from one design to the next. At its core, yes, it's an osu! storyboard, but it represents a special kind of storyboard. With this project, I wanted to elevate storyboards from just a decorative background element to instead the main draw of the map.
 
@@ -21,7 +21,7 @@ On top of just lines, I did put some thought into adding color, but decided that
 
 Now, the first idea I wanted to do for Crusaders was a 3D game. Rendering would be taken care of through storyboard, audio by osu!, but a big problem remained: How would you register inputs for the game? It wouldn't be much of a game, and more a simulation, if you only viewed what was going on. To take care of that, I thought, well, let's just use the beatmap to register inputs.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/dimension__.jpg" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/dimension__.jpg" />
 
 The idea was to take a standard beatmap, get the individual note and slider information from it, and register those as inputs. Then we would generate a storyboard that ran through a simulation with those inputs. I thought about different types of games you could associate this with, and after some brainstorming, I decided on something akin to Time Crisis.
 
@@ -32,7 +32,7 @@ Gun movement would be different than standard Time Crisis. Like a first person s
 This project began to take fruition towards the end of [Dualive](http://maxrchung.com/projects/dualive). As Dualive was wrapping up, I thought about what I wanted to do with my next project. The driving force was probably wanting to do increasingly more complicated storyboards. I also wanted to dive more into 3D graphics, so together, I thought this project would be a good challenging and learning experience to take on.
 
 <video autoPlay loop controls>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/get_over_the_american_mexican_border.mp4" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/get_over_the_american_mexican_border.mp4" />
 </video>
 
 With Thanksgiving break coming up as well, I thought it would be a good opportunity to work with a programming team again. For the past few projects, it's just been me toying away on my own code, and I miss working closely with people. I invited some coders from the osu! club to join along if they were free. Paxton and Brenn answered my call, and we were set to do a small storyboard jam. My goal was to jump start the project during our jam session and work through the remainder of it through the quarter.
@@ -46,7 +46,7 @@ One requirement to keep track of here was that this process required flexibility
 Specifically, I broke down 3D objects into faces, lines, and points. Faces contain lines, and lines contain points. Everything is held together by pointers, so that if a point is shared across 5 lines or 5 faces, everything points to the same shared thing. There are some special cases I had to take care of, mostly dealing with null.
 
 <video autoPlay loop controls>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/rebel.mp4" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/rebel.mp4" />
 </video>
 
 One other thing to keep in mind was order. The point order of each face needs to be consistent, either all clockwise or counter-clockwise. This is needed for future occlusion calculations. To detect if you need to draw a face, you can find the normal by cross producting two points of the face. Then you compare the normal with the camera direction and only draw the face if they face each other.
@@ -59,7 +59,7 @@ I set Brenn to do some easier tasks since he had the least experience with what 
 
 We ran into some pretty big, immediate issues a few hours in. Working with Brenn, we found ourselves unfortunately knee deep in some header circular dependency issues. The bulk of this occurred because of the ObjectPoint, ObjectLine, ObjectFace structure referencing each other. We sat down together and read through some basic header guidelines, and now I think I have a pretty confident grasp of how to include/forward declare things properly now.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/exte_hair.jpg" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/exte_hair.jpg" />
 <p className="caption">yall need to see this movie called Exte</p>
 
 We used this [post](http://www.cplusplus.com/forum/articles/10627/) to point us in the right direction. To paraphrase, always use include guards, always include/forward declare as little as possible in the header file, forward declare over include whenever possible, and that, wala, should fix all your issues. To start from a clean slate, we removed all the inclusions from our header/source files and reconnected everything. A bit of a pain, but now everything is spiffy clean and working. But yeah, this unfortunately took a large chunk of our time.
@@ -71,7 +71,7 @@ There was another issue where if faces, lines, or points appeared out of the cam
 And couldn't figure it out is a true statement. It's frustrating, and a bit humiliating to say, but fast forward to the future, I never solved these issues down the line. They became the cracks that would eventually cripple the project, to the point where I've now completely abandoned it. After spending many nights looking at these 3D issues, I wasn't making progress, and I pretty stressed out and angry working on it. I took some time off to R&R myself before coming back to tackle it again, but I got nowhere.
 
 <video autoPlay loop controls>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/to_stand_in_the_rain.mp4" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/to_stand_in_the_rain.mp4" />
 </video>
 
 The best, or maybe the worst, thing to come out of the jam was probably our food situation. Similar to what I did for a past game jam, I wanted to do something like a hot pot, where we gather whatever ingredients we wanted and had a ready pot of food available whenever we were hungry. It seemed convenient, simple, and easy at the time.
@@ -82,7 +82,7 @@ Alright, so we did the next best thing. We split the cooker into two pots and pu
 
 Overall, all things considered I think our jam went fine. I wasn't that concentrated about our progress since this was just supposed to be a jump start anyways. By the end, we had some cubes representing enemies that displayed and could die properly. A rectangular gun was able to show up on screen and could shoot small cube bullets. Most importantly though was the experience. I think the Brenn and Paxton had a fine introduction to working with 3D, and oh yeah, how to work with header inclusion.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/gotta_go_faster.jpg" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/gotta_go_faster.jpg" />
 
 Afterwards though, our team pretty quickly fell apart. Through it all, I don't think the two were that interested in 3D or storyboarding, and while I was ready to work on it full time, they weren't as committed. I could understand. Not everyone was going to enjoy working on this niche kind of project, and after confronting them about staying, Brenn decided to tap out first, followed by Paxton sometime after.
 
@@ -100,7 +100,7 @@ Eventually, I finally just gave up. Summer was coming around. I made little to n
 
 So really, I have to thank Royce to some extent for bringing me basically out of the shell of the ground and giving me a bit of life again. Without [Tegami](http://maxrchung.com/projects/tegami), I'd probably still be working on Crusaders and at a very unsightly low in life right now. Man, I think this really makes me want to reevaluate some of my priorities a bit and take care of myself a little better, mentally and physically.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/fall_light_cat.jpg" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/fall_light_cat.jpg" />
 
 Maybe solo projects just aren't my thing. I felt I lost my mind at some point working on Crusaders. I mean damn, the ideas and concepts I thought up of, I think they're all great, but I don't think I could bring myself to work on something like this again. Which makes me worried moving onto S2VX, a solo rhythm game project that I have next lined up to work on.
 

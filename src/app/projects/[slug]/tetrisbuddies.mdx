@@ -1,9 +1,9 @@
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/tetrisbuddies_banner.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/tetrisbuddies_banner.png" />
 
 Tetris Buddies was a 72-hour game jam project themed on making networked Tetris and loosely based on [ME!ME!ME!](http://animatorexpo.com/mememe/).
 
 - Made by: Max Chung, Alex Lewis, Winston Liang, and Derek Malonzo
-- Download (Windows): [TetrisBuddies.rar](https://maxrchung-rails.s3.amazonaws.com/uploads/TetrisBuddies.rar) (30.6 MB)
+- Download (Windows): [TetrisBuddies.rar](https://d1yx06f4zik90o.cloudfront.net/uploads/TetrisBuddies.rar) (30.6 MB)
 - Repositories: [TetrisBuddies](https://github.com/JettDota/TetrisBuddies) (Old), [TetrisBuddies2](https://github.com/maxrchung/TetrisBuddies2) (New)
 
 The download rar contains two folders, one for the multiplayer version of the game with lobbies and one with a standalone single player version. Multiplayer works only in local area networks.
@@ -14,7 +14,7 @@ This game jam was made over winter break with a couple of local friends. I've wo
 
 The idea for Tetris Buddies came from a variety of places. Right after Katana Shoujo was finished, we didn't really have a new idea to go off of. I think the second best idea someone brought up was making a card game. A few of us in particular played Yu-Gi-Oh! (such obnoxious titling) and wanted to possibly remake it. I wasn't so inclined. I know a lot of us on the team didn't play Yugioh, so making a remake of a game we never played could get messy.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/duelingNetwork.jpg" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/duelingNetwork.jpg" />
 <p className="caption">
   Some random screenshot I found of{" "}
   <a href="http://www.duelingnetwork.com/">Dueling Network</a>
@@ -32,7 +32,7 @@ Pygame 1.9.1 was also an old version. Officially on the Pygame site, only up to 
 
 It seemed like their game never ran into any problems, but I wasn't ready to make a leap into unofficial territory yet, so I chose to stick with whatever was most reliable at the time. Setting up took me like 15 minutes. I've used Pygame in the past, and the installers made everything easy.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pygame.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/pygame.png" />
 <p className="caption">What we used</p>
 
 This meant that we would need close to zero artists for this project, and I plus the others could all focus on programming. Unfortunately, this meant I had to cut some ties with Anni and Tiffany. I do feel sorry for doing so, since for these kinds of projects, the more the merrier, and it was more of a chance to hang out and catch up with friends rather than actually making something complete.
@@ -49,7 +49,7 @@ Eventually we went with a spin-off of [Tetris Attack](http://en.wikipedia.org/wi
 
 Alright, come the day of the jam, a few things went amiss. First, we didn't really appropriately plan for a date for the jam. I sent out a [whenisgood](http://www.when2meet.com/) scheduler to everyone and asked everyone to mark their appropriate dates. After asking multiple times, I only got a total of one response back for Saturday, Sunday, and Monday of December 27, 28, 29. Nobody said anything if this was good or bad for them, so I just went ahead and did those dates. To give us a full 72 hours, I started the jam at midnight of Saturday and ended on the midnight of Tuesday.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/whenisgood.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/whenisgood.png" />
 
 Ironically, it turns out the only person who responded, Derek, actually made a mistake, and he actually meant to put down Friday, Saturday, and Sunday. We ended up doing the midnight to midnight of Saturday to Tuesday since I wasn't notified. I admit though, starting on midnight was probably not a great idea. Next time, I'll do something like Friday night to Sunday night or Friday morning to Sunday morning so we get a bit of buffer time. I shouldn't be expecting people to pop up in the middle of night.
 
@@ -73,7 +73,7 @@ Very convenient. I feel very inclined to use Python in the future because it's s
 
 Alex and I did complain a lot getting used to it at first though. We joked that we could write code that we didn't understand and that were sure to crash but that ended up working anyways. Alex used the [LiClipse](http://www.liclipse.com/) AKA 1337Clipse as he called it. Winston used Eclipse that he set up from his previous classes. I used good old Emacs. IDE's would've helped me catch syntax errors, but I didn't want to download more editors and I wanted to practice on Emacs, so I stuck to it.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/emacs.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/emacs.png" />
 <p className="caption">
   The only reason I use it is because it (almost) has my name in it
 </p>
@@ -86,7 +86,7 @@ The idea was that the player would go through a series of different states, and 
 
 Here, they could either choose to become a 'Host' or poll for available rooms. Polling essentially meant sending a broadcast packet on the local area network to look for all available hosts, and these hosts would then respond back telling the poller about their existence.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/console.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/console.png" />
 <p className="caption">Example of the game and of state changes</p>
 
 The poller could then challenge hosts that they've found, and timed out after a certain period. On the other end, the host waited for any incoming requests. If a challenge arrived, he can either choose to accept or deny the request. If he accepted, then the game started and both players entered the 'Playing' state.
@@ -109,21 +109,21 @@ I tried different attempts to try and get past that, but in the end I couldn't f
 
 And to speak up a little more about this section, I ended up having to use a Windows specific keypress check after Googling around for answers. I tried to use Pygame to check for keypresses, but after an hour of failure, I realized that Pygame didn't actually check for keypresses within the console. You had to actually make a Pygame display and press a key within that window if you wanted Pygame to register that key.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/keypress.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/keypress.png" />
 <p className="caption">Thanks msvcrt, whatever you are</p>
 
 But that wasn't the most bizarre part of this implementation. I struggled for a time to figure out how to get the host's messaging thread to communicate with the host's main thread that a challenge request had been received. Looking back on it now, clearly the best solution was to have the message thread put the packet into the message queue and have the main thread process that packet. I even do have this queue implemented for other parts, but for some reason I lost my mind and decided to do something five times crazier.
 
 I somehow thought the best idea was to raise an exception from the message thread and have the main thread catch it. For general exceptions and user defined functions, however, this was not possible, as any exception thrown in the message thread would only be caught within the message thread. That was... until I found an obscure function from the \_thread class called interrupt_main().
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/interruptMain.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/interruptMain.png" />
 <p className="caption">Thank you magic function</p>
 
 This function raised a KeyboardInterrupt exception in the main thread. Perfect. Just what I needed. So now in the 'Host' state, a while True: loop continuously runs until the message thread tells the main thread to throw a KeyBoardInterrupt exception, which was then caught and dealt with. In retrospect, I think this was a pretty poor hacky solution.
 
 Actually, I feel really dumb right now, because the message thread still puts the packet on the queue, and the 'Host' still goes through the queue to look for the corresponding packet. I'm really not sure why I did that. The only thing I can maybe think of is that I wanted a while True loop be continuously run after giving the 'Host' instructions... but I don't know. Oh well, next time I'll hopefully not resort to these odd solutions.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/exceptKeyboardInterrupt.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/exceptKeyboardInterrupt.png" />
 <p className="caption">Yep</p>
 
 UDP was expected to be unreliable, so I have some TTL timers that made sure that the other side responded properly and in time. If any of these timers went above some limit, the connection broke between the two and the players are sent to previous states.
@@ -132,7 +132,7 @@ For example, if a challenger failed to receive a response from the host within a
 
 Another thing I had to pick up was using pickle. Because sockets only allowed players to send things as bytes, I couldn't just throw a list of values into the socket and receive it properly on the other side. Again with trusty Google, I tried to find a solution. The first recommendation was to use JSON, but that led to failure. I ended up successfully using pickle, specific to Python I believe, to encode and decode my lists into usable formats.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/pickle.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/pickle.png" />
 <p className="caption">
   Using pickle, man I should figure out how to embed code one of these days
 </p>
@@ -141,7 +141,7 @@ I'm lucky that I have a bunch of old laptops lying around. For some reason, my f
 
 I ended up having to push and commit a ton of useless builds and fixes back and forth to our repository since I had to test between two computers. Next time I should definitely try and work on a separate branch so the other people don't have to deal with my changes. At least all my code was separated off in its own folder though, so there shouldn't have been any conflicts between the game and networking parts.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/commits.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/commits.png" />
 <p className="caption">Woops</p>
 
 Surprisingly this time around, I don't think we had too many issues with Git. I think it was mostly the fact that almost all of us (minus Derek) had previous Git experience, and we were very careful with how and when we edited things. We tried to avoid merging as much as possible, and only commit and push a bit at a time, even reverting files if we had to. We could have broken up our sections into smaller bits and pieces to perhaps allow us to work on separate parts easier, but I think our repository management this time around was satisfactory.
@@ -174,19 +174,19 @@ The only "art asset" really to speak of in the game was our side banner that ind
 
 Our first iteration of the banner was a purple one that had a score indicator. Purple because, well, I'm not too sure. I think we wanted a "hot and spicy" color even before incorporating ME!ME!ME! We decided on using Comic Sans because it's bad, and Derek called it MaxFaggotry.png. Alrighty then.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/MaxFaggotry1.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/MaxFaggotry1.png" />
 <p className="caption">First banner image</p>
 
 It wasn't until a few iterations afterwards that Derek incorporated the ME!ME!ME! girl into the banner, and I felt it fit so, so well for us. I mean, it's definitely for sexy tastes, but the girl fitted our four panels really well The head was set perfectly in place for the first box, followed by the chest for the second, the panty shot for the third, and the hands for the saved block. Pretty ingenious if you ask me.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/MaxFaggotry2.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/MaxFaggotry2.png" />
 <p className="caption">Second image with the girl</p>
 
 I went in later and edited the banner a lot. We needed the banner to be pixel perfect, and Derek wasn't familiar enough with Photoshop to have perfectly aligned measurements. I did the dirty work of going in and fixing the errors, as well as making a ton of further changes, most noticeably adding the legs and hanging her head and breasts over the frames heheh.
 
 In addition, I blocked out the saved block to differentiate it from the next blocks, and I hid her hands underneath so that the saved description would be visible. After playing around with a huge variation of colors and thicknesses, we eventually came up with what we have now.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/MaxFaggotry.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/MaxFaggotry.png" />
 <p className="caption">Final image</p>
 
 The original background for the grid was a plain, dull, dark gray. To add some more flair, I added in a white grid to distinguish the tiled boxes, and with the banner set in place, I then started playing around with gradients and colors for the background. After another bunch of different variations, we now have a faded white grid atop a pink to blue fade. Furthermore, keeping in line with the color theme, I recolored the blocks that Winston originally made to match closer to the girl's colors.
@@ -203,7 +203,7 @@ Squashing our code together actually turned out to be very easy. I structured th
 
 Rather than difficult, the most tedious part of this process was simply converting the game code that ran from a main loop into an actual class. That basically entailed writing in self specifiers everywhere. After testing and fixing syntax errors here and there, the game was good to go.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/easyGame.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/easyGame.png" />
 <p className="caption">Easy game, easy life</p>
 
 The rest of our combining was on me writing network code to update the gameboard between players. This involved sending the player's block grid to the opponent and sending updates upon losing the game or sending a line. With a little bit of direction and peer programming between Alex and I, we addressed these issues without a problem.
@@ -228,7 +228,7 @@ I tried deleting and repulling the project from my other computer, but it seemed
 
 I decided the best decision at the time was simply to start a new repo up with all the songs removed. This wouldn't affect anyone else either, since they wouldn't be awake for a couple of hours. So now if you're wondering why we have two repos, that's the reason.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/repositories.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/repositories.png" />
 <p className="caption">All these repos make me cry</p>
 
 On the last day, we mainly did play testing and more bug fixes. One major thing I wanted to add towards the end of the project was multi-input, allowing the player to move diagonally, rotate, hard drop, etc. at the same times. It seemed like a simple task of changing some if, elif, else statements to just if statements. The end result actually didn't lead to any breaking errors, but it did bring up a problem we didn't notice before: lag.

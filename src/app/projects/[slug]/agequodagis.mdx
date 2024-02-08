@@ -1,4 +1,4 @@
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/aga_banner.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/aga_banner.png" />
 
 Age quod agis was an osu! beatmap I helped work on with Royce, a friend I met through [osu! UCI](http://maxrchung.com/projects/osuuci). I handled programming the storyboard, while he worked on the map itself. We themed the song off snow and winter.
 
@@ -31,7 +31,7 @@ I thought this was a pretty unique and interesting idea. It also required a bit 
 
 There were about 20 snowflakes in total, each made individually through Photoshop and a bit through programming. To make them, I worked with a 1/6th slice of a snowflake and mirrored/copied the section via code six times to make the snowflake shape. This process was pretty fast for iteration, and with Royce's comments I modified a few that looked out of place.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/aga_snowflakes.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/aga_snowflakes.png" />
 
 Next time I'll look into Photoshop scripting to see if I can take advantage of Photoshop doing more of the tedious work for me. This time I used SFML to generate the complete images, but I still needed to run the resulting files through Photoshop again to apply a specific blur filter. Working with Photoshop scripts was made at a suggestion of a high school storyboarder, Clayton, that I met through osu! UCI, thanks m9.
 
@@ -42,7 +42,7 @@ The reason this was a little tricky to work on was because osu! behaves a little
 The problem with this, however, was that osu! didn't know how to handle a command if you declared a new instruction during the time frame of another one. This is probably for good reason because it does seem ambiguous if you try and alter a Sprite in two conflicting ways over the same period. To get around this, I needed to calculate the interpolation myself, find future points that a Sprite would move to, and move between those points individually.
 
 <video autoPlay controls loop>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/im_gonna_merge_it.webm" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/im_gonna_merge_it.webm" />
 </video>
 
 With this resolved, there was one last thing I wanted to add that would end taking the most time for me out of this whole project: an audio spectrum. This actually took a bit of digging around and required a bit of research. From some basic Googling, I got a pretty good idea through stackoverflow posts about how to piece together a spectrum, but I wanted a more thorough understanding of sound and computers.
@@ -55,7 +55,7 @@ My logic was sound and the process I was using was correct, but a few small thin
 
 Turns out, the FFT I believe only took in floats between -1 and 1, so I ran into some weird representation errors. There was no documentation I could find that explained the input ranges, so this was actually something I asked my roommate about. He seemed pretty sure that I needed to use normalized floats, and that fixed some of my issues.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/must_be_a_float.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/must_be_a_float.png" />
 
 There were more problems, however, mainly dealing with scaling and frequency ranges. The FFT returned back an array of linear frequency buckets. I knew that frequency ranges were logarithmic so directly using the buckets was incorrect. I didn't realize, however, that the difference between the two would be drastic.
 
@@ -70,7 +70,7 @@ The problem was that the storyboard just seemed too disconnected with the map. Y
 To be honest, at that point I wanted to just get done with this project and move on, but I after some reflection, I wanted to make sure I did a good job finishing this storyboard. I decided to throw much of the input action idea away and scrape what I had into something new. We talked about ideas for a while, and I came up with something slightly based on what I had before.
 
 <video autoPlay controls loop>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/ping_pong_head.webm" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/ping_pong_head.webm" />
 </video>
 
 This time, all the key inputs controlled the snowflake explosions, but instead, each key shot only 1 snowflake out from the center. Color was to be controlled automatically, fading in and out. Rotations were specified at a certain rate at particular points in time. And scaling would be based off of the spectrum bass.
@@ -81,7 +81,7 @@ I had things at a pretty good state, but I ran into nasty bugs that took a long 
 
 I'll gloss over most of the bug details, but the biggest bug was probably figuring out some float issues. Turns out if you do a lot of float additions, you'll start to have quite a few round off errors. It took me a while to find out this was even happening, though hacking a fix was pretty simple by adding some buffer room.
 
-<img src="https://maxrchung-rails.s3.amazonaws.com/uploads/prove_you_are_human.png" />
+<img src="https://d1yx06f4zik90o.cloudfront.net/uploads/prove_you_are_human.png" />
 
 I fixed up a lot of edge cases where the storyboard behaved oddly when you were just about to change into or out of a rotation range or scale off range. And with that I was pretty much done for sure with the project. Royce and I looked over the storyboard, and he wanted to add some small edits here or there. I rejected a few of them but the simpler changes we went through with.
 
@@ -90,7 +90,7 @@ I do think in some sense I probably ended this project too early still. There we
 I'm pretty satisfied with my work here though. I learned a ton about spectrums and sound and how they all work together, and I'm confident I'll be able to go into my next project with a lot of good knowledge and code retained. I do feel a bit sorry for Royce since this was his baby project, and I didn't want to leave it in bad terms or anything. He seemed fine with the end result, though because he's a pretty happy go lucky person, I don't really know if fine is good enough.
 
 <video autoPlay controls loop>
-  <source src="https://maxrchung-rails.s3.amazonaws.com/uploads/two_bestest_friends.webm" />
+  <source src="https://d1yx06f4zik90o.cloudfront.net/uploads/two_bestest_friends.webm" />
 </video>
 
 I think one thing I'll definitely work on in the future is variety in storyboarding. Right now all of the storyboards I've worked on have a very central idea that is just repeated over and over. There's no variety in the content, and that can be quite boring and uninteresting. In my next projects, I'll spice up the storyboard with a few different concepts and see how that works out.

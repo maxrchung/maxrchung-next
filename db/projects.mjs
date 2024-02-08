@@ -108,7 +108,7 @@ for (let i = rows.length - 1; i >= 0; --i) {
 
   configs[extension] = {
     thumbnail: thumbnail
-      ? "https://maxrchung-rails.s3.amazonaws.com/uploads/" + thumbnail
+      ? "https://d1yx06f4zik90o.cloudfront.net/uploads/" + thumbnail
       : "",
     title,
     start: startdate.toISOString(),
@@ -120,7 +120,7 @@ for (let i = rows.length - 1; i >= 0; --i) {
   const markdown = turndownService.turndown(
     content
       // Replace all /file/ paths with S3 path
-      .replace(/\/file\//g, "https://maxrchung-rails.s3.amazonaws.com/uploads/")
+      .replace(/\/file\//g, "https://d1yx06f4zik90o.cloudfront.net/uploads/")
   );
   fs.writeFileSync(`../src/app/projects/[slug]/${extension}.mdx`, markdown);
 }
