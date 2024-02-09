@@ -24,7 +24,7 @@ export const projectConfigs: ProjectConfigs = {
     thumbnail: s3("uploads/skr-thumbnail.png"),
     title: "skr",
     start: "2023-07-01T07:00:00.000Z",
-    end: "2023-09",
+    end: "1 Sep 2023",
     description: "skribblio clone",
   },
   love: {
@@ -394,7 +394,7 @@ export const projectConfigs: ProjectConfigs = {
   maxrchungnext: {
     thumbnail: s3("the-boy/the-boy-circle.png"),
     title: "maxrchung (Next)",
-    start: "2024-01",
+    start: "1 Jan 2024",
     end: undefined,
     description: "Personal website rebuilt with Next.js and Evergreen UI",
   },
@@ -402,8 +402,9 @@ export const projectConfigs: ProjectConfigs = {
     thumbnail: s3("the-boy/the-boy-phone.jpg"),
     title: "The Boy",
     // Note my preference is something like Oct 2018, but this doesn't seem to
-    // work for Firefox/iOS
-    start: "2018-10",
+    // work for Firefox/iOS. Also the day is required because if you omit it, it
+    // will become the previous month due to time zone differences.
+    start: "1 Oct 2018",
     end: undefined,
     description: "The Boy",
   },
