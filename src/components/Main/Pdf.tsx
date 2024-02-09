@@ -12,7 +12,7 @@ export default function Pdf({ file }: PdfProps) {
   return (
     <Pane
       className="is-hidden-mobile"
-      border={!isLoading && "1px solid #474d66"}
+      border={isLoading ? undefined : "1px solid #474d66"}
     >
       <Document
         loading={<Spinner />}
