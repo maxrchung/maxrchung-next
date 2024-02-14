@@ -1,0 +1,59 @@
+// Evergreen/ui-box doesn't expose certain CSS like aspect-ratio so I'm going to
+// try using custom SCSS for most of this
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  /* Use 3 columns for tablet+ views */
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .item {
+    // Force height and width of each item to be the same:
+    // https://stackoverflow.com/a/75690981
+    aspect-ratio: 1;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      // Counter act main styling >_<
+      max-width: 100%;
+
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(85%);
+      }
+    }
+
+    svg {
+      // Ignore hover on svg so image can still be filtered
+      pointer-events: none;
+
+      // :shrug:
+      z-index: 1;
+
+      fill: #FFFFFF;
+      opacity: 0%;
+      transition: opacity 0.2s;
+    }
+
+    &:hover {
+      svg {
+        display: block;
+        opacity: 100%;
+      }
+    }
+  }
+}

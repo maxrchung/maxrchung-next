@@ -399,12 +399,12 @@ export const projectConfigs: ProjectConfigs = {
     description: "Personal website rebuilt with Next.js and Evergreen UI",
   },
   theboy: {
-    thumbnail: s3("the-boy/the-boy-phone.jpg"),
+    thumbnail: "/the-boy.jpg",
     title: "The Boy",
-    // Note my preference is something like Oct 2018, but this doesn't seem to
+    // Note my preference is something like Aug 2011, but this doesn't seem to
     // work for Firefox/iOS. Also the day is required because if you omit it, it
     // will become the previous month due to time zone differences.
-    start: "1 Oct 2018",
+    start: "8 Aug 2011",
     end: undefined,
     description: "The Boy",
   },
