@@ -1,14 +1,19 @@
 import { Image, Paragraph } from "evergreen-ui";
 import style from "./viewer.module.scss";
 import { useEffect, useState } from "react";
+import { GalleryConfig } from "./Gallery";
 
 interface ViewerProps {
-  // If src is non-empty then we show the viewer
-  src: string;
+  galleryConfigs: GalleryConfig[];
+  index: number;
   onClose: () => void;
 }
 
-export default function Viewer({ src, onClose }: ViewerProps) {
+export default function Viewer({
+  galleryConfigs,
+  index,
+  onClose,
+}: ViewerProps) {
   const [state, setState] = useState("");
 
   // Hide scrollbar when viewer is open, based on some code here:
@@ -16,14 +21,14 @@ export default function Viewer({ src, onClose }: ViewerProps) {
   // ^ This actually doesn't really work for me so I followed v
   // https://stackoverflow.com/a/56382662
   useEffect(() => {
-    if (src) {
+    if (index !== -1) {
       const previous = document.body.clientWidth;
       document.body.style.overflow = "hidden";
       const updated = document.body.clientWidth;
       const diff = updated - previous;
       document.body.style.paddingRight = diff + "px";
 
-      setState("active");
+      setState("loading");
     } else {
       document.body.style.overflow = "auto";
       document.body.style.paddingRight = "0";
@@ -31,10 +36,7 @@ export default function Viewer({ src, onClose }: ViewerProps) {
       setState("fadeout");
       setTimeout(() => setState(""), 200);
     }
-  }, [src]);
-
-  // Yeah this is not the greatest but yolo
-  const hiRes = src.replace("-preview.", ".");
+  }, [index]);
 
   if (!state) {
     return null;
@@ -44,21 +46,28 @@ export default function Viewer({ src, onClose }: ViewerProps) {
     <div
       onClick={onClose}
       className={`${style.viewer} ${
-        state === "active" ? style["fade-in"] : ""
+        state === "loaded" || state === "loading" ? style["fade-in"] : ""
       }`}
     >
-      {hiRes && (
+      {index !== -1 && (
         <>
           <Image
-            src={hiRes}
-            alt={hiRes}
+            src={galleryConfigs[index].src}
+            alt={galleryConfigs[index].src}
             maxWidth="80%"
             maxHeight="80%"
             className={style.image}
+            onLoad={() => setState("loaded")}
           />
-          <Paragraph color="white" maxWidth="80%" maxHeight="80%">
-            Pretty neat
-          </Paragraph>
+          {
+            // This reduces some flickering where text may flicker from middle
+            // screen to bottom while waiting for image to laod
+            state === "loaded" && (
+              <Paragraph color="white" maxWidth="80%" maxHeight="80%">
+                {galleryConfigs[index].caption}
+              </Paragraph>
+            )
+          }
         </>
       )}
     </div>

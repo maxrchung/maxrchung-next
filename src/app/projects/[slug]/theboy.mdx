@@ -2,8 +2,9 @@ import { Image } from "evergreen-ui";
 import s3 from "@/s3";
 import Caption from "@/components/Main/Caption";
 import Gallery from "@/components/Main/Gallery/Gallery";
+import galleryConfigs from "./theboyGalleryConfigs";
 
-<Gallery />
+<Gallery galleryConfigs={galleryConfigs} />
 
 The Boy is a long running project that's pretty much evolved into my personal
 brand and identity. Originally, it was a one-off digital picture I drew back in
@@ -16,11 +17,11 @@ just custom art pieces that I've bought here and there. Not much of it required
 work from myself.
 
 Also, since I guess I am web developer or I guess frontend engineer might be
-better sounding, I'm going to create some kind of gallery-like component later
-on in the post. Might as well take advantage of React now that I've upgraded my
-[site update](https://maxrchung.com/projects/maxrchungnext). Also might as well
-do this since I'm kind of laid off right now and should probably do some
-frontend exercises. 🤪
+better sounding, I'm going to create some kind of gallery-like component for all
+my media posts. Might as well take advantage of React now that I've [upgraded my
+site](https://maxrchung.com/projects/maxrchungnext). Also might as well do this
+since I'm kind of laid off right now and should probably do some frontend
+exercises. 🤪
 
 Before I start, I'll just note that I'm not entirely sure if I'll be really
 maintaining this page. Most of the stuff on here are just reposted from my
@@ -169,6 +170,13 @@ have now.
 At this point I could probably go into indepth details about how every new The
 Boy addition was made, but I think I want to avoid going too deep. I like making
 these free form posts but it takes a lot of time, a lot of typing, and there's a
-reason why I haven't touched these for like the past 3 or 4 years or something.
-I'm going to try something a little different and try some kind of interesting
-gallery component format.
+reason why I haven't done these for like the past 3 or 4 years or something. I'm
+going to try something a little different and make a customized gallery of sorts
+to showcase all my The Boy things.
+
+## Gallery
+
+I moved the gallery to the top of the post since I think that's probably where
+others (and probably I too) would like to more easily see it. I'll maybe write
+more in this section once I'm done because it's been pretty interesting building
+the gallery so far.
