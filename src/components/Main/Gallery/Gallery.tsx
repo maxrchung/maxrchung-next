@@ -26,7 +26,7 @@ export default function Gallery({ galleryConfigs }: GalleryProps) {
             key={previewSrc}
             onClick={() => setIndex(index)}
           >
-            <Image src={previewSrc} alt={previewSrc} />
+            <img src={previewSrc} alt={previewSrc} />
 
             {mediaType === "video" && (
               <PlayIcon className={style.play} size={majorScale(4)} />

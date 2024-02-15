@@ -1,18 +1,15 @@
-import {
-  CaretLeftIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  IconButton,
-  Image,
-  Pane,
-  Paragraph,
-  majorScale,
-} from "evergreen-ui";
+import { ChevronLeftIcon, ChevronRightIcon, IconButton } from "evergreen-ui";
 import style from "./viewer.module.scss";
 import { useEffect, useState } from "react";
 import { GalleryConfig } from "./Gallery";
 import { MouseEvent } from "react";
+import classNames from "classnames";
 
+enum ViewerState {
+  Inactive = "Inactive",
+  Loading = "Loading",
+  Loaded = "Loaded",
+}
 interface ViewerProps {
   galleryConfigs: GalleryConfig[];
   index: number;
@@ -24,7 +21,7 @@ export default function Viewer({
   index,
   setIndex,
 }: ViewerProps) {
-  const [state, setState] = useState("");
+  const [state, setState] = useState(ViewerState.Inactive);
 
   // Hide scrollbar when viewer is open, based on some code here:
   // https://github.com/segmentio/evergreen/blob/cce2742921d0ff0a4372503883eee89d00b508c4/src/lib/prevent-body-scroll.js#L10
@@ -42,13 +39,12 @@ export default function Viewer({
         document.body.style.paddingRight = diff + "px";
       }
 
-      setState("loading");
+      setState(ViewerState.Loading);
     } else {
       document.body.style.overflow = "auto";
       document.body.style.paddingRight = "0";
 
-      setState("fadeout");
-      setTimeout(() => setState(""), 200);
+      setState(ViewerState.Inactive);
     }
   }, [index]);
 
@@ -59,71 +55,64 @@ export default function Viewer({
   return (
     <div
       onClick={() => setIndex(-1)}
-      className={`${style.viewer} ${
-        state === "loaded" || state === "loading" ? style["fade-in"] : ""
-      }`}
+      className={classNames(style.viewer, {
+        [style.inactive]: state === ViewerState.Inactive,
+        [style.load]:
+          state === ViewerState.Loading || state === ViewerState.Loaded,
+      })}
     >
+      <button
+        onClick={(event: MouseEvent<HTMLButtonElement>) => {
+          // This seems pretty sus putting this on every UI element
+          event.stopPropagation();
+
+          setIndex(index - 1);
+        }}
+        className={classNames(style.navButton, {
+          [style.load]:
+            index > 0 &&
+            (state === ViewerState.Loading || state === ViewerState.Loaded),
+        })}
+      >
+        <ChevronLeftIcon />
+      </button>
+
       {index !== -1 && (
-        <>
+        <div className={style.main}>
           {galleryConfigs[index].mediaType === "video" ? (
             <video
               src={galleryConfigs[index].src}
               autoPlay
               loop
-              controls
-              onLoadedData={() => setState("loaded")}
+              onLoadedData={() => setState(ViewerState.Loaded)}
+              onClick={(event) => event.stopPropagation()}
             />
           ) : (
-            <Pane
-              display="flex"
-              maxHeight="80%"
-              width="80%"
-              justifyContent="space-between"
-              alignItems="center"
-            >
-              <IconButton
-                onClick={(event: MouseEvent<HTMLButtonElement>) => {
-                  event.stopPropagation();
-                  setIndex(index - 1);
-                }}
-                icon={<ChevronLeftIcon />}
-                size="large"
-              />
-
-              <div>
-                <Image
-                  src={galleryConfigs[index].src}
-                  alt={galleryConfigs[index].src}
-                  maxHeight="100%"
-                  maxWidth="100%"
-                  onLoad={() => setState("loaded")}
-                />
-                <div className={style.textContainer}>
-                  <Paragraph
-                    color="white"
-                    maxWidth="80%"
-                    maxHeight="80%"
-                    textAlign="center"
-                    // This reduces some flickering where text may flicker from middle
-                    // screen to bottom while waiting for image to laod
-                    visibility={state === "loaded" ? "visible" : "hidden"}
-                  >
-                    {galleryConfigs[index].caption}
-                  </Paragraph>
-                </div>
-              </div>
-
-              <IconButton
-                onClick={(event: MouseEvent<HTMLButtonElement>) => {
-                  event.stopPropagation();
-                  setIndex(index + 1);
-                }}
-                icon={ChevronRightIcon}
-              />
-            </Pane>
+            <img
+              src={galleryConfigs[index].src}
+              alt={galleryConfigs[index].src}
+              onLoad={() => setState(ViewerState.Loaded)}
+              onClick={(event) => event.stopPropagation()}
+            />
           )}
-        </>
+
+          <p>{galleryConfigs[index].caption}</p>
+        </div>
       )}
+
+      <button
+        onClick={(event: MouseEvent<HTMLButtonElement>) => {
+          event.stopPropagation();
+          setIndex(index + 1);
+        }}
+        className={classNames(style.navButton, {
+          [style.load]:
+            index < galleryConfigs.length - 1 &&
+            (state === ViewerState.Loading || state === ViewerState.Loaded),
+        })}
+      >
+        <ChevronRightIcon />
+      </button>
     </div>
   );
 }
