@@ -22,24 +22,29 @@
   }
 
   .navButton {
-    border-radius: 100%;
-    width: 32px;
-    height: 32px;
     display: flex;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
+
     padding: 0;
     margin: 0;
+    width: 32px;
+    height: 32px;
+
     border: 0;
+    border-radius: 100%;
     color: #474d66;
     background-color: #d8dae5;
 
     opacity: 0%;
     transition: opacity 0.2s, filter 0.2s;
+    pointer-events: none;
 
     &.load {
       opacity: 100%;
       cursor: pointer;
+      pointer-events: all;
     }
 
     &:hover {
