@@ -96,7 +96,13 @@ export default function Viewer({
             />
           )}
 
-          <p>{galleryConfigs[index].caption}</p>
+          <p
+            className={classNames({
+              [style.loaded]: state === ViewerState.Loaded,
+            })}
+          >
+            {galleryConfigs[index].caption}
+          </p>
         </div>
       )}
 

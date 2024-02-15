@@ -72,7 +72,8 @@ const galleryConfigs: GalleryConfig[] = [
     mediaType: "image",
     previewSrc: s3("the-boy/7the-boy-masks-preview.jpg"),
     src: s3("the-boy/7the-boy-masks.jpg"),
-    caption: "This was during Covid so yeah that makes a lot of sense",
+    caption:
+      "This was during Covid so yeah that makes a lot of sense. Also wack hair.",
   },
   {
     mediaType: "image",
@@ -113,7 +114,8 @@ const galleryConfigs: GalleryConfig[] = [
     mediaType: "image",
     previewSrc: s3("the-boy/puz3-preview.jpg"),
     src: s3("the-boy/puz3.jpg"),
-    caption: "A couple of more progress pictures (3)",
+    caption:
+      "A couple of more progress pictures (3). I was also really into sparkling water at that time. ",
   },
   {
     mediaType: "image",
@@ -145,7 +147,7 @@ const galleryConfigs: GalleryConfig[] = [
   {
     mediaType: "image",
     previewSrc: s3("the-boy/cards-preview.jpg"),
-    src: s3("the-boy/cards-preview.jpg"),
+    src: s3("the-boy/cards.jpg"),
     caption: (
       <>
         Business cards, I think from <Link href="https://moo.com">MOO</Link>

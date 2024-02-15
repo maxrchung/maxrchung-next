@@ -1,5 +1,5 @@
 import style from "./gallery.module.scss";
-import { Image, MaximizeIcon, PlayIcon, majorScale } from "evergreen-ui";
+import { MaximizeIcon, PlayIcon, majorScale } from "evergreen-ui";
 import { ReactNode, useState } from "react";
 import Viewer from "./Viewer";
 
