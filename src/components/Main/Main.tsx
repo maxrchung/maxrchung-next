@@ -1,6 +1,6 @@
 import { Pane, majorScale } from "evergreen-ui";
 import { ReactNode } from "react";
-import style from "./style.module.scss";
+import style from "./main.module.scss";
 
 interface MainProps {
   children: ReactNode;

@@ -1,0 +1,28 @@
+.viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0);
+  overflow-y: hidden;
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  transition: background-color 0.2s;
+  padding: 16px;
+
+  &.fade-in {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  .image {
+    object-fit: fit;
+  }
+}
+
