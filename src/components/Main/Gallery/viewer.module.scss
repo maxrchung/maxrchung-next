@@ -21,8 +21,21 @@
     background-color: rgba(0, 0, 0, 0.9);
   }
 
-  .image {
+  img,
+  video {
     object-fit: fit;
   }
-}
 
+  .textContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+
+  @media (min-width: 640px) {
+    .textContainer {
+      width: 640px;
+    }
+  }
+}

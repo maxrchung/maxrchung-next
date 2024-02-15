@@ -10,16 +10,13 @@
   @media (min-width: 640px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  
+
   .item {
     // Force height and width of each item to be the same:
     // https://stackoverflow.com/a/75690981
     aspect-ratio: 1;
 
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
 
     img {
@@ -33,7 +30,7 @@
       transition: filter 0.2s;
 
       &:hover {
-        filter: brightness(80%);
+        filter: brightness(75%);
       }
     }
 
@@ -44,14 +41,28 @@
       // :shrug:
       z-index: 1;
 
-      fill: #FFFFFF;
-      opacity: 0%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      fill: #ffffff;
       transition: opacity 0.2s;
+
+      &.play {
+        opacity: 100%;
+      }
+
+      &.maximize {
+        opacity: 0%;
+      }
     }
 
     &:hover {
-      svg {
-        display: block;
+      .play {
+        opacity: 0%;
+      }
+
+      .maximize {
         opacity: 100%;
       }
     }

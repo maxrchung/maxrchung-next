@@ -33,7 +33,7 @@ const galleryConfigs: GalleryConfig[] = [
     previewSrc: s3("the-boy/3the-boy-shirt-front-preview.jpg"),
     src: s3("the-boy/3the-boy-shirt-front.jpg"),
     caption:
-      "Okay now this is where things start rolling, a very epic shirt. I actually like my hair at this stage, the color was nice. I think it was the first time I ever got it dyed.",
+      "Okay now this is where things start rolling, a very epic shirt. I actually like my hair here too, the color was nice. I think it was the first time I got it dyed.",
   },
   {
     mediaType: "image",
@@ -256,7 +256,7 @@ const galleryConfigs: GalleryConfig[] = [
     previewSrc: s3("the-boy/mini-cardp.jpg"),
     src: s3("the-boy/mini-card.mp4"),
     caption:
-      "Mini business cards because I lost my other business cards at AX, rip",
+      "Mini business cards because I lost my other business cards at AX, rip. Also thanks GQ for the nails.",
   },
   {
     mediaType: "image",
@@ -283,7 +283,7 @@ const galleryConfigs: GalleryConfig[] = [
     previewSrc: s3("the-boy/whiteboardp.jpg"),
     src: s3("the-boy/whiteboard.jpg"),
     caption:
-      "I used this for my LinkedIn profile. I think it's a little cross eyed but otherwise looks pretty cool imo.",
+      "I used this for my LinkedIn profile. I think it's a little cross-eyed but otherwise looks pretty cool.",
   },
   {
     mediaType: "image",

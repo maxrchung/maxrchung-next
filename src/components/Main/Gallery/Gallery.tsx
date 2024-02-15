@@ -1,5 +1,5 @@
 import style from "./gallery.module.scss";
-import { Image, MaximizeIcon, minorScale } from "evergreen-ui";
+import { Image, MaximizeIcon, PlayIcon, majorScale } from "evergreen-ui";
 import { ReactNode, useState } from "react";
 import Viewer from "./Viewer";
 
@@ -20,14 +20,19 @@ export default function Gallery({ galleryConfigs }: GalleryProps) {
   return (
     <>
       <div className={style.gallery}>
-        {galleryConfigs.map(({ previewSrc }, index) => (
+        {galleryConfigs.map(({ previewSrc, mediaType }, index) => (
           <div
             className={style.item}
             key={previewSrc}
             onClick={() => setIndex(index)}
           >
             <Image src={previewSrc} alt={previewSrc} />
-            <MaximizeIcon size={minorScale(5)} />
+
+            {mediaType === "video" && (
+              <PlayIcon className={style.play} size={majorScale(4)} />
+            )}
+
+            <MaximizeIcon className={style.maximize} size={majorScale(3)} />
           </div>
         ))}
       </div>
@@ -35,7 +40,7 @@ export default function Gallery({ galleryConfigs }: GalleryProps) {
       <Viewer
         galleryConfigs={galleryConfigs}
         index={index}
-        onClose={() => setIndex(-1)}
+        setIndex={setIndex}
       />
     </>
   );
