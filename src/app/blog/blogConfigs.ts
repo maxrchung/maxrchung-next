@@ -32,10 +32,6 @@ const blogConfigs: BlogConfigs = {
     title: "Rebuilding this site Version 3.0 Epic",
     time: "2024-02-03T22:52:19.174Z",
   },
-  "24": {
-    title: "Some reflection",
-    time: "7 Feb 2024",
-  },
 };
 
 export default blogConfigs;
