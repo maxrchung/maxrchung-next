@@ -146,6 +146,12 @@ const galleryConfigs: GalleryConfig[] = [
   },
   {
     mediaType: "image",
+    previewSrc: s3("the-boy/cakep.jpg"),
+    src: s3("the-boy/cake.jpg"),
+    caption: "Ok this one was a stretch but the cheesecake was nice",
+  },
+  {
+    mediaType: "image",
     previewSrc: s3("the-boy/cards-preview.jpg"),
     src: s3("the-boy/cards.jpg"),
     caption: (
@@ -285,7 +291,7 @@ const galleryConfigs: GalleryConfig[] = [
     previewSrc: s3("the-boy/whiteboardp.jpg"),
     src: s3("the-boy/whiteboard.jpg"),
     caption:
-      "I used this for my LinkedIn profile. I think it's a little cross-eyed but otherwise looks pretty cool.",
+      "I used this as a part of my LinkedIn profile. I think it's a little cross-eyed but otherwise looks pretty cool.",
   },
   {
     mediaType: "image",
