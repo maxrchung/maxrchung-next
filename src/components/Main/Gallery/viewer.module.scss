@@ -76,12 +76,6 @@
       font-size: 14px;
       line-height: 24px;
       color: #ffffff;
-      visibility: hidden;
-
-      // Avoid text flickering from middle to bottom of screen when image is loaded
-      &.loaded {
-        visibility: visible;
-      }
     }
 
     @media (min-width: 640px) {

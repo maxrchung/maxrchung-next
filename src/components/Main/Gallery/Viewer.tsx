@@ -96,12 +96,7 @@ export default function Viewer({
             />
           )}
 
-          <p
-            className={classNames({
-              [style.loaded]: state === ViewerState.Loaded,
-            })}
-            onClick={(event) => event.stopPropagation()}
-          >
+          <p onClick={(event) => event.stopPropagation()}>
             {galleryConfigs[index].caption}
           </p>
         </div>
