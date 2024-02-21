@@ -8,7 +8,7 @@ import galleryConfigs from "./theboyGalleryConfigs";
 
 The Boy is a long running project that's pretty much evolved into my personal
 brand and identity. Originally, it was a one-off digital picture I drew back in
-highschool. But one thing's led to another and now I am Him.
+high school. But one thing's led to another and now I am Him.
 
 I was debating even if I should put this as a project since it's not very
 software related. Honestly this is more than a joke than a real thing. But
@@ -167,7 +167,7 @@ an server emote pretty much as a meme. On Discord it was added as
 collecting newer and newer pieces of The Boy merchandise until I have what I
 have now.
 
-At this point I could probably go into indepth details about how every new The
+At this point I could probably go into in-depth details about how every new The
 Boy addition was made, but I think I want to avoid going too deep. I like making
 these free form posts but it takes a lot of time, a lot of typing, and there's a
 reason why I haven't done these for like the past 3 or 4 years or something. I'm
@@ -176,7 +176,54 @@ to showcase all my The Boy things.
 
 ## Gallery
 
-I moved the gallery to the top of the post since I think that's probably where
-others (and probably I too) would like to more easily see it. I'll maybe write
-more in this section once I'm done because it's been pretty interesting building
-the gallery so far.
+I moved the gallery to the top of the post since I think that's probably where I
+expect to see it more easily. Usually I keep everything chronological though so
+not sure, maybe I'll the gallery down here. I'll maybe write more in this
+section once I'm done because it's been pretty interesting building the gallery
+so far.
+
+Okay as usual it's been a while since I worked on the gallery but I figured I'd
+try and wrap up this post on it. I'll talk about some of the implementation
+details of gallery. There could be more additions to add to it but I'm satisfied
+where it is. React is probably a must at this point to implement it since this
+is a Next project. Except for icons though, I did not use Evergreen. So all
+styling was done through SASS. I just wanted to get a bit lower level for this one.
+
+The gallery is made up of 2 components, a `<Gallery />` for showing the gallery
+of items and a `<Viewer />` for showing a single image. For gallery, I guess I
+took some inspirations from Twitter/Instagram views with the 3 column layout. On
+mobile, this gets shrunk to 2 columns. I used `display: grid`, which I think
+makes sense since `flex` may have issues with lining up columns/rows without
+forcing widths/heights.
+
+I'm pretty bad at `grid` stuff to be honest, but I don't know how I'd dive
+deeper into it. These days I feel somewhat lazy learning about new tech. Which
+is not a good thing if I want to keep up my skills up, but my routine is just
+work on one side project, move onto the next, and if I happen to need to pick up
+skills or research something for that project, then learn that, but not go out
+of my way to learn something.
+
+Anyways, the one thing I wanted to learn a bit more of was animating stuff. The
+Boy picture on the home page uses key frames animation, but here I tried out
+`transition` for the first time, and that was surprisingly easy to set up. I
+just made a small effect to darken on hover. I'll definitely remember this going
+forward as I do like to add more visual cues to frontend changes. Though it's
+probably easy to overdo these kinds of things. I think there's an argument to
+make things as snappy as possible since that's an immediate response instead
+lagging a transition.
+
+Implementing the viewer was more complicated. I've never really built a modal
+component from scratch before so there were some odd challenges I faced.
+Probably the most annoying was dealing with the scrollbar. To darken the background, I stretch a fixed div over the whole page, but the browser scrollbar can still be seen. When I looked at example implementations (Evergreen/Twitter), it seems like most sites will hide the scrollbar temporary when the modal is open. So that's what I did, and I put some custom styling into the `body` element, while also thinking about scenarios where there are no scrollbars (mobile).
+
+I could have left it at that but I wanted to also add some easier navigation, so I put some buttons in the viewer to go next and back. I think these buttons are a little hard to click and maybe supporting gestures would make navigation easier. My general feedback seems to be that it's too easy to click the dark background and leave the viewer on accident.
+
+There's also probably something seriously wrong with the way leaving the viewer works. Leaving works by clicking the background, but I have a lot of `stopPropagation` calls so that clicking on the navigation buttons or the image or the image caption text doesn't propagate to the background and trigger leaving the viewer. I think this is probably an anti-pattern, if not for maintainable alone but maybe for accessibility. I remember reading briefly on Chakra UI docs that they handle this in a special way. Maybe the correct pattern is to make the background a sibling to the UI elements rather than the parent.
+
+One more thing was handling loading of images. So what most sites will probably do is have a preview image and a larger image, where the preview image is significantly smaller in size so the gallery page can quickly load. I have a bunch of configs set up to basically specify a preview image and main image. The main image only gets loaded in the viewer.
+
+A side note also is that one annoying thing I didn't have a solution for is that sometimes the image caption text will flicker because the image is still being loaded. I tried some things to adjust visibility of the text but overall it's still not good so I reverted it. I think the proper way to handle this is to get the image dimensions beforehand and create like a skeleton image that is loading at the correct width/height. This way the size of the image is always correct and there's no shifting around. I don't think this is easily available in Next.js SSG so I didn't pursue this too much.
+
+Ok I think that's pretty much it. Overall, I think it was a good exercise building this. It took some time to be honest, maybe one to two days. Hopefully I'll have more opportunities to make these kinds of things because it's pretty fun.
+
+<img src="/the-boy.jpg" />
