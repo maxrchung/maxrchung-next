@@ -408,6 +408,13 @@ export const projectConfigs: ProjectConfigs = {
     end: undefined,
     description: "The Boy",
   },
+  rideintherain: {
+    thumbnail: s3("ride-in-the-rain/thumbnail.png"),
+    title: "Ride in the Rain",
+    start: "17 Feb 2024",
+    end: "19 Feb 2024",
+    description: "3D networked racing game",
+  },
 };
 
 export default projectConfigs;
