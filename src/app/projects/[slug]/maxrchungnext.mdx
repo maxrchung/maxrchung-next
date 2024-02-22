@@ -1,2 +1,41 @@
-WIP. Basically some of the big changes to this site. I think it's pretty good
-maybe maybe not.
+Once again I've rewritten my `maxrchung.com` website. In the beginning, there was just HTML and CSS. Then, there was a Rails remake. And now, we're at Next.js.
+
+- Made by: Max Chung
+- Made with: Next.js, Evergreen, AWS Amplify
+- Repository: [maxrchung-next](https://github.com/maxrchung/maxrchung-next), [maxrchung-rails-cdk](https://github.com/maxrchung/maxrchung-rails-cdk), [maxrchung-next-cdk](https://github.com/maxrchung/maxrchung-next-cdk)
+
+So, I was laid off unfortunately. I don't think it was due to performance, but just an unlucky situation where my team was disproportionately impacted compared to others. Lots of good folks affected, really an unfortunate situation. I'm in an okay spot though, I'm not hurting financially or anything so maybe having a bit of a break is a good thing all things considered.
+
+It's been probably a couple weeks to a month for me now. I submitted maybe like 20 to 30 apps but only got rejections. I think it's probably a bad time right now since tech layoffs are so widespread. I definitely need to brush up on my technical interview skills though so I'm probably not in a huge rush. At least, I don't feel like I have confidence in my interviewee abilities. It's hard trying to study for it but I'll try my best daily.
+
+On top of interview prep stuff I'm also doing various side projects, to keep me busy if anything. First thing on the list was to remake this site. I think moving to Next.js just makes sense given my web background now. I'm much more familiar and experienced with React now, so that's the kind of stack I should focus on. Rails is pretty outdated these days I think. I mean, I guess server rendered pages is still a thing but I could just do that in Next.js now.
+
+I'm using Next.js SSG (static site generation) now. Basically, I generate a bunch of static site files instead of running a web server. Financially it should save me money because I'm just hosting static pages instead of a server. But in practice that's not really what happens, because I run multiple server containers on one Fargate task. I guess alternatively I could have containerized a Next.js server but I think the simplicity of SSG is nice. It frees up my Fargate for some other things too.
+
+There's also a number of annoying things that I didn't like with the Rails site. The first problem was that after moving the Rails site to AWS, I had some issues with API calls redirecting to a bad link. The call was successful, but the response page was incorrect. This happened on every edit operation so it was quite annoying. Editing things was also a pain because I didn't have markdown. I basically had to write HTML for every single thing and man, that's a lot of `<p></p>` tags that add up over time.
+
+These are all pretty much fixed with the new site. Now, I'm using Next.js's integration with MDX for all my pages. Markdown definitely feels easier to work with but I'm still finding the best Markdown setup. I'm using a VSCode spell check plugin and text wrap tools for instance.
+
+It's consequently also easier to deploy. I have this site hooked up with Amplify (set up through CDK). Amplify will detect any pushes to the `maxrchung-next` repo and then automatically build/deploy a new site for me. No container management or manual publish commands necessary.
+
+There is one thing I miss though. If I wanted to add media to the Rails site, it was a simple operation to drag images or videos into the web page. Rails would then handle uploading and managing content to S3. Now, I have to upload to S3 manually which can be a bit more cumbersome with 2FA and whatnot. I guess I could make an S3 utility but I honestly don't think it'd save me that much convenience. Maybe that'll be a future project.
+
+## Next.js (and Evergreen)
+
+Okay, so why Next.js in the first place? I've actually used it before for another static site so it's not like I'm starting from zero. I do kind of want to choose another library just to see how things are. I was considering Gatsby, but I've honestly just seen pretty mixed reviews of it compared to Next.js. It feels like everyone just suggests Next.js these days.
+
+The real reason is kind of a meme, but one of the sites my previous team worked on used Next.js and Evergreen. I actually never really got too much exposure into that project but I was curious about its tech stack. Next.js seems to have been updated recently with the new App Router. I didn't have any qualms with it, if anything I like it, so I gave it a shot again.
+
+Evergreen was also pretty cool. It has some interesting ideas with its [ui-box model](https://github.com/segmentio/ui-box) that allows for flexible component creation. I think it's similar to Chakra UI, which I was debating of using, and which I now regret not using. And that's because after implementing everything in Evergreen, I seem to have only then realized that Evergreen [may be dead](https://github.com/segmentio/evergreen/issues/1669).
+
+Well that sucks. I'm actually kind of tightly integrated with Evergreen. It's not impossible to change to another component library, but I'll need to update components and change out MDX to React mapping. Maybe I should just write all my components from scratch so I don't have to think about this kind of thing. Whatever, at least for now Evergreen's fine for my needs, and I like it enough. For the foreseeable future I'll keep on using it.
+
+## Migration
+
+In moving from Rails to this new site, I made a number of changes. Design-wise, I switched from a pink colored theme to a yellowish one. I've decided to go all-in on [The Boy](https://maxrchung.com/projects/theboy), and theme the whole site loosely on it. The website icon is now The Boy and the website colors reflect it more closely.
+
+## Tech stack
+
+## Migration
+
+## I guess some final thoughts
