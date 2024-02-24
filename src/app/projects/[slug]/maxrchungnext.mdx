@@ -1,41 +1,174 @@
-Once again I've rewritten my `maxrchung.com` website. In the beginning, there was just HTML and CSS. Then, there was a Rails remake. And now, we're at Next.js.
+Once again I've rewritten my `maxrchung.com` website. In the beginning, there
+was just HTML and CSS. Then, there was a Rails remake. And now, we're at
+Next.js.
 
 - Made by: Max Chung
 - Made with: Next.js, Evergreen, AWS Amplify
-- Repository: [maxrchung-next](https://github.com/maxrchung/maxrchung-next), [maxrchung-rails-cdk](https://github.com/maxrchung/maxrchung-rails-cdk), [maxrchung-next-cdk](https://github.com/maxrchung/maxrchung-next-cdk)
+- Repository: [maxrchung-next](https://github.com/maxrchung/maxrchung-next),
+  [maxrchung-rails-cdk](https://github.com/maxrchung/maxrchung-rails-cdk),
+  [maxrchung-next-cdk](https://github.com/maxrchung/maxrchung-next-cdk)
 
-So, I was laid off unfortunately. I don't think it was due to performance, but just an unlucky situation where my team was disproportionately impacted compared to others. Lots of good folks affected, really an unfortunate situation. I'm in an okay spot though, I'm not hurting financially or anything so maybe having a bit of a break is a good thing all things considered.
+So, I was laid off unfortunately. I don't think it was due to performance, but
+just an unlucky situation where my team was disproportionately impacted compared
+to others. Lots of good folks affected, really an unfortunate situation. I'm in
+an okay spot. I'm not hurting financially or anything so maybe having a bit of a
+break is a good thing all things considered.
 
-It's been probably a couple weeks to a month for me now. I submitted maybe like 20 to 30 apps but only got rejections. I think it's probably a bad time right now since tech layoffs are so widespread. I definitely need to brush up on my technical interview skills though so I'm probably not in a huge rush. At least, I don't feel like I have confidence in my interviewee abilities. It's hard trying to study for it but I'll try my best daily.
+But it's been probably a couple weeks to a month for me now. I submitted maybe
+like 20 to 30 apps but only got a few rejections so far. Maybe it's a bad time
+right now since tech layoffs are so widespread. I definitely need to brush up on
+my technical interview skills though so I'm probably not in a huge rush. At
+least, I don't feel like I have confidence in my interviewee abilities. It's
+hard trying to study for it, but I'll try my best daily.
 
-On top of interview prep stuff I'm also doing various side projects, to keep me busy if anything. First thing on the list was to remake this site. I think moving to Next.js just makes sense given my web background now. I'm much more familiar and experienced with React now, so that's the kind of stack I should focus on. Rails is pretty outdated these days I think. I mean, I guess server rendered pages is still a thing but I could just do that in Next.js now.
+On top of interview prep stuff I'm also doing various side projects, to keep me
+busy if anything. First thing on my list was to remake this site. I think moving
+my site to Next.js just makes sense, given my web background. I'm much more
+familiar and experienced with React now, so that's the kind of stack I should
+focus on. Rails is pretty outdated these days I think. I mean, I guess server
+rendered pages is still a thing but I could also just do that in Next.js if I
+wanted to.
 
-I'm using Next.js SSG (static site generation) now. Basically, I generate a bunch of static site files instead of running a web server. Financially it should save me money because I'm just hosting static pages instead of a server. But in practice that's not really what happens, because I run multiple server containers on one Fargate task. I guess alternatively I could have containerized a Next.js server but I think the simplicity of SSG is nice. It frees up my Fargate for some other things too.
+I'm using Next.js SSG (static site generation). Basically, I generate a bunch of
+static website files instead of running a web server. Financially it should save
+me money because I'm just hosting static pages instead of a server. But in
+practice that's not really what happens, because I can run multiple server
+containers on a Fargate machine. Alternatively, I could have containerized a
+Next.js server and put it on Fargate, but I think the simplicity of SSG is nice.
+It also frees up my Fargate for other things.
 
-There's also a number of annoying things that I didn't like with the Rails site. The first problem was that after moving the Rails site to AWS, I had some issues with API calls redirecting to a bad link. The call was successful, but the response page was incorrect. This happened on every edit operation so it was quite annoying. Editing things was also a pain because I didn't have markdown. I basically had to write HTML for every single thing and man, that's a lot of `<p></p>` tags that add up over time.
+There's also a number of annoying things that I didn't like with the Rails site.
+The first problem was that after moving the Rails site to AWS, I had some issues
+with API calls redirecting to a bad link. The call was successful, but the
+response page was incorrect. I think this was due to how I set up my NGINX
+proxy. This happened on every edit operation so it was quite annoying. Editing
+things also in general was a pain because I didn't have something like markdown
+to easily write things. I basically wrote raw HTML for every single post and
+man, that's a lot of `<p></p>` tags that add up over time.
 
-These are all pretty much fixed with the new site. Now, I'm using Next.js's integration with MDX for all my pages. Markdown definitely feels easier to work with but I'm still finding the best Markdown setup. I'm using a VSCode spell check plugin and text wrap tools for instance.
+These are all pretty much fixed with the new site. Now, I'm using Next.js's
+integration with MDX for all my pages. Markdown definitely feels easier to work
+with but I'm still finding the best Markdown setup. I'm using a VSCode spell
+check plugin and text wrap tools for instance. Next.js is also easier for me to
+deploy. I have this site hooked up with Amplify. Amplify detects any pushes to
+the `maxrchung-next` repo and automatically builds/deploys a new site for me. No
+container management or manual publish necessary.
 
-It's consequently also easier to deploy. I have this site hooked up with Amplify (set up through CDK). Amplify will detect any pushes to the `maxrchung-next` repo and then automatically build/deploy a new site for me. No container management or manual publish commands necessary.
-
-There is one thing I miss though. If I wanted to add media to the Rails site, it was a simple operation to drag images or videos into the web page. Rails would then handle uploading and managing content to S3. Now, I have to upload to S3 manually which can be a bit more cumbersome with 2FA and whatnot. I guess I could make an S3 utility but I honestly don't think it'd save me that much convenience. Maybe that'll be a future project.
+There is one thing I miss though. If I wanted to add media to the old Rails
+site, it was a simple operation to drag images or videos into the web page.
+Rails would then handle uploading and managing content to S3. Now, I have to
+upload to S3 manually which can be a bit more cumbersome with 2FA and whatnot. I
+guess I could make an S3 utility, but I honestly don't think it'd save me that
+much convenience. Maybe I'll consider it as a future project.
 
 ## Next.js (and Evergreen)
 
-Okay, so why Next.js in the first place? I've actually used it before for another static site so it's not like I'm starting from zero. I do kind of want to choose another library just to see how things are. I was considering Gatsby, but I've honestly just seen pretty mixed reviews of it compared to Next.js. It feels like everyone just suggests Next.js these days.
+Okay, so why Next.js in the first place? I've actually used it before for
+another static site so it's not like I'm starting from zero. I do kind of want
+to choose another library just to see how things are. I was considering Gatsby,
+but I've honestly just seen pretty mixed reviews of it compared to Next.js. It
+feels like everyone just suggests Next.js these days, for reason.
 
-The real reason is kind of a meme, but one of the sites my previous team worked on used Next.js and Evergreen. I actually never really got too much exposure into that project but I was curious about its tech stack. Next.js seems to have been updated recently with the new App Router. I didn't have any qualms with it, if anything I like it, so I gave it a shot again.
+The real reason is kind of a meme, but one of the sites my previous team worked
+on used Next.js and Evergreen. I actually never really got too much exposure
+into that project, but I wanted to look more into its tech stack. Recently it
+seems Next.js updated to using their new App Router. I wanted to try that out,
+and Next.js never gave me much problems in the past, so why not use it again.
 
-Evergreen was also pretty cool. It has some interesting ideas with its [ui-box model](https://github.com/segmentio/ui-box) that allows for flexible component creation. I think it's similar to Chakra UI, which I was debating of using, and which I now regret not using. And that's because after implementing everything in Evergreen, I seem to have only then realized that Evergreen [may be dead](https://github.com/segmentio/evergreen/issues/1669).
+Evergreen was also pretty cool when I read through its pretty short docs. It has
+some interesting ideas with its [ui-box
+model](https://github.com/segmentio/ui-box) that allows for flexible component
+creation. I think it's similar to Chakra UI, which I looked into, was debating
+to use use, and which I now regret not using now. And that's because after
+implementing everything using Evergreen, I seem to have only then realized that
+Evergreen [may be dead](https://github.com/segmentio/evergreen/issues/1669).
 
-Well that sucks. I'm actually kind of tightly integrated with Evergreen. It's not impossible to change to another component library, but I'll need to update components and change out MDX to React mapping. Maybe I should just write all my components from scratch so I don't have to think about this kind of thing. Whatever, at least for now Evergreen's fine for my needs, and I like it enough. For the foreseeable future I'll keep on using it.
+Well that sucks. I'm actually kind of tightly integrated with Evergreen. It's
+not impossible to change to another component library, but I'll need to update
+components and change out MDX to React mapping. Maybe I should just write all my
+components from scratch so I don't have to think about this kind of thing.
+Whatever, at least for now Evergreen's fine for my needs, and I like it enough.
+For the foreseeable future I'll keep on using it.
 
 ## Migration
 
-In moving from Rails to this new site, I made a number of changes. Design-wise, I switched from a pink colored theme to a yellowish one. I've decided to go all-in on [The Boy](https://maxrchung.com/projects/theboy), and theme the whole site loosely on it. The website icon is now The Boy and the website colors reflect it more closely.
+In moving from Rails to this new site, I made a number of changes. Design-wise,
+I switched from a pink colored theme to a yellowish one. I've decided to go
+all-in on [The Boy](https://maxrchung.com/projects/theboy), and theme the whole
+site on it. The website icon is now The Boy and the website colors reflect it
+more closely. I decided not to create custom colored links like the old site and
+just rely on what Evergreen provides, simple blue links.
 
-## Tech stack
+I recreated the top menu bar using Evergreen components. Evergreen interestingly
+has a bit of a smaller font than maybe I'd like. It's `14px` by default which is
+definitely smaller than the `16px` I used before. Maybe it's too small, but
+they're the experts, so if that's what they want to use for their default size
+I'll go ahead stick with that. I think it's something I'll get used to but maybe
+when I do probably end up redoing this site again, I'll think about upping the
+size.
 
-## Migration
+I started getting into MDX with the home page and about page. I like working in
+MDX and having the freedom to jump to React if I want to. I struggle a bit
+phrasing things so my about section actually took some time, at least
+content-wise. I'll probably revise it more as time goes on. One thing I added
+was a React PDF reader. I felt it could be useful if I just show my resume
+directly in the page and was able to do that after some tinkering.
 
-## I guess some final thoughts
+Then I started migrating blogs and projects. This was actually kind of
+complicated, and I predicted that, but for the most part it was straightforward
+enough to work with. Basically, since this site used to be server rendered, my
+blog posts and project posts were all stored in a DB. So I wrote some scripts to
+fetch them out of the DB, convert them from HTML to MDX, then put them into a
+directory. You can see some of my scripts
+[here](https://github.com/maxrchung/maxrchung-next/tree/main/converters).
+
+The complicated part of this came from the fact that HTML to MDX conversion
+needed some massaging to work. I had a lot of, for example `<p
+class="caption"></p>` tags that needed to be specially handled and kept with the
+`caption` class. There were also img/video/audio/iframe tags that I wanted to keep as
+HTML. So I tried to keep most of the special HTML intact and copied over some
+old styling to support that.
+
+For the most part, things look relatively similar to before. I still have the
+middle column layout. I tried to make spacing similarly dynamic like before,
+where there are deviations in spacing for headers, lists, paragraphs, etc. For
+example, headers have a larger top spacing than bottom spacing so that I think
+it's easier to tie a header and its section together. The styling can get a bit
+gnarly on this. By default, there is a `flex gap` set on all elements in the
+main column. Then each element that can adjust the spacing with negative
+margins. Probably not the prettiest way to handle it, but it's usable for me.
+
+Once I got blogs working with all of its special media elements, projects was
+pretty smooth to transition after. MDX did kind of run into problems on certain
+posts. I think these were mostly things like unclosed tags that it complained
+about. MDX kind of falls a bit short on auto-completion and error reporting.
+It's not a perfect system, but I'm fine with some of its deficiencies.
+
+And after all the projects were done I could finally deploy the site. Similar to
+a number of my previous projects, I used Amplify to deploy. It's quite familiar
+to me now, and I have sample CDK projects to reference. A couple of annoying
+things though. One was that the base Amplify image only supported up to Node 16,
+and my Next.js needed 18+. It was kind of complicated finding this out but
+apparently you can specify in CDK a special environment variable `_CUSTOM_IMAGE`
+to get around that. Kind of stupid, but whatever, works for me.
+
+Another annoying thing was that I upgraded my CDK to version 2. Not too bad
+since this was just refactoring but I ended up changing some parts of my
+`maxrchung-cloud-cdk` to manage containers and `maxrchung-rails-cdk` to manage
+Cloudfront. Oh yeah that's another thing, I added Cloudfront to
+`maxrchung-rails-cdk`. Before it was just running from a public S3 but I figured
+I may end up saving a bit of money if I take advantage of Cloudfront for
+distribution. This way cached items can be retrieved faster and easier, I
+imagine. Also, just out of laziness sake I'm not moving anything from the
+`maxrchung-rails-cdk` project to `maxrchung-next-cdk`.
+
+And I think that's pretty much it. I like the current state, and I'll probably
+use it like this for a while. But I wouldn't be surprised if maybe even a year
+from now I'll rebuild this site again, next time maybe with some more fancy
+custom made components. But there's honestly not too much to show here on this
+website. It's mostly just a bunch of text and simple navigation. Maybe I'll work
+on some web project to incorporate all of that.
+
+Cheers, and I guess a final note is that I'm introducing linked images for this
+post. Recently I've been on Twitter quite a bit so I have a lot of saved posts.
+I'll bring in some of them here to break up the content.
