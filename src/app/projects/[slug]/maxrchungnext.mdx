@@ -1,3 +1,8 @@
+import ImageLink from "@/components/Main/ImageLink";
+import VideoLink from "@/components/Main/VideoLink";
+
+<img src="https://maxrchung.com/favicon.ico" />
+
 Once again I've rewritten my `maxrchung.com` website. In the beginning, there
 was just HTML and CSS. Then, there was a Rails remake. And now, we're at
 Next.js.
@@ -8,11 +13,11 @@ Next.js.
   [maxrchung-rails-cdk](https://github.com/maxrchung/maxrchung-rails-cdk),
   [maxrchung-next-cdk](https://github.com/maxrchung/maxrchung-next-cdk)
 
-So, I was laid off unfortunately. I don't think it was due to performance, but
-just an unlucky situation where my team was disproportionately impacted compared
-to others. Lots of good folks affected, really an unfortunate situation. I'm in
-an okay spot. I'm not hurting financially or anything so maybe having a bit of a
-break is a good thing all things considered.
+So, I was laid off unfortunately. I don't think it was due to any performance
+reasons, but just an unlucky situation where my team was disproportionately
+impacted by company layoffs. Lots of good folks affected, really an unfortunate
+situation. I'm in an okay spot though. I'm fine financially for a while, so
+maybe having a bit of a break is a good thing all things considered.
 
 But it's been probably a couple weeks to a month for me now. I submitted maybe
 like 20 to 30 apps but only got a few rejections so far. Maybe it's a bad time
@@ -20,6 +25,11 @@ right now since tech layoffs are so widespread. I definitely need to brush up on
 my technical interview skills though so I'm probably not in a huge rush. At
 least, I don't feel like I have confidence in my interviewee abilities. It's
 hard trying to study for it, but I'll try my best daily.
+
+<ImageLink
+  href="https://twitter.com/MaojinLee/status/1750043804382691672"
+  src="https://pbs.twimg.com/media/GElnjzfaoAALVhz?format=jpg&name=small"
+/>
 
 On top of interview prep stuff I'm also doing various side projects, to keep me
 busy if anything. First thing on my list was to remake this site. I think moving
@@ -45,6 +55,11 @@ proxy. This happened on every edit operation so it was quite annoying. Editing
 things also in general was a pain because I didn't have something like markdown
 to easily write things. I basically wrote raw HTML for every single post and
 man, that's a lot of `<p></p>` tags that add up over time.
+
+<ImageLink
+  href="https://twitter.com/KarinHosono/status/1751228280731312569"
+  src="https://pbs.twimg.com/media/GE2c1gwaEAAj5dp?format=jpg&name=small"
+/>
 
 These are all pretty much fixed with the new site. Now, I'm using Next.js's
 integration with MDX for all my pages. Markdown definitely feels easier to work
@@ -82,6 +97,11 @@ creation. I think it's similar to Chakra UI, which I looked into, was debating
 to use use, and which I now regret not using now. And that's because after
 implementing everything using Evergreen, I seem to have only then realized that
 Evergreen [may be dead](https://github.com/segmentio/evergreen/issues/1669).
+
+<ImageLink
+  href="https://twitter.com/xuejiye66/status/1753632501556453478"
+  src="https://pbs.twimg.com/media/GFYndgPaYAAdDBU?format=jpg&name=small"
+/>
 
 Well that sucks. I'm actually kind of tightly integrated with Evergreen. It's
 not impossible to change to another component library, but I'll need to update
@@ -122,12 +142,17 @@ fetch them out of the DB, convert them from HTML to MDX, then put them into a
 directory. You can see some of my scripts
 [here](https://github.com/maxrchung/maxrchung-next/tree/main/converters).
 
+<ImageLink
+  href="https://twitter.com/sungmoomoo/status/1751913303532851585"
+  src="https://pbs.twimg.com/media/GFAL3KEbQAAYrF8?format=jpg&name=small"
+/>
+
 The complicated part of this came from the fact that HTML to MDX conversion
 needed some massaging to work. I had a lot of, for example `<p
 class="caption"></p>` tags that needed to be specially handled and kept with the
-`caption` class. There were also img/video/audio/iframe tags that I wanted to keep as
-HTML. So I tried to keep most of the special HTML intact and copied over some
-old styling to support that.
+`caption` class. There were also img/video/audio/iframe tags that I wanted to
+keep as HTML. So I tried to keep most of the special HTML intact and copied over
+some old styling to support that.
 
 For the most part, things look relatively similar to before. I still have the
 middle column layout. I tried to make spacing similarly dynamic like before,
@@ -162,6 +187,11 @@ distribution. This way cached items can be retrieved faster and easier, I
 imagine. Also, just out of laziness sake I'm not moving anything from the
 `maxrchung-rails-cdk` project to `maxrchung-next-cdk`.
 
+<ImageLink
+  href="https://twitter.com/J_KMOR/status/1754698203327574255"
+  src="https://pbs.twimg.com/media/GFnss7taMAA06O7?format=png&name=small"
+/>
+
 And I think that's pretty much it. I like the current state, and I'll probably
 use it like this for a while. But I wouldn't be surprised if maybe even a year
 from now I'll rebuild this site again, next time maybe with some more fancy
@@ -170,5 +200,75 @@ website. It's mostly just a bunch of text and simple navigation. Maybe I'll work
 on some web project to incorporate all of that.
 
 Cheers, and I guess a final note is that I'm introducing linked images for this
-post. Recently I've been on Twitter quite a bit so I have a lot of saved posts.
+post. Recently I've been on Twitter quite a bit so I have a lot of liked posts.
 I'll bring in some of them here to break up the content.
+
+## Twitter shenanigans
+
+Wow, okay, so it's been a few days, and I ended up doing some funky Chrome
+extension stuff. I wanted an easy way to link Twitter videos, but it's not
+exactly trivial. As with most social media sites, videos are typically streamed
+through a video player. Which sucks for me if I want to embed a Twitter video
+into my site. Twitter does have this sort of [publish
+embed](https://publish.twitter.com) feature, but it kind of sucks if I'm being honest, at least for my use case. Something something about how it's not using an `iframe` that I can easily style, or something like that. Alternatively, there are tools and browser extensions available that can
+help download the video.
+
+[youtube-dl](https://github.com/ytdl-org/youtube-dl) should be able to download
+it if you're looking for a CLI tool. I ended up liking the first Chrome
+extension I found that solved this problem, [Twitter video
+downloader](https://chromewebstore.google.com/detail/twitter-video-downloader/akmdionenlnfcipmdhbhcnkighafmdha).
+This extension is nice because it injects a button into a Twitter post which you
+can then click to download the post's video. But while this was pretty useful, I
+realized I actually didn't want to download and then reupload the video to S3. It's a
+bit of a hassle, and I was fine with just linking the Twitter video directly if
+that was possible. Yeah s-ure, this might run into problems if the post gets deleted or
+something like that, but I think I'm okay with living with that.
+
+So I was curious, and I searched up the [source
+code](https://github.com/mstfsnc/twitter-video-downloader-extension) of this
+extension. I took a peek into it, and there's a lot of interesting stuff in
+there that I want to talk about. So this thing works in a couple of parts. First
+thing is that the extension overrides the XHR GET request so that it can spy on
+requests and their responses. Specifically it wants to spy on Twitter's GraphQL
+calls that are requesting Tweet details. Within these GraphQL responses, there is a
+`video_info` section that gives you `mp4` links to the video content.
+
+<ImageLink
+  href="https://twitter.com/996beshi/status/1697824107113676988"
+  src="https://pbs.twimg.com/media/F4_iBmlbQAAuzIx?format=jpg&name=small"
+/>
+
+So that'll give you a list of video links. But now you have to map it to each
+Twitter post. To do that, we start with a very generic check for all `<img>`
+elements on the page. Then we do some filtering steps to remove most of the
+unnecessary images. The ones remaining are checked to see if they map to any of
+the video links we spied on before. We're looking for an image that is a video's
+preview image. If there is a match, we inject a download button into the post
+that the user can then click and trigger a download. Download is bit funky as
+well. I think we're creating a hidden anchor element, clicking it, and then
+removing the anchor. I don't know. Just web dev things.
+
+So what I ended up doing was forking this project and then doing my own spin on
+the functionality I needed. I don't think it's really worth its own project post
+on this site so I'm just going to jam [my
+small fork changes](https://github.com/maxrchung/twitter-video-downloader-extension/tree/copy-links)
+here and call it a day. I just did a simple change so that I could use 2
+buttons. One button copies the link of the Twitter post for you. And another
+button copies the link of the video file. With this setup I could then
+easily copy the links I needed and use them in this writeup.
+
+This was pretty cool. It's my first exposure to Chrome extensions and browser
+extensions development. I probably should have done some more deep diving into
+some of the extension development docs but I just kind of winged it to get some
+simple behavior I needed and relied a lot on the existing extension code from
+the original repo I forked from. Anyways, to finish off on this website, I
+created some simple components to take in `href` and `src` props, then showed an
+image or videos. All the stuff above are just images, but here's an example of a
+video clip:
+
+<VideoLink
+  href="https://twitter.com/rloubersanes/status/1749866994315223262"
+  src="https://video.twimg.com/tweet_video/GEjGcbQXYAAN9Er.mp4"
+/>
+
+Ok, for real I'm gonna leave now.
