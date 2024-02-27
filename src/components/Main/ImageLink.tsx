@@ -17,6 +17,7 @@ export default function ImageLink({ href, src, width }: ImageLinkProps) {
       borderRadius={majorScale(1)}
       alignSelf="center"
       maxWidth="80%"
+      target="_blank"
     >
       <Image
         src={src}

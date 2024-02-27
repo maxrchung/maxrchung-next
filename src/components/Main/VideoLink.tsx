@@ -17,6 +17,7 @@ export default function VideoLink({ href, src, width }: VideoLinkProps) {
       borderRadius={majorScale(1)}
       alignSelf="center"
       maxWidth="80%"
+      target="_blank"
     >
       <video
         src={src}
