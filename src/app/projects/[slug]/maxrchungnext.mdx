@@ -210,27 +210,30 @@ extension stuff. I wanted an easy way to link Twitter videos, but it's not
 exactly trivial. As with most social media sites, videos are typically streamed
 through a video player. Which sucks for me if I want to embed a Twitter video
 into my site. Twitter does have this sort of [publish
-embed](https://publish.twitter.com) feature, but it kind of sucks if I'm being honest, at least for my use case. Something something about how it's not using an `iframe` that I can easily style, or something like that. Alternatively, there are tools and browser extensions available that can
-help download the video.
+embed](https://publish.twitter.com) feature, but it kind of sucks if I'm being
+honest, at least for my use case. Something something about how it's not using
+an `iframe` that I can easily style, or something like that.
 
-[youtube-dl](https://github.com/ytdl-org/youtube-dl) should be able to download
-it if you're looking for a CLI tool. I ended up liking the first Chrome
-extension I found that solved this problem, [Twitter video
+Alternatively, there are tools and browser extensions available that can help
+download the video. [youtube-dl](https://github.com/ytdl-org/youtube-dl) should
+be able to download it if you're looking for a CLI tool. I ended up liking the
+first Chrome extension I found that solved this problem, [Twitter video
 downloader](https://chromewebstore.google.com/detail/twitter-video-downloader/akmdionenlnfcipmdhbhcnkighafmdha).
 This extension is nice because it injects a button into a Twitter post which you
 can then click to download the post's video. But while this was pretty useful, I
-realized I actually didn't want to download and then reupload the video to S3. It's a
-bit of a hassle, and I was fine with just linking the Twitter video directly if
-that was possible. Yeah s-ure, this might run into problems if the post gets deleted or
-something like that, but I think I'm okay with living with that.
+realized I actually didn't want to download and then reupload the video to S3.
+It's a bit of a hassle, and I was fine with just linking the Twitter video
+directly if that was possible. Yeah sure, this might run into problems if the
+post gets deleted or something like that, but I think I'm okay with living with
+that.
 
-So I was curious, and I searched up the [source
+So I was curious, and I took a peek into the [source
 code](https://github.com/mstfsnc/twitter-video-downloader-extension) of this
-extension. I took a peek into it, and there's a lot of interesting stuff in
-there that I want to talk about. So this thing works in a couple of parts. First
-thing is that the extension overrides the XHR GET request so that it can spy on
-requests and their responses. Specifically it wants to spy on Twitter's GraphQL
-calls that are requesting Tweet details. Within these GraphQL responses, there is a
+extension. There's a lot of interesting stuff going on in there that I want to
+talk about. So this thing works in a couple of parts. First thing is that the
+extension overrides the XHR GET request so that it can spy on requests and their
+responses. Specifically it wants to spy on Twitter's GraphQL calls that are
+requesting Tweet details. Within these GraphQL responses, there is a
 `video_info` section that gives you `mp4` links to the video content.
 
 <ImageLink
@@ -239,7 +242,7 @@ calls that are requesting Tweet details. Within these GraphQL responses, there i
 />
 
 So that'll give you a list of video links. But now you have to map it to each
-Twitter post. To do that, we start with a very generic check for all `<img>`
+Twitter post. To do that, we start with a very generic check for all image
 elements on the page. Then we do some filtering steps to remove most of the
 unnecessary images. The ones remaining are checked to see if they map to any of
 the video links we spied on before. We're looking for an image that is a video's
@@ -250,12 +253,12 @@ removing the anchor. I don't know. Just web dev things.
 
 So what I ended up doing was forking this project and then doing my own spin on
 the functionality I needed. I don't think it's really worth its own project post
-on this site so I'm just going to jam [my
-small fork changes](https://github.com/maxrchung/twitter-video-downloader-extension/tree/copy-links)
+on this site so I'm just going to jam [my small fork
+changes](https://github.com/maxrchung/twitter-video-downloader-extension/tree/copy-links)
 here and call it a day. I just did a simple change so that I could use 2
 buttons. One button copies the link of the Twitter post for you. And another
-button copies the link of the video file. With this setup I could then
-easily copy the links I needed and use them in this writeup.
+button copies the link of the video file. With this setup I could then easily
+copy the links I needed and use them in this writeup.
 
 This was pretty cool. It's my first exposure to Chrome extensions and browser
 extensions development. I probably should have done some more deep diving into
