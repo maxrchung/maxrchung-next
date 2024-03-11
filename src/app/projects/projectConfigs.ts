@@ -415,6 +415,12 @@ export const projectConfigs: ProjectConfigs = {
     end: "19 Feb 2024",
     description: "3D networked racing game",
   },
+  step: {
+    thumbnail: "",
+    title: "Step",
+    start: "01 Mar 2024",
+    description: "WIP",
+  },
 };
 
 export default projectConfigs;
