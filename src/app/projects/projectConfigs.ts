@@ -416,7 +416,7 @@ export const projectConfigs: ProjectConfigs = {
     description: "3D networked racing game",
   },
   step: {
-    thumbnail: "",
+    thumbnail: s3("step/ddr-up.png"),
     title: "Step",
     start: "01 Mar 2024",
     description: "WIP",
