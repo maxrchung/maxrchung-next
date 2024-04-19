@@ -419,7 +419,7 @@ export const projectConfigs: ProjectConfigs = {
     thumbnail: s3("step/ddr-up.png"),
     title: "Step",
     start: "01 Mar 2024",
-    description: "WIP",
+    description: "A web tool to create step patterns",
   },
 };
 
