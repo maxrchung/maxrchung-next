@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon, IconButton } from "evergreen-ui";
+import { ChevronLeftIcon, ChevronRightIcon } from "evergreen-ui";
 import style from "./viewer.module.scss";
 import { useEffect, useState } from "react";
 import { GalleryConfig } from "./Gallery";

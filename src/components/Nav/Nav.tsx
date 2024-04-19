@@ -1,12 +1,4 @@
-import {
-  Pane,
-  majorScale,
-  Popover,
-  Position,
-  MenuIcon,
-  Button,
-  IconButton,
-} from "evergreen-ui";
+import { Pane, majorScale, Popover, Position, MenuIcon } from "evergreen-ui";
 import NavIcon from "./NavIcon";
 import NavLink from "./NavLink";
 import MenuLink from "./MenuLink";
