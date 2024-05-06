@@ -421,6 +421,13 @@ export const projectConfigs: ProjectConfigs = {
     start: "01 Mar 2024",
     description: "A web tool to create step patterns",
   },
+  maxew: {
+    thumbnail: s3("maxew/thumbnail.png"),
+    title: "maxew",
+    start: "04 May 2024",
+    end: "05 May 2024",
+    description: '2D platformer made in game jam, theme was "Reflect"',
+  },
 };
 
 export default projectConfigs;
