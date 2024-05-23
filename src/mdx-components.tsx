@@ -1,7 +1,6 @@
 import {
   Code,
   CodeProps,
-  Heading,
   HeadingProps,
   Link,
   LinkProps,

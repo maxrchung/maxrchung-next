@@ -2,21 +2,17 @@
 
 import blogConfigs from "../blogConfigs";
 import Timestamp from "@/components/Main/Timestamp";
-import dynamic from "next/dynamic";
 import Header from "@/components/Main/Header";
 import BreadcrumbLink from "@/components/Main/BreadcrumbLink";
-import { Spinner } from "evergreen-ui";
+import ContentfulBlog from "./ContentfulBlog";
+import MdxBlog from "./MdxBlog";
 
 interface ClientProps {
   slug: string;
 }
 
 export default function Client({ slug }: ClientProps) {
-  const { title, time } = blogConfigs[slug];
-
-  const Content = dynamic(() => import(`./${slug}.mdx`), {
-    loading: () => <Spinner />,
-  });
+  const { title, time, source } = blogConfigs[slug];
 
   return (
     <>
@@ -27,7 +23,11 @@ export default function Client({ slug }: ClientProps) {
       </Header>
       <Timestamp time={time} />
 
-      <Content />
+      {source === "contentful" ? (
+        <ContentfulBlog slug={slug} />
+      ) : (
+        <MdxBlog slug={slug} />
+      )}
     </>
   );
 }

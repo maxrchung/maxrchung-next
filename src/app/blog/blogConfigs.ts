@@ -1,7 +1,20 @@
+import { EntryFieldTypes } from "contentful";
+
 interface BlogConfigs {
   [slug: string]: {
     title: string;
     time: string;
+    // By default, source will be [slug].mdx file, however I'm testing some integrations with Contentful
+    source?: "contentful";
+  };
+}
+
+// Manual copy of Contentful blogPost
+export interface BlogPostSkeleton {
+  contentTypeId: "blogPost";
+  fields: {
+    id: EntryFieldTypes.Text;
+    content: EntryFieldTypes.Text;
   };
 }
 
@@ -31,6 +44,11 @@ const blogConfigs: BlogConfigs = {
   "23": {
     title: "Rebuilding this site Version 3.0 Epic",
     time: "2024-02-03T22:52:19.174Z",
+  },
+  "24": {
+    title: "Back in business",
+    time: "2024-05-18T20:00:00.000Z",
+    source: "contentful",
   },
 };
 

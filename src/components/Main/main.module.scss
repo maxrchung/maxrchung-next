@@ -1,7 +1,12 @@
 .main {
   width: 100%;
 
-  img, audio, video, iframe {
+  img,
+  audio,
+  video,
+  iframe {
+    display: block;
+    margin: auto;
     align-self: center;
     max-width: 80%;
     border-radius: 8px;
