@@ -3,3 +3,5 @@ version that used Ruby on Rails. This site is statically generated with Next.js.
 
 For more context, you can read the project page on my website:
 https://maxrchung.com/projects/maxrchungnext
+
+I use AWS Amplify to hook onto changes in this repo and deploy the website.

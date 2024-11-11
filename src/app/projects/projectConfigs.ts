@@ -428,6 +428,13 @@ export const projectConfigs: ProjectConfigs = {
     end: "05 May 2024",
     description: '2D platformer made in game jam, theme was "Reflect"',
   },
+  realfishing: {
+    thumbnail: s3("real-fishing/thumbnail.png"),
+    title: "REAL FISHING",
+    start: "09 Nov 2024",
+    end: "10 Nov 2024",
+    description: "2D networked platformer about real fishing",
+  },
 };
 
 export default projectConfigs;
