@@ -439,7 +439,7 @@ export const projectConfigs: ProjectConfigs = {
   hisoyakani: {
     thumbnail: "",
     title: "Hisoyakani",
-    start: "09 Nov 2024",
+    start: "14 Jul 2024",
     description: "A storyboard",
   },
   needforpee: {
