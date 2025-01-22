@@ -419,6 +419,7 @@ export const projectConfigs: ProjectConfigs = {
     thumbnail: s3("step/ddr-up.png"),
     title: "Step",
     start: "01 Mar 2024",
+    end: "27 May 2024",
     description: "A web tool to create step patterns",
   },
   maxew: {
@@ -434,6 +435,19 @@ export const projectConfigs: ProjectConfigs = {
     start: "09 Nov 2024",
     end: "10 Nov 2024",
     description: "2D networked platformer about real fishing",
+  },
+  hisoyakani: {
+    thumbnail: "",
+    title: "Hisoyakani",
+    start: "09 Nov 2024",
+    description: "A storyboard",
+  },
+  needforpee: {
+    thumbnail: s3("need-for-pee/p.png"),
+    title: "Need for Pee",
+    start: "18 Jan 2025",
+    end: "21 Jan 2025",
+    description: "3D horror visual novel about needing to pee",
   },
 };
 
