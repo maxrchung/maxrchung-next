@@ -440,7 +440,7 @@ export const projectConfigs: ProjectConfigs = {
     thumbnail: "",
     title: "Hisoyakani",
     start: "14 Jul 2024",
-    description: "A storyboard",
+    description: "",
   },
   needforpee: {
     thumbnail: s3("need-for-pee/p.png"),
