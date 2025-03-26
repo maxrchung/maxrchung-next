@@ -437,10 +437,11 @@ export const projectConfigs: ProjectConfigs = {
     description: "2D networked platformer about real fishing",
   },
   hisoyakani: {
-    thumbnail: "",
+    thumbnail: s3("hisoyakani/thumbnail.png"),
     title: "Hisoyakani",
     start: "14 Jul 2024",
-    description: "",
+    end: "22 Mar 2025",
+    description: "osu! 3D animation storyboard",
   },
   needforpee: {
     thumbnail: s3("need-for-pee/p.png"),
