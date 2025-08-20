@@ -51,7 +51,7 @@ const blogConfigs: BlogConfigs = {
     source: "contentful",
   },
   "25": {
-    title: "I moved a lot of stuff to Railway",
+    title: "I moved a lot of stuff to Railway and saved $20",
     time: "19 August 2025",
     source: "contentful",
   },
