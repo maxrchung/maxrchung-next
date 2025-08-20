@@ -50,6 +50,11 @@ const blogConfigs: BlogConfigs = {
     time: "2024-05-18T20:00:00.000Z",
     source: "contentful",
   },
+  "25": {
+    title: "I moved a lot of stuff to Railway",
+    time: "19 August 2025",
+    source: "contentful",
+  },
 };
 
 export default blogConfigs;
