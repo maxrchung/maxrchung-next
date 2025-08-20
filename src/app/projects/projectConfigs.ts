@@ -450,6 +450,12 @@ export const projectConfigs: ProjectConfigs = {
     end: "21 Jan 2025",
     description: "3D horror visual novel about needing to pee",
   },
+  pzl: {
+    title: "pzl",
+    start: "12 Apr 2025",
+    thumbnail: "",
+    description: "Multiplayer jigsaw puzzle game",
+  },
 };
 
 export default projectConfigs;
