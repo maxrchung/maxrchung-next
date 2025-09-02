@@ -461,7 +461,7 @@ export const projectConfigs: ProjectConfigs = {
     start: "1 Sep 2025",
     end: "1 Sep 2025",
     thumbnail: s3("eye-scream/picture.png"),
-    description: "Second person puzzle platformer",
+    description: "Second-person puzzle platformer",
   },
 };
 
