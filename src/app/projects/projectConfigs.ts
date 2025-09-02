@@ -456,6 +456,13 @@ export const projectConfigs: ProjectConfigs = {
     thumbnail: "",
     description: "Multiplayer jigsaw puzzle game",
   },
+  eyescream: {
+    title: "EYE SCREAM",
+    start: "1 Sep 2025",
+    end: "1 Sep 2025",
+    thumbnail: s3("eye-scream/picture.png"),
+    description: "Second person puzzle platformer",
+  },
 };
 
 export default projectConfigs;
