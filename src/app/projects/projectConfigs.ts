@@ -458,7 +458,7 @@ export const projectConfigs: ProjectConfigs = {
   },
   eyescream: {
     title: "EYE SCREAM",
-    start: "1 Sep 2025",
+    start: "30 Aug 2025",
     end: "1 Sep 2025",
     thumbnail: s3("eye-scream/picture.png"),
     description: "Second-person puzzle platformer",
