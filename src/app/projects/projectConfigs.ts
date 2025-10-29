@@ -453,7 +453,7 @@ export const projectConfigs: ProjectConfigs = {
   pzl: {
     title: "pzl",
     start: "12 Apr 2025",
-    thumbnail: "",
+    thumbnail: "https://pzl.maxrchung.com/favicon.svg",
     description: "Multiplayer jigsaw puzzle game",
   },
   eyescream: {
