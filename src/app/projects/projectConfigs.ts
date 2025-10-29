@@ -454,7 +454,8 @@ export const projectConfigs: ProjectConfigs = {
     title: "pzl",
     start: "12 Apr 2025",
     thumbnail: "https://pzl.maxrchung.com/favicon.svg",
-    description: "Multiplayer jigsaw puzzle game",
+    description:
+      "Multiplayer online real-time co-op custom jigsaw puzzle web game",
   },
   eyescream: {
     title: "EYE SCREAM",
