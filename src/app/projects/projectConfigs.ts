@@ -453,6 +453,7 @@ export const projectConfigs: ProjectConfigs = {
   pzl: {
     title: "pzl",
     start: "12 Apr 2025",
+    end: "3 Jan 2026",
     thumbnail: "https://pzl.maxrchung.com/favicon.svg",
     description:
       "Multiplayer online real-time co-op no-talking custom jigsaw puzzle web game",
