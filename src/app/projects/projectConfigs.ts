@@ -46,7 +46,7 @@ export const projectConfigs: ProjectConfigs = {
     title: "retro",
     start: "2021-05-01T07:00:00.000Z",
     end: "Jun 26, 2022",
-    description: "A simple retrospective tool.",
+    description: "A simple retrospective tool",
   },
   S2VX: {
     thumbnail: s3("uploads/s2vxlogo99.png"),
