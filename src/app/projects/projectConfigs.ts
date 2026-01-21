@@ -465,6 +465,13 @@ export const projectConfigs: ProjectConfigs = {
     thumbnail: s3("eye-scream/picture.png"),
     description: "Second-person puzzle platformer",
   },
+  realgambling: {
+    title: "REAL GAMBLING",
+    start: "17 Jan 2026",
+    end: "19 Jan 2026",
+    thumbnail: s3("real-gambling/g.png"),
+    description: "Pull and upgrade a fishing slot machine",
+  },
 };
 
 export default projectConfigs;
