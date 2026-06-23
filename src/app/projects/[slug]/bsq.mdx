@@ -1,0 +1,62 @@
+import { Image } from "evergreen-ui";
+import s3 from "@/s3";
+
+<Image src={s3("bsq/banner.png")} />
+
+bs? is our take on BS Poker (sometimes known as Liar's Poker). It's a bluffing
+card game where you deal out a few cards to a group, then you take turns trying
+to guess the better poker hand you can complete with everyone's cards. If you
+don't think a hand exists, you call BS on it.
+
+There are a lot of house rules you can add. In our bs? we added a group voting
+system so everyone individually decides BS or not. We also keep track of a score
+depending on hand rarity and determine a winner after some rounds are done.
+
+This final version is in a bit of a weird state. The itch.io release is an older
+build with a few patches. The latest in main has some issues with parts of the
+game loop. Long story short is rewriting stuff took a long time, and we couldn't
+get things fixed by the deadline.
+
+bs? was made over a 3 day weekend. We used Godot and GDScript for the client and
+C# for the WebSockets server.
+
+- Made by: Max Chung, Julia Ahopelto, Kenneth Ahne, Sandy Fang, Ralph Orteza, Jonathan
+  Alcantara
+- Made with: Godot, C#
+- Repository:
+  [https://github.com/maxrchung/bsq](https://github.com/maxrchung/bsq)
+- Play:
+  [https://maxrchung.itch.io/bsq](https://maxrchung.itch.io/bsq)
+
+## Background
+
+Maybe a short background recap. Overall, this game jam wasn't as smooth as
+previous ones. Day 1, We struggled a bit to come up with an idea. BS Poker was
+our backup plan after we couldn't figure out some kind of gameplay that could
+possibly work with Mpreg. I worked on card assets Day 1 and got them into Godot.
+Not terribly productive but at least refamiliarizing myself with everything.
+
+Day 2 I decided to focus solely on client to get something connected and did a
+lot of prototype-y stuff in Godot/GDSCript. By Day 2's end I had a pretty cruddy
+UI that was talking and updating things with the server. Maybe a mistake, but I
+worked throughout the night to try and make this look as good as I could by
+polishing UI. That left me really dead and pretty much useless the last day save
+for doing a small things to figure out how we would deploy this (Railway).
+
+In my head, I thought things were in a good spot for handoff Day 3. I was pretty
+happy with the state of it and thought things would just be additions to what I
+laid some foundation for. But Julie didn't like the messy UI I wrote, that was
+basically cramming everything into one scene. Admittedly it can be painful to
+follow, but Julie's solution was to rewrite everything to separate out into
+multiple scenes. I'm not opposed to that, but if you're going to rewrite you
+better leave things in a stable state.
+
+And lo and behold, end of Day 3, things weren't connected properly and arguably
+in a worst state than my prototype version. Game loop had issues, some game
+crashes, release version had some major visual bugs. Granted, I could have
+helped out more on Day 3 to try and rewrite things, but with the sleep crash
+affecting me and not feeling motivated to migrate perfectly working code into a
+brand new, broken system, I didn't do much.
+
+In some defiance and just to get a playable working build, the version I'm
+publishing on itch.io is the previous prototype with a few patches.

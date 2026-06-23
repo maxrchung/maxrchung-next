@@ -472,6 +472,13 @@ export const projectConfigs: ProjectConfigs = {
     thumbnail: s3("real-gambling/g.png"),
     description: "Pull and upgrade a fishing slot machine",
   },
+  bsq: {
+    title: "bs?",
+    start: "26 Jun 2026",
+    end: "22 Jun 2026",
+    thumbnail: s3("bsq/thumbnail.png"),
+    description: "BS Poker with group voting",
+  },
 };
 
 export default projectConfigs;
