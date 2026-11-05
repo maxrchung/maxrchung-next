@@ -479,6 +479,14 @@ export const projectConfigs: ProjectConfigs = {
     thumbnail: s3("bsq/thumbnail.png"),
     description: "BS Poker with group voting",
   },
+  heroes: {
+    title: "Heroes",
+    start: "Oct 27 2026",
+    end: "",
+    thumbnail: s3("heroes/thumbnail.avif"),
+    description: "Heroes of the Storm reference site"
+  }
+
 };
 
 export default projectConfigs;
