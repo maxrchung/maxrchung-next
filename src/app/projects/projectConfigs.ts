@@ -482,8 +482,8 @@ export const projectConfigs: ProjectConfigs = {
   heroes: {
     title: "Heroes",
     start: "Oct 27 2026",
-    end: "",
-    thumbnail: s3("heroes/thumbnail.avif"),
+    end: "Nov 9 2026",
+    thumbnail: s3("heroes/thumbnail.png"),
     description: "Heroes of the Storm reference site"
   }
 
