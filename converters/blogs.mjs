@@ -75,7 +75,7 @@ for (let i = rows.length - 1; i >= 0; --i) {
 
   const replaced = content
     // Replace all /file/ paths with S3 path
-    .replace(/\/file\//g, "https://d1yx06f4zik90o.cloudfront.net/uploads/");
+    .replace(/\/file\//g, "https://maxrchung-assets.up.railway.app/uploads/");
 
   configs[id] = {
     title,
