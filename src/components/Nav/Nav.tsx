@@ -15,7 +15,6 @@ export default function NavBar() {
       />
       <NavIcon href="https://github.com/maxrchung" src="/github-logo.png" />
       <NavIcon href="https://maxrchung.itch.io" src="/itch-logo.svg" />
-      <NavIcon href="https://x.com/maxrchung" src="/x-logo.png" />
       <NavIcon href="https://osu.ppy.sh/users/S2VX" src="/osu-logo.png" />
     </Pane>
   );
